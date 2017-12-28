@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>layout</title>
+<style type="text/css">
+*{margin:0px; padding:0px;}
+body{padding:1px; font-family:arial;}
+.block-inline,.inline-inline,.block-block,.ul-li{background-color:#c00; /*font-size:0px;*/ padding:1px;}
+.block-inline *,.inline-inline *,.block-block *,.ul-li *{ /*font-size:16px;*/}
+/**block**/
+	/*.block-inline b{display:block; margin:5px; border:1px dashed #00c;}
+	.inline-inline b{display:block; margin:5px; border:1px dashed #00c;}
+	.block-block div{margin:5px; border:1px dashed #00c;}
+	.ul{display:block;}
+	.ul-li li{display:block; margin:5px; border:1px dashed #00c; list-style:disc inside;}*/
+/**inline**/
+	/*.block-inline b{padding:5px; border:1px dashed #00c; *margin-right:-1px;}
+	.inline-inline b {padding:5px; border:1px dashed #00c; *margin-right:-1px;}
+	.block-block div{display:inline; padding:5px; border:1px dashed #00c;}
+	.ul-li li{display:inline; padding:5px; border:1px dashed #00c; list-style:disc inside;}*/
+/**list-item**/
+	/*.block-inline b{display:list-item; list-style:disc inside; padding:5px; margin:5px; border:1px dashed #00c;}
+	.inline-inline b {display:list-item; list-style:disc inside; padding:5px; margin:5px; border:1px dashed #00c;}
+	.block-block div{display:list-item; list-style:disc inside; padding:5px; margin:5px; border:1px dashed #00c;}
+	.ul-li li{display:list-item; list-style:disc inside; padding:5px; margin:5px; border:1px dashed #00c; list-style:disc inside;}*/
+/**inline-block**/
+	/*.block-inline b{display:inline-block; list-style:disc inside; padding:5px; margin:5px 0; border:1px dashed #00c; *margin-right:-1px;}
+	.inline-inline{}
+	.inline-inline b {display:inline-block; list-style:disc inside; padding:5px; margin:5px 0; border:1px dashed #00c; *margin-right:-1px;}
+	.block-block div{display:inline-block; list-style:disc inside; padding:5px; margin:5px 0; border:1px dashed #00c;}
+	.ul-li li{display:inline-block; list-style:disc inside; padding:5px; margin:5px 0; border:1px dashed #00c; list-style:disc inside;}*/
+/**table**/
+	/*.block-inline{display:table; width:100%; border-collapse:collapse; border-spacing:3px; border:1px solid #0c0;}
+	.block-inline b{display:table-cell; width:20%; overflow:hidden; background-color:#0cc; height:30px; border:1px solid #00c;}
+	.inline-inline{display:table; width:100%; border-collapse:collapse; border-spacing:3px; border:1px solid #0c0;}
+	.inline-inline b{display:table-cell; width:20%; overflow:hidden; background-color:#0cc; height:30px; border:1px solid #00c; vertical-align:middle; text-align:center; height:50px;}
+	.block-block{display:table; width:100%; border-collapse:collapse; border-spacing:3px; border:1px solid #0c0;}
+	.block-block div{display:table-cell; width:20%; overflow:hidden; background-color:#0cc; height:30px; border:1px solid #00c; vertical-align:middle; text-align:center; height:50px;}
+	.ul-li{display:table; width:100%; border-collapse:collapse; border-spacing:3px; border:1px solid #0c0;}
+	.ul-li li{display:table-cell; width:20%; overflow:hidden; background-color:#0cc; height:30px; border:1px solid #00c; vertical-align:middle; text-align:center; height:50px; list-style:disc inside;}*/
+/**inline-table**/
+	/*.block-inline{display:inline-table; border-collapse:collapse; border-spacing:3px; border:1px solid #0c0;}
+	.block-inline .b{display:table-caption; border:none; background-color:transparent; text-align:center;}
+	.block-inline b{display:table-cell;  background-color:#0cc; height:30px; border:1px solid #00c;}
+	.inline-inline{display:inline-table; border-collapse:collapse; border-spacing:3px; border:1px solid #0c0;}
+	.inline-inline b{display:table-cell;background-color:#0cc; height:30px; border:1px solid #00c; vertical-align:middle; text-align:center; height:50px;}*/
+/**table,table-caption,table-column,table-row,table-row-group,table-footer-group,table-header-group**/
+	.dlTable{display:inline-table; width:50%; margin:-1px; border:1px solid #0cc; border-collapse:separate; border-spacing:2px; empty-cells:show;}
+	.dlTable dt{/*display:table-caption; display:-webkit-ruby; display:-moz-ruby; display:ruby;*/ text-align:center; line-height:40px;}
+	.dlTable dd.ddHead{display:table-header-group;}
+	.dlTable dd.ddFoot{display:table-footer-group;}
+	.dlTable dd.ddBody{display:table-row-group;}
+	.dlTable ul{display:table-row;}
+	.dlTable li{display:table-cell; width:20%; border:1px solid #0c0; padding:5px; vertical-align:middle;}
+.block-inline{display:-webkit-compact;}
+.inline-inline{display:block;}
+.inline-inline b:first-child{float:left;}
+.inline-inline b:nth-child(2){display:block;}
+.inline-inline b:nth-child(3){}
+
+.run-in{margin:20px;}
+.run-in dt{display:run-in;}
+.run-in dt p{display:inline;}
+.run-in dd{margin-left:0px;}
+</style>
+</head>
+
+<body>
+<h1>block</h1>
+	<div class="block">
+		
+	</div>
+
+<h1>block-inline</h1>
+	<div class="block-inline">
+		<b class="b">内容内容内</b>
+		<b>内容</b>
+		<b>内容</b>
+		<b>内容</b>
+		<b>内容</b>
+	</div>
+<h1>inline-inline</h1>
+	<span class="inline-inline">
+		<b>这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题</b>
+		<b>这是内容</b>
+		<b>这是内容</b>
+		<b>这是内容</b>
+		<b>这是内容</b>
+	</span>
+<h1>block-block</h1>
+	<div class="block-block">
+		<div>这是内容</div>
+		<div>这是内容</div>
+		<div>这是内容</div>
+		<div>这是内容</div>
+	</div>
+<h1>ul-li</h1>
+	<ul class="ul-li">
+		<li>这是内容</li>
+		<li>这是内容</li>
+		<li>这是内容</li>
+		<li>这是内容</li>
+		<li>这是内容</li>
+	</ul>
+<h1>display:table</h1>
+<dl class="dlTable">
+	<dt>这个是表格标题</dt>
+	<dd class="ddBody">
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+	</dd>
+	<dd class="ddHead">
+		<ul>
+			<li>这是头部模块</li>
+			<li>这是头部模块</li>
+			<li>这是头部模块</li>
+			<li>这是头部模块</li>
+			<li>这是头部模块</li>
+		</ul>
+	</dd>
+	<dd class="ddBody">
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+	</dd>
+	<dd class="ddFoot">
+		<ul>
+			<li>这是尾部模块</li>
+			<li>这是尾部模块</li>
+			<li>这是尾部模块</li>
+			<li>这是尾部模块</li>
+			<li>这是尾部模块</li>
+		</ul>
+	</dd>
+	<dd class="ddBody">
+		<ul>
+			<li></li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+	</dd>
+</dl><dl class="dlTable">
+	<dt>这个是表格标题</dt>
+	<dd class="ddBody">
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li></li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+	</dd>
+	<dd class="ddHead">
+		<ul>
+			<li>这是头部模块</li>
+			<li>这是头部模块</li>
+			<li>这是头部模块</li>
+			<li>这是头部模块</li>
+			<li>这是头部模块</li>
+		</ul>
+	</dd>
+	<dd class="ddBody">
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li></li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+	</dd>
+	<dd class="ddFoot">
+		<ul>
+			<li>这是尾部模块</li>
+			<li>这是尾部模块</li>
+			<li>这是尾部模块</li>
+			<li>这是尾部模块</li>
+			<li>这是尾部模块</li>
+		</ul>
+	</dd>
+	<dd class="ddBody">
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li></li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+		<ul>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li>这是块级元素转换成表格元素的实例</li>
+			<li></li>
+			<li>这是块级元素转换成表格元素的实例</li>
+		</ul>
+	</dd>
+</dl>
+<dl class="run-in">
+	<dt><p>提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问提问：</p></dt><dd>你为什么没有男朋友</dd>
+	<dt><p>回答：</p></dt><dd>男朋友是什么能吃吗？</dd>
+</dl>
+</body>
+</html>

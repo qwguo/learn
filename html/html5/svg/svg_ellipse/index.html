@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>svg绘制椭圆的方法</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css"></style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">svg绘制椭圆的方法：</dt>
+			<dd class="detail-list-body">
+				<div class="explain">
+					<h3>&lt;ellipse&gt; 标签可用来创建椭圆形：</h3>
+					<div style="background-color:#CCC">
+						<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width:100%; height:150px;">
+							<ellipse cx="50" cy="70" rx="40" ry="60" stroke-width="2" stroke="rgb(255, 0, 0)" fill="rgb(0, 0, 255)" />
+							<ellipse cx="160" cy="70" rx="60" ry="30" stroke-width="2" stroke="rgb(255, 0, 0)" fill="rgb(0, 0, 255)" fill-opacity="0.6" />
+							<ellipse cx="300" cy="65" rx="60" ry="60" style="stroke-width:2px; stroke:rgba(255, 0, 0, .4); fill:rgba(0, 0, 255, .5);" />
+							<ellipse cx="450" cy="35" rx="100" ry="10" transform="rotate(45, 401, 50)" style="stroke-width:2px; stroke:rgba(255, 0, 0, .4); fill:rgba(0, 0, 255, .5);" />
+							<ellipse cx="450" cy="35" rx="10" ry="100" transform="rotate(45, 401, 50)" style="stroke-width:2px; stroke:rgba(255, 0, 0, .4); fill:rgba(0, 0, 255, .5);" />
+						</svg>
+					</div>
+				</div>
+<pre data-title="HTML" data-skin="1">
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; style=&quot;width:100%; height:150px;&quot;&gt;
+	&lt;ellipse cx=&quot;50&quot; cy=&quot;70&quot; rx=&quot;40&quot; ry=&quot;60&quot; stroke-width=&quot;2&quot; stroke=&quot;rgb(255, 0, 0)&quot; fill=&quot;rgb(0, 0, 255)&quot; /&gt;
+	&lt;ellipse cx=&quot;160&quot; cy=&quot;70&quot; rx=&quot;60&quot; ry=&quot;30&quot; stroke-width=&quot;2&quot; stroke=&quot;rgb(255, 0, 0)&quot; fill=&quot;rgb(0, 0, 255)&quot; fill-opacity=&quot;0.6&quot; /&gt;
+	&lt;ellipse cx=&quot;300&quot; cy=&quot;65&quot; rx=&quot;60&quot; ry=&quot;60&quot; style=&quot;stroke-width:2px; stroke:rgba(255, 0, 0, .4); fill:rgba(0, 0, 255, .5);&quot; /&gt;
+	&lt;ellipse cx=&quot;450&quot; cy=&quot;35&quot; rx=&quot;100&quot; ry=&quot;10&quot; transform=&quot;rotate(45, 401, 50)&quot; style=&quot;stroke-width:2px; stroke:rgba(255, 0, 0, .4); fill:rgba(0, 0, 255, .5);&quot; /&gt;
+	&lt;ellipse cx=&quot;450&quot; cy=&quot;35&quot; rx=&quot;10&quot; ry=&quot;100&quot; transform=&quot;rotate(45, 401, 50)&quot; style=&quot;stroke-width:2px; stroke:rgba(255, 0, 0, .4); fill:rgba(0, 0, 255, .5);&quot; /&gt;
+&lt;/svg&gt;
+</pre>
+			<div class="explain">
+				<h3>圆形的基本定义属性：</h3>
+				<p><span class="f-red">&lt;ellipse&gt;:</span>用来创建椭圆形。</p>
+				<p><span class="f-red">cx：</span>表示椭圆形在svg中x轴的位置正数表示向右偏移，负数表示向左偏移。cx是从圆心开始计算的。</p>
+				<p><span class="f-red">cy：</span>表示椭圆形在svg中y轴的位置正数表示向下偏移，负数表示向上偏移。cy也是从圆心开始计算的。</p>
+				<p><span class="f-red">rx：</span>表示椭圆形的x轴半径（横向半径）。根据x轴半径来画椭圆形的宽度。</p>
+				<p><span class="f-red">ry：</span>表示椭圆形的y轴半径（横向半径）。根据y轴半径来画椭圆形的高度。</p>
+				<h3>使用属性来定义图形的样式：</h3>
+				<p><span class="f-red">skroke-width="2"</span>边线的宽度。</p>
+				<p><span class="f-red">skroke=rgb(255, 0, 0);</span>边线的颜色。</p>
+				<p><span class="f-red">file=rgb(255, 0, 0);</span>矩形填充色。</p>
+				<p><span class="f-red">transform：</span>圆形的变形效果，类似 css 中的 transform</p>
+				<h3>使用css来定义图形的样式</h3>
+				<p><span class="f-red">fill：</span>图形内部的填满顏色，类似 css 中的 background-color。</p>
+				<p><span class="f-red">fill-opacity：</span>图形内部的不透明度值，类似 css 中的 opacity，但不包含边框喔！</p>
+				<p><span class="f-red">stroke：</span>图形的边框顏色，类似 css 中的 border-color！</p>
+				<p><span class="f-red">stroke-width：</span>图形的边框宽度，类似 css 中的 border-width！</p>
+				<p><span class="f-red">opacity：</span>图形的不透明度值，类似 css 中的 opacity！</p>
+				<p><span class="f-red">style="fill:rgba(0, 0, 255, .8); stroke-width:2; stroke:rgba(255, 0, 0, .5); height:100; width:100px;"</span>这里包括定义元素的填充颜色，边框，宽高等</p>
+			</div>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>layout</title>
+<style type="text/css">
+*{margin:0px; padding:0px;}
+html{font-size:12px; background-color:orange;}
+body{font-size:18px; background-color:#c00;}
+ul li{color:#fff; list-style:inside;}
+.ul-1{background-color:#cc0; margin:10px;}
+	.ul-1 li{ background-color:#c0c; margin:10px;}
+	.ul-1 .li-1{margin:50px 0 30px;}
+	.ul-1 .li-3{margin-bottom:30px;}
+.ul-2{background-color:#bb0; margin:10px; zoom:1; overflow:hidden;}
+	.ul-2 li{ background-color:#c0c; margin:10px;}
+	.ul-2 .li-1{margin:50px 0 30px;}
+	.ul-2 .li-3{margin-bottom:30px;}
+
+.ul-3{background-color:#bb0; margin:10px; zoom:1;}
+.ul-3:after{content:"."; visibility:hidden; height:0px; display:block; clear:both; overflow:hidden;}
+	.ul-3 li{ background-color:#c0c; margin:10px 0; float:left; width:100%; zoom:1;}
+	.ul-3 .li-1{margin:50px 0;}
+	.ul-3 .li-3{margin-bottom:30px;}
+.ul-4{background-color:#bb0; margin:10px; zoom:1; *padding-bottom:10px;}
+.ul-4:after{content:"."; visibility:hidden; height:0px; display:block; clear:both; overflow:hidden;}
+	.ul-4 li{ background-color:#c0c; margin:10px 0px 10px 10px; float:left; width:30%; height:100px;_display:inline;}
+	/*.ul-4 li.clear{float:none; clear:both; height:0px; line-height:0px; overflow:hidden; font-size:0px; width:auto; margin:0px; padding:0px;}*/
+</style>
+</head>
+
+<body>
+	<ul class="ul-1">
+		<li class="li-1">我的外上边距和父级ul的外边距重叠了。在ie8+，chrome，firefox，safari中ul的上边距被渲染在body上。ie6，7正常。</li>
+		<li class="li-2">我的上边距和我的上个兄弟节点的下边距重叠了，并且取他的下边距的值，因为他的下边距比我的上边距大。</li>
+		<li class="li-3">我的下边和我的父级ul的下边距重叠了，并且渲染给我的父级，如果我的父级和body是毗邻的，由于body没有设置任何内边距和边线，那么下外边距会渲染到body上。所有浏览器都这样。</li>
+	</ul>
+	<ul class="ul-2">
+		<li class="li-1">解决方法：1、给ul一个高度，ie6-7生效。<br />2、给ul设置zoom:1,ie6-7生效;<br />3、给ul元素设置overflow:hidden,auto,scroll;ie6不起作用。考虑兼容2\3同时使用可以。</li>
+		<li class="li-2">我的上边距和我的上个兄弟节点的下边距重叠了，并且取他的下边距的值，因为他的下边距比我的上边距大。</li>
+		<li class="li-3">我的下边和我的父级ul的下边距重叠了，并且渲染给我的父级，如果我的父级和body是毗邻的，由于body没有设置任何内边距和边线，那么下外边距会渲染到body上。所有浏览器都这样。</li>
+	</ul>
+
+	<ul class="ul-3">
+		<li class="li-1">通过对li的浮动可以解决li之间的margin上下重叠。但是带来的确实父级ul的高度不自动，解决办法ie7以上和正常浏览器可以使用尾类:after方式解决，ie6只能使用zoom:1;给父级方式解决。(我的外边距不和我的父级上边距重叠了)</li>
+		<li class="li-2">我是浮动了，我的上下外边距不和我的同级元素上下编剧重叠了。</li>
+		<li class="li-3">我的外边距也不和我的父级下边距重叠了。但是我在ie7下却没有了我的下外边距。其他浏览器正常。</li>
+	</ul>
+
+	<ul class="ul-4">
+		<li class="li-1">我是在设置了浮动的情况下消除了我和上下兄弟节点外边距重叠的问题，但是在我又设置了宽度的情况下ie6-7下最后一行的下边距不生效了。解决办法给父级最后加一个空的清楚浮动元素，或者是使用父级的内边距来代替外边距。</li>
+		<li class="li-2">同时在设置了浮动后，如果有左右边距的话，ie6会给最靠近父级的左边或右边出现双倍外边距的情况，根据浮动情况而定，这种情况下需要给浮动添加display:inline;属性可解决。</li>
+		<li class="li-3">内容区域</li>
+		<li class="li-4">内容区域</li>
+		<li class="li-5">内容区域</li>
+		<li class="li-6">内容区域</li>
+		<li class="li-7">内容区域</li>
+		<!--<li class="clear"></li>-->
+	</ul>
+<p>结束</p>
+</body>
+</html>

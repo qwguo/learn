@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>元素边框结合css3属性实现不同效果</title>
+    <link rel="stylesheet" href="/public_css/base_style.css">
+    <script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+    <script type="text/javascript" src="/public_js/public_fun.js"></script>
+    <style type="text/css">
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .radius-case-1 li {
+            width: 0;
+            height: 0;
+            border-width: 100px;
+            border-radius: 50%;
+            border-style: solid;
+            float: left;
+            margin: 10px;
+        }
+        
+        .radius-case-1 .case-1 {
+            border-color: yellow red orange blue;
+        }
+        
+        .radius-case-1 .case-2 {
+            border-color: yellow transparent transparent transparent;
+            border-width: 100px 100px 0;
+        }
+        
+        .radius-case-1 .case-3 {
+            border-color: transparent red transparent transparent;
+        }
+        
+        .radius-case-1 .case-4 {
+            border-color: transparent transparent orange transparent;
+        }
+        
+        .radius-case-1 .case-5 {
+            border-color: transparent transparent transparent blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <dl class="detail-list">
+            <dt class="detail-list-head">border结合css3中的border-radius实现效果</dt>
+            <dd class="detail-list-body">
+                <ul class="q radius-case radius-case-1">
+                    <li class="case-1"></li>
+                    <li class="case-2"></li>
+                    <li class="case-3"></li>
+                    <li class="case-4"></li>
+                    <li class="case-5"></li>
+                    <li class="case-6"></li>
+                    <li class="case-7"></li>
+                    <li class="case-8"></li>
+                    <li class="case-9"></li>
+                    <li class="case-10"></li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+</body>
+
+</html>

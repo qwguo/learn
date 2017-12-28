@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D旋转效果</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+		ul,li{margin: 0; padding: 0; list-style: none;}
+		.box-wrap{height: 400px; background-image:linear-gradient(#FF0 0%, #000 100%); padding: 150px 0 0;
+			/* perspective: 1000px; */
+		}
+		.box-area{
+			width: 200px; height: 200px; margin: auto;
+			position: relative;
+			transform-style: preserve-3d;
+			animation: rotates 20s linear infinite;
+		}
+		@keyframes rotates{
+			0%{
+				transform:rotateX(0deg) rotateY(0deg);
+			}
+			100%{
+				transform: rotateX(360deg) rotateY(360deg);
+			}
+		}
+		.box-area > div{width: 200px; height: 200px; font: normal bold 40px/200px 'Microsoft Yahei'; color: #FFF; text-align: center; position: absolute; background-color: #333; opacity:0.9; border: 1px solid #FFF; transition: transform .3s ease;}
+			.box-area > .out-front{transform: perspective(1000px) translateZ(100px);}
+			.box-area > .out-back{transform: perspective(1000px) translateZ(-100px) rotateY(180deg);}
+			.box-area > .out-left{transform: perspective(1000px) perspective(1000px) translateX(-100px) rotateY(90deg);}
+			.box-area > .out-right{transform: translateX(100px) rotateY(90deg);}
+			.box-area > .out-top{transform: perspective(1000px) translateY(-100px) rotateX(90deg);}
+			.box-area > .out-bottom{transform: perspective(1000px) translateY(100px) rotateX(-90deg);}
+		.box-area > span{ font: normal bold 40px/200px 'Microsoft Yahei';width: 100px; height: 100px; text-align: center; position: absolute; left:50px; top:50px; background-color: #999; border: 1px solid #000; font: normal bold 20px/100px 'Microsoft Yahei'; color: #C00;}
+			.box-area > .in-front{transform: translateZ(50px);}
+			.box-area > .in-back{transform: translateZ(-50px) rotateY(180deg);}
+			.box-area > .in-left{transform: translateX(-50px) rotateY(90deg);}
+			.box-area > .in-right{transform: translateX(50px) rotateY(90deg);}
+			.box-area > .in-top{transform: translateY(-50px) rotateX(90deg);}
+			.box-area > .in-bottom{transform: translateY(50px) rotateX(-90deg);}
+		.box-area:hover .out-front{transform: translateZ(150px);}
+		.box-area:hover .out-back{transform: translateZ(-150px) rotateY(180deg);}
+		.box-area:hover .out-left{transform: translateX(-150px) rotateY(90deg);}
+		.box-area:hover .out-right{transform: translateX(150px) rotateY(90deg);}
+		.box-area:hover .out-top{transform: translateY(-150px) rotateX(90deg);}
+		.box-area:hover .out-bottom{transform: translateY(150px) rotateX(-90deg);}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">旋转动画效果</dt>
+			<dd class="detail-list-body">
+				<div class="box-wrap">
+					<div class="box-area">
+						<div class="out-front">前</div>
+						<div class="out-back">后</div>
+						<div class="out-left">左</div>
+						<div class="out-right">右</div>
+						<div class="out-top">上</div>
+						<div class="out-bottom">下</div>
+						<span class="in-front">前</span>
+						<span class="in-back">后</span>
+						<span class="in-left">左</span>
+						<span class="in-right">右</span>
+						<span class="in-top">上</span>
+						<span class="in-bottom">下</span>
+					</div>
+				</div>
+<pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;box-wrap&quot;&gt;
+	&lt;div class=&quot;box-area&quot;&gt;
+		&lt;div class=&quot;out-front&quot;&gt;前&lt;/div&gt;
+		&lt;div class=&quot;out-back&quot;&gt;后&lt;/div&gt;
+		&lt;div class=&quot;out-left&quot;&gt;左&lt;/div&gt;
+		&lt;div class=&quot;out-right&quot;&gt;右&lt;/div&gt;
+		&lt;div class=&quot;out-top&quot;&gt;上&lt;/div&gt;
+		&lt;div class=&quot;out-bottom&quot;&gt;下&lt;/div&gt;
+		&lt;span class=&quot;in-front&quot;&gt;前&lt;/span&gt;
+		&lt;span class=&quot;in-back&quot;&gt;后&lt;/span&gt;
+		&lt;span class=&quot;in-left&quot;&gt;左&lt;/span&gt;
+		&lt;span class=&quot;in-right&quot;&gt;右&lt;/span&gt;
+		&lt;span class=&quot;in-top&quot;&gt;上&lt;/span&gt;
+		&lt;span class=&quot;in-bottom&quot;&gt;下&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+ul,li{margin: 0; padding: 0; list-style: none;}
+	.box-wrap{height: 400px; background-image:linear-gradient(#FF0 0%, #000 100%); padding: 150px 0 0;
+		perspective: 1000px;
+	}
+	.box-area{
+		width: 200px; height: 200px; margin: auto;
+		position: relative;
+		transform-style: preserve-3d;
+		animation: rotates 20s linear infinite;
+	}
+	@keyframes rotates{
+		0%{
+			transform:rotateX(0deg) rotateY(0deg);
+		}
+		100%{
+			transform: rotateX(360deg) rotateY(360deg);
+		}
+	}
+	.box-area > div{width: 200px; height: 200px; font: normal bold 40px/200px 'Microsoft Yahei'; color: #FFF; text-align: center; position: absolute; background-color: #333; opacity:0.9; border: 1px solid #FFF; 
+		transition: transform .3s ease;
+	}
+		.box-area > .out-front{transform: translateZ(100px);}
+		.box-area > .out-back{transform: translateZ(-100px) rotateY(180deg);}
+		.box-area > .out-left{transform: translateX(-100px) rotateY(90deg);}
+		.box-area > .out-right{transform: translateX(100px) rotateY(90deg);}
+		.box-area > .out-top{transform: translateY(-100px) rotateX(90deg);}
+		.box-area > .out-bottom{transform: translateY(100px) rotateX(-90deg);}
+	.box-area > span{ font: normal bold 40px/200px 'Microsoft Yahei';width: 100px; height: 100px; text-align: center; position: absolute; left:50px; top:50px; background-color: #999; border: 1px solid #000; font: normal bold 20px/100px 'Microsoft Yahei'; color: #C00;}
+		.box-area > .in-front{transform: translateZ(50px);}
+		.box-area > .in-back{transform: translateZ(-50px) rotateY(180deg);}
+		.box-area > .in-left{transform: translateX(-50px) rotateY(90deg);}
+		.box-area > .in-right{transform: translateX(50px) rotateY(90deg);}
+		.box-area > .in-top{transform: translateY(-50px) rotateX(90deg);}
+		.box-area > .in-bottom{transform: translateY(50px) rotateX(-90deg);}
+	.box-area:hover .out-front{transform: translateZ(150px);}
+	.box-area:hover .out-back{transform: translateZ(-150px) rotateY(180deg);}
+	.box-area:hover .out-left{transform: translateX(-150px) rotateY(90deg);}
+	.box-area:hover .out-right{transform: translateX(150px) rotateY(90deg);}
+	.box-area:hover .out-top{transform: translateY(-150px) rotateX(90deg);}
+	.box-area:hover .out-bottom{transform: translateY(150px) rotateX(-90deg);}
+</pre>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

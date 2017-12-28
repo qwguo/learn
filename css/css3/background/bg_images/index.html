@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3多背景实现</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css">
+		.bg-div{height: 500px; border:3px solid #C00; background-image:url(/public_image/s1.jpg),url(/public_image/s2.jpg),url(/public_image/s3.jpg),url(/public_image/s4.jpg); background-position: left top, right top, left bottom, right bottom; background-repeat:repeat-y, repeat-x, repeat-x, repeat-y;}
+	</style>
+</head>
+<body>
+	
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">元素多背景图片</dt>
+		<dd class="detail-list-body">
+			<div class="bg-div"></div>
+<pre data-title="HTML" data-skin="1">
+&lt;div class="bg-div"&gt;&lt;/div&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+.bg-div{
+	height: 500px;
+	border:3px solid #C00;
+	background-image:
+		url(/public_image/s1.jpg),
+		url(/public_image/s2.jpg),
+		url(/public_image/s3.jpg),
+		url(/public_image/s4.jpg);
+	background-position:
+		left top,
+		right top,
+		left bottom,
+		right bottom;
+	background-repeat:
+		repeat-y,
+		repeat-x,
+		repeat-x,
+		repeat-y;
+}
+</pre>
+<div class="explain">
+	<h3>元素设置多背景图片是css3新增的一个属性</h3>
+</div>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

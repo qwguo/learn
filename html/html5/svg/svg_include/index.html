@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>svg嵌入页面方式</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css"></style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">svg嵌入页面的方式：</dt>
+			<dd class="detail-list-body">
+				<div>
+					<embed src="circle.svg" type="image/svg+xml" />
+					<embed src="polygon.svg" type="image/svg+xml" />
+				</div>
+<pre data-title="HTML" data-skin="1">
+<span class="note">/**通过embed方式嵌入**/</span>
+&lt;embed src="circle.svg" type="image/svg+xml" /&gt;
+&lt;embed src="polygon.svg" type="image/svg+xml" /&gt;
+<span class="note">优点：所有主流浏览器都支持，并且允许使用脚本</span>
+<span class="note">缺点：不推荐在HTML4和XHTML中使用，在HTML5中可以</span>
+</pre>
+				<div>
+					<object data="circle.svg" type="image/svg+xml"></object>
+					<object data="polygon.svg" type="image/svg+xml"></object>
+				</div>
+<pre data-title="HTML" data-skin="1">
+<span class="note">/**使用object标签**/</span>
+&lt;object data="circle.svg" type="image/svg+xml"&gt;&lt;/object&gt;
+&lt;object data="polygon.svg" type="image/svg+xml"&gt;&lt;/object&gt;
+<span class="note">优势：所有主要浏览器都支持，并支持HTML4，XHTML和HTML5标准</span>
+<span class="note">缺点：不允许使用脚本。</span>
+</pre>
+				<div>
+					<iframe src="circle.svg" frameborder="0" height="100" width="100"></iframe>
+					<iframe src="polygon.svg" frameborder="0" height="100" width="100"></iframe>
+				</div>
+<pre data-title="HTML" data-skin="1">
+<span class="note">/**通过iframe方式嵌入到页面**/</span>
+&lt;iframe src="circle.svg" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;iframe src="polygon.svg" frameborder="0"&gt;&lt;/iframe&gt;
+<span class="note">优势：所有主要浏览器都支持，并允许使用脚本</span>
+<span class="note">缺点：不推荐在HTML4和XHTML中使用（但在HTML5允许）</span>
+</pre>
+				<div>
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+						<circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+					</svg>
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+						<polygon points="0,30 80,30 10,80 40,0 70,80" stroke="rgb(255, 0, 0)" stroke-width="2" fill="rgb(255, 0, 0)" />
+					</svg>
+				</div>
+<pre data-title="HTML" data-skin="1">
+<span class="note">/**直接在HTML嵌入SVG代码**/</span>
+&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"&gt;
+	&lt;circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+&lt;svg&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+	&lt;polygon points="0,30 80,30 10,80 40,0 70,80" stroke="rgb(255, 0, 0)" stroke-width="2" fill="rgb(255, 0, 0)" /&gt;
+&lt;/svg&gt;
+<span class="note">在Firefox、Internet Explorer9、谷歌Chrome和Safari中，你可以直接在HTML嵌入SVG代码。</span>
+</pre>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

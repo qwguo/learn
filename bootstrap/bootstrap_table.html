@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<title>alert警告框组件</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="user_style.css" />
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">简易表格组件</dt>
+			<dd class="detail-list-body">
+				<h3>关于表格还有好多的样式，就不再一一列出，简单把所有的表格的class类名列举出来</h3>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>状态说明</th>
+							<th>普通型表格</th>
+							<th>带背景条的表格</th>
+							<th>带边框的表格</th>
+							<th>鼠标悬停上</th>
+							<th>紧凑型表格</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>class名</th>
+							<td>.table</td>
+							<td>.table-striped</td>
+							<td>.table-bordered</td>
+							<td>.table-hover</td>
+							<td>.table-condensed</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>关于表格行级元素的的样式</h3>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>状态说明</th>
+							<th>当前活动状态</th>
+							<th>成功或者正确的行</th>
+							<th>中立的信息或者行</th>
+							<th>警告，需要特别注意</th>
+							<th>危险或者可能是错误的</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>class名</th>
+							<td>.active</td>
+							<td>.success</td>
+							<td>.info</td>
+							<td>.warning</td>
+							<td>.danger</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>这是表格标题</th>
+							<th>这是表格标题</th>
+							<th>这是表格标题</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr class="active">
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr class="success">
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr class="info">
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr class="warning">
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr class="danger">
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+					</tbody>
+				</table>
+<pre data-title="HTML" data-skin="1">
+&lt;table class=&quot;table table-bordered&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;这是表格标题&lt;/th&gt;
+			&lt;th&gt;这是表格标题&lt;/th&gt;
+			&lt;th&gt;这是表格标题&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class=&quot;active&quot;&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class=&quot;success&quot;&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class=&quot;info&quot;&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class=&quot;warning&quot;&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class=&quot;danger&quot;&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>这是表格标题</th>
+							<th>这是表格标题</th>
+							<th>这是表格标题</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+					</tbody>
+				</table>
+<pre data-title="HTML" data-skin="1">
+&lt;table class=&quot;table table-bordered table-hover&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;这是表格标题&lt;/th&gt;
+			&lt;th&gt;这是表格标题&lt;/th&gt;
+			&lt;th&gt;这是表格标题&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+			&lt;td&gt;这是单元格中的内容&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+			</dd>
+		</dl>		
+	</div>	
+</body>
+</html>

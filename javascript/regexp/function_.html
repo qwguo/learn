@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript正则表达式小功能</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<style type="text/css">
+		.big-h3{padding:10px 20px; font-size:18px; border-bottom:2px dashed #c00;}
+		.detail-list-body>ol{}
+		.detail-list-body>ol>li{padding:10px 5px; border-bottom:1px dashed #ccc;}
+		.span-lable{display:inline-block;}
+		.text-obj{height:30px; line-height:30px; font-size:16px; padding:0px 10px;}
+		.btn-obj{height:32px; line-height: 32px; font-size:14px; vertical-align: top;}
+	</style>
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<script type="text/javascript" src="small_function.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("pre").each(function(){
+			$(this).codeShow({
+				'title' : {'names' : 'javascript'},
+				'skin' : 3
+			})
+		});
+		$("#caseList").on({
+			click : function(){
+				var prev = $(this).prev(),
+						v = prev.val(),
+						id = prev.data("id");
+						digitFn[id](v);
+			}
+		},"input[type='button']");
+		$("#caseList").on({
+			keydown : function(e){
+				if(e.keyCode == 13){
+					$(this).next("input[type='button']").trigger("click");
+				}
+			}
+		},"input.text-obj")
+	})
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+			<dl class="detail-list">
+				<dt class="detail-list-head">正则表达式小功能</dt>
+				<dd class="detail-list-body" id="caseList">
+					<h3 class="big-h3">一、校验数字：</h3>
+					<ol>
+						<li>
+							<span class="span-lable">必须输入数字：</span>
+							<input class="text-obj" type="text" data-id="allDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="allDigit">
+<pre>
+allDigit = function(v){
+多种写法：
+	// var reg = /[^0-9]/g;		//通过[]指定区间查找非数字来判断
+	// var reg = new RegExp('[^0-9]');		//通过new实例化一个RegExp查找非数字来判断
+	// var reg = /\D/g;		//通过元字符查找非数字来判断 ,这个值必须改变判断!z
+	// var reg = /^[0-9]+$/;		//通过[]指定区间查找以数字开头和结尾来判断
+	var reg = /^\d+$/;	//通过元字符查找必须以数字开头和结尾的至少一个
+	var z = reg.test(v);
+	if(z){
+		alert('输入正确，您输入的值是：' + v);
+	}else{
+		alert('您输入的值必须都为数字！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-lable">必须输入5位数字：</span>
+							<input class="text-obj" type="text" data-id="fiveDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="fiveDigit">
+<pre>
+fiveDigit : function(v){
+	// var reg = /^\d{5}$/;
+	var reg = new RegExp("^\\d{5}$");
+	var z = reg.test(v);
+	if(z){
+			alert('输入正确，您输入的值是：' + v);
+		}else{
+			alert('您输入的值必须是5位数数字！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-lable">输入以数字开头：</span>
+							<input class="text-obj" type="text" data-id="beforeDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="beforeDigit">
+<pre>
+beforeDigit = function(v){
+多种学法：
+	// var reg = /^[0-9]/;	//通过^来检测输入的值的开头是否在[]给定的0-9数字区间
+	// var reg = new RegExp('^[0-9]');
+	// var reg = /^\d/;		//通过^来检测输入的值的开头是否在元字符\d(数字)区间
+	reg = /^[^\D]/;
+	var z = reg.test(v);
+	if(z){
+		alert('输入正确，您输入的值是：' + v);
+	}else{
+		alert('您输入的值必须以数字开头！');
+	}
+};
+</pre>
+						</li>
+						<li>
+							<span class="span-lable">输入以数字结尾：</span>
+							<input class="text-obj" type="text" data-id="afterDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="afterDigit">
+<pre>
+//多种写法：
+afterDigit : function(v){
+	// var reg = /[0-9]$/;	//通过[]指定区间的形式并在其后加入$符表示以指定区间任意一个字符结尾
+	// var reg = /\d$/;		//通过元字符\d,并在其后加入$符表示以任意一个数字结尾
+	// var reg = /[0123456789]$/;	//通过[]指定给定的数的形式判断
+	var reg = /[^\D]$/; //通过[^]表示非指定的字符;\D表示非数字字符。两次非代表是
+	var z = reg.test(v);
+	if(z){
+		alert('输入正确，您输入的值是：' + v);
+	}else{
+		alert('您输入的值必须以数字结尾！');
+	}
+};
+</pre>
+						</li>
+						<li>
+							<span class="span-lable">输入中间必须有数字：</span>
+							<input class="text-obj" type="text" data-id="middleDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="middleDigit">
+<pre>
+middleDigit = function(v){
+	var reg = /^\D+\d+\D+$/;		//表示非数字字符开头的一个或多个后跟数字的一个或多个，再以非数字结尾的一个或多个
+	var z = reg.test(v);
+	if(z){
+		alert('输入正确，您输入的值是：' + v);
+	}else{
+		alert('您输入的值必须在中间包含数字！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">必须输入正数：</span>
+							<input class="text-obj" type="text" data-id="plusDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="plusDigit">
+<pre>
+plusDigit = function(v){
+	// var reg = /^\d+\.?\d+$/;
+	// var reg = /^[0-9]+\.?[0-9]+$/;
+	var reg = /^[^\D]+\.?[\d]+$/;
+	var z = reg.test(v);
+	if(z){
+		alert('输入正确，您输入的值是：' + v);
+	}else{
+		alert('您必须输入正确的正数！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">必须输入负数：</span>
+							<input class="text-obj" type="text" data-id="minusDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="minusDigit">
+<pre>
+minusDigit = function(v){
+	var reg = /^\-[0-9]+\.?\d+$/;
+	var z = reg.test(v);
+	if(z){
+		alert('输入正确，您输入的值是：' + v);
+	}else{
+		alert('您必须输入正确的负数！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">必须输入合法的小数：</span>
+							<input class="text-obj" type="text" data-id="decimalDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="decimalDigit">
+<pre>
+decimalDigit = function(v){
+	var reg = /^([0]|[1-9]\d*)\.\d+$/g;
+	// var reg = new RegExp("^([0]|[1-9]\\d+)\\.\\d+$","g");
+	var z = reg.test(v);
+	if(z){
+		alert('输入正确，您输入的值是：' + v);
+	}else{
+		alert('您必须输入小数！');
+	}
+}
+</pre>							
+						</li>
+					</ol>
+					<h3 class="big-h3">二、匹配手机号：</h3>
+					<ol>
+						<li>
+							<span class="span-label">请输入您的手机号：</span>
+							<input class="text-obj" type="text" data-id="phoneDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="phoneDigit">
+<pre>
+phoneDigit = function(v){
+	// var reg = /^1[3|5|7|8|][0-9]{9}$/;	//方法一
+	// var reg = /^1(3|5|7|8)\d{9}$/;		//方法二
+	var reg = /^(134|132|131|155|182)[^\D]{8}/;  //方法三
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '手机号正确！');
+	}else{
+		alert('您必须输入正确的手机号！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">请输入您的手机号（带+86|86）：</span>
+							<input class="text-obj" type="text" data-id="phone_86_Digit">
+							<input value="检测" class="btn-obj" type="button" data-id="phone_86_Digit">
+<pre>
+phone_86_Digit = function(v){
+	// var reg = /^(\+86|86)*[0]*1[3|5|7|8][0-9]{9}$/;
+	var reg = /^(\+86|86)*0*1[3578]\d{9}$/;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '手机号正确！');
+	}else{
+		alert('您必须输入正确的手机号！');
+	}
+}
+</pre>
+						</li>
+
+						<li>
+							<span class="span-label">请输入移动手机号：</span>
+							<input class="text-obj" type="text" data-id="mobileDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="mobileDigit">
+<pre>
+mobileDigit = function(v){
+	// var reg = /^1(34|35|36|37|38|39|50|51|52|57|58|59|82|83|84|87|88)[0-9]{8}$/;		//匹配所有的移动号码
+	// var reg = /^1(3[456789]|5[012789]|8[2478])[0-9]{8}$/;
+	var reg = /^1(3[4-9]|5[0-27-9]|8[2-47-8])[0-9]{8}$/;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '是移动号码！');
+	}else{
+		alert('请输入正确的移动手机号！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">请输入联通手机号：</span>
+							<input class="text-obj" type="text" data-id="unicomDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="unicomDigit">
+<pre>
+mobileDigit = function(v){
+	// var reg = /^1(30|31|32|55|56|85|86|76|45)[0-9]{8}$/;		//匹配所有的移动号码
+	// var reg = /^1(3[012]|5[56]|8[56]|7[6]|4[5])[0-9]{8}$/;
+	var reg = /^1(3[0-2]|5[56]|8[56]|76|45)\d{8}$/;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '是移动号码！');
+	}else{
+		alert('请输入正确的移动手机号！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">请输入电信手机号：</span>
+							<input class="text-obj" type="text" data-id="CDMADigit">
+							<input value="检测" class="btn-obj" type="button" data-id="CDMADigit">
+<pre>
+CDMADigit : function(v){
+	// var reg = /^1(33|53|80|81|89|77)[^\D]{8}$/;		//匹配所有的电信号码
+	var reg = /^1(33|53|8[019]|77)\d{8}$/;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '是电信号码！');
+	}else{
+		alert('请输入正确的电信手机号！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">请输入您的手机号进行测试：</span>
+							<input type="text" class="text-obj" data-id="phoneTest">
+							<input type="button" value="检测" data-id="phoneTest" class="btn-obj">
+<pre>
+phoneTest : function(v){
+	var regPhone = /^1[3|4|5|7|8]\d{9}$/,	//是否为手机号正则
+			regMobile = /(3[4-9]|5[0-27-9]|8[2-47-8]|78)/,	//移动号码
+			regUnicom =  /(3[0-2]|5[56]|8[56]|76|45)/,	//联通号码
+			regCDMA = /(33|53|8[019]|77)/,	//电信号码
+			regMobile4g = /(78)/,
+			regUnicom4g = /76/,
+			regCDMA4g = /77/;
+	if(regPhone.test(v)){
+		var gv = v.slice(0,3);
+		if(regMobile.test(gv)){
+			alert(gv);
+			if(regMobile4g.test(gv)){
+				alert('土豪：您是移动4G用户！');
+			}else{
+				alert('您是移动用户！');
+			}
+		}else if(regUnicom.test(gv)){
+			if(regUnicom4g.test(gv)){
+				alert('土豪：您是联通4G用户！');
+			}else{
+				alert('您是联通用户！');
+			}
+		}else if(regCDMA.test(gv)){
+			if(regCDMA4g.test(gv)){
+				alert('土豪：您是电信4G用户！');
+			}else{
+				alert('您是电信用户！');
+			}
+
+		}
+	}else{
+		alert("请输入正确格式的手机号！");
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">请输入不带区号的电话号：</span>
+							<input class="text-obj" type="text" data-id="telDigit">
+							<input value="检测" class="btn-obj" type="button" data-id="telDigit">
+<pre>
+telDigit = function(v){
+	var reg = /^\d{7,8}$/;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '号码正确！');
+	}else{
+		alert('请输入正确的电话号！');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">请输入带区号的电话号：</span>
+							<input type="text" class="text-obj" data-id="zoneTelDigit">
+							<input type="button" value="检测" class="btn-obj" data-id="zoneTelDigit">
+<pre>
+zoneTelDigit = function(v){
+	var reg = /^\d{3,4}\-?\d{7,8}$/;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '号码正确！');
+	}else{
+		alert('请输入正确格式的电话号！(01082313345或010-82313345)');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">请输入带区号和分机号的电话号：</span>
+							<input type="text" class="text-obj" data-id="zoneTelExtDigit">
+							<input type="button" value="检测" class="btn-obj" data-id="zoneTelExtDigit">
+<pre>
+zoneTelExtDigit : function(v){
+	var reg = /^\d{3,4}\-\d{7,8}\-\d{0,4}$/;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '号码正确！');
+	}else{
+		alert('请输入正确格式的电话号！(010-82313345-801)');
+	}
+}
+</pre>
+						</li>
+						<li>
+							<span class="span-label">请输入电话号：</span>
+							<input type="text" class="text-obj" data-id="phoneTelDigit">
+							<input type="button" value="检测" class="btn-obj" data-id="phoneTelDigit">
+<pre>
+phoneTelDigit : function(v){
+  var reg = /((^(\+86|86)?[0]?1[3578]\d{9})|(^\d{3,4}\-\d{7,8})|(^\d{3,4}\-\d{7,8})\-\d{1,4})$/;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '号码正确！');
+	}else{
+		alert('请输入正确格式的电话号！');
+	}			
+}
+</pre>							
+						</li>
+						</li>
+					</ol>
+					<h3 class="big-h3">其他验证</h3>
+					<ol>
+						<li>
+							<span class="span-label">请输入正确的邮编：</span>
+							<input type="text" class="text-obj" data-id="PostcodeDigit">
+							<input type="button" value="检测" class="btn-obj" data-id="PostcodeDigit">
+<pre>
+PostcodeDigit = function(v){
+	// var reg = /^\d{6}$/g;
+	var reg = new RegExp("^\\d{6}$","g");
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '是正确的邮编！');
+	}else{
+		alert('请输入正确格式的邮政编码！');
+	}
+}
+</pre>						
+						</li>
+						<li>
+							<span class="span-label">请输入正确的身份证号：</span>
+							<input type="text" class="text-obj" data-id="idCodeDigit">
+							<input type="button" value="检测" class="btn-obj" data-id="idCodeDigit">
+<pre>
+idCodeDigit = function(v){
+	var reg = /^((11|12|13|14|15)|(21|22|23)|(31|32|33|34|35|36|37)|(41|42|43|44|45|46)|(50|51|52|53|54)|(61|62|63|64|65)|(81|82))\d{4}[12]\d{3}(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[01])\d{3}[0-9xX]$/;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '是正确的身份证号！');
+	}else{
+		alert('请输入正确格式的身份证号！');
+	}
+}
+</pre>							
+						</li>
+						<li>
+							<span class="span-label">请输入正确的ip地址：</span>
+							<input type="text" class="text-obj" data-id="ipDigit">
+							<input type="button" value="检测" class="btn-obj" data-id="ipDigit">
+<pre>
+ipDigit : function(v){
+	var reg = /^(([01]?\d\d?|2[0-4]\d|25[0-5])\.){3}([01]?\d\d?|2[0-4]\d|25[0-5])$/g;
+	var z = reg.test(v);
+	if(z){
+		alert('您输入的：' + v + '是正确的ip地址！');
+	}else{
+		alert('请输入正确格式的ip地址！');
+	}
+}
+</pre>							
+						</li>
+					</ol>
+				</dd>
+			</dl>
+	</div>
+</body>
+</html>

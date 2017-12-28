@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>box-align_CSS参考手册_web前端开发参考手册系列</title>
+<style type="text/css">
+	*{padding:0px; margin:0px;}
+	ol{zoom:1; padding:10px;}
+	ol:after{content:"."; height:0px; line-height:0px; clear:both; display:block; visibility:hidden;}
+	li{margin:0px 10px 10px; background-color:#eee; padding:10px; list-style:none; font-family:"微软雅黑";}
+	li.class-title{font-size:40px; font-weight:bold; border:3px solid pink; background-color:transparent;}
+	li span{color:orange; padding-left:10px;}
+	li p{margin:0; padding:5px 5px 10px;}
+	li.text-decoration{text-decoration:underline;}
+	li.text-decoration .p2{text-decoration:none;}
+	li.text-decoration-line{
+		-moz-text-decoration-line:underline; -moz-text-decoration-style:wavy; -moz-text-decoration-color:#c00;
+		-webkit-text-decoration-line:underline; -webkit-text-decoration-style:wavy; -webkit-text-decoration-color:#c00;
+		-o-text-decoration-line:underline; -o-text-decoration-style:wavy; -o-text-decoration-color:#c00;
+		-ms-text-decoration-line:underline; -ms-text-decoration-style:wavy; -ms-text-decoration-color:#c00;
+	}
+	li.text-shadow{font-size:30px; font-weight:bold;}
+	li.text-shadow .p1{color:#c00;text-shadow:3px 3px 3px #a00,-2px -2px 2px #000,3px -3px 3px #00c;}
+	li.text-shadow .p2{color:#0c0; text-shadow:-3px -3px 0px #ccc, 3px 3px 0px #ccc;}
+</style>
+</head>
+<body>
+<ol>
+	<li class="class-title">text-decoration设置：</li>
+	<li class="text-decoration">
+		<p class="p1">这是原文，1 2 3 4 56，This is used to test the CONTENT of the TEXT, it's used here:<span> text-decoration:underline;</span></p>
+		<p class="p2">这是原文，1 2 3 4 56，This is used to test the CONTENT of the TEXT, it's used here:<span> text-decoration:underline;</span></p>
+	</li>
+	<li class="text-decoration-line">
+		<p class="p1">这是原文，1 2 3 4 56，This is used to test the CONTENT of the TEXT, it's used here:<span> -moz-text-decoration-line:underline; -moz-text-decoration-style:wavy; -moz-text-decoration-color:#c00;</span></p>
+		<p class="p2">这是原文，1 2 3 4 56，This is used to test the CONTENT of the TEXT, it's used here:<span> -moz-text-decoration-line:underline; -moz-text-decoration-style:wavy; -moz-text-decoration-color:#c00;</span></p>
+	</li>
+	<li class="text-shadow">
+		<p class="p1">这是原文，1 2 3 4 56，This is used to test the CONTENT of the TEXT, it's used here:<span> text-decoration:underline solid #c00;</span></p>
+		<p class="p2">这是原文，1 2 3 4 56，This is used to test the CONTENT of the TEXT, it's used here:<span> text-decoration:underline solid #c00;</span></p>
+	</li>
+</ol>
+</body>
+</html>
+			

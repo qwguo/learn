@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>css3相册</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta charset="UTF-8">
+		<script src="/public_js/zepto.min.js"></script>
+		<style type="text/css">
+		html,body{height: 100%; width: 100%; overflow: hidden;}
+			body,ul,li{margin: 0; padding: 0;}
+			ul{list-style:none;}
+			ul:after{display: table; content: ""; clear: both;}
+			body{background-color: #000; position: relative;}
+			li{float: left; overflow: hidden;}
+			.large{left:0; top:0; right:0; bottom:0; position: absolute; background-color: #000; display: none;}
+
+		</style>
+		<link rel="stylesheet" href="../animate.css">
+		<script>
+		var win = $(window),
+				winW = win.width(),
+				winH = win.height(),
+				sum = 18,
+				album,large,cid;
+		var albumFun = function(){
+			var padding = 2,
+					liw = Math.floor((winW- padding*3)/4),
+					li = "";
+				for(var i = 1;i <= sum; i++){
+					var p = padding,
+							imgSrc = 'images/'+i+'.jpg';
+					if(i%4==1){
+						p = 0;
+					}
+					li += '<li class="animated bounceIn" style="width:'+liw+'px; height:'+liw+'px; padding:'+padding+'px 0 0 '+p+'px;" data-id="'+i+'"><canvas id="cvs_'+i+'"></canvas></li>';
+					var imageObj = new Image();
+						imageObj.index = i;
+						imageObj.onload = function(){
+							var cvs = $("#cvs_"+this.index)[0].getContext('2d');
+							cvs.width = this.width;
+							cvs.height = this.height;
+							cvs.drawImage(this,0,0);
+						}
+						imageObj.src = imgSrc;
+				}
+				album.html(li);
+		};
+var loadImg = function(id,callback){
+			large.css({display:'block'});
+					var largeSrc = 'images/'+id+'.large.jpg',
+							imgobj = new Image();
+						imgobj.onload = function(){
+							var h = this.height,
+									w = this.width,
+									realw = winH * w / h,
+									realh = winW * h / w,
+									paddingTop = parseInt((winH - realh)/2),
+									paddingLeft = parseInt((winW - realw)/2),
+									img = large.find('img');
+								paddingTop = paddingTop < 0 ? 0 : paddingTop;
+								paddingLeft = paddingLeft < 0 ? 0 : paddingLeft;
+							if(h/w > 1){
+								img.attr('src',largeSrc).css({width:'auto',height:winH+'px'});
+							}else{
+								img.attr('src',largeSrc).css({height:'auto',width:winW+'px'});
+							}
+							img.css({'margin-left' : paddingLeft+"px",'margin-top' : paddingTop+"px"});
+							if(typeof(callback) == 'function'){
+								callback();
+							}
+						}
+					imgobj.src = largeSrc;
+		};
+		$(function(){
+			album = $("#album");
+			large = $('#large');
+			albumFun();
+			album.on({
+				'tap' : function(){
+					var id = cid = $(this).data('id');
+					loadImg(id,'animated fadeInDown');
+				}	
+			},'li');
+			large.on('tap',function(){
+				$(this).hide();
+			});
+			large.find('img').on({
+				tap : function(){
+					return false;
+				},
+				swipeLeft : function(){
+					cid++;
+					if(cid > sum){
+						cid = sum;
+					}else{
+						var that = $(this),
+								that_ = that[0];
+						loadImg(cid,function(){
+							that_.addEventListener('webkitAnimationEnd',function(){
+								that.removeAttr("class");
+								that_.removeEventListener('webkitAnimationEnd');
+							},false);
+							that.attr('class','animated bounceInRight');
+						});
+					}
+				},
+				swipeRight : function(){
+					cid--;
+					if(cid < 1){
+						cid = 1;
+					}else{
+						var that = $(this),
+								that_ = that[0];
+						loadImg(cid,function(){
+							that_.addEventListener('webkitAnimationEnd',function(){
+								that.removeAttr("class");
+								that_.removeEventListener('webkitAnimationEnd');
+							},false);
+							that.attr('class','animated bounceInLeft');
+						});
+					}
+				}
+			})
+		})
+		</script>
+	</head>
+	<body>
+		<ul class="album-area" id="album"></ul>
+		<div class="large animated fadeIn" id="large">
+			<img class="animated fadeInDown">
+		</div>
+	</body>
+</html>

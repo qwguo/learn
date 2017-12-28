@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>伪类选择器</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+	.selector-list{padding-left:0; margin:0px; padding-bottom: 10px;font-family:arial;}
+	.selector-list li{background-color:#f5f5f5; border:1px solid #ddd; padding:10px; line-height:30px; margin:10px 0 0; list-style-position: inside;}
+	.selector-list a{text-decoration: none; color: #000;}
+	.selector-list span,.selector-list a{margin:0px 8px;}
+	.selector-list input.text{width:80px; height:30px;}
+	.selector-list input.radio,.selector-list input.checkbox{width:14px; height:14px; margin:0px 5px;}
+
+	/**伪类选择符**/
+	.pseudoClassSelect .link-pseudo a:link{color:tan;}
+	.pseudoClassSelect .visited-pseudo a:visited{color:teal;}
+	.pseudoClassSelect .hover-pseudo a:hover{color:firebrick;}
+	.pseudoClassSelect .active-pseudo a:active{color:forestgreen;}
+	.pseudoClassSelect .focus-pseudo :focus{border:1px solid orchid; color:orchid;}
+	.pseudoClassSelect .lang-pseudo :lang(zh-cn){color:slateblue;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .not-pseudo :not(a){color:skyblue;font-size:20px; font-weight:bold;}
+	:root{color:sienna;}
+	.pseudoClassSelect .first-child-pseudo :first-child{color:seagreen;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .last-child-pseudo :last-child{color:sandybrown;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .only-child-pseudo span em:only-child{color:salmon;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .nth-child-pseudo :nth-child(2){color:royalblue;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .nth-last-child-pseudo :nth-last-child(2){color:royalblue;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .first-of-type-pseudo :first-of-type{color:rosybrown;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .last-of-type-pseudo :last-of-type{color:red;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .only-of-type-pseudo :only-of-type{color:powderblue;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .nth-of-type-pseudo :nth-of-type(2){color:plum;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .nth-last-of-type-pseudo :nth-last-of-type(2){color:peru;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .empty-pseudo :empty+span{color:palevioletred;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .checked-pseudo :checked+*{color:olivedrab;font-size:20px; font-weight:bold;}
+	
+	.pseudoClassSelect .enabled-pseudo input{width:80px; height:30px;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .enabled-pseudo :enabled{color:olive; border:1px solid olive;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .enabled-pseudo :enabled+*{color:olive;font-size:20px; font-weight:bold;}
+
+	.pseudoClassSelect .disabled-pseudo :disabled{color:olive; border:1px solid olive;font-size:20px; font-weight:bold;}
+	.pseudoClassSelect .disabled-pseudo :disabled+*{color:olive;font-size:20px; font-weight:bold;}
+	
+	.pseudoClassSelect :target{background-color:moccasin; color:mediumaquamarine;font-size:20px; font-weight:bold;}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">伪类选择符 Pseudo-Classes Selectors：</dt>
+		<dd class="detail-list-body">
+			<ol class="selector-list pseudoClassSelect">
+				<li class="link-pseudo"><a href="javascript:void(0);">a:link{选择符}</a></li>
+				<li class="visited-pseudo"><a href="###">a:visited{选择符}</a></li>
+				<li class="hover-pseudo"><a href="javascript:void(0)">a:hover{选择符}</a></li>
+				<li class="active-pseudo"><a href="javascript:void(0)">a:active{选择符}</a></li>
+				<li class="focus-pseudo">
+					<a href="javascript:void(0)">a:focus{选择符}</a>
+					<input type="text" class="text" />
+					<input type="radio" class="radio" />
+					<span>单选</span><input type="checkbox" class="checkbox" />
+					<span>多选</span><select><option>这是选项</option><option>这是选项</option><option>这是选项</option><option>这是选项</option></select>
+					<textarea></textarea>
+					<button>按钮</button>
+				</li>
+				<li class="lang-pseudo">:lang(zh-cn){选择符}：<span lang="zh-cn">lang="zh-cn"中文语言</span><span>english language</span></li>
+				<li class="not-pseudo">:not(a){选择符}：<span class="span">&lt;span&gt;这样的<b>e</b>lement结构&lt;/span&gt;</span><a href="javascript:;">&lt;a&gt;这样的<em>e</em>lement结构&lt;/a&gt;</a></li>
+				<li class="root-pseudo">:root{选择符}：<span class="span">:root这的是根元素，在html文件中也就是HTML本身</span></li>
+				<li class="first-child-pseudo">:first-child{选择符}：<span>第一个span（被选中）</span><span><b>第</b>二<b>个</b>span</span><span>第三个span</span><span>第四个span</span><span>第五个span</span></li>
+				<li class="last-child-pseudo">:last-child{选择符}：<span>第一个span</span><span>第二个span</span><span>第三个span</span><span>第四个<b>s</b>p<b>a</b><b>n</b></span><span>第五个span（被选中）</span></li>
+				<li class="only-child-pseudo">span em:only-child{选择符}：<span>第一个span</span><span>第二个span</span><span><em>第</em><em>三</em><em>个</em>span</span><span><b>第四个span</b></span><span><em>第五个span<b>（被选中）</b></em></span></li>
+				<li class="nth-child-pseudo">:nth-child(2){选择符}：<span>第一个span</span><span>第二个span（被选中）</span><span>第三个span</span><span>第四个span</span><span>第五个span</span></li>
+				<li class="nth-last-child-pseudo">:nth-last-child(2){选择符}：<span>第一个span</span><span>第二个span</span><span>第三个span</span><span>第四个span（被选中）</span><span>第五个span</span></li>
+				<li class="first-of-type-pseudo">:first-of-type{选择符}：<a href="#">第一个a（被选中）</a><a href="#">第二个a</a><span>第一个span（被选中）</span><span>第二个span</span><span>第三个span</span><span>第四个span</span><span>第五个span</span></li>
+				<li class="last-of-type-pseudo">:last-of-type{选择符}：<span>第一个span</span><span>第二个span</span><span>第三个span</span><span>第四个span</span><span>第五个span（被选中）</span><a href="#">第一个a</a><a href="#">第二个a（被选中）</a></li>
+				<li class="only-of-type-pseudo">:only-of-type{选择符}：<span>第一个span</span><span>第二个span</span><span>第三个span</span><span>第四个span</span><span><em>第五个span（被选中）</em><b>b</b></span><a href="#">第一个a</a><a href="#"><em>第二个a（被选中）</em></a></li>
+				<li class="nth-of-type-pseudo">:nth-of-type{选择符}：<span>第一个span</span><span>第二个span（被选中）</span><span>第三个span</span><span>第四个span</span><span><em>第五个span</em></span><a href="#">第一个a</a><a href="#"><em>第二个a（被选中）</em></a></li>
+				<li class="nth-last-of-type-pseudo">:nth-last-of-type{选择符}：<span>第一个span</span><span>第二个span</span><span>第三个span</span><span>第四个span（被选中）</span><span><em>第五个span</em></span><a href="#">第一个a（被选中）</a><a href="#"><em>第二个a</em></a></li>
+				<li class="empty-pseudo">:empty{选择符}：<span>第一个span</span><span>第二个span</span><span>第三个span</span><span>第四个span</span><b></b><span>第五个span（他的上一个是空元素）</span><a href="#">第一个a</a><a href="#"><em>第二个a</em></a></li>
+				<li class="checked-pseudo">:checked+*{选择符}：<span>第一个span</span><input type="radio" checked="checked" /><span>第二个span（选中）</span><span>第三个span</span><input type="radio" /><span>第四个span</span><input type="checkbox" checked="checked" /><span>第五个span（选中）</span><a href="#">第一个a</a><input type="checkbox" /><a href="#"><em>第二个a</em></a></li>
+				<li class="enabled-pseudo">:enabled{选择符}：<span>第一个span</span><input type="text" checked="checked" disabled="disabled" class="text" /><span>第二个span</span><span>第三个span</span><input type="text" class="text" /><span>第四个span（选中）</span><input type="text" class="text" /><span>第五个span（选中）</span><a href="#">第一个a</a><input type="text" disabled="disabled" class="text" /><a href="#"><em>第二个a</em></a></li>
+				<li class="disabled-pseudo">:disabled{选择符}：<span>第一个span</span><input type="text" class="text" checked="checked" disabled="disabled" /><span>第二个span（选中）</span><span>第三个span</span><input type="text" class="text" /><span>第四个span</span><input type="text" class="text" /><span>第五个span</span><a href="#">第一个a</a><input type="text" disabled="disabled" class="text" /><a href="#"><em>第二个a（选中）</em></a></li>
+				<li class="target-pseudo">:target{选择符}：<span>第一个span</span><span>第二个span</span><a href="#">第一个a</a><a href="#target1"><em>第二个a（单击我）</em></a></li>
+				<li id="target1">这是链接的target目标</li>
+			</ol>
+<pre data-title="HTML" data-skin="1" data-height="300">
+&lt;ol class=&quot;selector-list pseudoClassSelect&quot;&gt;
+	&lt;li class=&quot;link-pseudo&quot;&gt;
+		&lt;a href=&quot;javascript:void(0);&quot;&gt;a:link{选择符}&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;visited-pseudo&quot;&gt;
+		&lt;a href=&quot;###&quot;&gt;a:visited{选择符}&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;hover-pseudo&quot;&gt;
+		&lt;a href=&quot;javascript:void(0)&quot;&gt;a:hover{选择符}&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;active-pseudo&quot;&gt;
+		&lt;a href=&quot;javascript:void(0)&quot;&gt;a:active{选择符}&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;focus-pseudo&quot;&gt;
+		&lt;a href=&quot;javascript:void(0)&quot;&gt;a:focus{选择符}&lt;/a&gt;
+		&lt;input type=&quot;text&quot; class=&quot;text&quot; /&gt;			
+		&lt;input type=&quot;radio&quot; class=&quot;radio&quot; /&gt;			
+		&lt;span&gt;单选&lt;/span&gt;
+		&lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; /&gt;			
+		&lt;span&gt;多选&lt;/span&gt;
+		&lt;select&gt;
+			&lt;option&gt;这是选项&lt;/option&gt;
+			&lt;option&gt;这是选项&lt;/option&gt;
+			&lt;option&gt;这是选项&lt;/option&gt;
+			&lt;option&gt;这是选项&lt;/option&gt;
+		&lt;/select&gt;
+		&lt;textarea&gt;&lt;/textarea&gt;
+		&lt;button&gt;按钮&lt;/button&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;lang-pseudo&quot;&gt;
+		:lang(zh-cn){选择符}：
+		&lt;span lang=&quot;zh-cn&quot;&gt;lang=&quot;zh-cn&quot;中文语言&lt;/span&gt;
+		&lt;span&gt;english language&lt;/span&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;not-pseudo&quot;&gt;
+		:not(a){选择符}：
+		&lt;span class=&quot;span&quot;&gt;
+			&amp;lt;span&amp;gt;这样的 &lt;b&gt;e&lt;/b&gt;
+			lement结构&amp;lt;/span&amp;gt;
+		&lt;/span&gt;
+		&lt;a href=&quot;javascript:;&quot;&gt;
+			&amp;lt;a&amp;gt;这样的 &lt;em&gt;e&lt;/em&gt;
+			lement结构&amp;lt;/a&amp;gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;root-pseudo&quot;&gt;
+		:root{选择符}：
+		&lt;span class=&quot;span&quot;&gt;:root这的是根元素，在html文件中也就是HTML本身&lt;/span&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;first-child-pseudo&quot;&gt;
+		:first-child{选择符}：
+		&lt;span&gt;第一个span（被选中）&lt;/span&gt;
+		&lt;span&gt; &lt;b&gt;第&lt;/b&gt;二&lt;b&gt;个&lt;/b&gt;span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;span&gt;第五个span&lt;/span&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;last-child-pseudo&quot;&gt;
+		:last-child{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个&lt;b&gt;s&lt;/b&gt;p&lt;b&gt;a&lt;/b&gt;&lt;b&gt;n&lt;/b&gt;&lt;/span&gt;
+		&lt;span&gt;第五个span（被选中）&lt;/span&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;only-child-pseudo&quot;&gt;
+		span em:only-child{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt; &lt;em&gt;第&lt;/em&gt;&lt;em&gt;三&lt;/em&gt;&lt;em&gt;个&lt;/em&gt;span&lt;/span&gt;
+		&lt;span&gt;&lt;b&gt;第四个span&lt;/b&gt;&lt;/span&gt;
+		&lt;span&gt;&lt;em&gt;第五个span&lt;b&gt;（被选中）&lt;/b&gt;&lt;/em&gt;&lt;/span&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;nth-child-pseudo&quot;&gt;
+		:nth-child(2){选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span（被选中）&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;span&gt;第五个span&lt;/span&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;nth-last-child-pseudo&quot;&gt;
+		:nth-last-child(2){选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span（被选中）&lt;/span&gt;
+		&lt;span&gt;第五个span&lt;/span&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;first-of-type-pseudo&quot;&gt;
+		:first-of-type{选择符}：
+		&lt;a href=&quot;#&quot;&gt;第一个a（被选中）&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;第二个a&lt;/a&gt;
+		&lt;span&gt;第一个span（被选中）&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;span&gt;第五个span&lt;/span&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;last-of-type-pseudo&quot;&gt;
+		:last-of-type{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;span&gt;第五个span（被选中）&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;第二个a（被选中）&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;only-of-type-pseudo&quot;&gt;
+		:only-of-type{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;span&gt;&lt;em&gt;第五个span（被选中）&lt;/em&gt;&lt;b&gt;b&lt;/b&gt;&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;em&gt;第二个a（被选中）&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;nth-of-type-pseudo&quot;&gt;
+		:nth-of-type{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span（被选中）&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;span&gt;&lt;em&gt;第五个span&lt;/em&gt;&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;em&gt;第二个a（被选中）&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;nth-last-of-type-pseudo&quot;&gt;
+		:nth-last-of-type{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span（被选中）&lt;/span&gt;
+		&lt;span&gt;&lt;em&gt;第五个span&lt;/em&gt;&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a（被选中）&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;em&gt;第二个a&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;empty-pseudo&quot;&gt;
+		:empty{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;b&gt;&lt;/b&gt;
+		&lt;span&gt;第五个span（他的上一个是空元素）&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;em&gt;第二个a&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;checked-pseudo&quot;&gt;
+		:checked+*{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;input type=&quot;radio&quot; checked=&quot;checked&quot; /&gt;			
+		&lt;span&gt;第二个span（选中）&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;input type=&quot;radio&quot; /&gt;			
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; /&gt;			
+		&lt;span&gt;第五个span（选中）&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a&lt;/a&gt;
+		&lt;input type=&quot;checkbox&quot; /&gt;			
+		&lt;a href=&quot;#&quot;&gt;&lt;em&gt;第二个a&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;enabled-pseudo&quot;&gt;
+		:enabled{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;input type=&quot;text&quot; checked=&quot;checked&quot; disabled=&quot;disabled&quot; class=&quot;text&quot; /&gt;			
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;input type=&quot;text&quot; class=&quot;text&quot; /&gt;			
+		&lt;span&gt;第四个span（选中）&lt;/span&gt;
+		&lt;input type=&quot;text&quot; class=&quot;text&quot; /&gt;			
+		&lt;span&gt;第五个span（选中）&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a&lt;/a&gt;
+		&lt;input type=&quot;text&quot; disabled=&quot;disabled&quot; class=&quot;text&quot; /&gt;			
+		&lt;a href=&quot;#&quot;&gt;&lt;em&gt;第二个a&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;disabled-pseudo&quot;&gt;
+		:disabled{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;input type=&quot;text&quot; class=&quot;text&quot; checked=&quot;checked&quot; disabled=&quot;disabled&quot; /&gt;			
+		&lt;span&gt;第二个span（选中）&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;input type=&quot;text&quot; class=&quot;text&quot; /&gt;			
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;input type=&quot;text&quot; class=&quot;text&quot; /&gt;			
+		&lt;span&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a&lt;/a&gt;
+		&lt;input type=&quot;text&quot; disabled=&quot;disabled&quot; class=&quot;text&quot; /&gt;			
+		&lt;a href=&quot;#&quot;&gt;&lt;em&gt;第二个a（选中）&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;target-pseudo&quot;&gt;
+		:target{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a&lt;/a&gt;
+		&lt;a href=&quot;#target1&quot;&gt;&lt;em&gt;第二个a（单击我）&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li id=&quot;target1&quot;&gt;这是链接的target目标&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/**伪类选择符**/</span>
+.pseudoClassSelect .link-pseudo a:link{color:tan;}
+.pseudoClassSelect .visited-pseudo a:visited{color:teal;}
+.pseudoClassSelect .hover-pseudo a:hover{color:firebrick;}
+.pseudoClassSelect .active-pseudo a:active{color:forestgreen;}
+.pseudoClassSelect .focus-pseudo :focus{border:1px solid orchid; color:orchid;}
+.pseudoClassSelect .lang-pseudo :lang(zh-cn){color:slateblue;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .not-pseudo :not(a){color:skyblue;font-size:20px; font-weight:bold;}
+:root{color:sienna;}
+.pseudoClassSelect .first-child-pseudo :first-child{color:seagreen;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .last-child-pseudo :last-child{color:sandybrown;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .only-child-pseudo span em:only-child{color:salmon;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .nth-child-pseudo :nth-child(2){color:royalblue;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .nth-last-child-pseudo :nth-last-child(2){color:royalblue;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .first-of-type-pseudo :first-of-type{color:rosybrown;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .last-of-type-pseudo :last-of-type{color:red;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .only-of-type-pseudo :only-of-type{color:powderblue;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .nth-of-type-pseudo :nth-of-type(2){color:plum;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .nth-last-of-type-pseudo :nth-last-of-type(2){color:peru;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .empty-pseudo :empty+span{color:palevioletred;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .checked-pseudo :checked+*{color:olivedrab;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .enabled-pseudo input{width:80px; height:30px;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .enabled-pseudo :enabled{color:olive; border:1px solid olive;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .enabled-pseudo :enabled+*{color:olive;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .disabled-pseudo :disabled{color:olive; border:1px solid olive;font-size:20px; font-weight:bold;}
+.pseudoClassSelect .disabled-pseudo :disabled+*{color:olive;font-size:20px; font-weight:bold;}
+.pseudoClassSelect :target{background-color:moccasin; color:mediumaquamarine;font-size:20px; font-weight:bold;}
+</pre>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

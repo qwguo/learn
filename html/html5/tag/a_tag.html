@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximun-scale=1, user-scalable=no">
+    <!--<link rel="stylesheet" href="/public_css/base_style.css">-->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+    <script type="text/javascript" src="/public_js/public_fun.js"></script>
+    <title>html标签-a标签</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><span class="h3">a标签</span></div>
+            <div class="panel-body">
+                <h4 class="text-primary"><strong>定义和用法：</strong></h4>
+                <ul>
+                    <li><p><code>&lt;a&gt;</code>：标签定义超链接，用于从当前页面链接（跳转）到另一张页面，是页面中的重要标签之一。现在的网站是通过好多页面组成的，这个时候就需要通过次标签来实现每个页面之间的链接，来实现网站的页面之间的相互关联的关系。
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong><code>&lt;a&gt;</code>：标签元素最常用的属性：</strong></p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr class="active">
+                                        <th>标签名</th>
+                                        <th>说明</th>
+                                        <th>取值</th>
+                                        <th>用法</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><kbd>href</kbd></td>
+                                        <td>它指示链接的地址，也就是说要打开的页面的地址。</td>
+                                        <td>自定义</td>
+                                        <td>
+                                            <code>&lt;a href="http://www.baidu.com"&gt;链接的文字内容&lt;/a&gt;</code>&nbsp;
+                                            <a href="http://www.baidu.com">这个链接会跳转到百度页面</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><kbd>target</kbd></td>
+                                        <td>它指定打开链接地址的目标窗口，也就是说在哪个窗口打开载入连接的页面。</td>
+                                        <td>
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <p><code class="text-info">_self</code>：当前窗口或者当前框架中打开链接，这个值是默认值，可以不用设置。
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p><code class="text-info">_blank</code>：浏览器总在一个新打开、未命名的窗口中载入目标文档。
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p><code class="text-info">_parent</code>：在父窗口中打开载入链接的页面，如果没有父窗口那么在本窗口打开。
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p><code class="text-info">_top</code>：在顶级窗口中打开载入链接的页面，这个主要是用在多个iframe嵌套的情况下使用。
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <code>&lt;a href="http://www.baidu.com"&gt;链接的文字内容&lt;/a&gt;</code>&nbsp;
+                                            <a href="http://www.baidu.com">这个链接会跳转到百度页面</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        在所有浏览器中，链接的默认外观是：
+                        <ul>
+                            <li>未被访问的链接带有下划线而且是蓝色的</li>
+                            <li>已被访问的链接带有下划线而且是紫色的</li>
+                            <li>活动链接带有下划线而且是红色的</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  <div class="wrapper">
+   <dl class="detail-list">
+     <dt class="detail-list-head">a标签</dt>
+     <dd class="detail-list-body">
+       <div class="explain">
+         <h3>定义和用法：</h3>
+         <ul>
+           <li><span class="f-red">&lt;a&gt; </span>标签定义超链接，用于从当前页面链接（跳转）到另一张页面，是页面中的重要标签之一。现在的网站是通过好多页面组成的，这个时候就需要通过次标签来实现每个页面之间的链接，来实现网站的页面之间的相互关联的关系。</li>
+           <li><b><span class="f-red">&lt;a&gt;</span>：标签元素最常用的属性：</b>
+             <div class="public-table">
+               <table>
+                 <tr>
+                   <th>标签名</th>
+                   <th>说明</th>
+                   <th>用法</th>
+                 </tr>
+                 <tr>
+                   <td><span class="f-red">href</span></td>
+                   <td>它指示链接的目标。</td>
+                   <td>它指示链接的目标。</td>
+                 </tr>
+               </table>
+             </div>
+           </li>
+           <li>
+             在所有浏览器中，链接的默认外观是：
+             <ul>
+               <li>未被访问的链接带有下划线而且是蓝色的</li>
+               <li>已被访问的链接带有下划线而且是紫色的</li>
+               <li>活动链接带有下划线而且是红色的</li>
+             </ul>
+           </li>
+         </ul>
+         提示：您可能已经注意到了，W3School 站点内的链接外观与默认的链接外观非常不同。您可以使用 CSS 伪类 向文本超链接添加复杂而多样的样式。
+       </div>
+     </dd>
+   </dl>
+ </div> -->
+</body>
+
+</html>

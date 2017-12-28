@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3——transform</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+	@-webkit-keyframes opacitys{
+		0% {opacity: 1;}
+		50% {opacity: 0;}
+		100%{opacity: 1;}
+	}
+	@-webkit-keyframes scale{
+		0%{transform:scale(1,1);}
+		25%{transform:scale(0.5,0.5);}
+		50%{transform:scale(1,1);}
+		75%{transform:scale(1.5,1.5);}
+		100%{transform:scale(1,1);}
+	}
+	ul:after{display: table; content: ""; clear: both;}
+	ul li{float:left; width:100px; height:100px; margin:10px 20px; border:1px dashed #c00; position:relative; list-style:none;}
+	ul[class^='ul'] li div {
+    background-color: #ccc;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    word-wrap: break-word;
+    left: 0;
+    top: 0;
+	}
+	.ul-1{height: 300px;}
+	.ul-1 li:nth-child(1):hover div{
+		-webkit-animation-name:opacitys;
+		-webkit-animation-delay:0.2s;
+		/*-webkit-animation-direction:alternate;*/
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-duration:3s;
+		-webkit-animation-timing-function:ease-in-out;
+	}
+	.ul-1 li:nth-child(2):hover div{
+		/*-webkit-animation-name:scale;
+		-webkit-animation-delay:0.2s;
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-duration:3s;
+		-webkit-animation-timing-function:ease-in-out;*/
+		-webkit-animation:scale 3.5s ease infinite;
+	}
+</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="explain">
+		<h3><b>animation：</b>用来设置元素动画效果，取值有：</h3>
+			<p><span class="f-red">animation：[[ animation-name ] || [ animation-duration ] || [ animation-timing-function ] || [ animation-delay ] || [ animation-iteration-count ] || [ animation-direction ]] [ , [ animation-name ] || [ animation-duration ] || [ animation-timing-function ] || [ animation-delay ] || [ animation-iteration-count ] || [ animation-direction ]]*
+
+</span>
+		</p>
+	</div>
+	<dl class="detail-list">
+		<dt class="detail-list-head">animation-name:none;动画名称</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-1">
+				<li><div></div></li>
+				<li><div></div></li>
+				<li><div></div></li>
+				<li><div></div></li>
+				<li class="li-6"><div></div></li>
+				<li><div></div></li>
+				<li><div></div></li>
+				<li><div></div></li>
+			</ul>
+		</dd>
+	</dl>
+</div>

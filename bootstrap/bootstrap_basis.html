@@ -1,0 +1,338 @@
+﻿<!doctype  html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<title>alert弹窗组件</title>
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<style type="text/css">
+		.row{border:1px solid #ccc; margin-bottom:10px;}
+		.row div{border-left:1px solid #ccc;background-color:#f5f5f5; }
+		.row div:first-child{border-left:0px;}
+		.wrap-2 div{height:auto;}		
+		.row-table > div{background-color:transparent; padding-top:10px; }
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>h在bootstrap中的定义</h1>
+	<div class="row">
+		普通标题h的定义
+		<div class="col-xs-6">
+			<h1>这是标题h1</h1>
+			<h2>这是标题h2</h2>
+			<h3>这是标题h3</h3>
+			<h4>这是标题h4</h4>
+			<h5>这是标题h5</h5>
+			<h6>这是标题h6</h6>
+		</div>
+		<div class="col-xs-6">
+		标题h中有small标签的定义
+			<h1>这是标题h1<small>这是small在h1中的表现</small></h1>
+			<h2>这是标题h2<small>这是small在h2中的表现</small></h2>
+			<h3>这是标题h3<small>这是small在h3中的表现</small></h3>
+			<h4>这是标题h4<small>这是small在h4中的表现</small></h4>
+			<h5>这是标题h5<small>这是small在h5中的表现</small></h5>
+			<h6>这是标题h6<small>这是small在h6中的表现</small></h6>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			对齐方式：
+			<p class="text-left">这是text-left的使用</p>
+			<p class="text-right">这是text-right的使用</p>
+			<p class="text-center">这是text-center的使用</p>
+			<p class="text-justify">这是text-justify的使用</p>
+		</div>
+		<div class="col-xs-2">
+			缩略语：<br />
+			<abbr title="javascript设计模式是一本专门讲解设计模型的专业书籍">javascript设计模式</abbr>
+			<abbr title="HtypeText Markup Language" class="initialism">HTML</abbr>
+			强调文字：<br />
+			<b>这是b标签</b><br /><strong>这是strong标签</strong><br />
+			<small>这是small标签</small><br /><big>这是big标签</big><br />
+		</div>
+		<div class="col-xs-7">
+			blockquote的使用：
+			<blockquote>
+				<p>不愤不启，不悱不发。举一隔，不以三隔反，则无不符也。</p>
+			</blockquote>
+			<blockquote class="pull-right">
+				<p>不愤不启，不悱不发。举一隔，不以三隔反，则无不符也。</p>
+			</blockquote>
+		</div>
+	</div>
+	<h1>这是列表的一些定义样式效果</h1>
+	<div class="row">
+		<div class="col-sm-3">
+			普通ul，li
+			<ul>
+				<li>这是列表ul下的li元素</li>
+				<li>这是列表ul下的li元素</li>
+				<li>这是列表ul下的li元素</li>
+				<li>这是列表ul下的li元素</li>
+				<li>这是列表ul下的li元素</li>
+			</ul>
+		</div>
+		<div class="col-sm-3">
+		普通ol，li
+			<ol>
+				<li>这是列表ol下的li</li>
+				<li>这是列表ol下的li</li>
+				<li>这是列表ol下的li</li>
+				<li>这是列表ol下的li</li>
+				<li>这是列表ol下的li</li>
+			</ol>
+		</div>
+		<div class="col-sm-3">
+			这是取点列表
+			<ul class="list-unstyled">
+				<li>这是去除li下的原点</li>
+				<li>
+					<ul>
+						<li>这是嵌套在li中的ul，li</li>
+						<li class="list-unstyled">
+							<ul>
+								<li>这又是一层嵌套</li>
+								<li>这又是一层嵌套</li>
+							</ul>
+						</li>
+						<li>这是嵌套在li中的ul，li</li>
+					</ul>
+				</li>
+				<li>这是去除li下的原点</li>
+				<li>这是去除li下的原点</li>
+				<li>这是去除li下的原点</li>
+			</ul>
+		</div>
+		<div class="col-sm-3">
+			<ul class="list-inline">
+				<li>这是内联列表</li>
+				<li>这是内联列表</li>
+				<li>这是内联列表</li>
+			</ul>
+		</div>
+	</div>
+	<h1>代码的使用</h1>
+	<div class="row">
+		<div class="col-md-2">
+			单行代码code<br />
+			<code>
+				&lt;li&gt;这是单行代码&lt;/li&gt;
+			</code>
+		</div>
+		<div class="col-md-5">
+			多行代码块的样式pre<br />
+<pre>
+&lt;body&gt;
+	&lt;ul class=&quot;list-inline&quot;&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/body&gt;
+</pre>
+		</div>
+	<div class="col-md-5">
+	多行代码块的样式pre<br />
+<pre class="pre-scrollable">
+&lt;body&gt;
+	&lt;ul class=&quot;list-inline&quot;&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+		&lt;li&gt;这是内联列表&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/body&gt;
+</pre>
+	</div>
+	</div>
+</div>
+
+
+	<div class="container">
+		<h1>表格的样式展示</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>这是表格标题</th>
+						<th>这是表格标题</th>
+						<th>这是表格标题</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+					<tr class="active">
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+					<tr class="success">
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+					<tr class="info">
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+					<tr class="warning">
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+					<tr class="danger">
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>带背景条的表格</h1>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>这是表格标题</th>
+						<th>这是表格标题</th>
+						<th>这是表格标题</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+					<tr>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+					<tr>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+					<tr>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+					<tr>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+						<td>这是单元格中的内容</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>带边框的，相应式的表格</h1>
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>这是表格标题</th>
+							<th>这是表格标题</th>
+							<th>这是表格标题</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+						<tr>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+							<td>这是单元格中的内容</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>关于表格还有好多的样式，就不再一一列出，简单把所有的表格的class类名列举出来</p>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>状态说明</th>
+						<th>普通型表格</th>
+						<th>带背景条的表格</th>
+						<th>带边框的表格</th>
+						<th>鼠标悬停上</th>
+						<th>紧凑型表格</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>class名</th>
+						<td>.table</td>
+						<td>.table-striped</td>
+						<td>.table-bordered</td>
+						<td>.table-hover</td>
+						<td>.table-condensed</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>关于表格行级元素的的样式</p>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>状态说明</th>
+						<th>当前活动状态</th>
+						<th>成功或者正确的行</th>
+						<th>中立的信息或者行</th>
+						<th>警告，需要特别注意</th>
+						<th>危险或者可能是错误的</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>class名</th>
+						<td>.active</td>
+						<td>.success</td>
+						<td>.info</td>
+						<td>.warning</td>
+						<td>.danger</td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</body>
+
+</html>

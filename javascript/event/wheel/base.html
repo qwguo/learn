@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>鼠标滚轮事件</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<style type="text/css">
+	.attribute-table{}
+	.attribute-table td{text-align: center;}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+			<dl class="detail-list">
+				<dt class="detail-list-head">滚轮事件</dt>
+				<dd class="detail-list-body">
+					<div class="explain">
+						<h3>whell：滚轮事件</h3>
+						<p>滚轮滚动事件各大版本浏览器使用的方式差异性却非常大，总体来说，目前wheel事件有3种，分别如下：
+<b class="f-red">onwheel</b>，<b class="f-red">onmousewheel</b>，<b class="f-red">DOMMouseScroll</b></p>
+						<table class="public-table attribute-table">
+							<thead>
+								<tr>
+									<th>事件/浏览器</th>
+									<th>chrome</th>
+									<th>IE</th>
+									<th>firefox</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>onwheel</th>
+									<td><b class="f-blue">✔</b></td>
+									<td><b class="f-blue">✔</b></td>
+									<td><b class="f-red">✘</b></td>
+								</tr>
+								<tr>
+									<th>onmousewheel</th>
+									<td><b class="f-red">✘</b></td>
+									<td><b class="f-blue">✔</b></td>
+									<td><b class="f-red">✘</b></td>
+								</tr>
+								<tr>
+									<th>DOMMouseScroll</th>
+									<td><b class="f-red">✘</b></td>
+									<td><b class="f-red">✘</b></td>
+									<td><b class="f-blue">✔</b></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</dd>
+			</dl>
+	</div>
+<body>
+</body>
+</html>

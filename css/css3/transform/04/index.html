@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>旋转动画</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css">
+		ul,li{list-style: none; padding: 0; margin: 0;}
+		.pic-list::after{content: ""; display: table; clear: both;}
+		.pic-list li,.pic-list li div,.pic-list li a span{transition:all 0.8s ease-in-out 0s;}
+		.pic-list li{float: left; width: 200px; height: 200px; position: relative; margin: 15px;}
+		.pic-list li div,.pic-list li a{width: 180px; height: 180px; border-radius: 50%; overflow: hidden;}
+		.pic-list li div{position: absolute; left: 0; top: 0; border-style: solid; border-width: 10px; border-color: orange red red orange; z-index: 1; transform:rotate(45deg);}
+		.pic-list li a{position: relative; z-index: 2;display: inline-block; left: 10px; top: 10px; text-transform: none;}
+		.pic-list li a span{position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); color:#fff;text-align: center; font-family: "微软雅黑"; opacity: 0;}
+		.pic-list li a strong,.pic-list li a b{display: inline-block; font-weight: 100;}
+		.pic-list li a strong{font-size: 30px; border-bottom: 1px solid #fff; padding: 40px 10px 5px;}
+		.pic-list li a b{ line-height: 2; padding: 5px;}
+		.pic-list li a img{width: 100%; height: 100%;}
+		.pic-list li:hover{/* transform:scale(1.5); z-index: 20;*/}
+		.pic-list li:hover a span{opacity: 1;}
+		.pic-list li:hover div{transform:rotate(225deg);}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">transform : 旋转动画效果</dt>
+			<dd class="detail-list-body">
+				<ul class="pic-list">
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/01.jpg" alt=""></a>
+					</li>
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/02.jpg" alt=""></a>
+					</li>
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/03.jpg" alt=""></a>
+					</li>
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/04.jpg" alt=""></a>
+					</li>
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/05.jpg" alt=""></a>
+					</li>
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/06.jpg" alt=""></a>
+					</li>
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/07.jpg" alt=""></a>
+					</li>
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/08.jpg" alt=""></a>
+					</li>
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/09.jpg" alt=""></a>
+					</li>
+					<li>
+						<div></div>
+						<a href="#"><span><strong>标题文字</strong><b>图片介绍</b></span><img src="image/10.jpg" alt=""></a>
+					</li>
+				</ul>
+<pre data-skin="1" data-title="HTML">
+&lt;ul class=&quot;pic-list&quot;&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/02.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/04.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/05.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/06.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/07.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/08.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/09.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;标题文字&lt;/strong&gt;&lt;b&gt;图片介绍&lt;/b&gt;&lt;/span&gt;&lt;img src=&quot;image/10.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+
+</pre>
+<pre data-skin="2" data-title="CSS">
+.pic-list::after{content: ""; display: table; clear: both;}
+.pic-list li,.pic-list li div,.pic-list li a span{transition:all 0.8s ease-in-out 0s;}
+.pic-list li{float: left; width: 200px; height: 200px; position: relative; margin: 15px;}
+.pic-list li div,.pic-list li a{width: 180px; height: 180px; border-radius: 50%; overflow: hidden;}
+.pic-list li div{position: absolute; left: 0; top: 0; border-style: solid; border-width: 10px; border-color: orange red red orange; z-index: 1; transform:rotate(45deg);}
+.pic-list li a{position: relative; z-index: 2;display: inline-block; left: 10px; top: 10px; text-transform: none;}
+.pic-list li a span{position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); color:#fff;text-align: center; font-family: "微软雅黑"; opacity: 0;}
+.pic-list li a strong,.pic-list li a b{display: inline-block; font-weight: 100;}
+.pic-list li a strong{font-size: 30px; border-bottom: 1px solid #fff; padding: 40px 10px 5px;}
+.pic-list li a b{ line-height: 2; padding: 5px;}
+.pic-list li a img{width: 100%; height: 100%;}
+.pic-list li:hover{/* transform:scale(1.5); z-index: 20;*/}
+.pic-list li:hover a span{opacity: 1;}
+.pic-list li:hover div{transform:rotate(225deg);}
+</pre>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

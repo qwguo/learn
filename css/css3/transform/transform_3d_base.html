@@ -1,0 +1,895 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3——transform</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+html{font-size: 12px;}
+ul:after{content:"";clear:both; display:block; height:0px; visibility:hidden;}
+ul{zoom:1;padding:40px 10px; border-bottom:2px dotted #c00; margin:10px;}
+ul li{float:left; width:200px; height:200px; margin:50px; border:1px dashed #c00; position:relative; list-style:none;}
+ul[class*='ul'] li div{background-color:#ccc; width:200px; height:200px; display:inline-block; word-wrap:break-word; font-size:18px;}
+ul[class*='ul'] li span{color:#fff;position:absolute; left:0px; top:0px; padding:10px; width:180px;}
+
+ul[class='ul-1'] li:nth-child(1) div{background-color:rgba(20,20,2,0.5); -moz-transform:matrix(1,0,0,1,30,30); -webkit-transform:matrix(1,0,0,1,30,30);-o-transform:matrix(1,0,0,1,30,30);-ms-transform:matrix(1,0,0,1,30,30);transform:matrix(1,0,0,1,30,30);}
+
+ul[class^='ul'] li:nth-child(1),ul[class^='ul'] li:nth-child(2){
+	-webkit-perspective: 800px;
+	-moz-perspective:800px;
+	-ms-perspective:800px;
+	-o-perspective:800px;
+	perspective:800px;
+	-webkit-perspective-origin:50% 50%;
+	-moz-perspective-origin:50% 50%;
+	-ms-perspective-origin:50% 50%;
+	perspective-origin:50% 50%;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+ul[class='ul-2'] li:nth-child(1) div{
+	font-size:20px;
+	line-height:24px;
+	background-color:rgba(20,20,2,0.5);
+	-moz-transform:translate3d(10px,1.5em,2ex); 
+	-webkit-transform:translate3d(10px,1.5em,2ex);
+	-ms-transform:translate3d(10px,1.5em,2ex);
+	-o-transform:translate3d(10px,1.5em,2ex);
+	transform:translate3d(10px,1.5em,2ex);
+}
+ul[class='ul-2'] li:nth-child(2) div{
+	font-size:16px;
+	background-color:rgba(20,20,2,0.5);
+	-webkit-transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+	-moz-transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+	-ms-transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+	-o-transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+	transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+}
+ul[class='ul-2'] li:nth-child(3) div{
+	font-size:18px;
+	background-color:rgba(220,220,20,0.9);
+	-webkit-transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+	-moz-transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+	-ms-transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+	-o-transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+	transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+}
+ul[class="ul-2"] li:nth-child(4) div{
+	background-color:rgba(0,0,255,0.5);
+	-webkit-transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+	-moz-transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+	-o-transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+	-ms-transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+	transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+}
+ul[class="ul-2"] li:nth-child(5) div{
+	font-size: 14px;
+	-webkit-transform: perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0);
+	-moz-transform: perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0);
+	-ms-transform: perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0);
+	-o-transform: perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0);
+	transform:perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0 ,0);
+} 
+ul[class="ul-2"] li:nth-child(6) div{
+	font-size: 10px;
+	-webkit-transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+	-moz-transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+	-ms-transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+	-o-transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+	transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+}
+ul[class="ul-3"] li div{
+	font-size: 20px;
+	line-height: 24px;
+}
+ul[class="ul-3"] li em{position: absolute; z-index: 100; border-style: solid; border-color: #aaa; font-size: 0; transform:perspective(400px);}
+ul[class="ul-3"] li em:after{position: absolute; font-size: 20px; font-style: normal;}
+ul[class="ul-3"] li em.x{ left: -15%; top: 50%; width:130%; border-width: 2px 0 0; margin-top: -2px; text-align: right;}
+	ul[class="ul-3"] li em.x:after{content:"x";}
+ul[class="ul-3"] li em.y{top: -15%; left: 50%; height: 130%; border-width: 0 2px 0 0; margin-left: -2px;}
+	ul[class="ul-3"] li em.y:after{content:"y"; left: 10px; top: -7px;}
+	ul[class="ul-3"] li em.z{ left: 50%; top: 50%; margin: -6px auto auto -6px; border-width: 5px;}
+ul[class="ul-3"] li em.z:after{content:"z";}
+ul[class="ul-3"] li:nth-child(1) div{
+	background-color: rgba(20,20,2,.5);
+	-webkit-transform: rotateX(40deg);
+	-moz-transform: rotateX(40deg);
+	-ms-transform: rotateX(40deg);
+	-o-transform: rotateX(40deg);
+	transform: rotateX(40deg);
+}
+ul[class="ul-3"] li:nth-child(2) div{
+	background-color: rgba(40,120,40,.5);
+	-webkit-transform: rotateY(40deg);
+	-moz-transform: rotateY(40deg);
+	-ms-transform: rotateY(40deg);
+	-o-transform: rotateY(40deg);
+	transform: rotateY(40deg);
+}
+ul[class="ul-3"] li:nth-child(3) div{
+	background-color: rgba(50, 50, 150,.4);
+	-webkit-transform: rotateZ(40deg);
+	-moz-transform:rotateZ(40deg);
+	-ms-transform: rotateZ(40deg);
+	-o-transform: rotateZ(40deg);
+	transform: rotateZ(40deg);
+}
+ul[class="ul-3"] li:nth-child(4) div{
+	background-color: rgba(120,30,30,.5);
+	/*-webkit-transform: perspective(400px) rotate3d(1,.5,.3,40deg);*/
+	-moz-transform: perspective(400px) rotate3d(1,.5,.3,40deg);
+	-ms-transform: perspective(400px) rotate3d(1,.5,.3,40deg);
+	-o-transform: perspective(400px) rotate3d(1,.5,.3,40deg);
+	transform: perspective(400px) rotate3d(1,0,0,40deg);
+}
+ul[class="ul-3"] li:nth-child(5) div{
+	background-color: rgba(123,121,20,.6);
+	-webkit-transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+	-moz-transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+	-ms-transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+	-o-transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+	transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+}
+ul[class="ul-3"] li:nth-child(6) div{
+	background-color: rgba(100,50,105,.6);
+	-webkit-transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+	-moz-transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+	-ms-transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+	-o-transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+	transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+}
+ul[class="ul-3"] li:nth-child(7) div{
+	background-color: rgba(80,100,50,.4);
+	-webkit-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);
+	-moz-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);
+	-ms-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);
+	-o-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateX(-10deg);
+	transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);
+}
+ul[class="ul-3"] li:nth-child(8) div{
+	background-color: rgba(100,50,40,.5);
+	-webkit-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+	-moz-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+	-ms-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+	-o-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+	transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+}
+/* 元素缩放 */
+ul[class="ul-4"] li:nth-child(1) div{
+	background-color: rgba(40,100,30,.5);
+	-webkit-transform: scaleZ(3) rotateZ(40deg);
+	-moz-transform: scaleZ(3) rotateZ(40deg);
+	-ms-transform: scaleZ(3) rotateZ(40deg);
+	-o-transform: scaleZ(3) rotateZ(40deg);
+	transform: scaleZ(3) rotateZ(40deg);
+}
+ul[class="ul-4"] li:nth-child(2) div{
+	background-color: rgba(30,40,50,.4);
+	-webkit-transform: scale3d(.8,.6,.3) rotateZ(40deg);
+	-moz-transform: scale3d(.8,.6,.3) rotateZ(40deg);
+	-ms-transform: scale3d(.8,.6,.3) rotateZ(40deg);
+	-o-transform: scale3d(.8,.6,.3) rotateZ(40deg);
+	transform: scale3d(.8,.6,.3) rotateZ(40deg);
+}
+ul[class="ul-4"] li:nth-child(3) div{
+	background-color: rgba(50,40,10,.5);
+	-webkit-transform: perspective(1000px) scaleX(-1.1) scaleY(-1.2) scaleZ(-3.0) rotateX(40deg);
+	-moz-transform: perspective(1000px) scaleX(-1.1) scaleY(-1.2) scaleZ(-3.0) rotateX(40deg);
+	-ms-transform: perspective(1000px) scaleX(-1.1) scaleY(-1.2) scaleZ(-3.0) rotateX(40deg);
+	-o-transform: perspective(1000px) scaleX(-1.1) scaleY(-1.2) scaleZ(-3.0) rotateX(40deg);
+	transform: perspective(1000px) scaleX(-1.1) scaleY(-1.2) scaleZ(-3.0) rotateX(40deg);
+}
+ul[class='ul-4'] li:nth-child(4) div{
+	background-color: rgba(20,100,100,.4);
+	-webkit-transform: perspective(1000px) scaleX(1.1) scaleX(1.3) scaleY(1.2) scaleY(-1) scaleZ(3) rotateX(40deg);
+	-moz-transform: perspective(1000px) scaleX(1.1) scaleX(1.3) scaleY(1.2) scaleY(-1) scaleZ(3) rotateX(40deg);
+	-ms-transform: perspective(1000px) scaleX(1.1) scaleX(1.3) scaleY(1.2) scaleY(-1) scaleZ(3) rotateX(40deg);
+	-o-transform: perspective(1000px) scaleX(1.1) scaleX(1.3) scaleY(1.2) scaleY(-1) scaleZ(3) rotateX(40deg);
+	transform: perspective(1000px) scaleX(1.1) scaleX(1.3) scaleY(1.2) scaleY(-1) scaleZ(3) rotateX(40deg);
+}
+ul[class='ul-4'] li:nth-child(5) div{
+	background-color: rgba(60,90,10,.6);
+	-webkit-transform: perspective(1000px) scaleX(1.1) scaleX(1.8) scaleX(-0.2) scaleX(2) scaleX(-1) scaleY(1.3) scaleY(-1.3) scaleZ(2) scaleZ(-1.2) rotate(40deg);
+	-moz-transform: perspective(1000px) scaleX(1.1) scaleX(1.8) scaleX(-0.2) scaleX(2) scaleX(-1) scaleY(1.3) scaleY(-1.3) scaleZ(2) scaleZ(-1.2) rotate(40deg);
+	-ms-transform: perspective(1000px) scaleX(1.1) scaleX(1.8) scaleX(-0.2) scaleX(2) scaleX(-1) scaleY(1.3) scaleY(-1.3) scaleZ(2) scaleZ(-1.2) rotate(40deg);
+	-o-transform: perspective(1000px) scaleX(1.1) scaleX(1.8) scaleX(-0.2) scaleX(2) scaleX(-1) scaleY(1.3) scaleY(-1.3) scaleZ(2) scaleZ(-1.2) rotate(40deg);
+	transform: perspective(1000px) scaleX(1.1) scaleX(1.8) scaleX(-0.2) scaleX(2) scaleX(-1) scaleY(1.3) scaleY(-1.3) scaleZ(2) scaleZ(-1.2) rotate(40deg);
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="explain">
+		<h3><b>transform：</b>用来设置元素的变换，取值有：</h3>
+		<p>
+			<span class="f-red">matrix(a,b,c,d,e,f)</span> | 
+			<span class="f-red">translate(x,y)</span> | 
+			<span class="f-red">translateX(x)</span> | 
+			<span class="f-red">translateY(y)</span> | 
+			<span class="f-red">rotate(deg)</span> | 
+			<span class="f-red">scale(x,y)</span> | 
+			<span class="f-red">scaleX(x)</span> | 
+			<span class="f-red">scaleY(y)</span> | 
+			<span class="f-red">skew(x,y)</span> | 
+			<span class="f-red">skewX(x)</span> | 
+			<span class="f-red">skewY(y)</span>
+		</p>
+	</div>
+	<dl class="detail-list">
+		<dt class="detail-list-head">transform : matrix; 矩阵</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-1">
+				<li><div><span>transform:matrix(1,0,0,1,30,30)</span></div></li>
+				<li><div><span>transform:matrix(1.5,0,0,1,0,0)</span></div></li>
+				<li><div><span>transform:matrix(1,0,0,1.2,0,0)</span></div></li>
+				<li><div><span>transform:matrix(1,0.5,0,1,0,0)</span></div></li>
+				<li class="li-6"><div><span>transform:matrix(1,0,1,1,0,0)</span></div></li>
+				<li><div><span>transform:matrix(1.2,0,0,1.2,0,0)</span></div></li>
+				<li><div><span>transform:matrix(1,0.5,0.5,1,0,0)</span></div></li>
+				<li><div><span>transform:matrix(0.5,0.3,0.3,0.5,50,-50)</span></div></li>
+			</ul>
+<pre data-title="HTML" data-skin="1" data-height="300">
+
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+
+</pre>
+			<div class="explain">
+				<h4>matrix(a,b,c,d,e,f)：使用矩阵来设置元素的变换；</h4>
+				<p>a：表示左右缩放；d：表示上下缩放；取值为数字可以为负数或小数。0.5表示缩小50%；-2负数表示把元素翻转后在放大1倍。默认值为1。和scale表示效果相同。</p>
+				<p>b：表示上下扭曲。c：表示左右扭曲；取值为数字可以为负数或者小数。默认值为0。和skew表示效果一样。</p>
+				<p>e：表示元素x轴移动；f：表示元素y轴移动。取值为数字不加单位。但是表现以像素呈现。可以为负数表示相反方向移动。默认值为0。30表示像右或向下移动30像素。-30表示向左或向上移动30像素。</p>
+			</div>
+		</dd>
+	</dl>
+
+	<dl class="detail-list">
+		<dt class="detail-list-head">transform : translate; 平移</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-2">
+				<li><div><span>li{perspective:800; perspective-origin:50% 50%;}<br/>li div{transform:translate3d(10px,1.5em,2ex);}</span></div></li>
+				<li><div><span>li{perspective:800; perspective-origin:50% 50%;}<br/>li div{transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);}</span></div></li>
+				<li><div><span>li div{transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);}</span></div></li>
+				<li><div><span>li div{transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);}</span></div></li>
+				<li><div><span>li div{perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0)}</span></div></li>
+				<li><div><span>li div{transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);}</span></div></li>
+			</ul>
+<pre data-title="HTML" data-skin="1">
+&lt;ul class=&quot;ul-2&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;li{perspective:800; perspective-origin:50% 50%;}&lt;br/&gt;li div{transform:translate3d(10px,1.5em,2ex);}&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;li{perspective:800; perspective-origin:50% 50%;}&lt;br/&gt;li div{transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);}&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;li div{transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);}&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;li div{transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);}&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;li div{perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0)}&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;li div{transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);}&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/**translate3d：设置元素在3d的环境下，上下左右前后位置的移动，可以使用多种写法的形式来定义，也可以用不同的单位来定义**/</span>
+ul[class='ul-2'] li:nth-child(1),ul[class='ul-2'] li:nth-child(2){
+	<span class="note">/**perspective：用来定义3D元素距视图的距离，以像素计,同时可以省略px单位。该属性允许您改变3D元素查看3D元素的视图**/</span>
+	-webkit-perspective: 800;
+	-moz-perspective:800;
+	-ms-perspective:800;
+	-o-perspective:800;
+	perspective:800;
+	-webkit-perspective-origin:50% 50%;
+	-moz-perspective-origin:50% 50%;
+	-ms-perspective-origin:50% 50%;
+	perspective-origin:50% 50%;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+<span class="note">transform:translate3d(x,y,z)使用translate3d来设置元素的3d位置移动,表示元素在x轴上向右移动10像素，元素在y轴上向下移动1.5em（30像素），元素在z轴上向外移动2ex（10像素）</span>
+ul[class='ul-2'] li:nth-child(1) div{
+	font-size:20px;
+	line-height:24px;
+	background-color:rgba(20,20,2,0.5);
+	-moz-transform:translate3d(10px,1.5em,2ex); 
+	-webkit-transform:translate3d(10px,1.5em,2ex);
+	-ms-transform:translate3d(10px,1.5em,2ex);
+	-o-transform:translate3d(10px,1.5em,2ex);
+	transform:translate3d(10px,1.5em,2ex);
+}
+<span class="note">同时也可以把三个方向分开来写计，transform:translateX() translateY() translateZ();通过设置不同方向的参数来控制元素在三个方向的移动位置。</span>
+ul[class='ul-2'] li:nth-child(2) div{
+	font-size:16px;
+	background-color:rgba(20,20,2,0.5);
+	-webkit-transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+	-moz-transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+	-ms-transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+	-o-transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+	transform:translateX(0.84rem) translateY(2.1vw) translateZ(2.3vh);
+}
+<span class="note">也可以把perspective写到元素本身上用函数的形式</span>
+ul[class='ul-2'] li:nth-child(3) div{
+	font-size:18px;
+	background-color:rgba(220,220,20,0.9);
+	-webkit-transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+	-moz-transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+	-ms-transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+	-o-transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+	transform:perspective(800px) translateX(0.3cm) translateY(8mm) translateZ(0.2in);
+}
+<span class="note">可以使用混合的方式来定义3d平移，多种方式连续使用，相同属性的属性值相加后现实。</span>
+ul[class="ul-2"] li:nth-child(4) div{
+	background-color:rgba(0,0,255,0.5);
+	-webkit-transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+	-moz-transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+	-o-transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+	-ms-transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+	transform: perspective(800px) translate3d(10.5pt, 10pc, 35px) translate3d(-2pt, -5pc, -15px) translateY(-3.1pc);
+}
+ul[class="ul-2"] li:nth-child(5) div{
+	font-size: 14px;
+	-webkit-transform: perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0);
+	-moz-transform: perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0);
+	-ms-transform: perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0);
+	-o-transform: perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0, 0);
+	transform:perspective(800px) translate3d(1px, 10px, 10px) translate3d(2px, 5px, 0) translate3d(3px, 10px, 0) translate3d(4px, 15px, 0) translate3d(5px, -10px, 0) translate3d(-5px, 0 ,0);
+} 
+ul[class="ul-2"] li:nth-child(6) div{
+	font-size: 10px;
+	-webkit-transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+	-moz-transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+	-ms-transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+	-o-transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+	transform: perspective(800px) perspective(600px) perspective(400px) perspective(900px) translateX(5px) translateX(10px) translateX(15px) translateY(15px) translateY(10px) translateY(5px) translateZ(5px) translateZ(10px) translateZ(15px) translate3d(5px, 5px, 5px) translate3d(10px, 10px, 10px) translate3d(15px, 15px, 15px);
+}
+</pre>
+			<div class="explain">
+				<h4>一、translate3d(x,y,z)：表示元素左右上下前后位移。参数x取正值表示元素向右位移，取负值表示元素向左位移。y取正值表示元素向下位移动，取负值表示元素向上移动。z取正值表示元素向前位移，取负值表示元素向后位移。</h4>
+				<p>1、x、y、z：可以使用不同单位来设置。</p>
+				<h4>二、translate3d还可以分开单独定义某个方向：</h4>
+				<p>1、translateX(x)：用来设置元素向左或向右位移。</p>
+				<p>2、translateY(y)：表示元素向上或着向下位移。</p>
+				<p>2、translateY(z)：表示元素向前或着向后位移。</p>
+				<h4>三、transform:translate3d(x,y,z) translate3d(x,y,z) translateX(x) translateY(y) translateZ(z);</h4>
+				<p>可以设置多个translate来设置元素的位移，多个属性之间用空格分开，并且相同方向的多个值相加。</p>
+			</div>
+		</dd>
+	</dl>
+
+	<dl class="detail-list">
+		<dt class="detail-list-head">transform : rotate; 旋转</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-3">
+				<li><div><span>transform:rotateX(40deg)</span></div><em class="x"></em></li>
+				<li><div><span>transform:rotateY(40deg)</span></div><em class="y"></em></li>
+				<li><div><span>transform:rotateZ(40deg)</span></div><em class="z"></em></li>
+				<li><div><span>transform:rotate3d(1,.5,.3,40deg)</span></div><em class="x"></em><em class="y"></em><em class="z"></em></li>
+				<li><div><span>transform: perspective(500px) rotateX(40deg) rotateY(20deg) rotateZ(12deg)</span></div><em class="x"></em><em class="y"></em><em class="z"></em></li>
+				<li><div><span>transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);</span></div><em class="x"></em><em class="y"></em><em class="z"></em></li>
+				<li><div><span>transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);</span></div><em class="x"></em><em class="y"></em><em class="z"></em></li>
+				<li><div><span>transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,40deg);</span></div><em class="x"></em><em class="y"></em><em class="z"></em></li>
+			</ul>
+<pre data-title="HTML" data-skin="1">
+&lt;ul class=&quot;ul-3&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:rotateX(40deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:rotateY(40deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:rotateZ(40deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:rotate3d(1,.5,.3,40deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform: perspective(500px) rotateX(40deg) rotateY(20deg) rotateZ(12deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,40deg);&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/**transform：rotate3d用来设置元素的旋转效果，单位取deg（角度），同时也可以分开定义：rotateX(x),rotateY(y),rotateZ(z)**/</span>
+ul[class="ul-3"] li div{
+	font-size: 20px;
+	line-height: 24px;
+}
+<span class="note">/**transform: rotateX(40deg); 元素在3d旋转效果中沿着x轴顺时针旋转40度**/</span>
+ul[class="ul-3"] li:nth-child(1) div{
+	background-color: rgba(20,20,2,.5);
+	-webkit-transform: rotateX(40deg);
+	-moz-transform: rotateX(40deg);
+	-ms-transform: rotateX(40deg);
+	-o-transform: rotateX(40deg);
+	transform: rotateX(40deg);
+}
+<span class="note">/**transform: rotateY(40deg); 元素在3d旋转效果中沿着y轴顺时针旋转40度**/</span>
+ul[class="ul-3"] li:nth-child(2) div{
+	background-color: rgba(40,120,40,.5);
+	-webkit-transform: rotateY(40deg);
+	-moz-transform: rotateY(40deg);
+	-ms-transform: rotateY(40deg);
+	-o-transform: rotateY(40deg);
+	transform: rotateY(40deg);
+}
+<span class="note">/**transform: rotateZ(40deg); 元素在3d旋转效果中沿着z轴顺时针旋转40度**/</span>
+ul[class="ul-3"] li:nth-child(3) div{
+	background-color: rgba(50, 50, 150,.4);
+	-webkit-transform: rotateZ(40deg);
+	-moz-transform:rotateZ(40deg);
+	-ms-transform: rotateZ(40deg);
+	-o-transform: rotateZ(40deg);
+	transform: rotateZ(40deg);
+}
+<span class="note">/**transform: perspective(400px) rotate3d(1,.5,.3,40deg); 元素在3d旋转效果中沿着x轴顺时针旋转40度，沿y轴顺时针旋转40度的50%（20度），沿z轴顺时针旋转40度的30%(12度)**/</span>
+ul[class="ul-3"] li:nth-child(4) div{
+	background-color: rgba(120,30,30,.5);
+	-webkit-transform: perspective(400px) rotate3d(1,.5,.3,40deg);
+	-moz-transform: perspective(400px) rotate3d(1,.5,.3,40deg);
+	-ms-transform: perspective(400px) rotate3d(1,.5,.3,40deg);
+	-o-transform: perspective(400px) rotate3d(1,.5,.3,40deg);
+	transform: perspective(400px) rotate3d(1,.5,.3,40deg);
+}
+<span class="note">/**通过分开设置不同的方向来设置元素的旋转效果**/</span>
+ul[class="ul-3"] li:nth-child(5) div{
+	background-color: rgba(123,121,20,.6);
+	-webkit-transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+	-moz-transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+	-ms-transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+	-o-transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+	transform: perspective(400px) rotateX(40deg) rotateY(20deg) rotateZ(12deg);
+}
+<span class="note">/**也可以定义多个rotate3d()效果,每一个定义的3d转换都是在第一个转换完的基础上再次进行3d转换。**/</span>
+ul[class="ul-3"] li:nth-child(6) div{
+	background-color: rgba(100,50,105,.6);
+	-webkit-transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+	-moz-transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+	-ms-transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+	-o-transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+	transform: perspective(400px) rotate3d(.5,.3,.2,50deg) rotate3d(.6,.3,.3,20deg);
+}
+<span class="note">/**分开定义属性,也可以定义多个同样的属性每个属性之间用空格分开。**/</span>
+ul[class="ul-3"] li:nth-child(7) div{
+	background-color: rgba(80,100,50,.4);
+	-webkit-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);
+	-moz-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);
+	-ms-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);
+	-o-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateX(-10deg);
+	transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotateX(-50deg) rotateY(-50deg) rotateZ(-10deg);
+}
+<span class="note">/**混合定义可以分开定义每个方向的旋转度数也可以同时使用rotate3d来一起定义，多个属性定义之间的效果是在已经旋转变换的基础上继续执行。**/</span>
+ul[class="ul-3"] li:nth-child(8) div{
+	background-color: rgba(100,50,40,.5);
+	-webkit-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+	-moz-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+	-ms-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+	-o-transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+	transform: perspective(1000px) rotateX(-10deg) rotateY(20deg) rotateZ(30deg) rotate3d(1,.4,.5,60deg);
+}
+</pre>
+			<div class="explain">
+				<h4>一、transform:rotate3d(x,y,z,a);：用来设置元素在3维空间的旋转效果。括号中有四个值分别代表：x：表示元素沿x轴旋转参数a的百分比度数，取值为0-1之间的数，1表示100%，0表示0%。y：表示元素沿y轴旋转参数a的百分比度数。z：表示元素沿z轴旋转参数a的百分比度数。a：参考值，取值为度数，用来表示x、y、z轴都依照此值来取各自的比例值。</h4>
+				<p>1、rotate3d(.5,.3,.2,50deg)：表示元素沿x轴顺时针旋转25度，沿y轴顺时针旋转15度，沿z轴方向顺时针旋转10度。</p>
+				<p>2、rotate3d(1,0.5,.6,-50deg)：表示元素沿x轴逆时针旋转50度，沿y轴逆时针旋转25度，沿z轴方向逆时针旋转30度。</p>
+				<h4>二、transform:rotateX(x) rotateY(y) rotateZ(z);旋转属性也可以分开设置</h4>
+				<p>1、transform:rotateX(30deg) rotateY(-40deg) rotateZ(80deg);元素沿x轴顺时针旋转30度，沿y轴逆时针旋转40度，沿z轴顺时针旋转80度。</p>
+				<h4>三、transform:rotateX(x) rotateX(x) rotateX(x) rotateY(y) rotateY(y) rotateZ(z); 可以一次设置多个同一方向的旋转属之间用空格隔开。</h4>
+				<p>1、transform:rotateX(30deg) rotateX(10deg) rotateX(-10deg) rotateY(10deg) rotateY(-5deg) rotateZ(-5deg); 元素沿着x轴顺时针方向旋转30deg+10deg-10deg=30deg像素。沿着y轴顺时针旋转10deg-5deg=5deg;元素沿z轴逆时针旋转-5deg;</p>
+			</div>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">transform : scale； 放大缩小属性。</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-4">
+				<li><div><span>transform: scaleZ(3) rotateZ(40deg);</span></div></li>
+				<li><div><span>transform: scale3d(.8,.6,.3) rotateZ(40deg);</span></div></li>
+				<li><div><span>transform: perspective(1000px) scaleX(-1.1) scaleY(-1.2) scaleZ(-3.0) rotateX(40deg);</span></div></li>
+				<li><div><span>transform: perspective(1000px) scaleX(1.1) scaleX(1.3) scaleY(1.2) scaleY(-1) scaleZ(3) rotateX(40deg);</span></div></li>
+				<li><div><span>transform: perspective(1000px) scaleX(1.1) scaleX(1.8) scaleX(-0.2) scaleX(2) scaleX(-1) scaleY(1.3) scaleY(-1.3) scaleZ(2) scaleZ(-1.2) rotate(40deg);</span></div></li>
+			</ul>
+<pre data-title="HTML" data-skin="1">
+&lt;ul class=&quot;ul-4&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform: scaleZ(3) rotateZ(40deg);&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform: scale3d(.8,.6,.3) rotateZ(40deg);&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform: perspective(1000px) scaleX(-1.1) scaleY(-1.2) scaleZ(-3.0) rotateX(40deg);&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform: perspective(1000px) scaleX(1.1) scaleX(1.3) scaleY(1.2) scaleY(-1) scaleZ(3) rotateX(40deg);&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform: perspective(1000px) scaleX(1.1) scaleX(1.8) scaleX(-0.2) scaleX(2) scaleX(-1) scaleY(1.3) scaleY(-1.3) scaleZ(2) scaleZ(-1.2) rotate(40deg);&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/*transform:scale：用来设置元素的缩放程度,两个参数必须是数值类型，第一个表示x轴缩放，第二个表示Y轴缩放*/</span>
+<span class="note">/*scale(0.8,0.5)表示元素在原有的基础上缩小到原比例的宽：80%；高50%；*/</span>
+ul[class='ul-4'] li:nth-child(1) div {
+	-moz-transform:scale(0.8,0.5);
+	-webkit-transform:scale(0.8,0.5);
+	-o-transform:scale(0.8,0.5);
+	-ms-transform:scale(0.8,0.5);
+	transform:scale(0.8,0.5);
+}
+<span class="note">/*scale(-1,-1)表示元素在原有的基础上缩小到原比例的宽：200%；高200%；也就是相当于翻转后放大到原尺寸大小。*/</span>
+ul[class='ul-4'] li:nth-child(2) div {
+	-moz-transform:scale(-1,-1);
+	-webkit-transform:scale(-1,-1);
+	-o-transform:scale(-1,-1);
+	-ms-transform:scale(-1,-1);
+	transform:scale(-1,-1);
+}
+<span class="note">/*scale(1.2,1.2)表示元素在原有的基础上放大原比例的宽：20%；高20%；*/</span>
+ul[class='ul-4'] li:nth-child(3) div {
+	background-color:rgba(90,0,90,0.3);
+	-moz-transform:scale(1.2,1.2);
+	-webkit-transform:scale(1.2,1.2);
+	-o-transform:scale(1.2,1.2);
+	transform:scale(1.2,1.2);
+}
+<span class="note">/*scale(2,2)表示元素在原有的基础上放大原比例的宽：100%；高100%；也就是各放大2倍*/</span>
+ul[class='ul-4'] li:nth-child(4) div {
+	background-color:rgba(90,90,0,0.4);
+	-moz-transform:scale(2);
+	-webkit-transform:scale(2);
+	-o-transform:scale(3);
+	-ms-transform:scale(2);
+	transform:scale(2);
+}
+<span class="note">/*scaleY(2)单独设置缩放高度，表示元素在原有的基础上高度放大原比例的2倍；*/</span>
+ul[class='ul-4'] li:nth-child(5) div {
+	background-color:rgba(20,100,200,0.6);
+	-moz-transform:scaleY(2);
+	-webkit-transform:scaleY(2);
+	-o-transform:scaleY(2);
+	-ms-transform:scaleY(2);
+	transform:scaleY(2);
+}
+<span class="note">/*scaleX(2)单独设置缩放高度，表示元素在原有的基础上宽度放大原比例的2倍；*/</span>
+ul[class='ul-4'] li:nth-child(6) div {
+	background-color:rgba(100,20,50,0.8);
+	-moz-transform:scaleX(2);
+	-webkit-transform:scaleX(2);
+	-o-transform:scaleX(2);
+	-ms-transform:scaleX(2);
+	transform:scaleX(2);
+}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">transform : skew; 斜切扭曲</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-5">
+				<li><div><span>transform:skew(10deg,10deg)</span></div></li>
+				<li><div><span>transform:skew(-20deg,-10deg)</span></div></li>
+				<li><div><span>transform:skew(-30deg)</span></div></li>
+				<li><div><span>transform:skew(40deg)</span></div></li>
+				<li><div><span>transform:skewX(50deg)</span></div></li>
+				<li><div><span>transform:skewY(50deg)</span></div></li>
+			</ul>
+<pre data-title="HTML" data-skin="1">
+&lt;ul class=&quot;ul-5&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform&lt;br /&gt;skew&lt;br /&gt;斜切扭曲&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:skew(10deg,10deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:skew(-20deg,-10deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:skew(-30deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:skew(40deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:skewX(50deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:skewY(50deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">transform:skew;用来设置元素上下左右水平扭曲度。取值为数值加单位（deg）度表示，第一个参数水平扭曲，第二个参数垂直扭曲。</span>
+<span class="note">skew(10deg,10deg)表示元素水平和垂直方向平行各扭曲10度</span>
+ul[class=ul-5] li:nth-child(2) div {
+background-color:rgba(20,100,30,0.4);
+-moz-transform:skew(10deg,10deg);
+-webkit-transform:skew(10deg,10deg);
+-o-transform:skew(10deg,10deg);
+-ms-transform:skew(10deg,10deg);
+transform:skew(10deg,10deg);
+}
+<span class="note">skew(-20deg,-10deg)表示元素水平和垂直方向平行各扭曲-20度（也就是向右扭曲），-10度（也就是向上扭曲）</span>
+ul[class=ul-5] li:nth-child(3) div {
+background-color:rgba(0,10,230,0.5);
+-moz-transform:skew(-20deg,-10deg);
+-webkit-transform:skew(-20deg,-10deg);
+-o-transform:skew(-20deg,-10deg);
+-ms-transform:skew(-20deg,-10deg);
+transform:skew(-20deg,-10deg);
+}
+<span class="note">skew(-30deg)取一个参数表示元素只水平方向平行扭曲-30度。</span>
+ul[class=ul-5] li:nth-child(4) div {
+background-color:rgba(20,40,60,0.5);
+-moz-transform:skew(-30deg);
+-webkit-transform:skew(-30deg);
+-o-transform:skew(-30deg);
+-ms-transform:skew(-30deg);
+transform:skew(-30deg);
+}
+<span class="note">skew(40deg)取一个参数表示元素只水平方向平行扭曲40度。</span>
+ul[class=ul-5] li:nth-child(5) div {
+background-color:rgba(200,100,50,0.6);
+-moz-transform:skew(40deg);
+-webkit-transform:skew(40deg);
+-o-transform:skew(40deg);
+-ms-transform:skew(40deg);
+transform:skew(40deg);
+}
+<span class="note">skewY(50deg)用来单独设置Y轴扭曲，表示元素上下水平方向平行扭曲50度。</span>
+ul[class=ul-5] li:nth-child(6) div {
+background-color:rgba(50,100,150,0.7);
+-moz-transform:skewY(50deg);
+-webkit-transform:skewY(50deg);
+-o-transform:skewY(50deg);
+-ms-transfrom:skewY(50deg);
+transform:skewY(50deg);
+}
+<span class="note">skewX(50deg)用来单独设置X轴扭曲，表示元素左右水平方向垂直扭曲50度。</span>
+ul[class=ul-5] li:nth-child(7) div {
+background-color:rgba(100,50,25,0.8);
+-moz-transform:skewX(50deg);
+-webkit-transform:skewX(50deg);
+-o-transform:skewX(50deg);
+-ms-transform:skewX(50deg);
+transform:skew(50deg);
+}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">transform : origin; 旋转中心点</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-6">
+				<li><div><span>transform-origin:10% 10%; transform:rotate(10deg)</span></div><em></em></li>
+				<li><div><span>transform-origin:-10px -50px; transform:rotate(10deg)</span></div><em></em></li>
+				<li><div><span>transform-origin:left top; transform:rotate(20deg)</span></div><em></em></li>
+				<li><div><span>transform-origin:right; transform:rotate(60deg)</span></div><em></em></li>
+				<li><div><span>transform-origin:center bottom; transform:rotate(-30deg)</span></div><em></em></li>
+				<li><div><span>transform-origin:center center; transform:rotate(30deg)</span></div><em></em></li>
+				<li><div><span>transform-origin:50% 50%; transform:rotate(30deg)</span></div><em></em></li>
+			</ul>
+<pre data-title="HTMl" data-skin="1">
+&lt;ul class=&quot;ul-6&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform-origin:10% 10%; transform:rotate(10deg)&lt;/span&gt;&lt;/div&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform-origin:-10px -50px; transform:rotate(10deg)&lt;/span&gt;&lt;/div&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform-origin:left top; transform:rotate(20deg)&lt;/span&gt;&lt;/div&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform-origin:right; transform:rotate(60deg)&lt;/span&gt;&lt;/div&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform-origin:center bottom; transform:rotate(-30deg)&lt;/span&gt;&lt;/div&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform-origin:center center; transform:rotate(30deg)&lt;/span&gt;&lt;/div&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform-origin:50% 50%; transform:rotate(30deg)&lt;/span&gt;&lt;/div&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/*用来设置元素旋转时的圆心位置，默认情况旋转圆点的位置是在元素的中心点，也就是默认值为center center或50% 50%*/</span>
+ul[class=ul-6] li em {
+position:absolute;
+border-radius:5px;
+width:11px;
+height:11px;
+background-color:rgba(10,10,10,0.2);
+z-index:1;
+}
+<span class="note">/*元素的旋转圆点位置在元素本身的左方向10%处和上方向的10%处*/</span>
+ul[class=ul-6] li:nth-child(1) div {
+background-color:rgba(40,200,100,0.5);
+-moz-transform-origin:10% 10%;
+-moz-transform:rotate(10deg);
+-webkit-transform-origin:10% 10%;
+-webkit-transform:rotate(10deg);
+-ms-transform-origin:10% 10%;
+-ms-transform:rotate(10deg);
+-o-transform-origin:10% 10%;
+-o-transform:rotate(10deg);
+transform-origin:10% 10%;
+transform:rotate(10deg);
+}
+<span class="note">/*标记圆点位置*/</span>
+ul[class=ul-6] li:nth-child(1) em {
+left:15px;
+top:15px;
+}
+<span class="note">/*元素的旋转圆点位置在元素外部的左方向10px处和上方向的50px处*/</span>
+ul[class=ul-6] li:nth-child(2) div {
+background-color:rgba(40,200,200,0.5);
+-moz-transform-origin:-10px -50px;
+-moz-transform:rotate(10deg);
+-webkit-transform-origin:-10px -50px;
+-webkit-transform:rotate(10deg);
+-o-transform-origin:-10px -50px;
+-o-transform:rotate(10deg);
+-ms-transform-origin:-10px -50px;
+-ms-transform:rotate(10deg);
+transform-origin:-10px -50px;
+}
+ul[class=ul-6] li:nth-child(2) em {
+left:-5px;
+top:-45px;
+}
+<span class="note">/*元素的旋转圆点位置在元素本身的左方向0点处和上方向的0点处（元素左上角）*/</span>
+ul[class=ul-6] li:nth-child(3) div {
+background-color:rgba(20,130,120,0.6);
+-moz-transform-origin:left top;
+-moz-transform:rotate(-20deg);
+-webkit-transform-origin:left top;
+-webkit-transform:rotate(-20deg);
+-o-transform-origin:left top;
+-o-transform:rotate(-20deg);
+-ms-transform-origin:left top;
+-ms-transform:rotate(-20deg);
+transform-origin:left top;
+transform:rotate(-20deg);
+}
+ul[class=ul-6] li:nth-child(3) em {
+left:-5px;
+top:-5px;
+}
+<span class="note">/*元素的旋转圆点位置在元素本身的右中位置*/</span>
+ul[class=ul-6] li:nth-child(4) div {
+background-color:rgba(10,50,100,0.4);
+-moz-transform-origin:right;
+-moz-transform:rotate(60deg);
+-webkit-transform-origin:right;
+-webkit-transform:rotate(60deg);
+-o-transform-origin:right;
+-o-transform:rotate(60deg);
+-ms-transform-origin:right;
+-ms-transform:rotate(60deg);
+transform-origin:right;
+}
+ul[class=ul-6] li:nth-child(4) em {
+right:-5px;
+top:95px;
+}
+<span class="note">/*元素的旋转圆点位置在元素本身的中下位置*/</span>
+ul[class=ul-6] li:nth-child(5) div {
+background-color:rgba(50,50,100,0.7);
+-moz-transform-origin:center bottom;
+-moz-transform:rotate(-280deg);
+-weikit-transfrom-origin:center bottom;
+-webkit-transform:rotate(-280deg);
+-o-transform-origin:center bottom;
+-o-transform:rotate(-280deg);
+transform-origin:center bottom;
+transfrom:rotate(-280deg);
+}
+ul[class=ul-6] li:nth-child(5) em {
+left:95px;
+bottom:-5px;
+}
+<span class="note">/*元素的旋转圆点位置在元素本身的中间位置，也算是默认位置*/</span>
+ul[class=ul-6] li:nth-child(6) div {
+background-color:rgba(80,10,100,0.6);
+-moz-transform-origin:center center;
+-moz-transform:rotate(-30deg);
+-webkit-transform-origin:center center;
+-webkit-transform:rotate(-30deg);
+-o-transform-origin:center center;
+-o-transform:rotate(-30deg);
+-ms-transform-origin:center center;
+-ms-transform:rotate(-30deg);
+transform-origin:center center;
+transform:rotate(-30deg);
+}
+
+ul[class=ul-6] li:nth-child(6) em {
+left:50%;
+top:50%;
+}
+<span class="note">/*元素的旋转圆点位置在元素本身的中间位置，也算是默认位置*/</span>
+ul[class=ul-6] li:nth-child(7) div {
+background-color:rgba(30,10,100,0.6);
+-moz-transform-origin:50% 50%;
+-moz-transform:rotate(-30deg);
+-webkit-transform-origin:50% 50%;
+-webkit-transform:rotate(-30deg);
+-o-transform-origin:50% 50%;
+-o-transform:rotate(-30deg);
+-ms-transform-origin:50% 50%;
+-ms-transform:rotate(-30deg);
+transform-origin:50% 50%;
+transform:rotate(-30deg);
+}
+
+ul[class=ul-6] li:nth-child(7) em {
+left:50%;
+top:50%;
+}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">综合使用</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-7">
+				<li><div><span>transform:matrix(2,0.5,0.5,2,40,-40);</span></div></li>
+				<li><div><span>transform:translate(20px,40px) scale(1.2,1.2) rotate(-90deg) skew(10deg,20deg)</span></div></li>
+				<li><div><span>transform:translate(40px,20px) scale(0.8,0.5) rotate(30deg) skew(10deg,10deg)</span></div></li>
+				<li><div><span>transform:translateX(50px) translateY(20px) scaleX(0.6) scaleY(0.7) rotate(-20deg) skewX(-20deg) skewY(-30deg)</span></div></li>
+				<li><div><span>transform-origin:10% 10%; transform:rotate(400deg)</span></div><em></em></li>
+			</ul>
+<pre data-title='HTML' data-skin="1">
+&lt;ul class=&quot;ul-7&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:matrix(2,0.5,0.5,2,40,-40);&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:translate(20px,40px) scale(1.2,1.2) rotate(-90deg) skew(10deg,20deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:translate(40px,20px) scale(0.8,0.5) rotate(30deg) skew(10deg,10deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform:translateX(50px) translateY(20px) scaleX(0.6) scaleY(0.7) rotate(-20deg) skewX(-20deg) skewY(-30deg)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transform-origin:10% 10%; transform:rotate(400deg)&lt;/span&gt;&lt;/div&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title='CSS' data-skin="2" data-height="300">
+<span class="note">/**综合使用css3的transform实现多种效果**/</span>
+ul[class=ul-7] li em {
+position:absolute;
+border-radius:5px;
+width:11px;
+height:11px;
+background-color:rgba(10,10,10,0.4);
+z-index:1;
+}
+<span class="note">/*利用transition过渡来实现transform变换的动画效果*/</span>
+ul[class=ul-7] li div {
+-moz-transition:all .5s ease-in .1s;
+-webkit-transition:all .5s ease-in .1s;
+-o-transition:all .5s ease-in .1s;
+-ms-transition:all .5 ease-in .1s;
+transition:all .5s ease-in .1s;
+}
+<span class="note">/*使用matrix设置当鼠标进过的时候使元素：在宽度放大两倍，水平扭曲0.5倍，垂直扭曲0.5倍，高度放大2倍，元素在X轴方向向左平移40像素，元素在Y轴方向向上平移40像素*/</span>
+ul[class=ul-7] li:nth-child(1):hover div {
+background-color:rgba(50,80,100,0.4);
+-moz-transform:matrix(2,0.5,0.5,2,40,-40);
+-webkit-transform:matrix(2,0.5,0.5,2,40,-40);
+-o-transform:matrix(2,0.5,0.5,2,40,-40);
+-ms-transform:matrix(2,0.5,0.5,2,40,-40);
+transform:matrix(2,0.5,0.5,2,40,-40);
+}
+<span class="note">/*分开设置不同属性当鼠标经过的时候使元素：水平方向向左平移20像素，垂直方向向下平移40像素；宽度放大1.2倍，高度放大1.2倍；元素逆时针旋转90度；元素水平扭曲10度，垂直扭曲20度；*/</span>
+ul[class=ul-7] li:nth-child(2):hover div {
+background-color:rgba(50,130,140,0.7);
+-moz-transform:translate(20px,40px) scale(1.2,1.2) rotate(-90deg) skew(10deg,20deg);
+-webkit-transform:translate(20px,40px) scale(1.2,1.2) rotate(-90deg) skew(10deg,20deg);
+-o-transform:translate(20px,40px) scale(1.2,1.2) rotate(-90deg) skew(10deg,20deg);
+-ms-transform:translate(20px,40px) scale(1.2,1.2) rotate(-90deg) skew(10deg,20deg);
+transform:translate(20px,40px) scale(1.2,1.2) rotate(-90deg) skew(10deg,20deg);
+}
+
+ul[class=ul-7] li:nth-child(3):hover div {
+background-color:rgba(130,10,50,0.6);
+-moz-transform:translate(40px,20px) scale(0.8,0.5) rotate(30deg) skew(10deg,10deg);
+-webkit-transform:translate(40px,20px) scale(0.8,0.5) rotate(30deg) skew(10deg,10deg);
+-o-transform:translate(40px,20px) scale(0.8,0.5) rotate(30deg) skew(10deg,10deg);
+-ms-transform:translate(40px,20px) scale(0.8,0.5) rotate(30deg) skew(10deg,10deg);
+transform:translate(40px,20px) scale(0.8,0.5) rotate(30deg) skew(10deg,10deg);
+}
+
+ul[class=ul-7] li:nth-child(4):hover div {
+background-color:rgba(50,60,80,0.7);
+-moz-transform:translateX(50px) translateY(20px) scaleX(0.6) scaleY(0.7) rotate(-20deg) skewX(-20deg) skewY(-30deg);
+-webkit-transform:translateX(50px) translateY(20px) scaleX(0.6) scaleY(0.7) rotate(-20deg) skewX(-20deg) skewY(-30deg);
+-o-transform:translateX(50px) translateY(20px) scaleX(0.6) scaleY(0.7) rotate(-20deg) skewX(-20deg) skewY(-30deg);
+-ms-transform:translateX(50px) translateY(20px) scaleX(0.6) scaleY(0.7) rotate(-20deg) skewX(-20deg) skewY(-30deg);
+transform:translateX(50px) translateY(20px) scaleX(0.6) scaleY(0.7) rotate(-30deg) skewX(-20deg) skewY(-30deg);
+}
+
+ul[class=ul-7] li:nth-child(5) div {
+-moz-transform-origin:10% 10%;
+-webkit-transform-origin:10% 10%;
+-ms-transform-origin:10% 10%;
+-o-transform-origin:10% 10%;
+transform-origin:10% 10%;
+}
+
+ul[class=ul-7] li:nth-child(5):hover div {
+background-color:rgba(40,200,100,0.5);
+-moz-transform:rotate(400deg);
+-webkit-transform:rotate(400deg);
+-ms-transform:rotate(400deg);
+-o-transform:rotate(400deg);
+transform:rotate(400deg);
+}
+
+ul[class=ul-7] li:nth-child(5) em {
+left:15px;
+top:15px;
+}	
+</pre>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

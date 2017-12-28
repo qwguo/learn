@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript在页面的加载方法</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<style type="text/css">
+	.attribute-table{width: 95%;}
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+			<dl class="detail-list">
+				<dt class="detail-list-head">页面加载javascript方法</dt>
+				<dd class="detail-list-body">
+					<div class="explain">
+						<p>如需在 HTML 页面中插入 JavaScript，请使用 &lt;script&gt; 标签，它可被放置在 HTML 页面的 &lt;body&gt; 和 &lt;head&gt; 部分中。脚本代码必须位于 &lt;script&gt; 与 &lt;/script&gt; 标签之间。页面中加载脚本的方法有三种。</p>
+						<ol>
+							<li class="f-red">&lt;script type=&quot;text/javascript&quot; src=&quot;a.js&quot;&gt;&lt;/script&gt;</li>
+							<li class="f-red">&lt;script type=&quot;text/javascript&quot; &gt;alert("这是javascript弹窗！");&lt;/script&gt;</li>
+							<li class="f-red">&lt;a href="javascript:alert('这是javascript弹窗！');"&gt;&lt;/a&gt;</li>
+							<li class="f-red">&lt;span onclick="javascript:alert('这是javascript弹窗！');"&gt;&lt;/span&gt;</li>
+						</ol>
+						<p>其中<b class="f-red">第3</b>和<b class="f-red">第4</b>是同样的意思只是在a链接中可以用这种方式来写。</p>
+						<h1>script标签中的属于：</h1>
+						<table class="public-table attribute-table">
+							<thead>
+								<tr>
+									<th>属性名</th>
+									<th>属性值</th>
+									<th>描述</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>async</td>
+									<td>async</td>
+									<td>规定异步执行脚本（仅适用于外部脚本）。</td>
+								</tr>
+								<tr>
+									<td>defer</td>
+									<td>defer</td>
+									<td>规定当页面已完成解析后，执行脚本（仅适用于外部脚本）。</td>
+								</tr>
+								<tr>
+									<td>src</td>
+									<td>URL</td>
+									<td>规定外部脚本的 URL。</td>
+								</tr>
+								<tr>
+									<td>type</td>
+									<td>MIME-type</td>
+									<td>规定脚本的 MIME 类型。</td>
+								</tr>
+								<tr>
+									<td>language</td>
+									<td>script</td>
+									<td>不赞成使用。规定脚本语言。请使用 type 属性代替它。</td>
+								</tr>
+								<tr>
+									<td>charset</td>
+									<td>charset</td>
+									<td>规定在脚本中使用的字符编码（仅适用于外部脚本）。</td>
+								</tr>
+								<tr>
+									<td>xml:space</td>
+									<td>preserve</td>
+									<td>HTML5 不支持。规定是否保留代码中的空白。</td>
+								</tr>
+							</tbody>
+						</table>
+						<ol>
+							<li>
+								<h3><span class="f-red">async：</span>属性只支持通过src外部引入的脚本，也就是第一种方法。</h3>
+								<p><b class="f-orange">&lt;script type=&quot;text/javascript&quot; src=&quot;a.js&quot; async&gt;&lt;/script&gt;</b>或<b class="f-orange">&lt;script type=&quot;text/javascript&quot; src=&quot;a.js&quot; async=&quot;async&quot;&gt;&lt;/script&gt;</b><br />表示脚本异步加载，脚本以下的页面结构不用等待此脚本文件加载完的情况下可以顺利执行，不会出现浏览器停止网页渲染的现象。它和页面的加载是同步执行的。<a href="async.html" class="f-red" target="_blank">Demo1</a></p>
+								<p><span class="f-red">async：</span>是HTML5新增的属性IE浏览器并不支持他，在IE下可以使用<b class="f-red">defer</b>;</p>
+							</li>
+							<li>
+								<h3><span class="f-red">defer：</span>属性是一个布尔属性，属性只支持通过src外部引入的脚本，也就是第一种方法。</h3>
+								<p><b class="f-orange">&lt;script type=&quot;text/javascript&quot; src=&quot;a.js&quot; defer&gt;&lt;/script&gt;</b>或<b class="f-orange">&lt;script type=&quot;text/javascript&quot; src=&quot;a.js&quot; defer=&quot;defer&quot;&gt;&lt;/script&gt;</b><br />表示脚本异步加载，脚本以下的页面结构不用等待此脚本文件加载完的情况下可以顺利执行，不会出现浏览器停止网页渲染的现象。它和页面的加载是同步执行的。<a href="defer.html" class="f-red" target="_blank">Demo1</a></p>
+								<p><span class="f-red">defer：</span>属性规定是否对脚本执行进行延迟，直到页面加载为止。只有 Internet Explorer 支持 defer 属性。</p>
+							</li>
+							<li>
+								<h3><span class="f-red">src：</span>表示引入外部脚本的地址。</h3>
+							</li>
+							<li>
+								<h3><span class="f-red">type：</span>必选属性，规定脚本的 MIME 类型</h3>
+								<p>type 属性标识 &lt;script&gt; 和 &lt;/script&gt; 标签之间的内容。MIME 类型由两部分组成：媒介类型和子类型。对于 JavaScript，其 MIME 类型是 "text/javascript"。</p>
+							</li>
+							<li>
+								<h3><span class="f-red">charset：</span>属性规定在外部脚本文件中使用的字符编码。</h3>
+								<p class="f-red">&lt;script type=&quot;text/javascript&quot; src=&quot;a.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;</p>
+								<p>charset 属性与 src 属性一起使用，告诉浏览器用来编码这个 javascript 程序的字符集。它的值是任何一个 ISO 标准字符集编码的名称。</p>
+							</li>
+						</ol>
+					</div>
+				</dd>
+			</dl>
+	</div>
+<body>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<title>关于换行的测试</title>
+<script type="text/javascript">
+	var $ = function(obj){
+		return document.getElementById(obj);
+	}
+	var tag = function(pObj,tagName){
+		return pObj.getElementsByTagName(tagName);
+	}
+	window.onload = function(){
+		var blockset = $("blockset");
+		var wordBreak = $("wordBreak");
+		var wordWrap = $("wordWrap");
+		var whiteSpace = $("whiteSpace");
+		var ptag = $("blockArea");
+		var divs = tag(ptag,'div');
+		blockset.onchange = function(){
+			for(var i=0;i<divs.length;i++){
+				divs[i].style.display = this.value;
+				if(this.value=="block"){
+					divs[i].style.float = "left";
+				}else{
+					divs[i].style.float = "none";
+					divs[i].style.verticalAlign = "top";
+				}
+			}
+		};
+		wordBreak.onchange = function(){
+			for(var i=0;i<divs.length;i++){
+				divs[i].style.wordBreak = this.value;
+			}
+		}
+		wordWrap.onchange = function(){
+			for(var i=0; i<divs.length;i++){
+				divs[i].style.wordWrap = this.value;
+			}
+		}
+		whiteSpace.onchange = function(){
+			for(var i=0; i<divs.length; i++){
+				divs[i].style.whiteSpace = this.value;
+			}
+		}
+		/*var nbsps = $("nbsps"),htmls = nbsps.innerHTML;
+		nbsps.innerHTML= htmls.replace(/\&nbsp\;/ig, " ");*/
+	};
+</script>
+<style type="text/css">
+*{padding:0px; margin:0px; list-style:none;}
+.q:after{content:"."; height:0px; clear:both; overflow:hidden;visibility:hidden; display:block;}
+.q{zoom:1;}
+.operate{padding:10px 20px;clear:both;}
+.blockArea,.inlineblockArea,.tableArea{margin-bottom:50px; border-bottom:3px solid #c00;}
+.number,.letter,.englist,.chinese,.nbsps{width:200px; height:150px; border:1px solid #aaa; background-color:#eee; margin:10px;}
+.blockArea div{}
+	.blockArea .img img{width:300px; height:100px;}
+.inlineblockArea{border-top:1px solid #c00; display:none;}
+.inlineblockArea span{display:inline-block; word-break:break-all;}
+/*.tableArea{display:none;}*/
+
+</style>
+</head>
+
+<body>
+<div class="operate">
+	<label>block or inline-block</label>
+	<select id="blockset">
+		<option value="block">block</option>
+		<option value="inline-block">inline-block</option>
+	</select>
+	<label>word-break:</label>
+	<select id="wordBreak">
+	<option value="normal">normal</option>
+	<option value="keep-all">keep-all</option>
+	<option value="break-all">break-all</option>
+	</select>
+	<label>word-wrap:</label>
+	<select id="wordWrap">
+		<option value="normal">normal</option>
+		<option value="break-word">break-word</option>
+	</select>
+	<label>white-space:</label>
+	<select id="whiteSpace">
+		<option value="normal">normal</option>
+		<option value="nowrap">nowrap</option>
+		<option value="pre">pre</option>
+		<option value="pre-line">pre-line</option>
+		<option value="pre-wrap">pre-wrap</option>
+	</select>
+</div>
+<div class="blockArea q" id="blockArea">
+	<div class="number">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+	</div>
+	<div class="letter">abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+	</div>
+	<div class="nbsps" id="nbsps">This&nbsp;is&nbsp;a&nbsp;common&nbsp;problem&nbsp;at&nbsp;most&nbsp;offices&nbsp;today.&nbsp;Everything&nbsp;seems&nbsp;to&nbsp;be&nbsp;in&nbsp;a&nbsp;state&nbsp;of&nbsp;flux.&nbsp;industries&nbsp;are&nbsp;being&nbsp;disrupted&nbsp;by&nbsp;newcomers&nbsp;and&nbsp;tech&nbsp;startups.&nbsp;Companies&nbsp;need&nbsp;to&nbsp;change,&nbsp;management&nbsp;knows&nbsp;it,&nbsp;and&nbsp;they&nbsp;are&nbsp;looking&nbsp;for&nbsp;fresh&nbsp;ideas.</div>
+	<div class="englist">Everyone deserves not just, to survive, but to live.--Steve McQueen. Everyone deserves not just to survive, but to live.--Steve McQueen</div>
+	<div class="chinese">这是中文文字为了测行行，这是中文文字为了测试换行这是中文文字为了测试换行这是中文文字为了测试换行，这是中文文字为了测试换行这是中文文字为了测试换行这是中文文字为了测试换行。这是中文文字为了</div>
+	<div class="img"><img src="/public_image/s1.jpg" /><img src="/public_image/s2.jpg" /><img src="/public_image/s3.jpg" /><img src="/public_image/s4.jpg" /><img src="/public_image/s3.jpg" /><img src="/public_image/s4.jpg" /></div>
+</div>
+<div class="inlineblockArea">
+	<span class="number">
+		1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+	</span>
+	<span class="letter">
+	abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+	</span>
+	<span class="englist">Everyone deserves not just, to survive, but to live.--Steve McQueen. Everyone deserves not just to survive, but to live.--Steve McQueen</span>
+	<span class="chinese">这是中文文字为了测行行，   这    是中文文字为了测试换行这是中文文字为了测试换行这是中文文字为了测试换行，这是中文文字为了测试换行这是中文文字为了测试换行这是中文文字为了测试换行。</span>
+</div>
+<div class="tableArea">
+	<table class="number"><tr><td>
+		1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+	</td></tr></table>
+	<table class="letter"><tr><td>
+	abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+	</td></tr></table>
+	<table class="englist"><tr><td>Everyone deserves not just, to survive, but to live.--Steve McQueen. Everyone deserves not just to survive, but to live.--Steve McQueen</td></tr></table>
+	<table class="chinese"><tr><td>这是中文文字为了测行行，   这    是中文文字为了测试换行这是中文文字为了测试换行这是中文文字为了测试换行，这是中文文字为了测试换行这是中文文字为了测试换行这是中文文字为了测试换行。这是中文文字为了测试换行这是中文文字为了测试换行这是中文文字为了测试换行，行</td></tr></table>
+</div>
+
+</body>
+</html>

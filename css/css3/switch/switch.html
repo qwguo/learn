@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3开关效果</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<link rel="stylesheet" href="switch.css">
+<script type="text/javascript">
+window.onload = function(){
+	var apple = document.getElementById("apple"),
+			li = apple.getElementsByTagName("li");
+	for(var i=0;i<li.length;i++){
+		li[i].onclick = function(){
+			if(!this.className){ 
+				this.className = "hover";
+			}else{
+				this.className = "";
+			}
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">仿苹果的开关1,通过transition来设置</dt>
+		<dd class="detail-list-body">
+			<ul class="apple" id="apple">
+				<li><span></span><b class="on-b">On</b><b class="off-b">OFF</b><em></em></li>
+				<li><span></span><b class="on-b">On</b><b class="off-b">OFF</b><em></em></li>
+				<li><span></span><b class="on-b">On</b><b class="off-b">OFF</b><em></em></li>
+				<li><span></span><b class="on-b"></b><b class="off-b"></b><em></em></li>
+			</ul>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">代码</dt>
+		<dd class="detail-list-body">
+<pre data-title="HTML" data-skin="1">
+&lt;ul class=&quot;apple&quot;&gt;
+	&lt;li&gt;&lt;b class=&quot;on-b&quot;&gt;On&lt;/b&gt;&lt;b class=&quot;off-b&quot;&gt;OFF&lt;/b&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;b class=&quot;on-b&quot;&gt;On&lt;/b&gt;&lt;b class=&quot;off-b&quot;&gt;OFF&lt;/b&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;b class=&quot;on-b&quot;&gt;On&lt;/b&gt;&lt;b class=&quot;off-b&quot;&gt;OFF&lt;/b&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/**仿苹果的开关**/</span>
+ul,li{list-style:none;}
+ul{overflow:hidden;}
+	ul.apple li{
+		height:30px; 
+		width:60px; 
+		margin-bottom:10px; 
+		border-radius:20px/20px; 
+		background-color:#fff; 
+		position:relative; 
+		cursor:pointer; 
+		-webkit-transition:all .4s ease;
+		-moz-transition:all .4s ease;
+		-ms-transition:all .4s ease;
+		-o-transition:all .4s ease;
+		transition:all .4s ease;
+		float:left;
+		margin-right:20px;
+		background-color: #E1E1E1;
+	}
+	ul.apple li span,ul.apple li b,ul.apple li em{
+		position: absolute;
+	}
+	ul.apple li span{
+		background-color: #fff;
+		left: 2px;
+		top: 2px;
+		right: 2px;
+		bottom: 2px;
+		border-radius: 20px;
+		z-index: 0;
+		opacity: 1;
+		-webkit-transition:all .2s ease;
+		-moz-transition:all .2s ease;
+		-ms-transition:all .2s ease;
+		-o-transition:all .2s ease;
+		transition:all .2s ease;
+	}
+	ul.apple li b{
+		font-family:arial;
+		font-size:12px;
+		color:#aaa;
+		top: 7px;
+		z-index: 1;
+		opacity: 1;
+		-webkit-transition:all .1s ease;
+		-moz-transition:all .1s ease;
+		-ms-transition:all .1s ease;
+		-o-transition:all .1s ease;
+		transition:all .1s ease;
+	}
+	ul.apple li .on-b{
+		left: 7px;
+		opacity: 0;
+	}
+	ul.apple li .off-b{
+		right:7px;
+		opacity: 1;
+	}
+	ul.apple li em{
+		position:absolute; 
+		z-index: 2;
+		width:26px; 
+		height:26px; 
+		left:30px; 
+		margin-left:-28px; 
+		top:2px;
+		background-color:#fff;
+		border-radius:30px; 
+		box-shadow:0 1px 2px rgba(0, 0, 0, 0.5);
+		-webkit-transition:all .6s ease;
+		-moz-transition:all .6s ease;
+		-ms-transition:all .6s ease;
+		-o-transition:all .6s ease;
+		transition:all .6s ease;
+	}
+	ul.apple li:nth-child(4) .off-b{
+		width: 8px; 
+		height: 8px;
+		top: 9px;
+		border: 2px solid #9A9A9A; 
+		border-radius: 50%; 
+	}
+	ul.apple li:nth-child(4) .on-b{
+		width: 2px; 
+		height: 12px;
+		left: 15px;
+		top: 9px; 
+		background-color: #ccc; 
+	}
+
+	ul.apple li.hover{background-color:#4AD562;}
+	ul.apple li:nth-child(2).hover{background-color:#37A8ED;}
+	ul.apple li:nth-child(3).hover{background-color:#ED4646;}
+	ul.apple li.hover em{left:100%;}
+	ul.apple li.hover b{color: #fff;}
+	ul.apple li.hover b.off-b{opacity:0;}
+	ul.apple li.hover b.on-b{opacity:1;}
+	ul.apple li.hover span{
+		left: 50%;
+		top: 50%;
+		right: 50%;
+		bottom: 50%;
+		opacity: 0;
+	}
+</pre>
+<pre data-title="JavaScript" data-skin="3" data-height="300">
+window.onload = function(){
+	var li = document.getElementsByTagName("li");
+	for(var i=0;i&gt;li.length;i++){
+		li[i].onclick = function(){
+			if(!this.className){ 
+				this.className = "hover";
+			}else{
+				this.className = "";
+			}
+		}
+	}
+}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">仿苹果的开关2，通过animation设置动画</dt>
+		<dd class="detail-list-body">
+			<ul class="apple-2">
+				<li class="apple-switch"><input type="checkbox"><span></span><b></b></li>
+				<li class="apple-switch"><input type="checkbox" checked="checked"><span></span><b></b></li>
+				<li class="apple-switch"><input type="checkbox" disabled="disabled"><span></span><b></b></li>
+				<li class="apple-switch"><input type="checkbox" checked="checked" disabled="disabled"><span></span><b></b></li>
+			</ul>
+<pre data-skin="1" data-title="HTML">
+&lt;ul class=&quot;apple-2&quot;&gt;
+	&lt;li class=&quot;apple-switch&quot;&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;b&gt;&lt;/b&gt;&lt;/li&gt;
+	&lt;li class=&quot;apple-switch&quot;&gt;&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;b&gt;&lt;/b&gt;&lt;/li&gt;
+	&lt;li class=&quot;apple-switch&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled=&quot;disabled&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;b&gt;&lt;/b&gt;&lt;/li&gt;
+	&lt;li class=&quot;apple-switch&quot;&gt;&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; disabled=&quot;disabled&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;b&gt;&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-skin="2" data-title="CSS" data-height="300">
+.apple-switch{
+  float: left;
+  margin: 0 30px 10px 0;
+  width: 120px;
+  height: 65px;
+  position: relative;
+}
+.apple-switch input,
+.apple-switch span,
+.apple-switch span::after,
+.apple-switch span::before,
+.apple-switch b,
+.apple-switch b::after,
+.apple-switch b::before{
+  position: absolute;
+}
+.apple-switch input,.apple-switch span,.apple-switch b{
+  width: 100%;
+  height: 100%;
+  background:none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+.apple-switch input{
+  z-index: 3;
+  opacity: 0;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.apple-switch span{
+  /*z-index: 1;*/
+}
+.apple-switch b{
+  /*z-index: 2;*/
+}
+.apple-switch span::after,.apple-switch span::before,.apple-switch b::after,.apple-switch b::before{
+  content:'';
+  transition: all 0.2s ease;
+}
+.apple-switch span::before,.apple-switch span::after{
+  border-radius: 40px;
+  background-color: #fff;
+}
+.apple-switch span::before{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 3px solid #E5E5E5;
+  z-index: 1;
+}
+.apple-switch span::after{
+  top:4px;
+  left:64px;
+  width:56px;
+  height:56px;
+  margin-left: -60px;
+  box-shadow:0px 4px 8px rgba(0,0,0,0.3),0px 0px 2px rgba(0,0,0,0.3);
+  -webkit-animation: kickback 0.4s;-webkit-animation-fill-mode:both;
+  -moz-animation: kickback 0.4s;-moz-animation-fill-mode:both;
+  z-index: 3;
+}
+.apple-switch b::before,.apple-switch b::after{
+  z-index: 2;
+  border-color: #9a9a9a;
+  border-style: solid;
+}
+.apple-switch b::before{
+  border-width: 0 0 0 2px;
+  left: 25px;
+  top: 19px;
+  height: 29px;
+  opacity: 0;
+  /*display: none;*/
+}
+.apple-switch b::after{
+  border-width: 2px;
+  right: 20px;
+  top: 17px;
+  width: 25px;
+  height: 25px;
+  border-radius: 18px;
+  opacity: 1;
+  /*display: block;*/
+}
+.apple-switch input:active + span::after{
+  padding: 0 3px;
+}
+.apple-switch input:active:checked + span::after{
+  margin-left:-65px;
+}
+.apple-switch input:checked + span::after{
+  left: 100%;
+  -webkit-animation: kickback_checked 0.4s;-webkit-animation-fill-mode:both;
+  -moz-animation: kickback_checked 0.4s;-moz-animation-fill-mode:both;
+}
+.apple-switch input:checked + span::before{
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border-style:solid;
+  border-color:#4CD864;
+  border-width: 30px 32px 32px 84px;
+}
+.apple-switch input:checked + span + b::before{
+  opacity: 1;
+  /*display: block;*/
+}
+.apple-switch input:checked + span + b::after{
+  opacity: 0;
+  /*display: none;*/
+}
+@-webkit-keyframes kickback {
+  0% {-webkit-transform:translateX(0);}
+  70% {-webkit-transform:translateX(-3px);}
+  100% {-webkit-transform:translateX(0);}
+}
+@-moz-keyframes kickback {
+  0% {-moz-transform:translateX(0);}
+  70% {-moz-transform:translateX(-3px);}
+  100% {-moz-transform:translateX(0);}
+}
+@-webkit-keyframes kickback_checked {
+  0% {-webkit-transform:translateX(0);}
+  70% {-webkit-transform:translateX(3px);}
+  100% {-webkit-transform:translateX(0);}
+}
+@-moz-keyframes kickback_checked {
+  0% {-moz-transform:translateX(0);}
+  70% {-moz-transform:translateX(3px);}
+  100% {-moz-transform:translateX(0);}
+}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">仿灯的开关</dt>
+		<dd class="detail-list-body">
+			<ul>
+				<li class="light-switch"><input type="checkbox"><span></span><b></b></li>
+				<li class="light-switch"><input type="checkbox" checked="checked"><span></span><b></b></li>
+				<li class="light-switch"><input type="checkbox" disabled="disabled"><span></span><b></b></li>
+				<li class="light-switch"><input type="checkbox" checked="checked" disabled="disabled"><span></span><b></b></li>
+			</ul>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>目标伪类手风琴制作</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+.menu{
+	width:300px;
+	margin: 20px auto;
+}
+.menu dl{
+	margin:0;
+}
+.menu dt{
+	height:40px;
+	line-height: 40px;
+	padding-left: 10px;
+	background-color:#eee;
+	margin-bottom:10px;
+	background-image: -webkit-linear-gradient(top,#FECF4B,#E86802);
+	background-image: -moz-linear-gradient(top,#FECF4B,#E86802);
+	background-image: -ms-linear-gradient(top,#FECF4B,#E86802);
+	background-image: -o-linear-gradient(top,#FECF4B,#E86802);
+	background-image: linear-gradient(top,#FECF4B,#E86802);
+	position: relative;
+}
+.menu dt a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+	display: block;
+
+}
+.menu dt em{
+	position: absolute;
+	right:10px;
+	top:15px;
+	width: 0px;
+	height: 0px;
+	font-size:0px;
+	border-width:5px 0px 5px 5px;
+	border-style:solid;
+	border-color:transparent transparent transparent #fff;
+	-webkit-transition: all 0.1s ease-in;
+		 -moz-transition: all 0.1s ease-in;
+		 	-ms-transition: all 0.1s ease-in;
+			 -o-transition: all 0.1s ease-in;
+					transition: all 0.1s ease-in;
+}
+.menu dd{
+	height: 0px;
+	overflow:hidden;
+	margin:0;
+	opacity:0;
+	-webkit-transition: height 0.5s ease-in;
+		 -moz-transition: height 0.5s ease-in;
+		 	-ms-transition: height 0.5s ease-in;
+			 -o-transition: height 0.5s ease-in;
+					transition: height 0.5s ease-in;
+}
+.menu :target em{
+	-webkit-transform: rotate(90deg);
+		 -moz-transform: rotate(90deg);
+		 	-ms-transform: rotate(90deg);
+			 -o-transform: rotate(90deg);
+					transform: rotate(90deg);
+}
+.menu :target dd{
+	opacity:1;
+	margin-bottom: 10px;	
+	border: 1px solid #ccc; 
+	padding:10px;
+	background-color:moccasin; 
+	color:mediumaquamarine;
+	font-size:20px; 
+	font-weight:bold;
+	height: 100px;
+}
+	
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">效果展示：</dt>
+		<dd class="detail-list-body">
+			<div class="menu">
+				<dl id="target_1">
+					<dt><a href="#target_1">这是标题1</a><em></em></dt>
+					<dd>这是内容1</dd>
+				</dl>
+				<dl id="target_2">
+					<dt><a href="#target_2">这是标题2</a><em></em></dt>
+					<dd>这是内容2</dd>
+				</dl>
+				<dl id="target_3">
+					<dt><a href="#target_3">这是标题3</a><em></em></dt>
+					<dd>这是内容3</dd>
+				</dl>
+				<dl id="target_4">
+					<dt><a href="#target_4">这是标题4</a><em></em></dt>
+					<dd>这是内容4</dd>
+				</dl>
+				<dl id="target_5">
+					<dt><a href="#target_5">这是标题5</a><em></em></dt>
+					<dd>这是内容5</dd>
+				</dl>
+				<dl id="target_6">
+					<dt><a href="#target_6">这是标题6</a><em></em></dt>
+					<dd>这是内容6</dd>
+				</dl>
+			</div>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">代码展示：</dt>
+		<dd class="detail-list-body">
+<pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;menu&quot;&gt;
+	&lt;dl id=&quot;target_1&quot;&gt;
+		&lt;dt&gt;&lt;a href=&quot;#target_1&quot;&gt;这是标题1&lt;/a&gt;&lt;em&gt;&lt;/em&gt;&lt;/dt&gt;
+		&lt;dd&gt;这是内容1&lt;/dd&gt;
+	&lt;/dl&gt;
+	&lt;dl id=&quot;target_2&quot;&gt;
+		&lt;dt&gt;&lt;a href=&quot;#target_2&quot;&gt;这是标题2&lt;/a&gt;&lt;em&gt;&lt;/em&gt;&lt;/dt&gt;
+		&lt;dd&gt;这是内容2&lt;/dd&gt;
+	&lt;/dl&gt;
+	&lt;dl id=&quot;target_3&quot;&gt;
+		&lt;dt&gt;&lt;a href=&quot;#target_3&quot;&gt;这是标题3&lt;/a&gt;&lt;em&gt;&lt;/em&gt;&lt;/dt&gt;
+		&lt;dd&gt;这是内容3&lt;/dd&gt;
+	&lt;/dl&gt;
+	&lt;dl id=&quot;target_4&quot;&gt;
+		&lt;dt&gt;&lt;a href=&quot;#target_4&quot;&gt;这是标题4&lt;/a&gt;&lt;em&gt;&lt;/em&gt;&lt;/dt&gt;
+		&lt;dd&gt;这是内容4&lt;/dd&gt;
+	&lt;/dl&gt;
+	&lt;dl id=&quot;target_5&quot;&gt;
+		&lt;dt&gt;&lt;a href=&quot;#target_5&quot;&gt;这是标题5&lt;/a&gt;&lt;em&gt;&lt;/em&gt;&lt;/dt&gt;
+		&lt;dd&gt;这是内容5&lt;/dd&gt;
+	&lt;/dl&gt;
+	&lt;dl id=&quot;target_6&quot;&gt;
+		&lt;dt&gt;&lt;a href=&quot;#target_6&quot;&gt;这是标题6&lt;/a&gt;&lt;em&gt;&lt;/em&gt;&lt;/dt&gt;
+		&lt;dd&gt;这是内容6&lt;/dd&gt;
+	&lt;/dl&gt;
+&lt;/div&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+.menu{
+	width:300px;
+	margin: 20px auto;
+}
+.menu dl{
+	margin:0;
+}
+.menu dt{
+	height:40px;
+	line-height: 40px;
+	padding-left: 10px;
+	background-color:#eee;
+	margin-bottom:10px;
+	background-image: -webkit-linear-gradient(top,#FECF4B,#E86802);
+	background-image: -moz-linear-gradient(top,#FECF4B,#E86802);
+	background-image: -ms-linear-gradient(top,#FECF4B,#E86802);
+	background-image: -o-linear-gradient(top,#FECF4B,#E86802);
+	background-image: linear-gradient(top,#FECF4B,#E86802);
+	position: relative;
+}
+.menu dt a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+	display: block;
+
+}
+.menu dt em{
+	position: absolute;
+	right:10px;
+	top:15px;
+	width: 0px;
+	height: 0px;
+	font-size:0px;
+	border-width:5px 0px 5px 5px;
+	border-style:solid;
+	border-color:transparent transparent transparent #fff;
+	-webkit-transition: all 0.1s ease-in;
+		 -moz-transition: all 0.1s ease-in;
+		 	-ms-transition: all 0.1s ease-in;
+			 -o-transition: all 0.1s ease-in;
+					transition: all 0.1s ease-in;
+}
+.menu dd{
+	height: 0px;
+	overflow:hidden;
+	margin:0;
+	opacity:0;
+	-webkit-transition: height 0.5s ease-in;
+		 -moz-transition: height 0.5s ease-in;
+		 	-ms-transition: height 0.5s ease-in;
+			 -o-transition: height 0.5s ease-in;
+					transition: height 0.5s ease-in;
+}
+.menu :target em{
+	-webkit-transform: rotate(90deg);
+		 -moz-transform: rotate(90deg);
+		 	-ms-transform: rotate(90deg);
+			 -o-transform: rotate(90deg);
+					transform: rotate(90deg);
+}
+.menu :target dd{
+	opacity:1;
+	margin-bottom: 10px;	
+	border: 1px solid #ccc; 
+	padding:10px;
+	background-color:moccasin; 
+	color:mediumaquamarine;
+	font-size:20px; 
+	font-weight:bold;
+	height: 100px;
+}
+</pre>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>元素背景的使用</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<link rel="stylesheet" href="/public_css/spectrum.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/spectrum.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+*{margin:0px; padding:0px; list-style:none;}
+html{font-size:12px;}
+body{font-size:18px;}
+.area{ overflow:hidden; padding:0px 10px;}
+.showStyle{ resize:both; overflow:hidden; float:left; /*width:100px; height:100px;*/ width:150px; height:150px; margin:30px; border-width:10px; border-style:dashed; border-color:#aaa; padding:30px;}
+.setStyle{width:700px; height:auto; border:1px solid #ccc; float:right; margin:10px 20px 0 0;}
+.setStyle h3{font-weight:700; height:40px; line-height:40px; background-color:#efefef; padding-left:10px; border-bottom:2px solid #ddd;}
+.setStyle dl{border-bottom:1px dotted #ccc; padding:5px 0; margin:5px;}
+.setStyle dt{line-height:24px; display:block; color:#a00; margin-bottom:10px;}
+.setStyle dt em{display:inline-block; width:0px; height:0px; line-height:0px; font-size:0px; border-width:5px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; margin-right:10px;}
+.setStyle dt.open em{border-style:solid dashed dashed; border-color:#ccc transparent transparent;}
+.setStyle .text{height:24px; border:1px solid #ccc; line-height:24px; padding:0px 5px; margin-right:20px;}
+.setStyle .text100{width:100px;}
+.setStyle .text150{width:150px;}
+.setStyle .text200{width:200px;}
+.setStyle .label{padding:0px 8px;}
+.setStyle select{padding:2px; line-height:22px;}
+.setStyle .hideDiv{display:none; padding-top:10px;}
+</style>
+<script type="text/javascript">
+	var $id = function(obj){
+		var getObj = typeof(obj) == "string" ? document.getElementById(obj) : obj;
+		return getObj;
+	}
+	var getTag = function(par,tName){
+		return par.getElementsByTagName(tName);
+	}
+	var getClass = function(par,cName){
+		var getAttr = [],allTag = par.getElementsByTagName("*");
+		for(var i=0;i<allTag.length;i++){
+				if(allTag[i].className == cName){
+					getAttr.push(allTag[i]);
+				}
+		}
+		return getAttr;
+	}
+	var addEvent = function(obj,eName,fn){
+		if(obj.attachment){
+			obj.attachment("on"+eName,fn);
+		}else if(obj.addEventListener){
+			obj.addEventListener(eName,fn,false);
+		}else{
+			obj["on"+eName] = fn;
+		}
+	}
+	$(function(){
+		var show_style = $id("show_style"),pars = $id("form"),inputs = getTag(pars,"input"),selects = getTag(pars,"select"),styleJson = {'color':'#FFF'};
+			for(var i=0;i<inputs.length;i++){
+				addEvent(inputs[i],"change",changeFn);		//这样的写法this指向的是当前作用的对象。
+				//inputs[i].onchange = function(){changeFn()};	//这里不能使用这样的写法，这样写函数中的this指向的是window。
+			}
+			for(var y=0;y<selects.length;y++){
+				addEvent(selects[y],"change",changeFn);
+			}
+		 $('#backgroundColor').spectrum({
+			  color: $(this).val(),
+			  flat:false,
+			  clickoutFiresChange: true,
+			  showInitial: true,
+			  preferredFormat: "hex",
+			  showInput: true,
+			  chooseText: "确定",
+			  cancelText: "取消",
+			  change: function (color) {
+					$(this).val(color.toHexString());
+					changeFn(this,1);
+			  }
+			});
+		function changeFn(t){
+			if(arguments.length > 1){
+				var typeName = t.id,typeVal = t.value;
+			}else{
+				var typeName = this.id,typeVal = this.value;
+			}
+			switch (typeName){
+				case 'backgroundColor' : case 'backgroundRepeat' : case 'backgroundPosition' : case 'backgroundAttachment' : case 'backgroundClip' : case 'backgroundOrigin' : case 'backgroundSize' :
+					if(!typeVal){
+						delete styleJson[typeName];
+						show_style.style[typeName] = "";
+					}else if(typeVal=="custom"){
+						$id('custom_'+typeName).style.display = "block";
+					}else{
+						styleJson[typeName] = typeVal;
+						if($id('custom_'+typeName)){
+							$id('custom_'+typeName).style.display = "none";
+						}
+					}
+					//console.log(typeName +":"+typeVal);
+					//alert(typeName +":"+typeVal);
+				break;
+				case 'backgroundPositionX' : case 'backgroundPositionY' :
+					var Px = $id('backgroundPositionX').value,Py = $id('backgroundPositionY').value;
+					if(Px && !Py){
+						styleJson['backgroundPosition'] = Px;
+					}else if(!Px && Py){
+						styleJson['backgroundPosition'] = Py;
+					}else if(Px && Py){
+						styleJson['backgroundPosition'] = Px +" "+Py;
+					}
+				break;
+				case 'backgroundSizeX' : case 'backgroundSizeY' :
+					var Sx = $id('backgroundSizeX').value,Sy = $id('backgroundSizeY').value;
+					if(Sx && !Sy){
+						styleJson['backgroundSize'] = Sx;
+					}else if(!Sx && Sy){
+						styleJson['backgroundSize'] = Sy;
+					}else if(Sx && Sy){
+						styleJson['backgroundSize'] = Sx +" "+Sy;
+					}
+				break;
+				default :
+					if(typeName == "backgroundImage"){
+						if(typeVal != 'none'){
+							typeVal = 'url('+typeVal+')';
+						} 
+						styleJson['backgroundImage'] = typeVal;
+					}
+			}
+			for(x in styleJson){
+				show_style.style[x] = styleJson[x];
+			}
+			var isIE=!!window.ActiveXObject; 
+			var isIE6=isIE&&!window.XMLHttpRequest; 
+			var isIE8=isIE&&!!document.documentMode; 
+			var isIE7=isIE&&!isIE6&&!isIE8; 
+			if (isIE){ 
+				if (isIE6 || isIE7){//alert(1);
+					show_style.innerHTML = show_style.getAttribute('style').cssText.toLowerCase();
+				}
+			}else{
+				show_style.innerHTML = show_style.getAttribute('style');
+			}
+		}
+	});
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">利用js来查看元素边框原理</dt>
+		<dd class="detail-list-body">
+			<div class="area">
+				<div class="showStyle" id="show_style">这是测试内容用来测试背景颜色这是测试内容用来测试背景颜色这是测试内容用来测试背景颜色这是测试内容用来测试背景颜色这是测试内容用来测试背景颜色</div>
+				<div class="setStyle">
+					<h3>设置background的样式</h3>
+					<div class="form" id="form">
+						<dl>
+							<dt class="open"><em></em>backgroundColor:背景颜色</dt>
+							<dd>
+								<span class="label">color:</span><input type="text" class="text text100" id="backgroundColor" value="#000000" />
+							</dd>
+						</dl>			
+						<dl>
+							<dt class="open"><em></em>backgroundImage:背景图片</dt>
+							<dd>
+								<span class="label">1、url:</span>
+								<select name='backgroundImage' id="backgroundImage">
+									<option value="none">无图</option>
+									<option value="border_bg_0.png">图片0</option>
+									<option value="border_bg_1.png">图片1</option>
+									<option value="border_bg_2.png">图片2</option>
+									<option value="border_bg_3.png">图片3</option>
+								</select>
+								<!-- <input id="backgroundImage" type="text" class="text text200" /> -->
+							</dd>
+							
+						</dl>
+						<dl>
+							<dt class="open"><em></em>backgroundRepeat:背景平铺方式</dt>
+							<dd>
+								<span>平铺方式：</span>
+								<select id="backgroundRepeat">
+									<option value="" selected="selected">不设置</option>
+									<option value="no-repeat">no-repeat</option>
+									<option value="repeat">repeat</option>
+									<option value="repeat-x">repeat-x</option>
+									<option value="repeat-y">repeat-y</option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="open"><em></em>backgroundPosition:背景x,y轴方向位置</dt>
+							<dd>
+								<span>背景位置：</span>
+								<select id="backgroundPosition">
+									<option value="" selected="selected">不设置</option>
+									<option value="left top">左上</option>
+									<option value="left center">左中</option>
+									<option value="left bottom">左下</option>
+									<option value="center top">中上</option>
+									<option value="center center">中间</option>
+									<option value="center bottom">中下</option>
+									<option value="right top">右上</option>
+									<option value="right center">右中</option>
+									<option value="right bottom">右下</option>
+									<option value="custom">自定义</option>
+								</select>
+								<div class="hideDiv" id="custom_backgroundPosition">&nbsp;&nbsp;&nbsp;<span>x轴：</span><input type="text" class="text" id="backgroundPositionX" /><span>y轴：</span><input type="text"  class="text" id="backgroundPositionY" /></div>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="open"><em></em>backgroundAttachment:背景固定显示方式</dt>
+							<dd>
+								<span>背景固定定位方式：</span>
+								<select id="backgroundAttachment">
+									<option value="" selected="selected">不设置</option>
+									<option value="fixed">fixed</option>
+									<option value="scroll">scroll</option>
+									<option value="local">local</option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="open"><em></em>backgroundClip:背景从何处开始剪切</dt>
+							<dd>
+								<span>背景剪切的区域：</span>
+								<select id="backgroundClip">
+									<option value="" selected="selected">不设置</option>
+									<option value="border-box">border-box</option>
+									<option value="padding-box">padding-box</option>
+									<option value="content-box">content-box</option>
+									<option value="text">text</option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="open"><em></em>backgroundOrigin:背景从何处开始显示</dt>
+							<dd>
+								<span>背景从什么位置显示：</span>
+								<select id="backgroundOrigin">
+									<option value="" selected="selected">不设置</option>
+									<option value="border-box">border-box</option>
+									<option value="padding-box">padding-box</option>
+									<option value="content-box">content-box</option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="open"><em></em>backgroundSize:背景显示大小</dt>
+							<dd>
+								<span>背景图像的大小:</span>
+								<select id="backgroundSize">
+									<option value="" selected="selected">不设置</option>
+									<option value="auto">auto</option>
+									<option value="cover">cover</option>
+									<option value="contain">contain</option>
+									<option value="custom">自定义</option>
+								</select>
+								<div class="hideDiv" id="custom_backgroundSize"><span class="label">宽：</span><input type="text" class="text text100" id="backgroundSizeX" /><span class="label">高：</span><input type="text" class="text text100" id="backgroundSizeY" /></div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

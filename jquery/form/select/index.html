@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>我的自定义下拉菜单</title>
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="this is my page">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<script type="text/javascript" src="form_obj.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">自定义下拉菜单</dt>
+			<dd class="detail-list-body">
+				<form action="#" id="myform">
+					<select name="love" id="love" data-formelement="select">
+						<!-- <optgroup label="项目组1"> -->
+							<option selected="selected" value="love_1">项目1</option>
+							<option value="love_2">项目2</option>
+							<option value="love_3">项目3</option>
+							<option value="love_4">项目4</option>
+						<!-- </optgroup> -->
+						<optgroup label="项目组2">
+							<option value="love_5">项目5</option>
+							<option value="love_6">项目6</option>
+							<option value="love_7">项目7</option>
+						</optgroup>
+						<optgroup label="项目组3">
+							<option value="love_8">项目8</option>
+							<option value="love_9">项目9</option>
+							<option value="love_10">项目10</option>
+						</optgroup>
+					</select>
+				</form>
+				<!-- <span class="ev-dropdown" data-state="disabled">
+					<select name="love" id="love" data-formelement="select">
+						<option value="love_1">项目1</option>
+						<option value="love_2">项目2</option>
+						<option value="love_3">项目3</option>
+						<option value="love_4">项目4</option>
+						<option value="love_5">项目5</option>
+						<option value="love_6">项目6</option>
+						<option value="love_7">项目7</option>
+						<option value="love_8">项目8</option>
+						<option value="love_9">项目9</option>
+						<option value="love_10">项目10</option>
+					</select>
+					<span class="ev-dropdown-text"><strong>请选择内容请选择内容请选择内容</strong></span>
+					<em class="ev-dropdown-btn"><i></i></em> 
+					<div class="ev-dropdown-list">
+						<dl>
+							<dd class="hover"><b>项目1</b></dd>
+							<dt><b>分项标题</b></dt>
+							<dd class="disabled"><b>项目2</b></dd>
+							<dd><b>项目3项目3项目3项目3项目3</b></dd>
+							<dd class="active"><b>项目4</b></dd>
+							<dd><b>项目5</b>	</dd>
+							<dt><b>分项标题</b></dt>
+							<dd><b>项目6</b>	</dd>
+							<dd><b>项目7</b>	</dd>
+							<dt><b>分项标题</b></dt>
+							<dd><b>项目8</b>	</dd>
+							<dd><b>项目9</b>	</dd>
+							<dt><b>分项标题</b></dt>
+							<dd><b>项目10</b></dd>
+						</dl>
+					</div>
+				</span>
+				<span class="ev-dropdown">
+					<select name="love" id="love2" data-formelement="select">
+						<option value="love_1">项目1</option>
+						<option value="love_2">项目2</option>
+						<option value="love_3">项目3</option>
+						<option value="love_4">项目4</option>
+						<option value="love_5">项目5</option>
+						<option value="love_6">项目6</option>
+						<option value="love_7">项目7</option>
+						<option value="love_8">项目8</option>
+						<option value="love_9">项目9</option>
+						<option value="love_10">项目10</option>
+					</select>				
+					<span class="ev-dropdown-text"> <strong>请选择内容请选择内容请选择内容</strong>
+					</span> <em class="ev-dropdown-btn"><i></i></em> 
+					<div class="ev-dropdown-list">
+						<dl>
+							<dd><b>项目1</b>	</dd>
+							<dt><b>分项标题</b></dt>
+							<dd><b>项目2</b>	</dd>
+							<dd><b>项目3项目3项目3项目3项目3</b></dd>
+							<dd><b>项目4</b>	</dd>
+							<dd><b>项目5</b>	</dd>
+							<dt><b>分项标题</b></dt>
+							<dd><b>项目6</b>	</dd>
+							<dd><b>项目7</b>	</dd>
+							<dd><b>项目8</b>	</dd>
+							<dd><b>项目9</b>	</dd>
+							<dd><b>项目10</b></dd>
+						</dl>
+					</div>
+				</span>
+				<span class="ev-dropdown">
+					<select name="love" id="love3" disabled="disabled" data-formelement="select">
+						<option value="love_1">项目1</option>
+						<option value="love_2">项目2</option>
+						<option value="love_3">项目3</option>
+						<option value="love_4">项目4</option>
+						<option value="love_5">项目5</option>
+						<option value="love_6">项目6</option>
+						<option value="love_7">项目7</option>
+						<option value="love_8">项目8</option>
+						<option value="love_9">项目9</option>
+						<option value="love_10">项目10</option>
+					</select>
+					<span class="ev-dropdown-text">
+						<strong>请选择内容请选择内容请选择内容</strong>
+					</span>
+					<em class="ev-dropdown-btn">
+						<i></i>
+					</em>
+					<div class="ev-dropdown-list">
+						<dl>
+							<dt><b>分项标题</b></dt>
+							<dd><b>项目1</b>	</dd>
+							<dd><b>项目2</b>	</dd>
+							<dd><b>项目3项目3项目3项目3项目3</b></dd>
+							<dd><b>项目4</b>	</dd>
+							<dd><b>项目5</b>	</dd>
+							<dd><b>项目6</b>	</dd>
+							<dd><b>项目7</b>	</dd>
+							<dt><b>分项标题</b></dt>
+							<dd><b>项目8</b>	</dd>
+							<dd><b>项目9</b>	</dd>
+							<dd><b>项目10</b></dd>
+						</dl>
+					</div>
+				</span> -->
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

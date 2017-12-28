@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>自定义鼠标进过标题title</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<script type="text/javascript" src="title.js"></script>
+	<style type="text/css">
+		.p{line-height: 2; font-size: 20px; font-family: '微软雅黑';}
+		.p a{color: orange; text-decoration: none;}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">自定义title提示效果-功用代码</dt>
+			<dd class="detail-list-body">
+<pre data-skin="1" data-title="HTML">
+&lt;div class=&quot;p&quot;&gt;&lt;a href=&quot;#&quot; title=&quot;这是自定义title&quot;&gt;鼠标经过显示title&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;p&quot;&gt;&lt;span class=&quot;tip&quot; title=&quot;这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title&quot;&gt;鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title&lt;/span&gt;&lt;/div&gt;
+</pre>
+<pre data-skin="2" data-title="JavaScript" data-height="350">
+<span class="note">/*插件代码展示*/</span>
+;(function() {
+	$.fn.extend({
+		evTitle: function(styles,eff) {
+			var defStyles = {
+					'backgroundColor': "#efefef",
+					'borderWidth': '1px',
+					'borderColor': '#ddd',
+					'borderStyle': 'solid',
+					'color': '#444',
+					'fontSize': '12px',
+					'padding': '0.4em 0.5em',
+					'box-shadow': '2px 3px 6px rgba(0,0,0,.5)',
+					'z-index': '999',
+					'display': 'none',
+					'position': 'absolute',
+					'max-width': '300px'
+				},
+				nStyles = $.extend({}, defStyles, styles),
+				thatObj = $(this),
+				bodys = $('body'),
+				eff = eff ? eff : 1,
+				aIn = ['show','slideDown','fadeIn'],
+				aOut = ['hide','slideUp','fadeOut'],
+				pfun = function(obj,e) {
+					var l = e.pageX + 15,
+						t = e.pageY + 15,
+						bw = $(document).outerWidth(),
+						bh = $(document).outerHeight(),
+						ow = obj.outerWidth(),
+						oh = obj.outerHeight();
+					if(l + ow> bw){
+						l = l - (ow + 25);
+					}
+					if(t + oh > bh){
+						t = t - oh;
+					}
+					obj.css({
+						left: l + 'px',
+						top: t + 'px'
+					});
+				};
+			thatObj.find("*[title]").each(function() {
+					var titleDom = '',
+						titleText = '',
+						that = $(this);
+					that.on({
+						mouseenter: function(e) {
+							titleText = that.attr("title");
+							that.attr("title", "");
+							titleDom = $('&lt;div&gt;' + titleText + '&lt;/div&gt;');
+							titleDom.css(nStyles);
+							bodys.append(titleDom);
+							titleDom[aIn[eff]](100);
+							pfun(titleDom,e);
+						},
+						mousemove: function(e) {
+							titleDom.css({
+								'display': 'block'
+							});
+							pfun(titleDom,e);
+						},
+						mouseleave: function() {
+							that.attr('title', titleText);
+							titleDom[aOut[eff]](40,function(){
+								titleDom.remove()
+							});
+						}
+					});
+			});
+		}
+	});
+})(jQuery);
+</pre>
+			</dd>
+		</dl>
+		<dl class="detail-list">
+			<dt class="detail-list-head">自定义title提示效果-默认样式</dt>
+			<dd class="detail-list-body" id="cusTitle_1">
+				<div class="p"><a href="#" title="这是自定义title">鼠标经过显示title</a></div>
+				<div class="p"><span class="tip" title="这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title">鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title</span></div>
+			</dd>
+<pre data-skin="3" data-title="javascript">
+<span class="note">默认调用代码调用</span>
+$("#cusTitle_1").evTitle();
+</pre>
+		</dl>
+		<dl class="detail-list">
+			<dt class="detail-list-head">自定义title提示效果-自定义css样式1</dt>
+			<dd class="detail-list-body" id="cusTitle_2">
+				<div class="p"><a href="#" title="这是自定义title">鼠标经过显示title</a></div>
+				<div class="p"><span class="tip" title="这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title">鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title</span></div>
+<pre data-skin="3" data-title="javascript">
+<span class="note">/*自定义样式参数，和动画效果参数，1表示'滑入滑出'调用代码调用*/</span>
+$("#cusTitle_2").evTitle({'backgroundColor':'orange','fontSize':'20px','color':'white','borderColor':'white'},1);
+</pre>
+			</dd>
+		</dl>
+		<dl class="detail-list">
+			<dt class="detail-list-head">自定义title提示效果-自定义css样式2</dt>
+			<dd class="detail-list-body" id="cusTitle_3">
+				<div class="p"><a href="#" title="这是自定义title">鼠标经过显示title</a></div>
+				<div class="p"><span class="tip" title="这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title这也是自定义title">鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title鼠标经过显示title</span></div>
+<pre data-skin="3" data-title="javascript">
+<span class="note">/*自定义样式参数，和动画效果参数，2表示'淡入淡出'调用代码调用*/</span>
+$("#cusTitle_3").evTitle({'backgroundColor':'#6FBFFF','fontSize':'14px','color':'#fff','borderColor':'#2798F2'},3);
+	</pre>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

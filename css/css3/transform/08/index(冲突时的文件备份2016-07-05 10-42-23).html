@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>翻转效果</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+		ul,li{margin: 0; padding: 0; list-style: none;}
+		.turn-over{width:90%; margin: 0 auto;}
+		.turn-over li{width:25%; float:left; height: 200px;}
+		.turn-over .li-inner{margin:5px; height:190px; border:1px solid #CCC; position: relative; -webkit-perspective: 800px; perspective: 800px;}
+		.turn-over .li-inner .front{line-height: 200px; font-size:100px; background-color:#C00; position:absolute; left:0; top: 0;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">翻转效果</dt>
+			<dd class="detail-list-body">
+				<ul class="turn-over q">
+					<li><div class="li-inner"><span class="front">1</span><span class="behind"><img src="/public_image/1.jpg" alt=""></span></div></li>
+					<li><div class="li-inner"><span class="front">2</span><span class="behind"><img src="/public_image/2.jpg" alt=""></span></div></li>
+					<li><div class="li-inner"><span class="front">3</span><span class="behind"><img src="/public_image/3.jpg" alt=""></span></div></li>
+					<li><div class="li-inner"><span class="front">4</span><span class="behind"><img src="/public_image/4.jpg" alt=""></span></div></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

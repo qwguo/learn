@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>关系选择器</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+	.selector-list{padding-left:0; margin:0px; padding-bottom: 10px;font-family:arial;}
+	.selector-list a{text-decoration: none; color: #000;}
+	.selector-list li{background-color:#f5f5f5; border:1px solid #ddd; padding:10px; line-height:30px; margin:10px 0 0; list-style-position: inside;}
+	.selector-list span,.selector-list a{margin:0px 8px;}
+	.selector-list input.text{width:80px; height:30px;}
+	.selector-list input.radio,.selector-list input.checkbox{width:14px; height:14px; margin:0px 5px;}
+
+	/***关系选择符*/
+	.relationshipSelect .innerElement a{color:deeppink;font-size:20px; font-weight:bold;}
+	.relationshipSelect .children * > em{color:darkturquoise;font-size:20px; font-weight:bold;}
+	.relationshipSelect .next-element span+a{color:dodgerblue;font-size:20px; font-weight:bold;}
+	.relationshipSelect .after-element span~a{color:firebrick; font-size:20px; font-weight:bold;}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">关系选择符 Relationship Selectors：</dt>
+		<dd class="detail-list-body">
+			<ol class="selector-list relationshipSelect">
+				<li class="innerElement">dd a{选择符}：<span>第一个span</span><span>第二个span</span><span>第三个span</span><span>第四个span</span><b></b><span>第五个span</span><a href="#">第一个a（选中）</a><a href="#"><em>第二个a（选中）</em></a></li>
+				<li class="children">dd>span{选择符}：<span>第一个<em>span</em>（选中）</span><span>第二个<em>span</em>（选中）</span><span>第三个span</span><span>第四个span</span><span>第五个span</span><a href="#">第一个a</a><a href="#">第二个<em>a</em>（选中）</a></li>
+				<li class="next-element">dd span+a{选择符}：<span>第一个<em>span</em></span><span>第二个<em>span</em></span><span>第三个span</span><span>第四个span</span><span>第五个span</span><a href="#">第一个a（选中）</a><a href="#">第二个<em>a</em></a></li>
+				<li class="after-element">dd span~a{选择符}：<span>第一个<em>span</em></span><span>第二个<em>span</em></span><span>第三个span</span><span>第四个span</span><span>第五个span</span><a href="#">第一个a（选中）</a><a href="#">第二个<em>a</em>（选中）</a></li>
+			</ol>
+<pre data-title="HTML" data-skin="1" data-height="300">
+&lt;ol class=&quot;selector-list relationshipSelect&quot;&gt;
+	&lt;li class=&quot;innerElement&quot;&gt;
+		dd a{选择符}：
+		&lt;span&gt;第一个span&lt;/span&gt;
+		&lt;span&gt;第二个span&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt; &lt;b&gt;&lt;/b&gt;
+		&lt;span&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a（选中）&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt; &lt;em&gt;第二个a（选中）&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;children&quot;&gt;
+		dd&gt;span{选择符}：
+		&lt;span&gt;第一个&lt;em&gt;span&lt;/em&gt;（选中）&lt;/span&gt;
+		&lt;span&gt;第二个&lt;em&gt;span&lt;/em&gt;（选中）&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;span&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;第二个&lt;em&gt;a&lt;/em&gt;（选中）&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;next-element&quot;&gt;
+		dd span+a{选择符}：
+		&lt;span&gt;第一个&lt;em&gt;span&lt;/em&gt;&lt;/span&gt;
+		&lt;span&gt;第二个&lt;em&gt;span&lt;/em&gt;&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;span&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a（选中）&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;第二个&lt;em&gt;a&lt;/em&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;after-element&quot;&gt;
+		dd span~a{选择符}：
+		&lt;span&gt;第一个&lt;em&gt;span&lt;/em&gt;&lt;/span&gt;
+		&lt;span&gt;第二个&lt;em&gt;span&lt;/em&gt;&lt;/span&gt;
+		&lt;span&gt;第三个span&lt;/span&gt;
+		&lt;span&gt;第四个span&lt;/span&gt;
+		&lt;span&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;第一个a（选中）&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;第二个&lt;em&gt;a&lt;/em&gt;（选中）&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/***关系选择符***/</span>
+.relationshipSelect .innerElement a{color:deeppink;font-size:20px; font-weight:bold;}
+.relationshipSelect .children * > em{color:darkturquoise;font-size:20px; font-weight:bold;}
+.relationshipSelect .next-element span+a{color:dodgerblue;font-size:20px; font-weight:bold;}
+.relationshipSelect .after-element span~a{color:firebrick; font-size:20px; font-weight:bold;}
+</pre>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

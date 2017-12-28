@@ -1,0 +1,881 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3——transform</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+.explain p span{display: block;}
+ul:after {
+	content:"";
+	clear:both;
+	display:block;
+	height:0;
+	visibility:hidden;
+}
+ul {
+	zoom:1;
+	margin:10px;
+	padding:10px;
+}
+ul.ul-list li {
+	width:300px;
+	height:300px;
+	border:1px dashed #c00;
+	position:relative;
+	list-style:none;
+	margin:10px 5px;
+}
+ul.ul-list li div {
+	background-color:#ddd;
+	width:300px;
+	height:300px;
+	color:#000;
+	word-break:break-all;
+	word-wrap:break-word;
+	position:absolute;
+	left:0;
+	top:0;
+}
+/*property参与过渡的css属性值*/
+ul.property-list li{float: left;}
+ul.property-list li div{
+	position: static;
+	-webkit-transition-duration:.5s;
+	-moz-transition-duration:.5s;
+	-ms-transition-duration:.5s;
+	-o-transition-duration:.5s;
+	transition-duration:.5s;
+	-webkit-transition-timing-function:linear;
+	-moz-transition-timing-function:linear;
+	-ms-transition-timing-function:linear;
+	-o-transition-timing-function:linear;
+	transition-timing-function:linear;
+}
+.property-list li:nth-child(1) div{
+	width: 100px; 
+	-webkit-transition-property:width;
+	-moz-transition-property:width;
+	-ms-transition-property:width;
+	-o-transition-property:width;
+	transition-property:width;
+}
+.property-list li:nth-child(1):hover div{
+	width: 300px;
+}
+.property-list li:nth-child(2){
+	-webkit-transition-property:backgroundColor;
+	-moz-transition-property:backgroundColor;
+	-ms-transition-property:backgroundColor;
+	-o-transition-property:backgroundColor;
+	transition-property:backgroundColor;
+}
+.property-list li:nth-child(2) div:hover{
+	background-color: #a00;
+}
+.property-list li:nth-child(3) div,.property-list li:nth-child(4) div{
+	-webkit-transition-property:transform;
+	-moz-transition-property:transform;
+	-ms-transition-property:transform;
+	-o-transition-property:transform;
+	transition-property:transform;
+}
+.property-list li:nth-child(3):hover div{
+	background-color: yellow;
+	-webkit-transform:scale(0.5,.8);
+	-moz-transform:scale(0.5,.8);
+	-ms-transform:scale(0.5,.8);
+	-o-transform:scale(0.5,.8);
+	transform:scale(0.5,.8);
+}
+.property-list li:nth-child(4):hover div{
+	-webkit-transform:rotate(-180deg);
+	-moz-transform:rotate(-180deg);
+	-ms-transform:rotate(-180deg);
+	-o-transform:rotate(-180deg);
+	transform:rotate(-180deg);
+}
+.property-list li:nth-child(5) div{
+	border-width: 0px;
+	border-style: solid;
+	border-color: #c00;
+	-webkit-transition-property:width,height,border-right-width,border-left-width;
+	-moz-transition-property:width,height,border-left-width,border-right-width;
+	-ms-transition-property:width,height,border-left-width,border-right-width;
+	-o-transition-property:width,height,border-left-width,border-right-width;
+	transition-property:width,height,border-left-width,border-right-width;
+}
+.property-list li:nth-child(5):hover div{
+	border-left-width: 100px;
+	border-right-width: 100px;
+	width: 100px;
+	height: 100px;
+}
+.property-list li:nth-child(6) div{
+	opacity:1;
+	-webkit-transition-property:opacity;
+	-moz-transition-property:opacity;
+	-ms-transition-property:opacity;
+	-o-transition-property:opacity;
+	transition-property:opacity;
+}
+.property-list li:nth-child(6):hover div{
+	opacity: 0.2;
+}
+.property-list li:nth-child(7) div{
+	font-size:24px;
+	color:#000;
+	-webkit-transition-property:font-size;
+	-moz-transition-property:font-size;
+	-ms-transition-property:font-size;
+	-o-transition-property:font-size;
+	transition-property:font-size;
+}
+.property-list li:nth-child(7):hover div{
+	color:#c00;
+	font-size: 40px;
+}
+.property-list li:nth-child(8) div{
+	font-size:50px;
+	color:#c00;
+	background-color:yellow;
+	margin: 0px;
+}
+.property-list li:nth-child(8):hover div{
+	font-size: 20px;
+	color: #fff;
+	background-color: purple;
+	width: 100px;
+	height: 100px;
+	margin: 100px;
+}
+/*duration：设置过渡的持续时间*/
+.duration-list li{
+	float: left;
+}
+.duration-list li div{
+	left: 0;
+	top: 0;
+	-webkit-transition-property:all;
+	-moz-transition-property:all;
+	-ms-transition-property:all;
+	-o-transition-property:all;
+	transition-property:all;
+	-webkit-transition-timing:linear;
+	-moz-transition-timing:linear;
+	-ms-transition-timing:linear;
+	-o-transition-timing:linear;
+	transition-timing:linear;
+	-webkit-transition-delay:0s;
+	-moz-transition-delay:0s;
+	-ms-transition-delay:0s;
+	-o-transition-delay:0s;
+	transition-delay:0s;
+}
+.duration-list li:nth-child(1) div{
+	-webkit-transition-duration:.5s;
+	-moz-transition-duration:.5s;
+	-ms-transition-duration:.5s;
+	-o-transition-duration:.5s;
+	transition-duration:.5s;
+}
+.duration-list li:nth-child(2) div{
+	-webkit-transition-duration:0.8s;
+	-moz-transition-duration:0.8s;
+	-ms-transition-duration:0.8s;
+	-o-transition-duration:0.8s;
+	transition-duration:0.8s;
+}
+.duration-list li:nth-child(3) div{
+	-webkit-transition-duration:10.0s;
+	-moz-transition-duration:10.0s;
+	-ms-transition-duration:10.0s;
+	-o-transition-duration:10.0s;
+	transition-duration:10.0s;
+}
+.duration-list li:hover div{
+	left: 50px;
+	top: 50px;
+	width: 200px;
+	height: 200px;
+}
+/*delay设置元素过渡的延迟时间*/
+.delay-list li{
+	float: left;
+}
+.delay-list li div{
+	-webkit-transition-property:all;
+	-moz-transition-property:all;
+	-ms-transition-property:all;
+	-o-transition-property:all;
+	transition-property:all;
+	-webkit-transition-duration:2.5s;
+	-moz-transition-duration:2.5s;
+	-ms-transition-duration:2.5s;
+	-o-transition-duration:2.5s;
+	transition-duration:2.5s;
+}
+.delay-list li:nth-child(1) div{
+	-webkit-transition-delay:0.5s;
+	-moz-transition-delay:0.5s;
+	-ms-transition-delay:0.5s;
+	-o-transition-delay:0.5s;
+	transition-delay:0.5s;
+	background-color: orange;
+}
+.delay-list li:nth-child(1):hover div{
+	left: 200px;
+	top: 200px;
+}
+.delay-list li:nth-child(2) div{
+	-webkit-transition-delay:5s;
+	-moz-transition-delay:5s;
+	-ms-transition-delay:5s;
+	-o-transition-delay:5s;
+	transition-delay:5s;
+	background-color: purple;
+}
+.delay-list li:nth-child(2):hover div{
+	width: 100px;
+	height: 100px;
+	left: 100px;
+	top: 100px;
+}
+.delay-list li:nth-child(3) div{
+	background-color: pink;
+	-webkit-transition-property:transform,width,height;
+	-moz-transition-property:transform,width,height;
+	-ms-transition-property:transform,width,height;
+	-o-transition-property:transform,width,height;
+	transition-property:transform,width,height;
+	-webkit-transition-duration:.5s,1s,1.5s;
+	-moz-transition-duration:.5s,1s,1.5s;
+	-ms-transition-duration:.5s,1s,1.5s;
+	-o-transition-duration:.5s,1s,1.5s;
+	transition-duration:.5s,1s,1.5s;
+	-webkit-transition-delay:3.4s,.5s,1s;
+	-moz-transition-delay:3.4s,.5s,1s;
+	-ms-transition-delay:3.4s,.5s,1s;
+	-o-transition-delay:3.4s,.5s,1s;
+	transition-delay:3.4s,.5s,1s;
+}
+.delay-list li:nth-child(3):hover div{
+	-webkit-transform:rotate(145deg);
+	-moz-transform:rotate(145deg);
+	-ms-transform:rotate(145deg);
+	-o-transform:rotate(145deg);
+	transform:rotate(145deg);
+	width: 100px;
+	height: 100px;
+}
+/*timing-function-list设置元素的过渡动画类型*/
+.timing-function-list li{}
+.timing-function-list li div{
+	background-color: #eee;
+	-webkit-transition-property:transform;
+	-moz-transition-property:transform;
+	-ms-transition-property:transform;
+	-o-transition-property:transform;
+	transition-property:transform;
+	-webkit-transition-duration:2s;
+	-moz-transition-duration:2s;
+	-ms-transition-duration:2s;
+	-o-transition-duration:2s;
+	transition-duration:2s;
+	-webkit-transition-delay:0.2s;
+	-moz-transition-delay:0.2s;
+	-ms-transition-delay:0.2s;
+	-o-transition-delay:0.2s;
+	transition-delay:0.2s;
+}
+.timing-function-list li div span{padding:10px;display: inline-block;}
+.timing-function-list li:nth-child(1) div{
+	-webkit-transition-timing-function:linear;
+	-moz-transition-timing-function:linear;
+	-ms-transition-timing-function:linear;
+	-o-transition-timing-function:linear;
+	transition-timing-function:linear;
+}
+.timing-function-list li:nth-child(2) div{
+	-webkit-transition-timing-function:ease;
+	-moz-transition-timing-function:ease;
+	-ms-transition-timing-function:ease;
+	-o-transition-timing-function:ease;
+	transition-timing-function:ease;
+}
+.timing-function-list li:nth-child(3) div{
+	-webkit-transition-timing-function:ease-in;
+	-moz-transition-timing-function:ease-in;
+	-ms-transition-timing-function:ease-in;
+	-o-transition-timing-function:ease-in;
+	transition-timing-function:ease-in;
+}
+.timing-function-list li:nth-child(4) div{
+	-webkit-transition-timing-function:ease-out;
+	-moz-transition-timing-function:ease-out;
+	-ms-transition-timing-function:ease-out;
+	-o-transition-timing-function:ease-out;
+	transition-timing-function:ease-out;
+}
+.timing-function-list li:nth-child(5) div{
+	-webkit-transition-timing-function:ease-in-out;
+	-moz-transition-timing-function:ease-in-out;
+	-ms-transition-timing-function:ease-in-out;
+	-o-transition-timing-function:ease-in-out;
+	transition-timing-function:ease-in-out;
+}
+.timing-function-list li:nth-child(6) div{
+	-webkit-transition-timing-function:cubic-bezier(0.25, 0.1, 0.25, 1.0);
+	-moz-transition-timing-function:cubic-bezier(.25, .1, .25, 1);
+	-ms-transition-timing-function:cubic-bezier(.25, .1, .25, 1);
+	-o-transition-timing-function:cubic-bezier(.25, .1, .25, 1);
+	transition-timing-function:cubic-bezier(.25, .1, .25, 1);
+}
+.timing-function-list li:hover div{
+	-webkit-transform:translateX(350%);
+	-moz-transform:translateX(350%);
+}
+ul.transition-list li:nth-child(2) div{
+	-moz-transition:left 2.0s linear 0.5s; 
+	-webkit-transition:left 2.0s linear 0.5s; 
+	-o-transition:left 2.0s linear 0.5s;
+	-ms-transition:left 2.0s linear 0.5s; 
+	transition:left 2.0s linear 0.5s;
+}
+ul.transition-list li:nth-child(3) div{
+	-moz-transition:left 2.0s ease 0.5s; 
+	-webkit-transition:left 2.0s ease 0.5s; 
+	-o-transition:left 2.0s ease 0.5s; 
+	-ms-transition:left 2.0s ease 0.5s; 
+	transition:left 2.0s ease 0.5s;
+}
+ul.transition-list li:nth-child(4) div{
+	-moz-transition-property:left; 
+	-moz-transition-duration:2.0s; 
+	-moz-transition-timing-function:ease-in; 
+	-moz-transition-delay:0.5s; 
+	
+	-webkit-transition-property:left; 
+	-webkit-transition-duration:2.0s; 
+	-webkit-transition-timing-function:ease-in; 
+	-webkit-transition-delay:0.5s; 
+	
+	-o-transition-property:left; 
+	-o-transition-duration:2.0s; 
+	-o-transition-timing-function:ease-in; 
+	-o-transition-delay:0.5s; 
+	
+	-ms-transition-property:left; 
+	-ms-transition-duration:2.0s; 
+	-ms-transition-timing-function:ease-in; 
+	-ms-transition-delay:0.5s; 
+	
+	transition-property:left; 
+	transition-duration:2.0s; 
+	transition-timing-function:ease-in; 
+	transition-delay:0.5s;
+}
+ul.transition-list li:nth-child(5) div{
+	-moz-transition-property:left; 
+	-moz-transition-duration:2.0s; 
+	-moz-transition-timing-function:ease-out; 
+	-moz-transition-delay:0.5s;
+	
+	-webkit-transition-property:left;
+	-webkit-transition-duration:2.0s;
+	-webkit-transition-timing-function:ease-out;
+	-webkit-transition-delay:0.5s;
+	
+	-o-transition-property:left;
+	-o-transition-duration:2.0s;
+	-o-transition-timing-function:ease-out;
+	-o-transition-delay:0.5s;
+	
+	-ms-transition-property:left;
+	-ms-transition-duration:2.0s;
+	-ms-transition-timing-function:ease-out;
+	-ms-transition-delay:0.5s;
+	
+	transition-property:left;
+	transition-duration:2.0s;
+	transition-timing-function:ease-out;
+	transition-delay:0.5s;
+}
+ul.transition-list li:nth-child(6) div{
+	-moz-transition-property:left;
+	-moz-transition-duration:2.0s;
+	-moz-transition-timing-function:ease-in-out;
+	-moz-transition-delay:0.5s;
+	
+	-webkit-transition-property:left;
+	-webkit-transition-duration:2.0s;
+	-webkit-transition-timing-function:ease-in-out;
+	-webkit-transition-delay:0.5s;
+	
+	-o-transition-property:left;
+	-o-transition-duration:2.0s;
+	-o-transition-timing-function:ease-in-out;
+	-o-transition-delay:0.5s;
+	
+	-ms-transition-property:left;
+	-ms-transition-duration:2.0s;
+	-ms-transition-timing-function:ease-in-out;
+	-ms-transition-delay:0.5s;
+	
+	transition-property:left;
+	transition-duration:2.0s;
+	transition-timing-function:ease-in-out;
+	transition-delay:0.5s;
+}
+ul.transition-list li:nth-child(7) div{
+	-moz-transition-property:left;
+	-moz-transition-duration:2.0s;
+	-moz-transition-timing-function:cubic-bezier(0, 0, 1, 0);
+	-moz-transition-delay:0.5s;
+	
+	-webkit-transition-property:left;
+	-webkit-transition-duration:2.0s;
+	-webkit-transition-timing-function:cubic-bezier(0,0,1,0);
+	-webkit-transition-delay:0.5s;
+}
+ul.transition-list li:nth-child(8) div{
+	/*-moz-transition:left,top 2.0s,1.5s ease 0.5s;*/
+	-moz-transition-property:left,top;
+	-moz-transition-duration:2.0s,2.0s;
+	-moz-transition-timing-function:ease,ease-in;
+	-moz-transition-delay:0.5s,2s;
+}
+ul.transition-list li:hover div{background-color:rgba(10,50,100,0.4); left:800px;}
+ul.transition-list li:nth-child(8):hover div{top:100px;}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="explain">
+		<h3><b>transition：</b>用来设置元素变换时的过渡，取值有：</h3>
+		<ol>
+			<li><span class="f-red">transition-property：all | none | property[ ,property ]*</span></li>
+			<li><span class="f-red">transition-duration：time[ ,time ]*</span></li>
+			<li><span class="f-red">transition-delay：time[ ,time ]*</span></li>
+			<li><span class="f-red">transition-timing-function：linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(number, number, number, number)[ ,linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(number, number, number, number) ]*</span></li>
+		</ol>
+	</div>
+	<dl class="detail-list">
+		<dt class="detail-list-head">transition-property：设置元素过渡的类型。</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-list property-list">
+				<li><div><span>transition-property:width;</span></div></li>
+				<li><div><span>transition-property:background-color或者backgroundColor;</span></div></li>
+				<li><div><span>transition-property:transform;</span></div></li>
+				<li><div><span>transition-property:transform;</span></div></li>
+				<li><div><span>transition-property:width,height,border-right-width,border-left-width;</span></div></li>
+				<li><div><span>transition-property:opacity;</span></div></li>
+				<li><div><span>transition-property:font-size;</span></div></li>
+				<li><div><span>不设置</span></div></li>
+			</ul>
+<pre data-title="html" data-skin="1">
+&lt;ul class=&quot;ul-list property-list&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-property:width;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-property:background-color或者backgroundColor;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-property:transform;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-property:transform;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-property:width,height,border-right-width,border-left-width;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-property:opacity;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-property:font-size;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;不设置&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+ul.property-list li{float: left;}
+ul.property-list li div{
+	position: static;
+	-webkit-transition-duration:.5s;
+	-moz-transition-duration:.5s;
+	-ms-transition-duration:.5s;
+	-o-transition-duration:.5s;
+	transition-duration:.5s;
+	-webkit-transition-timing-function:linear;
+	-moz-transition-timing-function:linear;
+	-ms-transition-timing-function:linear;
+	-o-transition-timing-function:linear;
+	transition-timing-function:linear;
+}
+<span class="note">/*只设置width变换*/</span>
+.property-list li:nth-child(1) div{
+	width: 100px; 
+	-webkit-transition-property:width;
+	-moz-transition-property:width;
+	-ms-transition-property:width;
+	-o-transition-property:width;
+	transition-property:width;
+}
+.property-list li:nth-child(1):hover div{
+	width: 300px;
+}
+<span class="note">/*设置background-color（backgroundColor）的变化*/</span>
+.property-list li:nth-child(2){
+	-webkit-transition-property:backgroundColor;
+	-moz-transition-property:backgroundColor;
+	-ms-transition-property:backgroundColor;
+	-o-transition-property:backgroundColor;
+	transition-property:backgroundColor;
+}
+.property-list li:nth-child(2) div:hover{
+	background-color: #a00;
+}
+<span class="note">/*这是transform属性的变换*/</span>
+.property-list li:nth-child(3) div,.property-list li:nth-child(4) div{
+	-webkit-transition-property:transform;
+	-moz-transition-property:transform;
+	-ms-transition-property:transform;
+	-o-transition-property:transform;
+	transition-property:transform;
+}
+.property-list li:nth-child(3):hover div{
+	background-color: yellow;
+	-webkit-transform:scale(0.5,.8);
+	-moz-transform:scale(0.5,.8);
+	-ms-transform:scale(0.5,.8);
+	-o-transform:scale(0.5,.8);
+	transform:scale(0.5,.8);
+}
+<span class="note">/*也是设置transform的变换，但是变换的是不同的transform属性*/</span>
+.property-list li:nth-child(4):hover div{
+	-webkit-transform:rotate(-180deg);
+	-moz-transform:rotate(-180deg);
+	-ms-transform:rotate(-180deg);
+	-o-transform:rotate(-180deg);
+	transform:rotate(-180deg);
+}
+<span class="note">/*通过逗号分开设置多个不同的css属性*/</span>
+.property-list li:nth-child(5) div{
+	border-width: 0px;
+	border-style: solid;
+	border-color: #c00;
+	-webkit-transition-property:width,height,border-right-width,border-left-width;
+	-moz-transition-property:width,height,border-left-width,border-right-width;
+	-ms-transition-property:width,height,border-left-width,border-right-width;
+	-o-transition-property:width,height,border-left-width,border-right-width;
+	transition-property:width,height,border-left-width,border-right-width;
+}
+.property-list li:nth-child(5):hover div{
+	border-left-width: 100px;
+	border-right-width: 100px;
+	width: 100px;
+	height: 100px;
+}
+<span class="note">/*设置opecity来过渡透明度*/</span>
+.property-list li:nth-child(6) div{
+	opacity:1;
+	-webkit-transition-property:opacity;
+	-moz-transition-property:opacity;
+	-ms-transition-property:opacity;
+	-o-transition-property:opacity;
+	transition-property:opacity;
+}
+.property-list li:nth-child(6):hover div{
+	opacity: 0.2;
+}
+<span class="note">/*只过渡改变设置的css属性font-size*/</span>
+.property-list li:nth-child(7) div{
+	font-size:24px;
+	color:#000;
+	-webkit-transition-property:font-size;
+	-moz-transition-property:font-size;
+	-ms-transition-property:font-size;
+	-o-transition-property:font-size;
+	transition-property:font-size;
+}
+.property-list li:nth-child(7):hover div{
+	color:#c00;
+	font-size: 40px;
+}
+<span class="note">什么都不设置，那么transition-property取默认属性all， 所有可以进行过渡的css属性</span>
+.property-list li:nth-child(8) div{
+	font-size:50px;
+	color:#c00;
+	background-color:yellow;
+	margin: 0px;
+}
+.property-list li:nth-child(8):hover div{
+	font-size: 20px;
+	color: #fff;
+	background-color: purple;
+	width: 100px;
+	height: 100px;
+	margin: 100px;
+}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">transition-duration：用来设置过渡的持续时间。</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-list duration-list">
+				<li><div><span>transition-durtation:.5s;</span></div></li>
+				<li><div><span>transition-durtation:0.8s</span></div></li>
+				<li><div><span>transition-durtation:10s</span></div></li>
+			</ul>
+<pre data-title="HTML" data-skin="1">
+&lt;ul class=&quot;ul-list duration-list&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-durtation:.5s;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-durtation:0.8s&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-durtation:10s&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="300">
+.duration-list li{
+	float: left;
+}
+<span class="note">/*设置元素过渡transition的其他参数，包括参加过都的css，过渡的动画类型，延迟多少秒后执行过渡*/</span>
+.duration-list li div{
+	left: 0;
+	top: 0;
+	-webkit-transition-property:all;
+	-moz-transition-property:all;
+	-ms-transition-property:all;
+	-o-transition-property:all;
+	transition-property:all;
+	-webkit-transition-timing:linear;
+	-moz-transition-timing:linear;
+	-ms-transition-timing:linear;
+	-o-transition-timing:linear;
+	transition-timing:linear;
+	-webkit-transition-delay:0s;
+	-moz-transition-delay:0s;
+	-ms-transition-delay:0s;
+	-o-transition-delay:0s;
+	transition-delay:0s;
+}
+<span class="note">/*元素动画过渡的持续时间0.5秒其中0可以省略写成.5s*/</span>
+.duration-list li:nth-child(1) div{
+	-webkit-transition-duration:.5s;
+	-moz-transition-duration:.5s;
+	-ms-transition-duration:.5s;
+	-o-transition-duration:.5s;
+	transition-duration:.5s;
+}
+<span class="note">/*元素动画过渡的持续时间0.8秒*/</span>
+.duration-list li:nth-child(2) div{
+	-webkit-transition-duration:0.8s;
+	-moz-transition-duration:0.8s;
+	-ms-transition-duration:0.8s;
+	-o-transition-duration:0.8s;
+	transition-duration:0.8s;
+}
+<span class="note">/*元素动画过渡的持续时间10秒*/</span>
+.duration-list li:nth-child(3) div{
+	-webkit-transition-duration:10.0s;
+	-moz-transition-duration:10.0s;
+	-ms-transition-duration:10.0s;
+	-o-transition-duration:10.0s;
+	transition-duration:10.0s;
+}
+.duration-list li:hover div{
+	left: 50px;
+	top: 50px;
+	width: 200px;
+	height: 200px;
+}
+</pre>
+		</dd>
+	</dl>
+
+	<dl class="detail-list">
+		<dt class="detail-list-head">transition-delay：设置对象延迟的过渡时间。</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-list delay-list">
+				<li><div><span>transition-delay:.5s;</span></div></li>
+				<li><div><span>transition-delay:5s;</span></div></li>
+				<li><div><span>transition-delay:3.5s,.5s,1s;</span></div></li>
+			</ul>
+<pre data-skin="1" date-title="HTML">
+&lt;ul class=&quot;ul-list delay-list&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-delay:.5s;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-delay:5s;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-delay:3.5s,.5s,1s;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-skin="2" data-title="CSS" data-height="300">
+<span class="note">/*delay设置元素过渡的延迟时间*/</span>
+.delay-list li{
+	float: left;
+}
+<span class="note">/*统一设置元素的过渡css属性和过渡动画的持续时间*/</span>
+.delay-list li div{
+	-webkit-transition-property:all;
+	-moz-transition-property:all;
+	-ms-transition-property:all;
+	-o-transition-property:all;
+	transition-property:all;
+	-webkit-transition-duration:2.5s;
+	-moz-transition-duration:2.5s;
+	-ms-transition-duration:2.5s;
+	-o-transition-duration:2.5s;
+	transition-duration:2.5s;
+}
+<span class="note">/*设置元素延迟0.5秒后执行动画过渡*/</span>
+.delay-list li:nth-child(1) div{
+	-webkit-transition-delay:0.5s;
+	-moz-transition-delay:0.5s;
+	-ms-transition-delay:0.5s;
+	-o-transition-delay:0.5s;
+	transition-delay:0.5s;
+	background-color: orange;
+}
+<span class="note">/*过渡元素的左和上的定位位置*/</span>
+.delay-list li:nth-child(1):hover div{
+	left: 200px;
+	top: 200px;
+}
+<span class="note">/*设置元素延迟5s后执行过渡动画*/</span>
+.delay-list li:nth-child(2) div{
+	-webkit-transition-delay:5s;
+	-moz-transition-delay:5s;
+	-ms-transition-delay:5s;
+	-o-transition-delay:5s;
+	transition-delay:5s;
+	background-color: purple;
+}
+<span class="note">/*鼠标元素改变元素的宽、高、左、上*/</span>
+.delay-list li:nth-child(2):hover div{
+	width: 100px;
+	height: 100px;
+	left: 100px;
+	top: 100px;
+}
+<span class="note">/*可以分开设置多个过渡css属性，多个过渡持续时间，多个过渡延迟时间；它们分别用逗号分隔开每个个属性和参数一一对应*/</span>
+.delay-list li:nth-child(3) div{
+	background-color: pink;
+	-webkit-transition-property:transform,width,height;
+	-moz-transition-property:transform,width,height;
+	-ms-transition-property:transform,width,height;
+	-o-transition-property:transform,width,height;
+	transition-property:transform,width,height;
+	-webkit-transition-duration:.5s,1s,1.5s;
+	-moz-transition-duration:.5s,1s,1.5s;
+	-ms-transition-duration:.5s,1s,1.5s;
+	-o-transition-duration:.5s,1s,1.5s;
+	transition-duration:.5s,1s,1.5s;
+	-webkit-transition-delay:3.4s,.5s,1s;
+	-moz-transition-delay:3.4s,.5s,1s;
+	-ms-transition-delay:3.4s,.5s,1s;
+	-o-transition-delay:3.4s,.5s,1s;
+	transition-delay:3.4s,.5s,1s;
+}
+.delay-list li:nth-child(3):hover div{
+	-webkit-transform:rotate(145deg);
+	-moz-transform:rotate(145deg);
+	-ms-transform:rotate(145deg);
+	-o-transform:rotate(145deg);
+	transform:rotate(145deg);
+	width: 100px;
+	height: 100px;
+}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">transition-timing-function：设置元素过渡的动画类型。</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-list timing-function-list">
+				<li><div><span>transition-timing-function:linear;(线性过渡)</span></div></li>
+				<li><div><span>transition-timing-function:ease;(平滑过渡)</span></div></li>
+				<li><div><span>transition-timing-function:ease-in(由慢到快)</span></div></li>
+				<li><div><span>transition-timing-function:ease-out(由快到慢)</span></div></li>
+				<li><div><span>transition-timing-function:ease-in-out(由慢到快再到慢)</span></div></li>
+				<li><div><span>transition-timing-function:cubic-bezier(0.25, 0.1, 0.25, 1.0)(利用贝塞尔曲线来实现动画)</span></div></li>
+			</ul>
+<pre data-skin="1" data-title="HTML">
+&lt;ul class=&quot;ul-list timing-function-list&quot;&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-timing-function:linear;(线性过渡)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-timing-function:ease;(平滑过渡)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-timing-function:ease-in(由慢到快)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-timing-function:ease-out(由快到慢)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-timing-function:ease-in-out(由慢到快再到慢)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;div&gt;&lt;span&gt;transition-timing-function:cubic-bezier(0.25, 0.1, 0.25, 1.0)(利用贝塞尔曲线来实现动画)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-skin="2" data-title="CSS" data-height="300">
+<span class="note">/*timing-function-list设置元素的过渡动画类型*/</span>
+.timing-function-list li{}
+.timing-function-list li div{
+	background-color: #eee;
+	-webkit-transition-property:transform;
+	-moz-transition-property:transform;
+	-ms-transition-property:transform;
+	-o-transition-property:transform;
+	transition-property:transform;
+	-webkit-transition-duration:2s;
+	-moz-transition-duration:2s;
+	-ms-transition-duration:2s;
+	-o-transition-duration:2s;
+	transition-duration:2s;
+	-webkit-transition-delay:0.2s;
+	-moz-transition-delay:0.2s;
+	-ms-transition-delay:0.2s;
+	-o-transition-delay:0.2s;
+	transition-delay:0.2s;
+}
+.timing-function-list li div span{padding:10px;display: inline-block;}
+<span class="note">/*使用linear效果来执行动画，表示元素 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0) */</span>
+.timing-function-list li:nth-child(1) div{
+	-webkit-transition-timing-function:linear;
+	-moz-transition-timing-function:linear;
+	-ms-transition-timing-function:linear;
+	-o-transition-timing-function:linear;
+	transition-timing-function:linear;
+}
+<span class="note">/*使用ease效果来执行动画，表示元素 平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0) */</span>
+.timing-function-list li:nth-child(2) div{
+	-webkit-transition-timing-function:ease;
+	-moz-transition-timing-function:ease;
+	-ms-transition-timing-function:ease;
+	-o-transition-timing-function:ease;
+	transition-timing-function:ease;
+}
+<span class="note">/*使用ease-in效果来执行动画，表示元素 由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0) </span>
+.timing-function-list li:nth-child(3) div{
+	-webkit-transition-timing-function:ease-in;
+	-moz-transition-timing-function:ease-in;
+	-ms-transition-timing-function:ease-in;
+	-o-transition-timing-function:ease-in;
+	transition-timing-function:ease-in;
+}
+<span class="note">/*使用ease-out效果来执行动画效果，表示元素 由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)</span>
+.timing-function-list li:nth-child(4) div{
+	-webkit-transition-timing-function:ease-out;
+	-moz-transition-timing-function:ease-out;
+	-ms-transition-timing-function:ease-out;
+	-o-transition-timing-function:ease-out;
+	transition-timing-function:ease-out;
+}
+<span class="note">/*使用ease-in-out效果来执行动画效果，表示元素 由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)</span>
+.timing-function-list li:nth-child(5) div{
+	-webkit-transition-timing-function:ease-in-out;
+	-moz-transition-timing-function:ease-in-out;
+	-ms-transition-timing-function:ease-in-out;
+	-o-transition-timing-function:ease-in-out;
+	transition-timing-function:ease-in-out;
+}
+<span class="note">/*通过cubic-bezier(.25, .1, .25, 1);贝塞尔曲线来设置动画的执行函数</span>
+.timing-function-list li:nth-child(6) div{
+	-webkit-transition-timing-function:cubic-bezier(0.25, 0.1, 0.25, 1.0);
+	-moz-transition-timing-function:cubic-bezier(.25, .1, .25, 1);
+	-ms-transition-timing-function:cubic-bezier(.25, .1, .25, 1);
+	-o-transition-timing-function:cubic-bezier(.25, .1, .25, 1);
+	transition-timing-function:cubic-bezier(.25, .1, .25, 1);
+}
+.timing-function-list li:hover div{
+	-webkit-transform:translateX(350%);
+	-moz-transform:translateX(350%);
+}
+</pre>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

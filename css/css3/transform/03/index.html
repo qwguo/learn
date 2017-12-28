@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文字外翻效果</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css">
+		.letter-list{}
+		.letter-list::after{content:"";display:table; clear: both;}
+		.letter-list{zoom:1;}
+		.letter-list a{display: inline-block;  position: relative; margin:0 10px;}
+		.letter-list a::after,.letter-list a::before{content:attr(data-letter); position: absolute; transition:all .3s ease-out; transform-origin:left center;}
+		.letter-list a,.letter-list a::after,.letter-list a::before{font: 700 150px/100% '隶书'; text-decoration:none; text-align: center;}
+		.letter-list a{color:#c00;}
+		.letter-list a::after{color:rgba(0,0,0,0.11); left: 8px; top: 0; z-index: -1;}
+		.letter-list a::before{color: #fff;left: -2px; top: 0; text-shadow:1px 1px 1px rgba(0,0,0,0.8),-1px -1px 1px rgba(0,0,0,0.3);}
+		.letter-list a:hover::before{transform:rotateX(0deg) rotateY(-40deg) rotateZ(0deg);}
+		.letter-list a:hover::after{transform:scale(1.08,1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg,22deg);
+}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">transform : 文字外翻效果</dt>
+			<dd class="detail-list-body">
+				<div class="letter-list">
+					<a href="#" data-letter="A">A</a>
+					<a href="#" data-letter="B">B</a>
+					<a href="#" data-letter="C">C</a>
+					<a href="#" data-letter="D">D</a>
+					<a href="#" data-letter="E">E</a>
+					<a href="#" data-letter="F">F</a>
+					<a href="#" data-letter="G">G</a>
+					<a href="#" data-letter="H">H</a>
+					<a href="#" data-letter="I">I</a>
+					<a href="#" data-letter="G">G</a>
+					<a href="#" data-letter="K">K</a>
+					<a href="#" data-letter="L">L</a>
+					<a href="#" data-letter="M">M</a>
+					<a href="#" data-letter="N">N</a>
+					<a href="#" data-letter="O">O</a>
+					<a href="#" data-letter="P">P</a>
+					<a href="#" data-letter="Q">Q</a>
+					<a href="#" data-letter="R">R</a>
+					<a href="#" data-letter="S">S</a>
+					<a href="#" data-letter="T">T</a>
+					<a href="#" data-letter="U">U</a>
+					<a href="#" data-letter="V">V</a>
+					<a href="#" data-letter="W">W</a>
+					<a href="#" data-letter="X">X</a>
+					<a href="#" data-letter="Y">Y</a>
+					<a href="#" data-letter="Z">Z</a>
+				</div>
+<pre data-title="HTML" data-skin="1">
+&lt;a href=&quot;#&quot; data-letter=&quot;A&quot;&gt;A&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;B&quot;&gt;B&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;C&quot;&gt;C&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;D&quot;&gt;D&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;E&quot;&gt;E&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;F&quot;&gt;F&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;G&quot;&gt;G&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;H&quot;&gt;H&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;I&quot;&gt;I&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;G&quot;&gt;G&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;K&quot;&gt;K&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;L&quot;&gt;L&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;M&quot;&gt;M&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;N&quot;&gt;N&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;O&quot;&gt;O&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;P&quot;&gt;P&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;Q&quot;&gt;Q&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;R&quot;&gt;R&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;S&quot;&gt;S&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;T&quot;&gt;T&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;U&quot;&gt;U&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;V&quot;&gt;V&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;W&quot;&gt;W&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;X&quot;&gt;X&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;Y&quot;&gt;Y&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-letter=&quot;Z&quot;&gt;Z&lt;/a&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+.letter-list::after{content:"";display:table; clear: both;}
+.letter-list{zoom:1;}
+.letter-list a{display: inline-block;  position: relative; margin:0 10px;}
+.letter-list a::after,.letter-list a::before{content:attr(data-letter); position: absolute; transition:all .3s ease-out; transform-origin:left center;}
+.letter-list a,.letter-list a::after,.letter-list a::before{font: 700 150px/100% '隶书'; text-decoration:none; text-align: center;}
+.letter-list a{color:#c00;}
+.letter-list a::after{color:rgba(0,0,0,0.11); left: 8px; top: 0; z-index: -1;}
+.letter-list a::before{color: #fff;left: -2px; top: 0; text-shadow:1px 1px 1px rgba(0,0,0,0.8),-1px -1px 1px rgba(0,0,0,0.3);}
+.letter-list a:hover::before{transform:rotateX(0deg) rotateY(-40deg) rotateZ(0deg);}
+.letter-list a:hover::after{transform:scale(1.08,1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg,22deg);
+}
+</pre>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

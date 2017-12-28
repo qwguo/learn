@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>测试</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+.z-index-test{}
+.z-index-test ul{width:auto; clear:both; padding-top:10px; overflow:hidden; margin-bottom:10px; list-style:none;}
+	.z-index-test li{float:left; line-height:30px; padding:0px 10px;}
+	.z-index-test input{width:14px; height:14px; vertical-align:middle; margin-right:3px;}
+	.z-index-test label{display:inline-block; vertical-align:middle;}
+.z-index-list:after,.z-index-list:before{content: "";display:table;}
+.z-index-list:after{clear: both;}
+.z-index-list{width:680px; padding-top: 30px;}
+.z-index-list div{width:300px; height:300px; float:left; color:#000;}
+.z-index-list span{width:280px; height:280px;}
+.z-index-list b{position:absolute; z-index:100; width:300px;}
+	.z-index-1{background-color:yellow; position:relative; margin:10px 0px 0px 10px; padding:15px 0 0 15px;}
+		.z-index-1 span{position:absolute; z-index:10; background-color:olive;}
+	.z-index-2{background-color:orange; position:relative; margin:0px 0 0px -50px;}
+		.z-index-2 span{position:absolute; z-index:7; background-color:teal;}
+	.z-index-3{background-color:green; margin:-30px 0px 0px -60px;}
+		.z-index-3 span{position:absolute; z-index:8; background-color:aqua;}
+	.z-index-4{background-color:pink; margin:0 0 -400px 0; position:relative; top:-410px; z-index:2;}
+		.z-index-4 span{position:absolute; z-index:9; background-color:lime;}
+	.z-index-5{background-color:#cc0; position:fixed; top:400px; left:200px;}
+		.z-index-5 span{position:absolute; z-index:6; background-color:#0cc;}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var testDiv = document.getElementById("zIndexList"),
+				zDiv = testDiv.getElementsByTagName("div"),
+				radios = document.getElementById("radios").getElementsByTagName("input"),
+				subRadios = document.getElementById("subRadios").getElementsByTagName("input");
+		for(var i = 0,n; n = radios[i]; i++){
+			n.index = i;
+			n.onclick = function(){
+				if(this.checked){
+					zDiv[this.index].style.visibility = "hidden";
+				}else{
+					zDiv[this.index].style.visibility = "visible";
+				}
+			}
+		}
+		for(var x = 0,m; m = subRadios[x]; x++){
+			m.index = x;
+			m.onclick = function(){
+				if(this.checked){
+					zDiv[this.index].getElementsByTagName("span")[0].style.visibility = "hidden";
+				}else{
+					zDiv[this.index].getElementsByTagName("span")[0].style.visibility = "visible";
+				}
+			}
+		}
+		window.onscroll = function(){
+			var st = document.body.scrollTop || document.documentElement.scrollTop;
+			if(st>150){
+				zDiv[4].style.display = "none";
+			}else{
+				zDiv[4].style.display = "block";
+			}
+		}
+	};
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">通过设置不同的z-index值来测试div的层级问题</dt>
+		<dd class="detail-list-body">
+			<div class="z-index-test" id="testDiv">
+				<ul id="radios">
+					<li>
+						<input type="checkbox" id="div_1" />
+						<label for="div_1">第一个div隐藏</label>
+					</li>
+					<li>
+						<input type="checkbox" id="div_2" />	
+						<label for="div_2">第二个div隐藏</label>
+					</li>
+					<li>
+						<input type="checkbox" id="div_3" />	
+						<label for="div_3">第三个div隐藏</label>
+					</li>
+					<li>
+						<input type="checkbox" id="div_4" />	
+						<label for="div_4">第四个div隐藏</label>
+					</li>
+					<li>
+						<input type="checkbox" id="div_5" />	
+						<label for="div_5">第五个div隐藏</label>
+					</li>
+				</ul>
+				<ul id="subRadios">
+					<li>
+						<input type="checkbox" id="div_s1" />	
+						<label for="div_s1">第一个子span隐藏</label>
+					</li>
+					<li>
+						<input type="checkbox" id="div_s2" />	
+						<label for="div_s2">第二个子span隐藏</label>
+					</li>
+					<li>
+						<input type="checkbox" id="div_s3" />	
+						<label for="div_s3">第三个子span隐藏</label>
+					</li>
+					<li>
+						<input type="checkbox" id="div_s4" />	
+						<label for="div_s4">第四个子span隐藏</label>
+					</li>
+					<li>
+						<input type="checkbox" id="div_s5" />	
+						<label for="div_s5">第五个子span隐藏</label>
+					</li>
+				</ul>
+				<div class="z-index-list" id="zIndexList">
+					<div class="z-index-1"><span></span><b>父级position:relative; z-index不设置，子集position:absolute; z-index:10;</b></div>
+					<div class="z-index-2"><span></span><b>父级position:relative; z-index不设置，子集position:absolute; z-index:7;</b></div>
+					<div class="z-index-3"><span></span><b>父级position:不设置; z-index不设置，子集position:relative; z-index:8;</b></div>
+					<div class="z-index-4"><span></span><b>父级position:relative; z-index:2，子集position:absolute; z-index:9;</b></div>
+					<div class="z-index-5"><span></span><b>父级position:fixed; z-index:2，子集position:absolute; z-index:6;</b></div>
+				</div>
+			</div>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">代码详细：</dt>
+		<dd class="detail-list-body">
+<pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;z-index-1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;b&gt;父级position:relative; z-index不设置，子集position:absolute; z-index:10;&lt;/b&gt;&lt;/div&gt;
+&lt;div class=&quot;z-index-2&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;b&gt;父级position:relative; z-index不设置，子集position:absolute; z-index:7;&lt;/b&gt;&lt;/div&gt;
+&lt;div class=&quot;z-index-3&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;b&gt;父级position:不设置; z-index不设置，子集position:relative; z-index:8;&lt;/b&gt;&lt;/div&gt;
+&lt;div class=&quot;z-index-4&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;b&gt;父级position:relative; z-index:2，子集position:absolute; z-index:9;&lt;/b&gt;&lt;/div&gt;
+&lt;div class=&quot;z-index-5&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;b&gt;父级position:fixed; z-index:2，子集position:absolute; z-index:6;&lt;/b&gt;&lt;/div&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+.z-index-list{width:600px; padding-top: 30px;}
+.z-index-list div{width:300px; height:300px; float:left; color:#000;}
+.z-index-list span{width:280px; height:280px; color:#fff;}
+	.z-index-1{background-color:yellow; position:relative; margin:10px 0px 0px 10px; padding:15px 0 0 15px }
+		.z-index-1 span{position:absolute; z-index:10; background-color:olive;}
+	.z-index-2{background-color:orange; position:relative; margin:0px 0 0px -50px;}
+		.z-index-2 span{position:absolute; z-index:7; background-color:teal;}
+	.z-index-3{background-color:green; margin:-30px 0px 0px -60px;}
+		.z-index-3 span{position:absolute; z-index:8; background-color:aqua;}
+	.z-index-4{background-color:pink; margin:0 0 -400px 0; position:relative; top:-410px; z-index:2;}
+		.z-index-4 span{position:absolute; z-index:9; background-color:lime;}
+	.z-index-5{background-color:#cc0; position:fixed; top:400px; left:200px;}
+		.z-index-5 span{position:absolute; z-index:6; background-color:#0cc;}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">详细说明：</dt>
+		<dd class="detail-list-body">
+			<div class="explain">
+				<p>元素的层级是依据设置<span class="f-red">z-index</span>属性来决定的，在上图中通过隐藏不同的元素可以很明显的看出各自的层级关系。在不给元素设置position定位的时候，元素的各层级是依据元素在页面中出现的位置决定的，后输出的元素要比先输出的元素的层级高，也就是我们说的文本流顺序。</p>
+				<p>
+					当给元素设置了position属于，但是不设置<span class="f-red">z-index</span>属性时元素还是按照文本流的顺序来显示层级，如果没有设置<span class="f-red">position</span>属性的元素出现在设置<span class="f-red">position</span>属性的元素的后面，它的层级没有只设置了<span class="f-red">position</span>属性元素的层级高。
+				</p>
+				<p>
+					当两个同时设置<span class="f-red">position</span>属性的元素并列存在，给先输出的元素或者后输出的元素设置一个<span class="f-red">z-index : 0;</span>时并不会改变文本流的层级顺序。换句话说默认情况下文本流的<span class="f-red">z-index</span>的值就是<b class="f-red">0</b>，当所有的元素都设置了position并且设置了同样的z-index值得情况下，元素还是按照文本流顺序层输出。
+				</p>
+				<P>
+					当在有设置<span class="f-red">position</span>的元素的子元素中设置position并且给子元素设置z-index时值大的在所有元素的最顶层。如果父元素没有设置z-index，父元素的同级有设置z-index并且比他的层级高但是没有子元素层级高，这种情况下子元素也会覆盖在他的父元素的同级元素上。这时的层级关系取决于子元素自身的z-index。<span class="f-orange">但是在ie7及以下的浏览器当中子元素的层级取决于父元素的position属于和z-index属性</span><span class="f-blue">ie7及以下浏览器，当给父元素和同级元素同时设置position属性并且同级元素的z-index值是大于1的那么同级元素永远高于此元素和此元素中的所有子元素，不管子元素的层级设置值再大。</span><span class="f-pink">除非给父元素也设置z-index的值等于或大于同级元素的z-index值。</span>在ie7下如果最后出现的元素没有设置position而是一个普通的文档元素，那么他的子元素的层级如果设置的高的话会在最上边。
+				</P>
+			</div>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

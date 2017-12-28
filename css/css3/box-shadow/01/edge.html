@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>按钮效果</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+	.edge-shadow{
+		background-color:#fff;
+		display:inline-block;
+		position:relative;
+		width:240px;
+		margin:10px 1px 50px;
+		height:208px;
+		border:5px solid #ccc;
+		-webkit-box-shadow:0 0 100px rgba(0,0,0,0.4) inset;
+			 -moz-box-shadow:0 0 100px rgba(0,0,0,0.4) inset;
+				 -o-box-shadow:0 0 100px rgba(0,0,0,0.4) inset;
+						box-shadow:0 0 100px rgba(0,0,0,0.4) inset;
+		font-size:30px;
+		font-family:"隶书";
+		font-weight:bold;
+		text-align:center;
+		vertical-align: top;
+	}
+	.edge-shadow img{width:100%;}
+	.edge-shadow span{position:absolute; width:100%; text-align:center; left:0px; top:30px; color:red;}	
+	.edge-shadow:after,.edge-shadow:before{
+		content:" ";
+		background-color:#fff;
+		position:absolute;
+		z-index:-1;
+		border-radius:50px/10px;
+		width:70%;
+		height:60%;
+	}
+	.edge-shadow:after{
+		left:10px;
+		bottom:15px;
+		-webkit-transform:skew(-10deg) rotate(-10deg);
+			 -moz-transform:skew(-10deg) rotate(-10deg);
+			 	-ms-transform:skew(-10deg) rotate(-10deg);
+			 	 -o-transform:skew(-10deg) rotate(-10deg);
+			 	 		transform:skew(-10deg) rotate(-10deg);
+		-webkit-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+			 -moz-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+				-ms-box-shadow:0px 20px 20px rgba(0,0,0.0.8);
+				 -o-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+						box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+
+	}
+	.edge-shadow:before{
+		right:10px;
+		bottom:15px;
+		-webkit-transform:skew(10deg) rotate(10deg);
+			 -moz-transform:skew(10deg) rotate(10deg);
+			 	-ms-transform:skew(10deg) rotate(10deg);
+			 	 -o-transform:skew(10deg) rotate(10deg);
+			 	 		transform:skew(10deg) rotate(10deg);
+		-webkit-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+			 -moz-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+				-ms-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+				 -o-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+						box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+	}
+	.edge-box-list{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.edge-box-list .curved-box {
+    display: inline-block;
+    *display: inline;
+    width: 225px;
+    height: 248px;
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset; 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    position: relative;
+    *zoom: 1;
+}
+.curved-box:before {
+    -webkit-transform: skew(-15deg) rotate(-6deg);
+    -moz-transform: skew(-15deg) rotate(-6deg);
+    transform: skew(-15deg) rotate(-6deg);
+    left: 15px;
+}
+.curved-box:after {
+    -webkit-transform: skew(15deg) rotate(6deg);
+    -moz-transform: skew(15deg) rotate(6deg);
+    transform: skew(15deg) rotate(6deg);
+    right: 15px;
+}
+.curved-box:before, .curved-box:after {
+    width: 70%;
+    height: 55%;
+    content: ' ';
+    -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 10px;
+    z-index: -1;	
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">效果展示：</dt>
+		<dd class="detail-list-body">
+			<div class="edge-shadow">
+				<img src="/public_image/pic.jpg" alt="">
+				<span>这是翘边阴影</span>
+			</div>
+			<div class="edge-shadow">
+				<img src="/public_image/pic.jpg" alt="">
+				<span>这是翘边阴影</span>
+			</div>
+			<div class="edge-shadow">
+				<img src="/public_image/pic.jpg" alt="">
+				<span>这是翘边阴影</span>
+			</div>
+			<div class="edge-shadow">
+				<img src="/public_image/pic.jpg" alt="">
+				<span>这是翘边阴影</span>
+			</div>
+			<div class="edge-shadow">
+				<img src="/public_image/pic.jpg" alt="">
+				<span>这是翘边阴影</span>
+			</div>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">代码展示：</dt>
+		<dd class="detail-list-body">
+
+<pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;edge-shadow&quot;&gt;
+	&lt;img src=&quot;/public_image/pic.jpg&quot; alt=&quot;&quot;&gt;
+	&lt;span&gt;这是翘边阴影&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+.edge-shadow{
+	background-color:#fff;
+	display:inline-block;
+	position:relative;
+	width:240px;
+	margin:10px 8px 50px;
+	height:208px;
+	border:5px solid #ccc;
+	-webkit-box-shadow:0 0 100px rgba(0,0,0,0.4) inset;
+	-moz-box-shadow:0 0 100px rgba(0,0,0,0.4) inset;
+	-o-box-shadow:0 0 100px rgba(0,0,0,0.4) inset;
+	box-shadow:0 0 100px rgba(0,0,0,0.4) inset;
+	font-size:30px;
+	font-family:"隶书";
+	font-weight:bold;
+	text-align:center;
+}
+.edge-shadow img{width:100%;}
+.edge-shadow span{position:absolute; width:100%; text-align:center; left:0px; top:30px; color:red;}	
+.edge-shadow:after,.edge-shadow:before{
+	content:" ";
+	background-color:#fff;
+	position:absolute;
+	z-index:-1;
+	border-radius:50px/10px;
+	width:70%;
+	height:60%;
+}
+.edge-shadow:after{
+	left:10px;
+	bottom:15px;
+	-webkit-transform:skew(-10deg) rotate(-10deg);
+	-moz-transform:skew(-10deg) rotate(-10deg);
+	-ms-transform:skew(-10deg) rotate(-10deg);
+	-o-transform:skew(-10deg) rotate(-10deg);
+	transform:skew(-10deg) rotate(-10deg);
+	-webkit-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+	-moz-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+	-ms-box-shadow:0px 20px 20px rgba(0,0,0.0.8);
+	-o-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+	box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+}
+.edge-shadow:before{
+	right:10px;
+	bottom:15px;
+	-webkit-transform:skew(10deg) rotate(10deg);
+	-moz-transform:skew(10deg) rotate(10deg);
+	-ms-transform:skew(10deg) rotate(10deg);
+	-o-transform:skew(10deg) rotate(10deg);
+	transform:skew(10deg) rotate(10deg);
+	-webkit-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+	-moz-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+	-ms-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+	-o-box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+	box-shadow:0px 20px 20px rgba(0,0,0,0.8);
+}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">展示效果：</dt>
+		<dd class="detail-list-body">
+			<ul class="edge-box-list">
+				<li class="curved-box"></li>
+				<li class="curved-box"></li>
+				<li class="curved-box"></li>
+				<li class="curved-box"></li>
+				<li class="curved-box"></li>
+			</ul>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">展示效果：</dt>
+		<dd class="detail-list-body">
+<pre data-title="HTML" data-skin="1">
+&lt;ul class=&quot;edge-box-list&quot;&gt;
+	&lt;li class=&quot;curved-box&quot;&gt;&lt;/li&gt;
+	&lt;li class=&quot;curved-box&quot;&gt;&lt;/li&gt;
+	&lt;li class=&quot;curved-box&quot;&gt;&lt;/li&gt;
+	&lt;li class=&quot;curved-box&quot;&gt;&lt;/li&gt;
+	&lt;li class=&quot;curved-box&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+.edge-box-list{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.edge-box-list .curved-box {
+	display: inline-block;
+	*display: inline;
+	width: 225px;
+	height: 248px;
+	margin: 20px;
+	background-color: #fff;
+	border: 1px solid #eee;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.06) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset; 
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+	position: relative;
+	*zoom: 1;
+}
+.curved-box:before {
+	-webkit-transform: skew(-15deg) rotate(-6deg);
+	-moz-transform: skew(-15deg) rotate(-6deg);
+	transform: skew(-15deg) rotate(-6deg);
+	left: 15px;
+}
+.curved-box:after {
+	-webkit-transform: skew(15deg) rotate(6deg);
+	-moz-transform: skew(15deg) rotate(6deg);
+	transform: skew(15deg) rotate(6deg);
+	right: 15px;
+}
+.curved-box:before, .curved-box:after {
+	width: 70%;
+	height: 55%;
+	content: ' ';
+	-webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	position: absolute;
+	bottom: 10px;
+	z-index: -1;	
+}
+</pre>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

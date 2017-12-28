@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>相册边框动画</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css">
+		ul,li{list-style:none; margin: 0; padding: 0;}
+		ul{height: 400px; width: 1000px; margin: 50px auto 0; position: relative;}
+		li{width: 204px; height: 304px; overflow: hidden; float: left; margin: 0 20px; position: relative;}
+		li a{width: 200px; height: 300px; display: block; border: 2px solid #ccc;}
+		li img{width: 100%; height: 100%; opacity: 0.8}
+		li b{position: absolute; background-color: #c00;}
+		li img,li b{-webkit-transition:all .5s ease-in; -moz-transition:all .5s ease-in; -ms-transition:all .5s ease-in; -o-transition:all .5s ease-in; transition:all .5s ease-in;}
+		li .t,li .b{height: 2px; width: 0;}
+		li .r,li .l{width: 2px; height: 0;}
+		li .t{left: 0; top: 0;}
+		li .r{right: 0; top: 100%;}
+		li .b{bottom: 0; left: 100%;}
+		li .l{left: 0; top: 0}
+		li:hover .t{width: 100%;}
+		li:hover .l{height: 100%;}
+		li:hover .r{height: 100%; top: 0;}
+		li:hover .b{width: 100%; left: 0;}
+		li:hover img{opacity: 1;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">相册边框动画</dt>
+			<dd class="detail-list-body">
+				<ul class="wu">
+					<li>
+						<a href="###"><img src="/public_image/1.jpg" /></a>
+						<b class="t"></b>
+						<b class="r"></b>
+						<b class="b"></b>
+						<b class="l"></b>
+					</li>
+					<li>
+						<a href="###"><img src="/public_image/2.jpg" /></a>
+						<b class="t"></b>
+						<b class="r"></b>
+						<b class="b"></b>
+						<b class="l"></b>
+					</li>
+					<li>
+						<a href="###"><img src="/public_image/3.jpg" /></a>
+						<b class="t"></b>
+						<b class="r"></b>
+						<b class="b"></b>
+						<b class="l"></b>
+					</li>
+					<li>
+						<a href="###"><img src="/public_image/4.jpg" /></a>
+						<b class="t"></b>
+						<b class="r"></b>
+						<b class="b"></b>
+						<b class="l"></b>
+					</li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

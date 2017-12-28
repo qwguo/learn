@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>svg绘制多边形的方法</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css"></style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">svg绘制多边形的方法：</dt>
+			<dd class="detail-list-body">
+				<div class="explain">
+					<h3>&lt;line&gt; 标签用来创建含有不少于三个边的图形：</h3>
+					<div style="background-color:#CCC">
+						<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width:100%; height:350px;">
+							<polygon points="500,10 380,240 620,240" style="fill:#EFEFEF; stroke:#C00; stroke-width:2;" />
+							<polygon points="450,10 412,48 412,101 450,139 503,139 541,101 541,48 503,10" style="fill:#EFEFEF; stroke:#C00; stroke-width:2;" transform="translate(200,0)" />
+							<polygon points="122 59,72 205,194 114,49 114,171 205" style="fill-rule: nonzero; fill: #CFC;stroke: #000"/>
+							<circle cx="122" cy="59" r="5" style="fill:#C00;" />
+							<circle cx="72" cy="205" r="5" style="fill:#CC0;" />
+							<circle cx="194" cy="114" r="5" style="fill:#0C0;" />
+							<circle cx="49" cy="114" r="5" style="fill:#00C;" />
+							<circle cx="171" cy="205" r="5" style="fill:#0CC;" />
+							<polygon points="321 60,271 206,393 115,248 115,370 206" style="fill-rule: evenodd; fill: #CFC; stroke: #000"/>
+							<polygon points="220,100 300,210 170,250" style="fill:#C00;stroke:#000;stroke-width:1" />
+						</svg>
+					</div>
+				</div>
+<pre data-title="HTML" data-skin="1">
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; style=&quot;width:100%; height:150px;&quot;&gt;
+	&lt;polygon points=&quot;500,10 380,240 620,240&quot; style=&quot;fill:#EFEFEF; stroke:#C00; stroke-width:2;&quot; /&gt;
+	&lt;polygon points=&quot;450,10 412,48 412,101 450,139 503,139 541,101 541,48 503,10&quot; style=&quot;fill:#EFEFEF; stroke:#C00; stroke-width:2;&quot; transform=&quot;translate(200,0)&quot; /&gt;
+	&lt;polygon points=&quot;122 59,72 205,194 114,49 114,171 205&quot; style=&quot;fill-rule: nonzero; fill: #CFC;stroke: #000&quot;/&gt;
+	&lt;circle cx=&quot;122&quot; cy=&quot;59&quot; r=&quot;5&quot; style=&quot;fill:#C00;&quot; /&gt;
+	&lt;circle cx=&quot;72&quot; cy=&quot;205&quot; r=&quot;5&quot; style=&quot;fill:#CC0;&quot; /&gt;
+	&lt;circle cx=&quot;194&quot; cy=&quot;114&quot; r=&quot;5&quot; style=&quot;fill:#0C0;&quot; /&gt;
+	&lt;circle cx=&quot;49&quot; cy=&quot;114&quot; r=&quot;5&quot; style=&quot;fill:#00C;&quot; /&gt;
+	&lt;circle cx=&quot;171&quot; cy=&quot;205&quot; r=&quot;5&quot; style=&quot;fill:#0CC;&quot; /&gt;
+	&lt;polygon points=&quot;321 60,271 206,393 115,248 115,370 206&quot; style=&quot;fill-rule: evenodd; fill: #CFC; stroke: #000&quot;/&gt;
+	&lt;polygon points=&quot;220,100 300,210 172,250&quot; style=&quot;fill:#C00;stroke:#000;stroke-width:1&quot; /&get;
+&lt;/svg&gt;
+</pre>
+			<div class="explain">
+				<h3>多边形的基本属性：</h3>
+				<p><span class="f-red">&lt;polygon&gt;：</span>标签用来创建含有不少于三个边的图形。</p>
+				<p><span class="f-red">points：</span>属性定义多边形每个角的 x 和 y 坐标，x和y用逗号分隔开，多个角用空格分开。</p>
+				<h3>使用属性来定义图形的样式：</h3>
+				<p><span class="f-red">stroke-width="2"</span>边线的宽度。</p>
+				<p><span class="f-red">stroke=rgb(255, 0, 0);</span>边线的颜色。</p>
+				<p><span class="f-red">file=rgb(255, 0, 0);</span>矩形填充色。</p>
+				<p><span class="f-red">transform：</span>图形的变形效果，类似 css 中的 transform</p>
+				<h3>使用css来定义图形的样式</h3>
+				<p><span class="f-red">fill：</span>图形内部的填满顏色，类似 css 中的 background-color。</p>
+				<p><span class="f-red">fill-opacity：</span>图形内部的不透明度值，类似 css 中的 opacity，但不包含边框喔！</p>
+				<p><span class="f-red">stroke：</span>图形的边框顏色，类似 css 中的 border-color！</p>
+				<p><span class="f-red">stroke-width：</span>图形的边框宽度，类似 css 中的 border-width！</p>
+				<p><span class="f-red">opacity：</span>图形的不透明度值，类似 css 中的 opacity！</p>
+				<p><span class="f-red">style="fill:rgba(0, 0, 255, .8); stroke-width:2; stroke:rgba(255, 0, 0, .5); height:100; width:100px;"</span>这里包括定义元素的填充颜色，边框，宽高等</p>
+			</div>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>属性选择实现搜索功能</title>
+<link rel="stylesheet" href="/public_css/list.css" />
+<style type="text/css">
+.wrapper{padding-top:40px;}
+input[type="text"]{width:298px; height:30px; padding:0px; margin:0px; line-height:30px;}
+ul{width:300px; display:none; margin-top:3px; border:1px solid #ccc; margin:0; padding:0;}
+li{line-height:30px; height:30px; padding-left:10px; border-width:0 0 1px; border-style:dotted; border-color:#ccc; list-style: none;}
+li:hover{background-color:#f5f5f5;}
+/*input:focus + ul{display:block;}*/
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var sel = document.createElement("style");
+		var inp = document.getElementById("select");
+		var uls = document.querySelector("ul");
+		var lis = uls.getElementsByTagName("li");
+		document.querySelector("head").appendChild(sel);
+		inp.addEventListener("input",function(){
+			sel.innerHTML = 'li:not([data-index*="'+this.value+'"]){display:none;}'
+		});
+		inp.addEventListener("click",function(){
+			uls.style.display = "block";
+		});
+		for(var i = 0; i < lis.length; i++){
+			lis[i].onclick = function(){
+			//alert(1);
+				inp.value = this.innerHTML;
+				uls.style.display = "none";
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<span>输入您的关键字：</span><input type="text" id="select" />
+	<ul>
+		<li data-index="北京市beijingshi">北京市</li>
+		<li data-index="天津市tianjinshi">天津市</li>
+		<li data-index="上海市shanghaishi">上海市</li>
+		<li data-index="广东省guangdongsheng">广东省</li>
+		<li data-index="河北省hebeisheng">河北省</li>
+		<li data-index="河南省henansheng">河南省</li>
+	</ul>
+</div></body>
+</html>

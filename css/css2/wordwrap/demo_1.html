@@ -1,0 +1,126 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<title>关于换行的测试默认状态</title>
+<style type="text/css">
+*{margin:0; padding:0;}
+.block-element dl{margin-bottom:10px; padding-bottom:10px;}
+	.block-element dl dt{font-size:20px; line-height:60px; font-weight:bold;}
+	.block-element dl dd{width:393px; border:1px solid #ccc; background-color:#eee;}
+		.block-element dl dd img{width:100px; height:50px;}
+
+.inlineBlock-element div{margin-bottom:10px; padding-bottom:10px;}
+	.inlineBlock-element div h5{font-size:20px; line-height:60px; font-weight:bold;}
+	.inlineBlock-element div span{width:393px; display:inline-block; border:1px solid #ccc; background-color:#eee;}
+		.inlineBlock-element div span img{width:100px; height:50px;}
+
+.table-element table{margin-bottom:10px; padding-bottom:10px;}
+	.table-element table th{font-size:20px; line-height:60px; font-weight:bold; text-align:left;}
+	.table-element table td{width:393px; border:1px solid #ccc; background-color:#eee;}
+		.table-element table td img{width:100px; height:50px;}
+
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">这是块级元素(block)的显示效果</dt>
+			<dd class="detail-list-body">
+				<div class="block-element">
+					<dl class="dl-1">
+						<dt>这是连续数字</dt>
+						<dd>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</dd>
+					</dl>
+					<dl class="dl-2">
+						<dt>这是连续字母</dt>
+						<dd>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</dd>
+					</dl>
+					<dl class="dl-3">
+						<dt>这是把空格写成&amp;nbsp;的英文文章</dt>
+						<dd>This&nbsp;is&nbsp;a&nbsp;common&nbsp;problem&nbsp;at&nbsp;most&nbsp;offices&nbsp;today.&nbsp;Everything&nbsp;seems&nbsp;to&nbsp;be&nbsp;in&nbsp;a&nbsp;state&nbsp;of&nbsp;flux.&nbsp;industries&nbsp;are&nbsp;being&nbsp;disrupted&nbsp;by&nbsp;newcomers&nbsp;and&nbsp;tech&nbsp;startups.&nbsp;Companies&nbsp;need&nbsp;to&nbsp;change,&nbsp;management&nbsp;knows&nbsp;it,&nbsp;and&nbsp;they&nbsp;are&nbsp;looking&nbsp;for&nbsp;fresh&nbsp;ideas.</dd>
+					</dl>
+					<dl class="dl-4">
+						<dt>这是英文文章</dt>
+						<dd>This is a common problem at most offices today. Everything seems to be in a state of flux. Long-established industries are being disrupted by newcomers and tech startups. Companies need to change, management knows it, and they are looking for fresh ideas.</dd>
+					</dl>
+					<dl class="dl-5">
+						<dt>这是中文文章</dt>
+						<dd>日本是一个小处优秀大处混蛋的民族332，从来如此。这是日本民族的两面性。一是非常自傲，骨子里看不起任何其他民族，包括美国。二是极端虚伪，明明自己错了，心里也知道，就是不承认。比如南京大屠杀，慰安妇，钓鱼岛等问题，全世界包括美国都要求日本诚实的对待历史，但是他死不认账。三是非常残忍的对待别人和自己，杀人和自杀一样，日本人扑鲸和杀海豚引发全世界抗议，他依然我行我素。旅行社从来不敢带游客到靖国神社去，在那里你不敢讲一句客观评价二战历史的话。不承认的话，你敢去试一试吗？一个细节非常优秀但是方向错误的民族，是不会有好结果的。</dd>
+					</dl>
+					<dl class="dl-6">
+						<dt>这是图片列表</dt>
+						<dd><img src="/public_image/s1.jpg" /><img src="/public_image/s2.jpg" /><img src="/public_image/s3.jpg" /><img src="/public_image/s4.jpg" /><img src="/public_image/s2.jpg" /><img src="/public_image/s3.jpg" /></dd>
+					</dl>
+				</div>
+			</dd>
+		</dl>
+		<dl class="detail-list">
+			<dt class="detail-list-head">这是块级元素(inline-block)的显示效果</dt>
+			<dd class="detail-list-body">
+				<div class="inlineBlock-element">
+					<div class="div-1">
+						<h5>这是连续数字</h5>
+						<span>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</span>
+					</div>
+					<div class="div-2">
+						<h5>这是连续字母</h5>
+						<span>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</span>
+					</div>
+					<div class="div-3">
+						<h5>这是把空格写成&amp;nbsp;的英文文章</h5>
+						<span>This&nbsp;is&nbsp;a&nbsp;common&nbsp;problem&nbsp;at&nbsp;most&nbsp;offices&nbsp;today.&nbsp;Everything&nbsp;seems&nbsp;to&nbsp;be&nbsp;in&nbsp;a&nbsp;state&nbsp;of&nbsp;flux.&nbsp;industries&nbsp;are&nbsp;being&nbsp;disrupted&nbsp;by&nbsp;newcomers&nbsp;and&nbsp;tech&nbsp;startups.&nbsp;Companies&nbsp;need&nbsp;to&nbsp;change,&nbsp;management&nbsp;knows&nbsp;it,&nbsp;and&nbsp;they&nbsp;are&nbsp;looking&nbsp;for&nbsp;fresh&nbsp;ideas.</span>
+					</div>
+					<div class="div-4">
+						<h5>这是英文文章</h5>
+						<span>This is a common problem at most offices today. Everything seems to be in a state of flux. Long-established industries are being disrupted by newcomers and tech startups. Companies need to change, management knows it, and they are looking for fresh ideas.</span>
+					</div>
+					<div class="div-5">
+						<h5>这是中文文章</h5>
+						<span>日本是一个小处优秀大处混蛋的民族332，从来如此。这是日本民族的两面性。一是非常自傲，骨子里看不起任何其他民族，包括美国。二是极端虚伪，明明自己错了，心里也知道，就是不承认。比如南京大屠杀，慰安妇，钓鱼岛等问题，全世界包括美国都要求日本诚实的对待历史，但是他死不认账。三是非常残忍的对待别人和自己，杀人和自杀一样，日本人扑鲸和杀海豚引发全世界抗议，他依然我行我素。旅行社从来不敢带游客到靖国神社去，在那里你不敢讲一句客观评价二战历史的话。不承认的话，你敢去试一试吗？一个细节非常优秀但是方向错误的民族，是不会有好结果的。</span>
+					</div>
+					<div class="div-6">
+						<h5>这是图片列表</h5>
+						<span><img src="/public_image/s1.jpg" /><img src="/public_image/s2.jpg" /><img src="/public_image/s3.jpg" /><img src="/public_image/s4.jpg" /><img src="/public_image/s1.jpg" /><img src="/public_image/s2.jpg" /></span>
+					</div>
+				</div>
+			</dd>
+		</dl>
+		<dl class="detail-list">
+			<dt class="detail-list-head">这是表格元素(table)的显示效果</dt>
+			<dd class="detail-list-body">
+				<div class="table-element">
+					<table class="table-1">
+						<tr><th>这是连续数字</th></tr>
+						<tr><td>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</td></tr>
+					</table>
+					<table class="table-2">
+						<tr><th>这是连续字母</th></tr>
+						<tr><td>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</td></tr>
+					</table>
+					<table class="table-3">
+						<tr><th>这是把空格写成&amp;nbsp;的英文文章</th></tr>
+						<tr><td>This&nbsp;is&nbsp;a&nbsp;common&nbsp;problem&nbsp;at&nbsp;most&nbsp;offices&nbsp;today.&nbsp;Everything&nbsp;seems&nbsp;to&nbsp;be&nbsp;in&nbsp;a&nbsp;state&nbsp;of&nbsp;flux.&nbsp;industries&nbsp;are&nbsp;being&nbsp;disrupted&nbsp;by&nbsp;newcomers&nbsp;and&nbsp;tech&nbsp;startups.&nbsp;Companies&nbsp;need&nbsp;to&nbsp;change,&nbsp;management&nbsp;knows&nbsp;it,&nbsp;and&nbsp;they&nbsp;are&nbsp;looking&nbsp;for&nbsp;fresh&nbsp;ideas.</td></tr>
+					</table>
+					<table class="table-4">
+						<tr><th>这是英文文章</th></tr>
+						<tr><td>This is a common problem at most offices today. Everything seems to be in a state of flux. Long-established industries are being disrupted by newcomers and tech startups. Companies need to change, management knows it, and they are looking for fresh ideas.</td></tr>
+					</table>
+					<table class="table-5">
+						<tr><th>这是中文文章</th></tr>
+						<tr><td>日本是一个小处优秀大处混蛋的民族332，从来如此。这是日本民族的两面性。一是非常自傲，骨子里看不起任何其他民族，包括美国。二是极端虚伪，明明自己错了，心里也知道，就是不承认。比如南京大屠杀，慰安妇，钓鱼岛等问题，全世界包括美国都要求日本诚实的对待历史，但是他死不认账。三是非常残忍的对待别人和自己，杀人和自杀一样，日本人扑鲸和杀海豚引发全世界抗议，他依然我行我素。旅行社从来不敢带游客到靖国神社去，在那里你不敢讲一句客观评价二战历史的话。不承认的话，你敢去试一试吗？一个细节非常优秀但是方向错误的民族，是不会有好结果的。</td></tr>
+					</table>
+					<table class="table-6">
+						<tr><th>这是图片列表</th></tr>
+						<tr><td><img src="/public_image/s1.jpg" /><img src="/public_image/s2.jpg" /><img src="/public_image/s3.jpg" /><img src="/public_image/s4.jpg" /><img src="/public_image/s4.jpg" /><img src="/public_image/s3.jpg" /></td></tr>
+					</table>
+				</div>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

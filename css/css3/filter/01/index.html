@@ -1,0 +1,66 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>filter挤压效果</title>
+  <link rel="stylesheet" href="/public_css/base_style.css">
+  <script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+  <script type="text/javascript" src="/public_js/public_fun.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      var box = $("#boxList"),i = box.find("i");
+      box.on({
+        mouseenter: function(){
+          i.show();
+        },
+        mousemove : function(event){
+          i.css({'left': event.pageX - i.width(), 'top': event.pageY - i.height()});
+        },
+        mouseleave: function(){
+          i.hide();
+        }
+      });
+    });
+  </script>
+  <style type="text/css">
+    .box-list{width: 1120px; list-style: none; margin: 0 auto; padding: 0; background-color: #000;
+      -webkit-filter: blur(15px) saturate(700%);
+      cursor: none;
+      transform-style: preserve-3d;
+    }
+    .box-list:after{clear: both; content: ''; display:table;}
+    .box-list i,.box-list li{width: 100px; height: 100px; border-radius: 100%; }
+    .box-list i{position: absolute; background-color: #66D9EF; display:none;}
+    .box-list li{background-color: #C00; float: left; margin: 20px; transform: translateZ(10px);}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <dl class="detail-list">
+      <dt class="detail-list-head">css3中的filter(滤镜)效果---挤压效果</dt>
+      <dd class="detail-list-body">
+        <div class="box-list-area">
+          <ul class="box-list" id="boxList">
+            <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            <i></i>
+          </ul>
+        </div>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">通过filter:的blur模糊和saturate饱和度</span>
+.box-list{width: 1120px; list-style: none; margin: 0 auto; padding: 0; background-color: #000;
+  -webkit-filter: blur(15px) saturate(700%);
+  cursor: none;
+  <span class="note">通过设置transform-style: preserve-3d;来规定子元素将保留其 3D 位置。</span>
+  transform-style: preserve-3d;
+}
+.box-list:after{clear: both; content: ''; display:table;}
+.box-list i,.box-list li{width: 100px; height: 100px; border-radius: 100%; }
+.box-list i{position: absolute; background-color: #66D9EF; display:none;}
+<span class="note">通过设置子元素的z轴偏移来实现3d效果，消除filter的噪点</span>
+.box-list li{background-color: #C00; float: left; margin: 20px; transform: translateZ(10px);}
+</pre>
+      </dd>
+    </dl>
+  </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>visibility</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+.ul-li,.ul-li li{padding:0; margin: 0;}
+	.ul-li li{list-style: none;}
+	.ul-li .heads{font-size: 48px;}
+	.ul-li li.visible{width:300px; height:300px; background-color:#c00; border:2px solid #c0c; margin:40px; padding:20px;visibility:visible; overflow-y:hidden;}
+	.ul-li li.visible span,.ul-li li.hidden span{width:400px; height:400px; display:block; background:orange;}
+	.ul-li li.hidden{width:300px; height:300px; background-color:#c00; border:2px solid #c0c; margin:40px; padding:20px; visibility:hidden; overflow-y:scroll;}
+	.ul-li .collapse{visibility:collapse;}
+table{width:90%; border:1px solid #ccc; margin-bottom:30px;}
+table td{padding:10px; border:1px solid #ccc;}
+.table-1 tr.collapse{visibility:collapse;}
+.table-2 td.collapse{visibility:collapse;}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">元素选择符：</dt>
+		<dd class="detail-list-body">
+			<ul class="ul-li">
+				<li class="heads">visibilite:visibile</li>
+				<li class="visible"><span>visibility:visible;</span></li>
+				<li class="heads">visibilite:hidden</li>
+				<li class="hidden"><span>visibility:hidden;</span></li>
+				<li class="heads">visibilite:collapse</li>
+				<li class="collapse"><span style="height:10px; width:10px;">visibility:collapse;</span></li>
+			</ul>
+			<h1>这是给表格中的tr设置了visibility:collapse;</h1>
+			<table class="table-1">
+			<tr class="collapse"><td class="collapse">这是td</td><td class="collapse">这是td</td><td class="collapse">这是td</td><td class="collapse">这是td</td></tr>
+			<tr><td>这是td</td><td>这是td</td><td>这是td</td><td>这是td</td></tr>
+			</table>
+			<h1>这是给表格中的td设置了visibility:collapse;</h1>
+			<table class="table-2">
+			<tr class="collapse"><td class="collapse">这是td</td><td class="collapse">这是td</td><td class="collapse">这是td</td><td class="collapse">这是td</td></tr>
+			<tr><td>这是td</td><td>这是td</td><td>这是td</td><td>这是td</td></tr>
+			</table>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

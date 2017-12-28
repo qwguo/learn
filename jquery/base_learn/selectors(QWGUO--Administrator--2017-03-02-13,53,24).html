@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery/jquery-1.9.1/jquery.js"></script>
+	<style type="text/css">
+		.selector-list{padding-left:0; margin:0px; padding-bottom: 10px;font-family:arial;}
+		.selector-list li{background-color:#f5f5f5; border:1px solid #ddd; padding:10px; line-height:30px; margin:10px 0 0; list-style-position: inside;}
+		.selector-list a{text-decoration: none; color: #000;}
+		.selector-list span,.selector-list a{margin:0px 8px;}
+		.selector-list input.text{width:80px; height:30px;}
+		.selector-list input.radio,.selector-list input.checkbox{width:14px; height:14px; margin:0px 5px;}
+		.selector-list .selected{color: #F00; font-size:18px;}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#idSelector").find('#id').addClass('selected');
+			$("#emementSelector").find('span').addClass('selected');
+		});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">基础：</dt>
+			<dd class="detail-list-body">
+				<ol class="selector-list" id="baseSelector">
+					<li id="idSelector">$("#id"){选择符}：<span class="span span-val-1">第一个span</span><span class="span span-val-2">第二个span</span><span class="span span-val-3" id="id">第三个span（选中）</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a</a><a href="#" class="a a-val-2"><em>第二个a</em></a></li>
+					<li id="emementSelector">$("span"){选择符}：<span class="span span-val-1">第一个span（选中）</span><span class="span span-val-2">第二个span（选中）</span><span class="span span-val-3">第三个span（选中）</span><span class="span span-val-4">第四个span（选中）</span><span class="span span-val-5">第五个span（选中）</span><a href="#" class="a a-val-1">第一个a</a><a href="#" class="a a-val-2"><em>第二个a</em></a></li>
+					<li id="idSelector">dd [class~="span-val-2"]{选择符}：<span class="span span-val-1">第一个span</span><span title="这是  中文 这是测试中文 " class="span span-val-2">第二个span（选中）</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a</a><a href="#" class="a a-val-2"><em>第二个a</em></a></li>
+					<li id="idSelector">dd [class^="a"]{选择符}：<span class="span span-val-1">第一个span</span><span title="这是  中文 这是测试中文 " class="span span-val-2">第二个span</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a（选中）</a><a href="#" class="a a-val-2"><em>第二个a（选中）</em></a></li>
+					<li id="idSelector">dd [class$="-1"]{选择符}：<span class="span span-val-1">第一个span（选中）</span><span title="这是  中文 这是测试中文 " class="span span-val-2">第二个span</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a（选中）</a><a href="#" class="a a-val-2"><em>第二个a</em></a></li>
+					<li id="idSelector">dd [class*="-2"]{选择符}：<span class="span span-val-1">第一个span</span><span class="span span-val-2" title="这是  中文 这是测试中文 ">第二个span（选中）</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a</a><a href="#" class="a a-val-2"><em>第二个a（选中）</em></a></li>
+					<li id="idSelector">dd [class|="span"]{选择符}：<span title="文-" class="span-val-0 span">第零个span（选中）</span><span class="span span-val-1" title="这是  中文 这是测试中文 ">第一个span</span><span class="span span-val-2">第二个span</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a（选中）</a><a href="#" class="a a-val-2"><em>第二个a（选中）</em></a></li>
+				</ol>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

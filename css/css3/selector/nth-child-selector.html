@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>nth-child-selector</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css">
+		ul:after{
+			content:"";
+			display:table;
+			clear:both;
+		}
+		ul{
+			zoom:1;
+			margin-bottom:20px;
+		}
+		ul,li{margin:0; padding: 0; list-style: none;}
+		.selector{margin-bottom: 10px;}
+		.selector h3{height: 30px; line-height: 30px; font-size: 18px; background-color: #eee; padding: 0 10px;}
+		.selector h3 span{color: #c00;}
+		ul li{
+			width:100px;
+			height:100px;
+			border:5px solid #ccc;
+			margin:0 10px;
+			float:left;
+			font-size:12px;
+		}
+		.ul-1 li:first-child{
+			background-color:black;
+			color:white;
+		}
+		.ul-1 li:last-child{
+			background-color:silver;
+		}
+		.ul-2 li:nth-child(odd){
+			font-size:16px;
+			font-family:"微软雅黑";
+			background-color:maroon;
+			color:white;
+		}
+		.ul-2 li:nth-child(even){
+			font-size:14px;
+			font-family:"隶书";
+			background-color:purple;
+			color:white;
+		}
+		.ul-3 li:nth-child(5){
+			background-color:gray;
+			color:white;
+		}
+		.ul-4 li:nth-child(2n){
+			background-color:maroon;
+			color:white;
+		}
+		.ul-5 li:nth-child(n+3){
+			background-color:fuchsia;
+			color:white;
+		}
+		.ul-6 li:nth-child(-n+3){
+			background-color:green;
+			color:orange;
+		}
+		.ul-7 li:nth-child(3n+1){
+			background-color:olive;
+			color:white;
+		}
+		.ul-8 li:nth-child(3n-2){
+			background-color:navy;
+			color:white;
+		}
+		.ul-9 li:nth-last-child(3){
+			background-color:yellowgreen;
+			color:white;
+		}
+		.ul-10 li:nth-last-child(3n-2){
+			background-color:tomato;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">通用html代码</dt>
+			<dd class="detail-list-body">
+<pre data-title="HTML" data-skin="1">
+&lt;ul class=&quot;ul-1&quot;&gt;
+	&lt;li&gt;这是li中的内容1&lt;/li&gt;
+	&lt;li&gt;这是li中的内容2&lt;/li&gt;
+	&lt;li&gt;这是li中的内容3&lt;/li&gt;
+	&lt;li&gt;这是li中的内容4&lt;/li&gt;
+	&lt;li&gt;这是li中的内容5&lt;/li&gt;
+	&lt;li&gt;这是li中的内容6&lt;/li&gt;
+	&lt;li&gt;这是li中的内容7&lt;/li&gt;
+	&lt;li&gt;这是li中的内容8&lt;/li&gt;
+	&lt;li&gt;这是li中的内容9&lt;/li&gt;
+	&lt;li&gt;这是li中的内容10&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+			</dd>
+		</dl>
+		<dl class="detail-list">
+			<dt class="detail-list-head">关于子选择器的一些使用child</dt>
+			<dd class="detail-list-body">
+				<div class="selector">
+					<h3><span>first-child</span>和<span>last-child</span>选择器，选择第一个和最后一个</h3>
+					<ul class="ul-1">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<h3>nth-child(odd)和nth-child(even)择器，选择奇数和偶数</h3>
+					<ul class="ul-2">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<h3>
+						这是
+						<span>nth-child(5)</span>
+						选择器，选择只能序号的元素
+					</h3>
+					<ul class="ul-3">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<h3>
+						这是
+						<span>nth-child(2n)</span>
+						选择器，n表示从0开始递增，2*0,2*1,2*2,2*3,2*4....
+					</h3>
+					<ul class="ul-4">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<h3>
+						这是
+						<span>nth-child(n+3)</span>
+						选择器，n表示从0开始递增，0+3,1+3,2+3,3+3,4+3.....
+					</h3>
+					<ul class="ul-5">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<h3>
+						这是
+						<span>nth-child(-n+3)</span>
+						选择器，n表示从0开始递增，-0+3,-1+3,-2+3,-3+3,-4+3....
+					</h3>
+					<ul class="ul-6">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<h3>
+						这是
+						<span>nth-child(3n+1)</span>
+						选择器，n表示从0开始递增，3*0+1,3*1+1,3*2+1,3*3+1
+					</h3>
+					<ul class="ul-7">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<h3>
+						这是
+						<span>nth-chlid(3n-2)</span>
+						选择器，n表示从0开始递增，3*0-2,,3*1-2,3*2-2,3*3-2
+					</h3>
+					<ul class="ul-8">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<h3>
+						这是
+						<span>nth-last-child(3)</span>
+						选择器，选择倒数的第3个子元素
+					</h3>
+					<ul class="ul-9">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<h3>
+						这是
+						<span>nth-last-child(3n-2)</span>
+						选择器
+					</h3>
+					<ul class="ul-10">
+						<li>这是li中的内容1</li>
+						<li>这是li中的内容2</li>
+						<li>这是li中的内容3</li>
+						<li>这是li中的内容4</li>
+						<li>这是li中的内容5</li>
+						<li>这是li中的内容6</li>
+						<li>这是li中的内容7</li>
+						<li>这是li中的内容8</li>
+						<li>这是li中的内容9</li>
+						<li>这是li中的内容10</li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl class="detail-list">
+			<dt class="detail-list-head"></dt>
+			<dd class="detail-list-body">
+				
+<pre data-title="CSS" data-skin="2" data-height="300">
+ul li{
+	width:100px;
+	height:100px;
+	border:5px solid #ccc;
+	margin:0 10px;
+	float:left;
+	font-size:12px;
+}
+<span class="note">/* 选择第一个li */</span>
+.ul-1 li:first-child{
+	background-color:black;
+	color:white;
+}
+<span class="note">/* 选择最后一个li */</span>
+.ul-1 li:last-child{
+	background-color:silver;
+}
+<span class="note">/* 选择下标为奇数的li */</span>
+.ul-2 li:nth-child(odd){
+	font-size:16px;
+	font-family:"微软雅黑";
+	background-color:maroon;
+	color:white;
+}
+<span class="note">/* 选择下标为偶数的li */</span>
+.ul-2 li:nth-child(even){
+	font-size:14px;
+	font-family:"隶书";
+	background-color:purple;
+	color:white;
+}
+<span class="note">/* 选择下标为5的li */</span>
+.ul-3 li:nth-child(5){
+	background-color:gray;
+	color:white;
+}
+<span class="note">/* 选择下标为2*n的li(n默认为0，逐个递增) */</span>
+.ul-4 li:nth-child(2n){
+	background-color:maroon;
+	color:white;
+}
+<span class="note">/* 选择下标为2*n的li(n默认为0，逐个递增) */</span>
+.ul-5 li:nth-child(n+3){
+	background-color:fuchsia;
+	color:white;
+}
+<span class="note">/* 选择下标为-n+3的li(n默认为0，逐个递减) */</span>
+.ul-6 li:nth-child(-n+3){
+	background-color:green;
+	color:orange;
+}
+<span class="note">/* 选择下标为3n+1的li(n默认为0，逐个递增) */</span>
+.ul-7 li:nth-child(3n+1){
+	background-color:olive;
+	color:white;
+}
+<span class="note">/* 选择下标为3n-2的li(n默认为0，逐个递增) */</span>
+.ul-8 li:nth-child(3n-2){
+	background-color:navy;
+	color:white;
+}
+<span class="note">/* 选择倒数第三个li */</span>
+.ul-9 li:nth-last-child(3){
+	background-color:yellowgreen;
+	color:white;
+}
+<span class="note">/* 从后往前倒序选择3n-2的li(n默认为0，逐个递增) */</span>
+.ul-10 li:nth-last-child(3n-2){
+	background-color:tomato;
+	color:white;
+}
+</pre>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

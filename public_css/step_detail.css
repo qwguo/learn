@@ -1,0 +1,164 @@
+ul
+{
+    margin: 0;
+    padding: 0;
+}
+.step-detail-wrap
+{
+    width: 1003px;
+    margin: 0 auto;
+}
+/**页面代码展示**/
+.code-area{
+    overflow: hidden;
+    margin:15px 5px;
+}
+.code-title{
+  line-height:30px; 
+  height:30px;
+  padding:0px 10px;
+}
+.code-body{
+  position:relative;
+  overflow-y: auto;
+}
+.code-number
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+.code-number li
+{
+    font: bold 12px/30px Arial;
+    height: 30px;
+    width:40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.code-body-inner
+{
+    overflow-x:auto;
+    padding:0px;
+}
+.code-body-inner .pre-code{
+  line-height:30px;
+  margin:0;
+  padding-left:10px;
+font-family: "Courier New";
+}
+/**页面代码展示颜色 skin-1**/
+.code-skin-1{
+     border: 1px solid #ccc;   
+}
+.code-skin-1 .code-title{
+  border-bottom:2px solid #ccc;
+  background-color:#ddd;
+}
+.code-skin-1 .code-number{
+    border-right: 3px solid green;
+    background-color: #eee;
+}
+.code-skin-1 .code-number li{
+    color: #5091af;
+}
+.code-skin-1 .code-body-inner{
+    background-color: #eee;
+}
+.code-skin-1 .pre-code{
+    color:#333;
+}
+/**页面代码展示颜色 skin-2**/
+.code-skin-2{}
+.code-skin-2 .code-title{
+  border-bottom:0px solid #1F83D8;
+  background-color:#31322C;
+  color:#C1C1BF;
+}
+.code-skin-2 .code-number{
+    background-color: #272822;
+}
+.code-skin-2 .code-number li{
+    color: #8F908A;
+}
+.code-skin-2 .code-body-inner{
+    background-color:#49483E;
+}
+.code-skin-2 .pre-code{
+    color:#DCDCCC;
+}
+/**页面代码展示颜色 skin-3**/
+.code-skin-3{
+     border: 1px solid #26435C;   
+}
+.code-skin-3 .code-title{
+  border-bottom:0px solid #26435C;
+  background-color:#33424F;
+  color:#B6BFB0;
+}
+.code-skin-3 .code-number{
+    background-color: #002240;
+    border-right:2px solid #26435C;
+}
+.code-skin-3 .code-number li{
+    color: #7F909F;
+}
+.code-skin-3 .code-body-inner{
+    background-color:#002240;
+}
+.code-skin-3 .pre-code{
+    color:#9DF39F;
+}
+/**页面代码展示颜色 skin-4**/
+.code-skin-4{
+     border: 1px solid #342C28;   
+}
+.code-skin-4 .code-title{
+  border-bottom:0px solid #26435C;
+  background-color:#45413F;
+  color:#B9BFBE;
+}
+.code-skin-4 .code-number{
+    background-color: #2A211C;
+    border-right:2px solid #40362F;
+}
+.code-skin-4 .code-number li{
+    color: #73685C;
+}
+.code-skin-4 .code-body-inner{
+    background-color:#3A312C;
+}
+.code-skin-4 .pre-code{
+    color:#BDAE9D;
+}
+
+/*public-table*/
+.public-table{
+    margin:10px 0px;
+    border-width:1px;
+    border-style:solid;
+    border-color:#aaa;   
+}
+.public-table table{
+    border-collapse:collapse; 
+    border-spacing: 0px;
+    width:100%;
+}
+.public-table table,.public-table td,.public-table th{
+    border-width:1px;
+    border-style:solid;
+    border-color:#aaa;
+    color:#333;
+}
+.public-table th{
+    background-color:#eee;
+    padding:10px;
+}
+.public-table td{
+    padding:5px;
+}

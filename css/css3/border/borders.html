@@ -1,0 +1,246 @@
+﻿<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>测试</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+	h1{padding-left:20px; background-color:#eee;}
+	.borders-case div[class^=border-]{margin:25px; border-width:50px; /*border-color:orange blue yellow red;*/ width:0px; height:0px; float:left; _display:inline; font-size:0px; line-height:0px;}
+	div.borders-case .borders-list .w-100{ width:300px; height:300px;}
+	.borders-list{clear:both; overflow:hidden; border:3px solid #ccc;}
+	.border-1,.border-2{
+		border-style:solid;
+		-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	}
+	.border-3,.border-4{
+		border-style:dotted;
+		-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	}
+	.border-5,.border-6{
+		border-style:dashed;
+		-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	}
+	.border-7,.border-8{
+		border-style:double;
+		-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	}
+	.border-9,.border-10{
+		border-style:groove;
+		-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	}
+	.border-11,.border-12{
+		border-style:ridge;
+		-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	}
+	.border-13,.border-14{
+		border-style:inset;
+		-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	}
+	.border-15,.border-16{
+		border-style:outset;
+		-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+		-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	}
+	ul{padding: 0; margin: 0; list-style: none;}
+	ul.borders-case li{
+		width: 200px;
+		height: 200px;
+		border-width: 10px;
+		border-style: solid;
+		font-size: 30px;
+		line-height: 200px;
+		text-align: center;
+	}
+	li.case-1{
+		/*顶边边框*/
+		-moz-border-top-colors: #bfe6f8 #b0e3fa #9fdefa #89d6f9 #73cff9 #5dcafc #3ac1fe #20b7fb #05b1ff;
+		/*底边边框*/
+		-moz-border-bottom-colors: #ded7fc #c9bdfd #b7a6fe #a18bfc #8c72fb #7657fe #633ffe #4e25fe #3c0ffd;
+		/*右边边框*/
+		-moz-border-right-colors: #dbfdd5 #c4feba #adfe9f #96fe84 #89ff76 #72fa5b #57fd3c #43fe24 #25fd01;
+		/*左边边框*/
+		-moz-border-left-colors: #ffc9c9 #ffb0b0 #ff9696 #fd7f7f #fd6969 #fd5050 #fd3838 #fd1b1b #fe0101 #c00; 
+	}
+</style>
+
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">css中的bordes效果，通过设置不同的边框样式得到不同效果</dt>
+		<dd class="detail-list-body">
+			<div class="borders-case">
+				<div class="borders-list">
+					<div class="border-1 w-100"></div>
+					<div class="border-2"></div>
+				</div>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/*把边框样式设置成solid的效果*/</span>
+.border-1,.border-2{
+	border-width:50px;
+	border-style:solid;
+<span class="note">/*通过使用border-colors来设置每个像素的颜色，只有火狐支持此属性*/</span>
+	-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+}
+</pre>
+			<div class="borders-list">
+				<div class="border-3 w-100"></div>
+				<div class="border-4"></div>
+			</div>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/*把边框样式设置成dotted的效果*/</span>
+.border-3,.border-4{
+	border-width:50px;
+	border-style:dotted;
+	-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+}
+</pre>
+			<div class="borders-list">
+				<div class="border-5 w-100"></div>
+				<div class="border-6"></div>
+			</div>
+<pre data-title="CSS" data-skin="2">
+.border-5,.border-6{
+	<span class="note">/*把边框样式设置成dashed的效果*/</span>
+	border-style:dashed;
+	-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+}	
+</pre>
+			<div class="borders-list">
+				<div class="border-7 w-100"></div>
+				<div class="border-8"></div>
+			</div>
+<pre data-title="CSS" data-skin="2">
+.border-7,.border-8{
+	<span class="note">/*把边框样式设置成double的效果*/</span>
+	border-style:double;
+	-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+}
+</pre>
+			<div class="borders-list">
+				<div class="border-9 w-100"></div>
+				<div class="border-10"></div>
+			</div>
+<pre data-title="CSS" data-skin="2">
+.border-9,.border-10{
+	<span class="note">/*把边框样式设置成groove的效果*/</span>
+	border-style:groove;
+	-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+}
+</pre>
+			<div class="borders-list">
+				<div class="border-11 w-100"></div>
+				<div class="border-12"></div>
+			</div>
+<pre data-title="CSS" data-skin="2">
+.border-11,.border-12{
+	<span class="note">/*把边框样式设置成ridge的效果*/</span>
+	border-style:ridge;
+	-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+}
+</pre>
+			<div class="borders-list">
+				<div class="border-13 w-100"></div>
+				<div class="border-14"></div>
+			</div>
+<pre data-title="CSS" data-skin="2">
+.border-13,.border-14{
+	<span class="note">/*把边框样式设置成inset的效果*/</span>
+	border-style:inset;
+	-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+}
+</pre>
+			<div class="borders-list">
+				<div class="border-15 w-100"></div>
+				<div class="border-16"></div>
+			</div>
+<pre data-title="CSS" data-skin="2">
+.border-15,.border-16{
+	<span class="note">/*把边框样式设置成outset的效果*/</span>
+	border-style:outset;
+	-moz-border-bottom-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-top-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-left-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+	-moz-border-right-colors: #555 #5a5a5a #5c5c5c #5f5f5f #666 #6a6a6a #6c6c6c #6f6f6f #777 #7a7a7a #7c7c7c #7f7f7f #888 #8a8a8a #8c8c8c #8f8f8f #999 #9a9a9a #9c9c9c #9f9f9f #aaa #acacac #afafaf #bbb #ccc;
+}
+</pre>
+			</div>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">css中的bordes案例效果</dt>
+		<dd class="detail-list-body">
+			<ul class="borders-case">
+				<li class="case-1">case-1</li>
+			</ul>
+		</dd>
+	</dl>
+<pre data-title="CSS" data-skin="2">
+ul.borders-case li{
+	width: 200px;
+	height: 200px;
+	border-width: 10px;
+	border-style: solid;
+}
+li.case-1{
+	<span class="note">/*顶边边框*/</span>
+	-moz-border-top-colors: #bfe6f8 #b0e3fa #9fdefa #89d6f9 #73cff9 #5dcafc #3ac1fe #20b7fb #05b1ff;
+	<span class="note">/*底边边框*/</span>
+	-moz-border-bottom-colors: #ded7fc #c9bdfd #b7a6fe #a18bfc #8c72fb #7657fe #633ffe #4e25fe #3c0ffd;
+	<span class="note">/*右边边框*/</span>
+	-moz-border-right-colors: #dbfdd5 #c4feba #adfe9f #96fe84 #89ff76 #72fa5b #57fd3c #43fe24 #25fd01;
+	<span class="note">/*左边边框*/</span>
+	-moz-border-left-colors: #ffc9c9 #ffb0b0 #ff9696 #fd7f7f #fd6969 #fd5050 #fd3838 #fd1b1b #fe0101 #c00; 
+}
+</pre>
+</div>
+</body>
+</html>

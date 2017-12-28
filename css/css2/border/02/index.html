@@ -1,0 +1,302 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<title>元素边框的研究</title>
+<style type="text/css">
+/*通过ul和li实现固定宽度的步骤导航*/
+	.step-case{height:40px; margin:0px; list-style:none; padding:0px;}
+		.step-case li{ float:left; margin:0px; width:12.5%;position:relative; cursor:pointer;}
+		.step-case li span{display:block; background-color:#ccc;  height:40px; line-height:40px;  text-align:center; color:#fff; font-weight:bold;}
+		.step-case b{position:absolute; font-size:0px; line-height:0px; top:0px;}
+		.step-case .b-l{border-width:2px 2px 2px 0; border-style:dashed solid dashed dashed; border-color:transparent #ccc transparent transparent; height:36px; left:-2px;}
+		.step-case .b-r{border-width:2px 0 2px 2px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; height:36px; right:-2px;}
+		.step-case .b-1{border-width:20px 0 20px 20px; border-style:solid dashed solid solid; border-color:#ccc transparent #ccc #ddd; left:-20px;}
+		.step-case .b-2{border-width:20px 0 20px 20px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; left:-21px;}
+		/*当前状态*/
+		.step-case .s-cur span{background-color:orange;}
+		.step-case .s-cur .b-l{border-right-color:orange;}
+		.step-case .s-cur .b-r{border-left-color:orange;}
+		.step-case .s-cur .b-1{border-color:orange orange orange #FABF55;}
+		.step-case .s-cur .b-2{border-left-color:#FADBA5;}
+		/*当前状态后*/
+		.step-case .s-cur-next .b-2{border-color:transparent transparent transparent orange;}
+		/*完成的状态*/
+		.step-case .s-finish span{background-color:#FADBA5; color:#000;}
+		.step-case .s-finish .b-l{border-right-color:#FADBA5;}
+		.step-case .s-finish .b-r{border-left-color:#FADBA5;}
+		.step-case .s-finish .b-1{border-color:#FADBA5 #FADBA5 #FADBA5 #FABF55;}
+		.step-case .s-finish .b-2{border-left-color:#FADBA5;}
+/*通过table的特性实现不确定步骤个数的导航*/
+.step-case-1{width:100%; height:40px; margin-bottom:10px;}
+.step-case-1 td{ position:relative; cursor:pointer;}
+		.step-case-1 td span{display:block; background-color:#ccc;  height:40px; line-height:40px;  text-align:center; color:#fff; font-weight:bold;}
+		.step-case-1 b{position:absolute; font-size:0px; line-height:0px; top:0px;}
+		.step-case-1 .b-l{border-width:2px 2px 2px 0; border-style:dashed solid dashed dashed; border-color:transparent #ccc transparent transparent; height:36px; left:-2px;}
+		.step-case-1 .b-r{border-width:2px 0 2px 2px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; height:36px; right:-2px;}
+		.step-case-1 .b-1{border-width:20px 0 20px 20px; border-style:solid dashed solid solid; border-color:#ccc transparent #ccc #ddd; left:-20px;}
+		.step-case-1 .b-2{border-width:20px 0 20px 20px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; left:-21px;}
+		/*当前状态*/
+		.step-case-1 .s-cur span{background-color:orange;}
+		.step-case-1 .s-cur .b-l{border-right-color:orange;}
+		.step-case-1 .s-cur .b-r{border-left-color:orange;}
+		.step-case-1 .s-cur .b-1{border-color:orange orange orange #FABF55;}
+		.step-case-1 .s-cur .b-2{border-left-color:#FADBA5;}
+		/*当前状态后*/
+		.step-case-1 .s-cur-next .b-2{border-color:transparent transparent transparent orange;}
+		/*完成的状态*/
+		.step-case-1 .s-finish span{background-color:#FADBA5; color:#000;}
+		.step-case-1 .s-finish .b-l{border-right-color:#FADBA5;}
+		.step-case-1 .s-finish .b-r{border-left-color:#FADBA5;}
+		.step-case-1 .s-finish .b-1{border-color:#FADBA5 #FADBA5 #FADBA5 #FABF55;}
+		.step-case-1 .s-finish .b-2{border-left-color:#FADBA5;}
+</style>
+<script type="text/javascript">
+	$(function(){
+		/*js实现操作*/
+		var step = document.getElementById("step"),li = step.getElementsByTagName("li");
+		for(var i = 0;i<li.length;i++){
+			li[i].index = i;
+			li[i].onclick = function(){
+				var i = this.index;
+				for(var j = 0;j<i;j++){
+					li[j].className = "s-finish";
+				}
+				for(var j = li.length;j>i;){
+					li[--j].className = "";
+					if(j==i+1){
+						li[j].className = "s-cur-next";
+					}
+				}
+				this.className = "s-cur";
+			}
+		}
+		/*通过jquery实现*/
+		var step_1 = $(".step-case-1");
+		step_1.on({
+			click : function(){
+				$(this).attr('class','s-cur');
+				$(this).next().attr('class','s-cur-next');
+				$(this).next().nextAll().removeAttr('class');
+				$(this).prevAll().attr('class','s-finish');
+			}
+		},"td");
+	})
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">边框和div实现步骤效果：</dt>
+		<dd class="detail-list-body">
+			<ul class="step-case" id="step"> 
+				<li class="s-finish"><span>第1步</span><b class="b-l"></b></li>
+				<li class="s-finish"><span>第2步</span><b class="b-1"></b><b class="b-2"></b></li>
+				<li class="s-finish"><span>第3步</span><b class="b-1"></b><b class="b-2"></b></li>
+				<li class="s-finish"><span>第4步</span><b class="b-1"></b><b class="b-2"></b></li>
+				<li class="s-cur"><span>第5步</span><b class="b-1"></b><b class="b-2"></b></li>
+				<li class="s-cur-next"><span>第6步</span><b class="b-1"></b><b class="b-2"></b></li>
+				<li><span>第7步</span><b class="b-1"></b><b class="b-2"></b></li>
+				<li><span>第8步</span><b class="b-1"></b><b class="b-2"></b><b class="b-r"></b></li> 
+			</ul>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">代码详细：</dt>
+		<dd class="detail-list-body">
+<pre data-title="HTML" data-skin="1">
+&lt;ul class='step-case' id='step'&gt; 
+&nbsp;&nbsp;&lt;li class='s-finish'&gt;&lt;span&gt;第1步&lt;/span&gt;&lt;b class='b-l'&gt;&lt;/b&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class='s-finish'&gt;&lt;span&gt;第2步&lt;/span&gt;&lt;b class='b-1'&gt;&lt;/b&gt;&lt;b class='b-2'&gt;&lt;/b&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class='s-finish'&gt;&lt;span&gt;第3步&lt;/span&gt;&lt;b class='b-1'&gt;&lt;/b&gt;&lt;b class='b-2'&gt;&lt;/b&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class='s-finish'&gt;&lt;span&gt;第4步&lt;/span&gt;&lt;b class='b-1'&gt;&lt;/b&gt;&lt;b class='b-2'&gt;&lt;/b&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class='s-cur'&gt;&lt;span&gt;第5步&lt;/span&gt;&lt;b class='b-1'&gt;&lt;/b&gt;&lt;b class='b-2'&gt;&lt;/b&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class='s-cur-next'&gt;&lt;span&gt;第6步&lt;/span&gt;&lt;b class='b-1'&gt;&lt;/b&gt;&lt;b class='b-2'&gt;&lt;/b&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&gt;&lt;span&gt;第7步&lt;/span&gt;&lt;b class='b-1'&gt;&lt;/b&gt;&lt;b class='b-2'&gt;&lt;/b&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&gt;&lt;span&gt;第8步&lt;/span&gt;&lt;b class='b-1'&gt;&lt;/b&gt;&lt;b class='b-2'&gt;&lt;/b&gt;&lt;b class='b-r'&gt;&lt;/b&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/*基本结构*/</span>
+.step-case{height:40px;}
+.step-case li{ float:left; margin:0px; width:12.5%;position:relative; cursor:pointer;}
+.step-case li span{display:block; background-color:#ccc;  height:40px; line-height:40px;  text-align:center; color:#fff; font-weight:bold;}
+.step-case b{position:absolute; font-size:0px; line-height:0px; top:0px;}
+.step-case .b-l{border-width:2px 2px 2px 0; border-style:dashed solid dashed dashed; border-color:transparent #ccc transparent transparent; height:36px; left:-2px;}
+.step-case .b-r{border-width:2px 0 2px 2px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; height:36px; right:-2px;}
+.step-case .b-1{border-width:20px 0 20px 20px; border-style:solid dashed solid solid; border-color:#ccc transparent #ccc #ddd; left:-20px;}
+.step-case .b-2{border-width:20px 0 20px 20px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; left:-21px;}
+<span class="note">/*当前状态*/</span>
+.step-case .s-cur span{background-color:orange;}
+.step-case .s-cur .b-l{border-right-color:orange;}
+.step-case .s-cur .b-r{border-left-color:orange;}
+.step-case .s-cur .b-1{border-color:orange orange orange #FABF55;}
+.step-case .s-cur .b-2{border-left-color:#FADBA5;}
+<span class="note">/*当前状态后*/</span>
+.step-case .s-cur-next .b-2{border-color:transparent transparent transparent orange;}
+<span class="note">/*完成的状态*/</span>
+.step-case .s-finish span{background-color:#FADBA5; color:#000;}
+.step-case .s-finish .b-l{border-right-color:#FADBA5;}
+.step-case .s-finish .b-r{border-left-color:#FADBA5;}
+.step-case .s-finish .b-1{border-color:#FADBA5 #FADBA5 #FADBA5 #FABF55;}
+.step-case .s-finish .b-2{border-left-color:#FADBA5;}
+</pre>
+<pre data-title="JavasSript" data-skin="3">
+<span class="note">/*使用js实现*/</span>
+var step = document.getElementById("step"),li = step.getElementsByTagName("li");
+for(var i = 0;i<li.length;i++){
+ li[i].index = i;
+ li[i].onclick = function(){
+  var i = this.index;
+  for(var j = 0;j<i;j++){
+   li[j].className = "s-finish";
+  }
+  for(var j = li.length;j>i;){
+   li[--j].className = "";
+   if(j==i+1){
+    li[j].className = "s-cur-next";
+   }
+  }
+  this.className = "s-cur";
+ }
+}
+</pre>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">代码详细：</dt>
+		<dd class="detail-list-body">
+			<ol>
+				<li>左右圆角主要是利用了这个: &nbsp;<b style="display:inline-block; height:30px; width:0px; border-width:5px 5px 5px 0; border-style:solid; border-color:transparent orange; vertical-align:middle; width:0px; overflow:hidden;"></b>&nbsp;这是放大后的效果主要是利用右边线实线，有颜色上线都为透明色,相对应的右边的圆角为这个相反的设置：&nbsp;<b style="display:inline-block; height:30px; width:0px; border-width:5px 0px 5px 5px; border-style:solid; border-color:transparent orange; vertical-align:middle; width:0px; overflow:hidden;"></b>&nbsp;这样在和li左右对齐就能实现圆角的效果了。</li>
+				<li>接着就是实现箭头方向的效果也是利用相同的方法，只是这里的边框设置的相对要宽一些，并且设置高度为0像素。&nbsp;<b style="display:inline-block; height:0px; width:0px; border-width:20px 0px 20px 20px; border-style:solid; border-color:orange transparent; vertical-align:middle; width:0px; overflow:hidden;"></b>&nbsp;接着在设置一个相同的另一种颜色的用于叠加在这个的上方：&nbsp;<b style="display:inline-block; height:0px; width:0px; border-width:20px 0px 20px 20px; border-style:solid; border-color:#FADBA5 transparent; vertical-align:middle; width:0px; overflow:hidden;"></b>&nbsp;并且留出1像素的距离,这样基本上就实现了我们想要的效果。</li>	
+				<li>兼容方面：可以兼容ie6+浏览器，和Firefox，chrome，opera，Safari等浏览器，在ie6下，边框的透明设置transparent不兼容需要设置边框的样式为dashed才可以做到兼容。</li>
+			</ol>
+		</dd>
+	</dl>
+
+	<dl class="detail-list">
+		<dt class="detail-list-head">表格实现不固定步数的步骤导航：</dt>
+		<dd class="detail-list-body">
+			<table class="step-case-1">
+				<tr>
+					<td class="s-cur"><span>第1步</span><b class="b-l"></b><b class="b-r"></b></td>
+				</tr>
+			</table>
+			<table class="step-case-1">
+				<tr>
+					<td class="s-cur"><span>第1步</span><b class="b-l"></b></td>
+					<td class="s-cur-next"><span>第2步</span><b class="b-1"></b><b class="b-2"></b><b class="b-r"></b></td>
+				</tr>
+			</table>
+			<table class="step-case-1">
+				<tr>
+					<td class="s-finish"><span>第1步</span><b class="b-l"></b></td>
+					<td class="s-cur"><span>第2步</span><b class="b-1"></b><b class="b-2"></b><b class="b-r"></b></td>
+					<td class="s-cur-next"><span>第2步</span><b class="b-1"></b><b class="b-2"></b><b class="b-r"></b></td>
+				</tr>
+			</table>
+			<table class="step-case-1">
+				<tr>
+					<td class="s-finish"><span>第1步</span><b class="b-l"></b></td>
+					<td class="s-finish"><span>第2步</span><b class="b-1"></b><b class="b-2"></b></td>
+					<td class="s-finish"><span>第3步</span><b class="b-1"></b><b class="b-2"></b></td>
+					<td class="s-finish"><span>第4步</span><b class="b-1"></b><b class="b-2"></b></td>
+					<td class="s-cur"><span>第5步</span><b class="b-1"></b><b class="b-2"></b></td>
+					<td class="s-cur-next"><span>第6步</span><b class="b-1"></b><b class="b-2"></b></td>
+					<td><span>第7步</span><b class="b-1"></b><b class="b-2"></b></td>
+					<td><span>第8步</span><b class="b-1"></b><b class="b-2"></b></td>
+					<td><span>第9步</span><b class="b-1"></b><b class="b-2"></b></td>
+					<td><span>第10步</span><b class="b-1"></b><b class="b-2"></b><b class="b-r"></b></td>
+				</tr>
+			</table>
+		</dd>
+	</dl>
+
+	<dl class="detail-list">
+		<dt class="detail-list-head">代码详细：</dt>
+		<dd class="detail-list-body">
+<pre data-title="HTML" data-skin="1">
+<span class="note">&lt;!--只有一步的时候--&gt;</span>
+&lt;table class=&quot;step-case-1&quot;&gt;
+	&lt;tr&gt;
+		&lt;td class=&quot;s-cur&quot;&gt;&lt;span&gt;第1步&lt;/span&gt;&lt;b class=&quot;b-l&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-r&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+<span class="note">&lt;!--只有两步的时候--&gt;</span>
+&lt;table class=&quot;step-case-1&quot;&gt;
+	&lt;tr&gt;
+		&lt;td class=&quot;s-cur&quot;&gt;&lt;span&gt;第1步&lt;/span&gt;&lt;b class=&quot;b-l&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td class=&quot;s-cur-next&quot;&gt;&lt;span&gt;第2步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-r&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+<span class="note">&lt;!--只有三步的时候--&gt;</span>
+&lt;table class=&quot;step-case-1&quot;&gt;
+	&lt;tr&gt;
+		&lt;td class=&quot;s-finish&quot;&gt;&lt;span&gt;第1步&lt;/span&gt;&lt;b class=&quot;b-l&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td class=&quot;s-cur&quot;&gt;&lt;span&gt;第2步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-r&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td class=&quot;s-cur-next&quot;&gt;&lt;span&gt;第2步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-r&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+<span class="note">&lt;!--多步的时候--&gt;</span>
+&lt;table class=&quot;step-case-1&quot;&gt;
+	&lt;tr&gt;
+		&lt;td class=&quot;s-finish&quot;&gt;&lt;span&gt;第1步&lt;/span&gt;&lt;b class=&quot;b-l&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td class=&quot;s-finish&quot;&gt;&lt;span&gt;第2步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td class=&quot;s-finish&quot;&gt;&lt;span&gt;第3步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td class=&quot;s-finish&quot;&gt;&lt;span&gt;第4步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td class=&quot;s-cur&quot;&gt;&lt;span&gt;第5步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td class=&quot;s-cur-next&quot;&gt;&lt;span&gt;第6步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span&gt;第7步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span&gt;第8步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span&gt;第9步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span&gt;第10步&lt;/span&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-r&quot;&gt;&lt;/b&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/*通过table的特性实现不确定步骤个数的导航*/</span>
+.step-case-1{width:100%; height:40px;}
+.step-case-1 td{ position:relative; cursor:pointer;}
+	.step-case-1 td span{display:block; background-color:#ccc;  height:40px; line-height:40px;  text-align:center; color:#fff; font-weight:bold;}
+	.step-case-1 b{position:absolute; font-size:0px; line-height:0px; top:0px;}
+	.step-case-1 .b-l{border-width:2px 2px 2px 0; border-style:dashed solid dashed dashed; border-color:transparent #ccc transparent transparent; height:36px; left:-2px;}
+	.step-case-1 .b-r{border-width:2px 0 2px 2px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; height:36px; right:-2px;}
+	.step-case-1 .b-1{border-width:20px 0 20px 20px; border-style:solid dashed solid solid; border-color:#ccc transparent #ccc #ddd; left:-20px;}
+	.step-case-1 .b-2{border-width:20px 0 20px 20px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; left:-21px;}
+	<span class="note">/*当前状态*/</span>
+	.step-case-1 .s-cur span{background-color:orange;}
+	.step-case-1 .s-cur .b-l{border-right-color:orange;}
+	.step-case-1 .s-cur .b-r{border-left-color:orange;}
+	.step-case-1 .s-cur .b-1{border-color:orange orange orange #FABF55;}
+	.step-case-1 .s-cur .b-2{border-left-color:#FADBA5;}
+	<span class="note">/*当前状态后*/</span>
+	.step-case-1 .s-cur-next .b-2{border-color:transparent transparent transparent orange;}
+	<span class="note">/*完成的状态*/</span>
+	.step-case-1 .s-finish span{background-color:#FADBA5; color:#000;}
+	.step-case-1 .s-finish .b-l{border-right-color:#FADBA5;}
+	.step-case-1 .s-finish .b-r{border-left-color:#FADBA5;}
+	.step-case-1 .s-finish .b-1{border-color:#FADBA5 #FADBA5 #FADBA5 #FABF55;}
+	.step-case-1 .s-finish .b-2{border-left-color:#FADBA5;}
+</pre>
+<pre data-title="JavaScript" data-skin="3">
+<span class="note">/*通过jquery实现*/</span>
+var step_1 = $("#step_1");
+step_1.on({
+	click : function(){
+		$(this).attr('class','s-cur');
+		$(this).next().attr('class','s-cur-next');
+		$(this).next().nextAll().removeAttr('class');
+		$(this).prevAll().attr('class','s-finish');
+	}
+},"td");
+</pre>
+		</dd>
+	</dl>
+</div>
+
+</body>
+</html>

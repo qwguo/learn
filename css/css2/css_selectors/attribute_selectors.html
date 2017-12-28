@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>属性选择器</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+	.selector-list{padding-left:0; margin:0px; padding-bottom: 10px;font-family:arial;}
+	.selector-list li{background-color:#f5f5f5; border:1px solid #ddd; padding:10px; line-height:30px; margin:10px 0 0; list-style-position: inside;}
+	.selector-list a{text-decoration: none; color: #000;}
+	.selector-list span,.selector-list a{margin:0px 8px;}
+	.selector-list input.text{width:80px; height:30px;}
+	.selector-list input.radio,.selector-list input.checkbox{width:14px; height:14px; margin:0px 5px;}
+
+	/***属性选择符***/
+	.attributeSelect .all-attr [class]{color:forestgreen;font-size:20px; font-weight:bold;}
+	.attributeSelect .val-attr [class="span"]{color:Fuchsia;font-size:20px; font-weight:bold;}
+	.attributeSelect .blankval-attr [class~="span-val-2"]{color:gold;font-size:20px; font-weight:bold;}
+	.attributeSelect .frontval-attr [class^="a"]{color:wheat;font-size:20px; font-weight:bold;}
+	.attributeSelect .afterval-attr [class$="-1"]{color:turquoise;font-size:20px; font-weight:bold;}
+	.attributeSelect .includeval-attr [class*="-2"]{color:tomato;font-size:20px; font-weight:bold;}
+	.attributeSelect .bridgeval-attr [class|="span"]{color:thistle;font-size:20px; font-weight:bold;}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">属性选择符 Attribute Selectors：</dt>
+		<dd class="detail-list-body">
+			<ol class="selector-list attributeSelect">
+				<li class="all-attr">dd [class]{选择符}：<span class="span span-val-1">第一个span（选中）</span><span class="span span-val-2">第二个span（选中）</span><span class="span span-val-3">第三个span（选中）</span><span class="span span-val-4">第四个span（选中）</span><span class="span span-val-5">第五个span（选中）</span><a href="#" class="a a-val-1">第一个a（选中）</a><a href="#" class="a a-val-2"><em>第二个a（选中）</em></a></li>
+				<li class="val-attr">dd [class="span"]{选择符}：<span class="span">第零个span（选中）</span> <span class="span span-val-1">第一个span</span><span class="span span-val-2">第二个span</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a</a><a href="#" class="a a-val-2"><em>第二个a</em></a></li>
+				<li class="blankval-attr">dd [class~="span-val-2"]{选择符}：<span class="span span-val-1">第一个span</span><span title="这是  中文 这是测试中文 " class="span span-val-2">第二个span（选中）</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a</a><a href="#" class="a a-val-2"><em>第二个a</em></a></li>
+				<li class="frontval-attr">dd [class^="a"]{选择符}：<span class="span span-val-1">第一个span</span><span title="这是  中文 这是测试中文 " class="span span-val-2">第二个span</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a（选中）</a><a href="#" class="a a-val-2"><em>第二个a（选中）</em></a></li>
+				<li class="afterval-attr">dd [class$="-1"]{选择符}：<span class="span span-val-1">第一个span（选中）</span><span title="这是  中文 这是测试中文 " class="span span-val-2">第二个span</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a（选中）</a><a href="#" class="a a-val-2"><em>第二个a</em></a></li>
+				<li class="includeval-attr">dd [class*="-2"]{选择符}：<span class="span span-val-1">第一个span</span><span class="span span-val-2" title="这是  中文 这是测试中文 ">第二个span（选中）</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a</a><a href="#" class="a a-val-2"><em>第二个a（选中）</em></a></li>
+				<li class="bridgeval-attr">dd [class|="span"]{选择符}：<span title="文-" class="span-val-0 span">第零个span（选中）</span><span class="span span-val-1" title="这是  中文 这是测试中文 ">第一个span</span><span class="span span-val-2">第二个span</span><span class="span span-val-3">第三个span</span><span class="span span-val-4">第四个span</span><span class="span span-val-5">第五个span</span><a href="#" class="a a-val-1">第一个a（选中）</a><a href="#" class="a a-val-2"><em>第二个a（选中）</em></a></li>
+			</ol>
+<pre data-title="HTML" data-skin="1" data-height="300">
+&lt;ol class=&quot;selector-list attributeSelect&quot;&gt;
+	&lt;li class=&quot;all-attr&quot;&gt;
+		dd [class]{选择符}：
+		&lt;span class=&quot;span span-val-1&quot;&gt;第一个span（选中）&lt;/span&gt;
+		&lt;span class=&quot;span span-val-2&quot;&gt;第二个span（选中）&lt;/span&gt;
+		&lt;span class=&quot;span span-val-3&quot;&gt;第三个span（选中）&lt;/span&gt;
+		&lt;span class=&quot;span span-val-4&quot;&gt;第四个span（选中）&lt;/span&gt;
+		&lt;span class=&quot;span span-val-5&quot;&gt;第五个span（选中）&lt;/span&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-1&quot;&gt;第一个a（选中）&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-2&quot;&gt; &lt;em&gt;第二个a（选中）&lt;/em&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;val-attr&quot;&gt;
+		dd [class=&quot;span&quot;]{选择符}：
+		&lt;span class=&quot;span&quot;&gt;第零个span（选中）&lt;/span&gt;
+		&lt;span class=&quot;span span-val-1&quot;&gt;第一个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-2&quot;&gt;第二个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-3&quot;&gt;第三个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-4&quot;&gt;第四个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-5&quot;&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-1&quot;&gt;第一个a&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-2&quot;&gt; &lt;em&gt;第二个a&lt;/em&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;blankval-attr&quot;&gt;
+		dd [class~=&quot;span-val-2&quot;]{选择符}：
+		&lt;span class=&quot;span span-val-1&quot;&gt;第一个span&lt;/span&gt;
+		&lt;span title=&quot;这是  中文 这是测试中文 &quot; class=&quot;span span-val-2&quot;&gt;第二个span（选中）&lt;/span&gt;
+		&lt;span class=&quot;span span-val-3&quot;&gt;第三个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-4&quot;&gt;第四个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-5&quot;&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-1&quot;&gt;第一个a&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-2&quot;&gt;
+			&lt;em&gt;第二个a&lt;/em&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;frontval-attr&quot;&gt;
+		dd [class^=&quot;a&quot;]{选择符}：
+		&lt;span class=&quot;span span-val-1&quot;&gt;第一个span&lt;/span&gt;
+		&lt;span title=&quot;这是  中文 这是测试中文 &quot; class=&quot;span span-val-2&quot;&gt;第二个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-3&quot;&gt;第三个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-4&quot;&gt;第四个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-5&quot;&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-1&quot;&gt;第一个a（选中）&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-2&quot;&gt;
+			&lt;em&gt;第二个a（选中）&lt;/em&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;afterval-attr&quot;&gt;
+		dd [class$=&quot;-1&quot;]{选择符}：
+		&lt;span class=&quot;span span-val-1&quot;&gt;第一个span（选中）&lt;/span&gt;
+		&lt;span title=&quot;这是  中文 这是测试中文 &quot; class=&quot;span span-val-2&quot;&gt;第二个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-3&quot;&gt;第三个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-4&quot;&gt;第四个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-5&quot;&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-1&quot;&gt;第一个a（选中）&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-2&quot;&gt;
+			&lt;em&gt;第二个a&lt;/em&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;includeval-attr&quot;&gt;
+		dd [class*=&quot;-2&quot;]{选择符}：
+		&lt;span class=&quot;span span-val-1&quot;&gt;第一个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-2&quot; title=&quot;这是  中文 这是测试中文 &quot;&gt;第二个span（选中）&lt;/span&gt;
+		&lt;span class=&quot;span span-val-3&quot;&gt;第三个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-4&quot;&gt;第四个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-5&quot;&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-1&quot;&gt;第一个a&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-2&quot;&gt;
+			&lt;em&gt;第二个a（选中）&lt;/em&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li class=&quot;bridgeval-attr&quot;&gt;
+		dd [class|=&quot;span&quot;]{选择符}：
+		&lt;span title=&quot;文-&quot; class=&quot;span-val-0 span&quot;&gt;第零个span（选中）&lt;/span&gt;
+		&lt;span class=&quot;span span-val-1&quot; title=&quot;这是  中文 这是测试中文 &quot;&gt;第一个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-2&quot;&gt;第二个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-3&quot;&gt;第三个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-4&quot;&gt;第四个span&lt;/span&gt;
+		&lt;span class=&quot;span span-val-5&quot;&gt;第五个span&lt;/span&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-1&quot;&gt;第一个a（选中）&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;a a-val-2&quot;&gt;
+			&lt;em&gt;第二个a（选中）&lt;/em&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/***属性选择符***/</span>
+.attributeSelect .all-attr [class]{color:forestgreen;font-size:20px; font-weight:bold;}
+.attributeSelect .val-attr [class="span"]{color:Fuchsia;font-size:20px; font-weight:bold;}
+.attributeSelect .blankval-attr [class~="span-val-2"]{color:gold;font-size:20px; font-weight:bold;}
+.attributeSelect .frontval-attr [class^="a"]{color:wheat;font-size:20px; font-weight:bold;}
+.attributeSelect .afterval-attr [class$="-1"]{color:turquoise;font-size:20px; font-weight:bold;}
+.attributeSelect .includeval-attr [class*="-2"]{color:tomato;font-size:20px; font-weight:bold;}
+.attributeSelect .bridgeval-attr [class|="span"]{color:thistle;font-size:20px; font-weight:bold;}
+</pre>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

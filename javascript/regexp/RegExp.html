@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式联系</title>
+<style type="text/css">
+ li{padding:10px; border-bottom:2px dashed #0cf;}
+</style>
+
+<script type="text/javascript">
+//通过id获得dom
+	function $(domobj){
+		return document.getElementById(domobj);
+	}
+//验证邮箱函数
+	function email_test(){
+		var email_obj = $("email");
+		var reg = /^\w+@[a-zA-Z0-9]+\.[a-zA-Z]+$/;
+		if(reg.test(email_obj.value)){
+			alert("您输入的邮箱正确！");
+			}else{
+				alert("您输入的邮箱不正确，请从新输入！");
+				email_obj.focus();
+				}
+	}
+//验证手机号码
+	function iphone_test(){
+		var iphone_obj = $("iphone");
+		var reg = /^(13|15|18)[0-9]{9}$/;
+		if(reg.test(iphone_obj.value)){
+			alert("你输入的手机号正确");
+			}else{
+				alert("您输入的手机号不正确，请重新输入！");
+				iphone.focus();
+				}
+		}
+//过滤html代码
+	function filter_html(){
+		var textarea1_obj = $("textarea_1");
+		var textarea2_obj = $("textarea_2");
+		var reg = /\<[^<>]+\>/g;
+		textarea2_obj.value = textarea1_obj.value.replace(reg,"");
+	}
+//数字校验
+	function isnumber(){
+		var number_obj = $("number");
+		//var reg =/^[0-9]+$/;
+		var reg = /^\d+$/;
+		if(reg.test(number_obj.value)){
+			alert("你输入的是合法的数字");
+		}else{
+			alert("你输入的不是数字，请从新输入！");
+			number_obj.select();
+		}
+	}
+</script>
+</head>
+
+<body>
+<ol>
+	<li>email:<input type="text" id="email" /><input type="button" value="email验证" onclick="email_test();" /></li>	
+	<li>iphone:<input type="text" id="iphone" /><input type="button" value="手机号验证" onclick="iphone_test();"</li>
+	<li><textarea id="textarea_1" rows="10" cols="40" /></textarea><br /><input type="button" value="过滤html代码" onclick="filter_html()" /><br /><textarea id="textarea_2" rows="10" cols="40" /></textarea></li>
+	<li><input type="text" id="number" /><input type="button" value="数字验证" onclick="isnumber();"/></li>
+</ol>
+<body>
+</body>
+</html>

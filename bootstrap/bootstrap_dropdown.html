@@ -1,0 +1,363 @@
+﻿<!doctype  html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/bootstrap-theme.css" />
+	<script src="/public_js/jquery-1.7-min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<title>alert弹窗组件</title>
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<style type="text/css">
+		.row{border:1px solid #ccc; margin-bottom:10px;}
+		.row div[class^=col]{height:140px; border-left:1px solid #ccc;background-color:#f5f5f5;padding-top:10px; padding-bottom:10px;}
+		.row div[class^=col]:first-child{border-left:0px;}
+		.row .dropdown{display:inline-block;}
+		.wrap-2 div{height:auto;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>下拉菜单组件</h1>
+		<div class="row">
+			<div class="col-md-2">
+				普通下拉菜单
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Dropdown
+					<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Another action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Something else here</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+				带标题的下拉菜单
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Dropdown
+					<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li class="dropdown-header" role="presentation">Dropdown header</li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Another action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Something else here</a></li>
+						<li class="dropdown-header" role="presentation">Dropdown header</li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+				带分割线的下拉菜单
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Dropdown
+					<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Another action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Something else here</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+				有禁用项的下拉菜单
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Dropdown
+					<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation" class="disabled"><a href="#" role="menuitem" tabindex="-1">Action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Another action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Something else here</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+				这是左对齐下拉菜单
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Dropdown
+					<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Action需要更多的内容才能体现</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Another action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Something else here</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+				这是右对齐下拉菜单
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Dropdown
+					<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Action需要更多的内容才能体现</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Another action</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Something else here</a></li>
+						<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<h1>按钮式下拉菜单组件</h1>
+		<div class="row">
+			<div class="col-xs-2">
+				默认按钮下拉菜单
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						Default 
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<p>primary重点蓝按钮下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						primary 
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>	
+			</div>
+			<div class="col-xs-2">
+				<p>success成功绿按钮下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+						success 
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>	
+			</div>
+			<div class="col-xs-2">
+				<p>info信息蓝按钮下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+						info 
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<p>warning警告橙按钮下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+						warning
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<p>danger错误红按钮下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+						Danger
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<h1>分裂式按钮下拉菜单</h1>
+		<div class="row">
+			<div class="col-xs-2">
+				<p>默认分裂式下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default">Default</button>
+					<button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+						<span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Action action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<p>primary重点蓝分裂式下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-primary">Primary</button>
+					<button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li class="dropdown-header">dropdown-header</li>
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Action action</a></li>
+						<li class="disabled" role="presentation"><a href="#">disabled</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<p>success成功绿分裂式下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-success">Primary</button>
+					<button type="button" data-toggle="dropdown" class="btn btn-success dropdown-toggle">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li class="dropdown-header">dropdown-header</li>
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Action action</a></li>
+						<li class="disabled" role="presentation"><a href="#">disabled</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<p>info信息蓝裂式下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-info">Primary</button>
+					<button type="button" data-toggle="dropdown" class="btn btn-info dropdown-toggle">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li class="dropdown-header">dropdown-header</li>
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Action action</a></li>
+						<li class="disabled" role="presentation"><a href="#">disabled</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<p>warning警告橙分裂式下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-warning">Primary</button>
+					<button type="button" data-toggle="dropdown" class="btn btn-warning dropdown-toggle">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li class="dropdown-header">dropdown-header</li>
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Action action</a></li>
+						<li class="disabled" role="presentation"><a href="#">disabled</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<p>danger错误红分裂式下拉菜单</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-danger">Primary</button>
+					<button type="button" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li class="dropdown-header">dropdown-header</li>
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Action action</a></li>
+						<li class="disabled" role="presentation"><a href="#">disabled</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">
+				<p>多层嵌套下拉菜单 老版本支持</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-danger">Primary</button>
+					<button type="button" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+						<li class="dropdown-header">dropdown-header</li>
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Action action</a></li>
+						<li class="disabled" role="presentation"><a href="#">disabled</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li class="dropdown-submenu pull-left"><a href="#" tabindex="-1">Separated link</a>
+							<ul class="dropdown-menu">
+								<li><a href="#" tabindex="-1">二级下拉菜单</a></li>
+								<li><a href="#" tabindex="-1">二级下拉菜单</a></li>
+								<li><a href="#" tabindex="-1">二级下拉菜单</a></li>
+								<li><a href="#" tabindex="-1">二级下拉菜单</a></li>
+								<li><a href="#" tabindex="-1">二级下拉菜单</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12"></div>
+		</div>
+	</div>
+	
+</body>
+
+</html>

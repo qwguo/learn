@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>伪对象选择器</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+	.selector-list{padding-left:0; margin:0px; padding-bottom: 10px;font-family:arial;}
+	.selector-list li{background-color:#f5f5f5; border:1px solid #ddd; padding:10px; line-height:30px; margin:10px 0 0; list-style-position: inside;}
+	.selector-list span,.selector-list a{margin:0px 8px;}
+	.selector-list input.text{width:80px; height:30px;}
+	.selector-list input.radio,.selector-list input.checkbox{width:14px; height:14px; margin:0px 5px;}
+	/**伪对象选择符**/
+	.pseudoElementSelect .first-litter-pseudo :first-letter {background-color:midnightblue; color:#fff; font-size:48px;float:left; line-height:1; margin:6px 10px 0 0; font-family:"微软雅黑";}
+	.pseudoElementSelect .first-line-pseudo :first-line {background-color:darkgreen; color:#fff;}
+	
+	.pseudoElementSelect .before-pseudo{position:relative; clear:both;font-size:20px; font-weight:bold;}
+	.pseudoElementSelect .before-pseudo:before{content:"这是使用CSS的:before或者::before选择符生成的内容"; background-color:darkkhaki; color:white; margin-right:15px;font-size:20px; font-weight:bold;}
+	.pseudoElementSelect .after-pseudo:after{content:"这是使用CSS的:after或者::after选择符生成的内容"; background-color:darkmagenta; color:#fff; margin-left:15px;font-size:20px; font-weight:bold;}
+	
+	.pseudoElementSelect .selection-pseudo ::-moz-selection{background-color:darkorange; color:#aaa;}
+	.pseudoElementSelect .selection-pseudo ::selection{background-color:darkorange; color:#aaa;}
+	.pseudoElementSelect .selection-pseudo :last-child::selection{background-color:firebrick; color:#fff;}
+	.pseudoElementSelect .selection-pseudo :last-child::-moz-selection{background-color:firebrick;}	
+	
+	p *{color:#c00;}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">伪对象选择符 Pseudo-Element Selectors：</dt>
+		<dd class="detail-list-body">
+			<h1>1、E:first-letter/E::first-letter{ sRules }第一个字符选择器</h1>
+			<ol class="selector-list pseudoElementSelect">
+				<li class="first-litter-pseudo">
+					<p>设置对象内的第一个字符的样式。:first-letter::first-litter{选择符}：此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。 该伪类常被用来配合font-size属性和float属性制作首字下沉效果。 IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-line CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-letter可转化为E::first-letter</p>
+					<p>设置对象内的第一个字符的样式。:first-letter::first-litter{选择符}：此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。 该伪类常被用来配合font-size属性和float属性制作首字下沉效果。 IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-line CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-letter可转化为E::first-letter</p>
+				</li>
+			</ol>
+<pre data-title="HTML" data-skin="1">
+&lt;ol class=&quot;selector-list pseudoElementSelect&quot;&gt;
+	&lt;li class=&quot;first-litter-pseudo&quot;&gt;
+		&lt;p&gt;
+			设置对象内的第一个字符的样式。:first-litter或::first-litter{选择符}：此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。 该伪类常被用来配合font-size属性和float属性制作首字下沉效果。 IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-line CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-letter可转化为E::first-letter
+		&lt;/p&gt;
+		&lt;p&gt;
+			设置对象内的第一个字符的样式。:first-litter或::first-litter{选择符}：此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。 该伪类常被用来配合font-size属性和float属性制作首字下沉效果。 IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-line CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-letter可转化为E::first-letter
+		&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/**用于选择段落中的第一个文字**/</span>
+.pseudoElementSelect .first-litter-pseudo <b>:first-letter</b> {
+	background-color:midnightblue; 
+	color:#fff; 
+	font-size:48px;
+	float:left; 
+	line-height:1; 
+	margin:6px 10px 0 0; 
+	font-family:"微软雅黑";
+}
+</pre>
+			<h1>2、E:first-line/E::first-line{ sRules }第一个行选择器</h1>
+			<ol class="selector-list pseudoElementSelect">
+				<li class="first-line-pseudo">
+					<p>设置对象内的第一行的样式。:first-line活::first-line{选择符}： 此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。 IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-letter CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-line可转化为E::first-line</p>
+					<p>设置对象内的第一行的样式。:first-line活::first-line{选择符}： 此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。 IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-letter CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-line可转化为E::first-line</p>
+				</li>
+			</ol>
+<pre data-title="HTML" data-skin="1">
+<span class="note">/**用于选择段落中的第一行文字**/</span>
+&lt;ol class=&quot;selector-list pseudoElementSelect&quot;&gt;
+	&lt;li class=&quot;first-line-pseudo&quot;&gt;
+		&lt;p&gt;
+			设置对象内的第一行的样式。:first-line活::first-line{选择符}： 此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。 IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-letter CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-line可转化为E::first-line
+		&lt;/p&gt;
+		&lt;p&gt;
+			设置对象内的第一行的样式。:first-line活::first-line{选择符}： 此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。 IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-letter CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-line可转化为E::first-line
+		&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/**用于选择段落中的第一行文字**/</span>
+.pseudoElementSelect .first-line-pseudo <b>:first-line</b> {
+	background-color:darkgreen;
+	color:#fff;
+}
+</pre>
+			<h1>3、E:before/E::before{ sRules }元素前选择器</h1>
+			<ol class="selector-list pseudoElementSelect">
+				<li class="before-pseudo">这是原来的内容</li>
+			</ol>
+<pre data-title="HTML" data-skin="1">
+&lt;ol class=&quot;selector-list pseudoElementSelect&quot;&gt;
+	&lt;li class=&quot;before-pseudo&quot;&gt;这是原来的内容&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/**使用:before或者::before向指点元素的开头添加内容**/</span>
+.pseudoElementSelect .before-pseudo{position:relative; clear:both;font-size:20px; font-weight:bold;}
+.pseudoElementSelect <b>.before-pseudo:before</b>{
+	content:"这是使用CSS的:before或者::before选择符生成的内容"; 
+	background-color:darkkhaki; 
+	color:white; 
+	margin-right:15px;
+	font-size:20px; 
+	font-weight:bold;
+}
+</pre>
+			<h1>4、E:after/E::after{ sRules }元素后选择器</h1>
+			<ol class="selector-list pseudoElementSelect">
+				<li class="after-pseudo">这是原来的内容</li>
+			</ol>
+<pre data-title="HTML" data-skin="1">
+&lt;ol class=&quot;selector-list pseudoElementSelect&quot;&gt;
+	&lt;li class=&quot;after-pseudo&quot;&gt;这是原来的内容&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+<span class="note">/**使用:after或者::after向指点元素的末尾添加内容**/</span>
+.pseudoElementSelect <b>.after-pseudo:after</b>{
+	content:"这是使用CSS的:after或者::after选择符生成的内容"; 
+	background-color:darkmagenta; 
+	color:#fff; 
+	margin-left:15px;
+	font-size:20px; 
+	font-weight:bold;
+}
+</pre>
+			<h1>5、E:selection/E::selection{ sRules }被选择选择器</h1>
+			<ol class="selector-list pseudoElementSelect">
+				<li class="selection-pseudo">
+					<p>设置对象被选择时的样式。::selection{选择符}</p>
+					<p class="twop">设置对象被选择时的样式。::selection{选择符}测试是否继承父级设置的选中状态</p>
+				</li>
+			</ol>
+<pre data-title="HTML" data-skin="1">
+&lt;ol class=&quot;selector-list pseudoElementSelect&quot;&gt;
+	&lt;li class=&quot;after-pseudo&quot;&gt;这是原来的内容&lt;/li&gt;
+	&lt;li class=&quot;selection-pseudo&quot;&gt;
+		&lt;p&gt;设置对象被选择时的样式。::selection{选择符}&lt;/p&gt;
+		&lt;p class=&quot;twop&quot;&gt;设置对象被选择时的样式。::selection{选择符}测试是否继承父级设置的选中状态&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="200">
+<span class="note">/**使用:selection或者::selection设置文本选中的样式效果**/</span>
+.pseudoElementSelect .selection-pseudo <b>::-moz-selection</b>{background-color:darkorange; color:#aaa;}
+.pseudoElementSelect .selection-pseudo <b>::selection</b>{background-color:darkorange; color:#aaa;}
+<span class="note">/**伪对象的结合使用**/</span>
+.pseudoElementSelect .selection-pseudo <b>:last-child::selection</b>{background-color:firebrick; color:#fff;}
+.pseudoElementSelect .selection-pseudo <b>:last-child::-moz-selection</b>{background-color:firebrick;}	
+</pre>			
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

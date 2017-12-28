@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>测试</title>
+<style type="text/css">
+*{margin:0px; padding:0px;}
+body{padding:1px; border:1px solid #000;}
+ul,li{list-style:none;}
+.clear{height:0px; clear:both; border-width:5px; border-style:solid; border-color:yellow orange orange; overflow:hidden;}
+.clip-img{border:3px solid #00c;font-size:50px; width:150px; height:150px; overflow:hidden; position:absolute; clip:rect(0px 156px 156px 0px);}
+.clip img{}
+.absoluteDiv{width:100px; height:100px; background-color:#0c0; position:absolute; right:100px; top:100px;}
+.fixedDiv{width:80px; height:80px; background-color:#cc0; position:fixed; right:50px; top:30px;}
+.absoluteDiv .div{position:absolute;  width:60px; height:60px; background-color:#00f; background-color:#c00; left:5px; top:5px;}
+
+.relative-div{width:100px; height:100px; position:relative; background-color:#0cc; left:600px; top:100px;}
+	.relative-div .fixed-div{width:80px; height:80px; background-color:#0c0; position:fixed; left:500px; top:10px; zoom:1;}
+	.relative-div .position-div{width:50px; height:50px; background-color:#c00; position:absolute; left:10px; top:10px;}
+
+.z-index-test{width:500px; height:600px; border:2px solid #c00;}
+.z-index-test div{width:200px; height:200px; float:left; color:#fff;}
+.z-index-test span{width:180px; height:180px;}
+	.z-index-1{background-color:yellow; position:relative; margin:10px 0px 0px 10px; padding:10px 0 0 10px;}
+		.z-index-1 span{position:absolute; z-index:10; background-color:olive;}
+	.z-index-2{background-color:orange; position:relative; margin:0px 0 0px -50px;}
+		.z-index-2 span{position:absolute; z-index:7; background-color:teal;}
+	.z-index-3{background-color:green; margin:-30px 0px 0px -60px;}
+		.z-index-3 span{position:absolute; z-index:8; background-color:aqua;}
+	.z-index-4{background-color:pink; margin:0px 0 0 0; position:relative; top:-210px; z-index:2;}
+		.z-index-4 span{position:absolute; z-index:9; background-color:lime;}
+	.z-index-test ul{width:auto; height:60px; clear:both; padding-top:10px; overflow:hidden; margin-bottom:40px;}
+		.z-index-test li{float:left; line-height:30px; padding-right:15px; width:45%;}
+		.z-index-test input{width:14px; height:14px; vertical-align:middle; margin-right:3px;}
+		.z-index-test label{display:inline-block;}
+		
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var testDiv = document.getElementById("testDiv"),
+				zDiv = testDiv.getElementsByTagName("div"),
+				radios = document.getElementById("radios").getElementsByTagName("input"),
+				subRadios = document.getElementById("subRadios").getElementsByTagName("input");
+		for(var i = 0,n; n = radios[i]; i++){
+			n.index = i;
+			n.onclick = function(){
+				if(this.checked){
+					zDiv[this.index].style.visibility = "hidden";
+				}else{
+					zDiv[this.index].style.visibility = "visible";
+				}
+			}
+		}
+		for(var x = 0,m; m = subRadios[x]; x++){
+			m.index = x;
+			m.onclick = function(){
+				if(this.checked){
+					zDiv[this.index].getElementsByTagName("span")[0].style.visibility = "hidden";
+				}else{
+					zDiv[this.index].getElementsByTagName("span")[0].style.visibility = "visible";
+				}
+			}
+		}
+	};
+</script>
+</head>
+
+<body>
+	<div class="absoluteDiv"><div class="fixedDiv"><div class="div"></div></div></div>
+	<div class="clear"></div>
+	<div class="relative-div">
+		<div class="fixed-div">
+			<div class="position-div"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="z-index-test" id="testDiv">
+		<ul id="radios">
+			<li><input type="checkbox" id="div_1" /><label for="div_1">第一个div隐藏</label></li>
+			<li><input type="checkbox" id="div_2" /><label for="div_2">第二个div隐藏</label></li>
+			<li><input type="checkbox" id="div_3" /><label for="div_3">第三个div隐藏</label></li>
+			<li><input type="checkbox" id="div_4" /><label for="div_4">第四个div隐藏</label></li>
+		</ul>
+		<ul id="subRadios">
+			<li><input type="checkbox" id="div_s1" /><label for="div_s1">第一个子span隐藏</label></li>
+			<li><input type="checkbox" id="div_s2" /><label for="div_s2">第二个子span隐藏</label></li>
+			<li><input type="checkbox" id="div_s3" /><label for="div_s3">第三个子span隐藏</label></li>
+			<li><input type="checkbox" id="div_s4" /><label for="div_s4">第四个子span隐藏</label></li>
+		</ul>
+		<div class="z-index-1"><span>父级position:relative; z-index不设置，子集position:absolute; z-index:10;</span></div>
+		<div class="z-index-2"><span>父级position:relative; z-index不设置，子集position:absolute; z-index:7;</span></div>
+		<div class="z-index-3"><span>父级position:不设置; z-index不设置，子集position:relative; z-index:8;</span></div>
+		<div class="z-index-4"><span>父级position:relative; z-index:2，子集position:absolute; z-index:9;</span></div>
+		
+	</div>
+	<div class="clear"></div>
+	<div class="clip-img"><img src="/public_image/2.jpg" /></div>
+	<div class="clear"></div>
+</body>
+</html>

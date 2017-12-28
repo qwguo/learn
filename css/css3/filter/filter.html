@@ -1,0 +1,192 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>测试</title>
+  <link rel="stylesheet" href="/public_css/base_style.css">
+  <script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+  <script type="text/javascript" src="/public_js/public_fun.js"></script>
+  <style type="text/css">
+/*
+    grayscale 灰度    取值(0-1或1%-100%)之间;
+    sepia 褐色    取值(0-1或1%-100%)之间;
+    saturate 饱和度    取值(数字或百分值);
+    hue-rotate 色相旋转 取值(0-360deg);
+    invert 反色   取值(0-1或1%-100%)之间;
+    opacity 透明度 取值(0-1或1%-100%)之间;
+    brightness 亮度   取值(0-1或1%-100%)之间;
+    contrast 对比度    取值(0-1或1%-100%)之间;
+    blur 模糊 取值(px)单位
+    drop-shadow 阴影 
+*/
+.filter-list:after,.filter-list:before{content:""; display: table;}
+.filter-list:after{clear:both;}
+.filter-list{margin: 0; padding: 0;}
+.filter-list li{list-style: none;float:left; margin:10px 16px; position:relative;}
+.filter-list li .pic{border:1px solid #CCC; padding: 10px;}
+.filter-list li img{width:200px; height:200px;}
+.filter-list li span{font-size:14px; font-family: "微软雅黑"; text-align: center; padding-top:5px; display: block; width: 200px;}
+.filter-list li b{color:red;}
+.filter-list li:nth-child(2) img{-webkit-filter:grayscale(0.5); -moz-filter:grayscale(0.5); -o-filter:grayscale(0.5); filter:grayscale(0.5);}
+.filter-list li:nth-child(3) img{-webkit-filter:sepia(100%);-moz-filter:sepia(0.5);}
+.filter-list li:nth-child(4) img{-webkit-filter:saturate(10);}
+.filter-list li:nth-child(5) img{-webkit-filter:hue-rotate(180deg);}
+.filter-list li:nth-child(6) img{-webkit-filter:invert(10%);}
+.filter-list li:nth-child(7) img{-webkit-filter:opacity(0.5);}
+.filter-list li:nth-child(8) img{-webkit-filter:brightness(0.9);}
+.filter-list li:nth-child(9) img{-webkit-filter:contrast(10%);}
+.filter-list li:nth-child(10) img{-webkit-filter:blur(1px);}
+.filter-list li:nth-child(11) img{-webkit-filter: drop-shadow(10px 10px 10px rgba(1,0,0,.5));}
+.filter-list li:nth-child(12) img{-webkit-filter:grayscale(1) blur(1px) sepia(0.5) saturate(10) drop-shadow(1px 1px 1px rgba(1,0,0,.5));}
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <dl class="detail-list">
+      <dt class="detail-list-head">css3中的filter(滤镜)效果</dt>
+      <dd class="detail-list-body">
+        <ul class="filter-list">
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>正常</span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>灰度：<b>grayscale(0.5);</b></span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>褐色：<b>sepia(100%);</b></span>
+            </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>饱和度：<b>saturate(10);</b></span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>色相旋转：<b>hue-rotate(180deg);</b></span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>反色：<b>invert(10%);</b></span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>透明度：<b>opacity(0.5);</b></span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>亮度：<b>brightness(0.9);</b></span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>对比度：<b>contrast(10%);</b></span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>模糊：<b>blur(1px);</b></span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>阴影：<b>drop-shadow(10px 10px 10px rgba(1,0,0,.5));</b></span>
+          </li>
+          <li>
+            <div class="pic">
+              <img src="/public_image/pic.jpg" />
+            </div>
+            <span>混合</span>
+          </li>
+        </ul>
+        <div class="explain">
+          <h4>filter：用来这是元素得滤镜效果，是css3的新增属性，它和css only IE有所不同，目前css3中的filter支持的效果有以下10个。</h4>
+          <ol>
+            <li>grayscale：灰度（取值为0-1之间的小数）</li>
+            <li>sepia：褐色（取值为0-1之间的小数）</li>
+            <li>saturate：饱和度（取值为数字num）</li>
+            <li>hue-rotate：色相旋转（取值为角度值angle）</li>
+            <li>invert：反色（取值为0-1之间的小数）</li>
+            <li>opacity：透明度（取值为0-1之间的小数）</li>
+            <li>Brightness：亮度（取值为0-1之间的小数）</li>
+            <li>contrast：对比度（取值为数字num）</li>
+            <li>blur：模糊（取值为像素值）例如：blur(2px)</li>
+            <li>drop-shadow：阴影（取值为像素值加颜色）例如：drop-shadow(2px 2px 2px rgba(230, 120, 1, 0.5))</li>
+          </ol>
+        </div>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note"></span>
+<span class="note">filter:grayscale;设置元素的灰度模式，参数取值为0-1之间或者0%-100%之间，0、0%表示不进行灰度滤镜，1、100%表示完全灰色。</span>
+.filter-list li:nth-child(2) img {
+-webkit-filter:grayscale(0.5);
+-moz-filter:grayscale(0.5);
+-o-filter:grayscale(0.5);
+filter:grayscale(0.5);
+}
+<span class="note">filter:sepia;设置元素的褐色度，参数取值为0-1之间或者0%-100%之间，0、0%表示不进行褐色滤镜，1、100%表示最高值褐色滤镜。</span>
+.filter-list li:nth-child(3) img {
+-webkit-filter:sepia(0.5);
+-moz-filter:sepia(0.5);
+}
+<span class="note">filter:saturate;设置元素的饱和度参数为正数的数字</span>
+.filter-list li:nth-child(4) img {
+-webkit-filter:saturate(10);
+}
+
+.filter-list li:nth-child(5) img {
+-webkit-filter:hue-rotate(360deg);
+}
+
+.filter-list li:nth-child(6) img {
+-webkit-filter:invert(10%);
+}
+
+.filter-list li:nth-child(7) img {
+-webkit-filter:opacity(0.5);
+}
+
+.filter-list li:nth-child(8) img {
+-webkit-filter:brightness(0.9);
+}
+
+.filter-list li:nth-child(9) img {
+-webkit-filter:contrast(10%);
+}
+
+.filter-list li:nth-child(10) img {
+-webkit-filter:blur(1px);
+}
+
+.filter-list li:nth-child(11) img {
+-webkit-filter:drop-shadow(10px10px10pxrgba(1,0,0,.5));
+}
+
+.filter-list li:nth-child(12) img {
+-webkit-filter:grayscale(1) blur(1px) sepia(0.5) saturate(10) drop-shadow(1px1px1pxrgba(1,0,0,.5));
+}
+</pre>
+      </dd>
+    </dl>
+  </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片导航</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css">
+		.nav{text-align: center;}
+			.nav a{width: 200px; height: 200px; margin:10px; display: inline-block; position: relative;}
+				.nav .pic,.nav .attr{position: absolute;}
+				.nav .pic{width: 200px; height: 200px; left: 0; top: 0; 
+					-webkit-transition:all .5s ease;
+					-moz-transition:all .5s ease;
+					-ms-transition:all .5s ease;
+					-o-transition:all .5s ease;
+					transition:all .5s ease;
+					-webkit-transform-origin: 50% 20%;
+					-moz-transform-origin:50% 20%;
+					-ms-transform-origin:50% 20%;
+					-o-transform-origin:50% 20%;
+					transform-origin:50% 20%;
+				}
+					.nav .pic img{width: 100%;}
+			.nav .attr{
+				bottom: 10px; left: 0; font-family: 'arial'; text-align: left; opacity:0; line-height: 1.1;
+				-webkit-transition:all .2s ease;
+				-moz-transition:all .2s ease;
+				-ms-transition:all .2s ease;
+				-o-transition:all .2s ease;
+				transition:all .2s ease;
+			}
+				.nav strong,.nav b{display: block; padding:2px 5px;}
+				.nav strong{font-size: 25px; color:#CE7100; text-transform: uppercase; text-indent: 0;}
+				.nav b{font-size: 15px; color:#fff; font-weight: 300; text-transform: capitalize;}
+		.nav a:nth-child(1){background-color: #F8B334;}
+			.nav a:nth-child(1) strong{color: #f39c12;}
+		.nav a:nth-child(2){background-color: #2ECC71;}
+			.nav a:nth-child(2) strong{color: #27ae60;}
+		.nav a:nth-child(3){background-color: #E74C3C;}
+			.nav a:nth-child(3) strong{color: #c0392b}
+		.nav a:hover .pic{
+			-webkit-transform:scale(0.6);
+			-moz-transform:scale(0.6);
+			-ms-transform:scale(0.6);
+			-o-transform:scale(0.6);
+			transform:scale(0.6);
+		}
+		.nav a:hover .attr{opacity:1;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">transform : 图片缩放小导航</dt>
+			<dd class="detail-list-body">
+				<div class="nav">
+					<a href="#">
+						<div class="attr">
+							<strong>home</strong>
+							<b>this home is the best</b>
+						</div>
+						<div class="pic">
+							<img src="1.png" alt="">
+						</div>
+					</a>
+					<a href="#">
+						<div class="attr">
+							<strong>pic</strong>
+							<b>this pic is the best</b>
+						</div>
+						<div class="pic">
+							<img src="2.png" alt="">
+						</div>
+					</a>
+					<a href="#">
+						<div class="attr">
+							<strong>pc</strong>
+							<b>this pc is the best</b>
+						</div>
+						<div class="pic">
+							<img src="3.png" alt="">
+						</div>
+					</a>
+				</div>
+<pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;nav&quot;&gt;
+	&lt;a href=&quot;#&quot;&gt;
+		&lt;div class=&quot;attr&quot;&gt;
+			&lt;strong&gt;home&lt;/strong&gt;
+			&lt;b&gt;this home is the best&lt;/b&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;pic&quot;&gt;
+			&lt;img src=&quot;1.png&quot; alt=&quot;&quot;&gt;
+		&lt;/div&gt;
+	&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;
+		&lt;div class=&quot;attr&quot;&gt;
+			&lt;strong&gt;pic&lt;/strong&gt;
+			&lt;b&gt;this pic is the best&lt;/b&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;pic&quot;&gt;
+			&lt;img src=&quot;2.png&quot; alt=&quot;&quot;&gt;
+		&lt;/div&gt;
+	&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;
+		&lt;div class=&quot;attr&quot;&gt;
+			&lt;strong&gt;pc&lt;/strong&gt;
+			&lt;b&gt;this pc is the best&lt;/b&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;pic&quot;&gt;
+			&lt;img src=&quot;3.png&quot; alt=&quot;&quot;&gt;
+		&lt;/div&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+<pre data-title="CSS" data-skin="2">
+.nav{text-align: center;}
+	.nav a{width: 200px; height: 200px; margin:10px; display: inline-block; position: relative;}
+		.nav .pic,.nav .attr{position: absolute;}
+		.nav .pic{width: 200px; height: 200px; left: 0; top: 0; 
+			-webkit-transition:all .5s ease;
+			-moz-transition:all .5s ease;
+			-ms-transition:all .5s ease;
+			-o-transition:all .5s ease;
+			transition:all .5s ease;
+			-webkit-transform-origin: 50% 20%;
+			-moz-transform-origin:50% 20%;
+			-ms-transform-origin:50% 20%;
+			-o-transform-origin:50% 20%;
+			transform-origin:50% 20%;
+		}
+			.nav .pic img{width: 100%;}
+	.nav .attr{
+		bottom: 10px; left: 0; font-family: 'arial'; text-align: left; opacity:0; line-height: 1.1;
+		-webkit-transition:all .2s ease;
+		-moz-transition:all .2s ease;
+		-ms-transition:all .2s ease;
+		-o-transition:all .2s ease;
+		transition:all .2s ease;
+	}
+		.nav strong,.nav b{display: block; padding:2px 5px;}
+		.nav strong{font-size: 25px; color:#CE7100; text-transform: uppercase; text-indent: 0;}
+		.nav b{font-size: 15px; color:#fff; font-weight: 300; text-transform: capitalize;}
+.nav a:nth-child(1){background-color: #F8B334;}
+	.nav a:nth-child(1) strong{color: #f39c12;}
+.nav a:nth-child(2){background-color: #2ECC71;}
+	.nav a:nth-child(2) strong{color: #27ae60;}
+.nav a:nth-child(3){background-color: #E74C3C;}
+	.nav a:nth-child(3) strong{color: #c0392b}
+.nav a:hover .pic{
+	-webkit-transform:scale(0.6);
+	-moz-transform:scale(0.6);
+	-ms-transform:scale(0.6);
+	-o-transform:scale(0.6);
+	transform:scale(0.6);
+}
+.nav a:hover .attr{opacity:1;}
+</pre>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>利用css3画奥运五环</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<style type="text/css">
+		ul,li{list-style:none; margin: 0; padding: 0;}
+		ul{height: 400px; width: 780px; margin: 50px auto 0; position: relative;}
+		.wu li,.wu li:after,.wu li:before{position: absolute;border-style:solid; border-radius: 50%;}
+		.wu li{border-width: 20px; height: 200px; width: 200px;}
+		.wu li::after,.wu li::before{content: ""; border-width: 3px; border-color: #FFF;}
+		.wu li::after{ width: 240px; height: 240px; left: -23px; top: -23px;}
+		.wu li::before{ width: 194px; height: 194px; left: 0; top: 0;}
+		.wu li:nth-child(1){left: 0; border-color: #0085C7;}
+		.wu li:nth-child(2){left: 260px; border-color: #000;}
+		.wu li:nth-child(3){left: 520px; border-color: #DF0024;}
+		.wu li:nth-child(4){top: 110px; left: 130px; border-color: #F3C200;}
+		.wu li:nth-child(5){top: 110px; left: 390px; border-color: #009E3C;}
+		.wu li:nth-child(6){z-index: 5; border-color: transparent #0085C7 transparent transparent;}
+		.wu li:nth-child(6)::after,.wu li:nth-child(6)::before{ border-color: transparent #FFF transparent transparent; }
+		.wu li:nth-child(7){left: 260px;z-index: 5; border-color: transparent #000 #000 transparent;}
+		.wu li:nth-child(7)::after,.wu li:nth-child(7)::before{ border-color: transparent #FFF #FFF transparent; }
+		.wu li:nth-child(8){left: 520px; z-index: 5; border-color: transparent transparent #DF0024 transparent;}
+		.wu li:nth-child(8)::after,.wu li:nth-child(8)::before{ border-color: transparent transparent #FFF transparent; }
+		.wu li:nth-child(9){top:110px;left: 390px; z-index: 5; border-color: transparent transparent transparent #009E3C;}
+		.wu li:nth-child(9)::after,.wu li:nth-child(9)::before{ border-color: transparent transparent transparent #FFF; }
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">利用css3画奥运五环</dt>
+			<dd class="detail-list-body">
+				<ul class="wu">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+<pre data-title="HTML" data-skin="1">
+&lt;ul class=&quot;wu&quot;&gt;
+	&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<pre data-title="CSS" data-skin="2" data-height="210">
+ul,li{list-style:none; margin: 0; padding: 0;}
+ul{height: 400px; width: 780px; margin: 50px auto 0; position: relative;}
+	.wu li,.wu li:after,.wu li:before{position: absolute;border-style:solid; border-radius: 50%;}
+	.wu li{border-width: 20px; height: 200px; width: 200px;}
+	.wu li::after,.wu li::before{content: ""; border-width: 3px; border-color: #FFF;}
+	.wu li::after{ width: 240px; height: 240px; left: -23px; top: -23px;}
+	.wu li::before{ width: 194px; height: 194px; left: 0; top: 0;}
+	.wu li:nth-child(1){left: 0; border-color: #0085C7;}
+	.wu li:nth-child(2){left: 260px; border-color: #000;}
+	.wu li:nth-child(3){left: 520px; border-color: #DF0024;}
+	.wu li:nth-child(4){top: 110px; left: 130px; border-color: #F3C200;}
+	.wu li:nth-child(5){top: 110px; left: 390px; border-color: #009E3C;}
+	.wu li:nth-child(6){z-index: 5; border-color: transparent #0085C7 transparent transparent;}
+	.wu li:nth-child(6)::after,.wu li:nth-child(6)::before{ border-color: transparent #FFF transparent transparent; }
+	.wu li:nth-child(7){left: 260px;z-index: 5; border-color: transparent #000 #000 transparent;}
+	.wu li:nth-child(7)::after,.wu li:nth-child(7)::before{ border-color: transparent #FFF #FFF transparent; }
+	.wu li:nth-child(8){left: 520px; z-index: 5; border-color: transparent transparent #DF0024 transparent;}
+	.wu li:nth-child(8)::after,.wu li:nth-child(8)::before{ border-color: transparent transparent #FFF transparent; }
+	.wu li:nth-child(9){top:110px;left: 390px; z-index: 5; border-color: transparent transparent transparent #009E3C;}
+	.wu li:nth-child(9)::after,.wu li:nth-child(9)::before{ border-color: transparent transparent transparent #FFF; }
+</pre>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>

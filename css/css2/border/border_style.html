@@ -1,0 +1,944 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试</title>
+    <link rel="stylesheet" href="/public_css/base_style.css">
+    <link rel="stylesheet" href="/public_js/plugins/jQueryUi/css/jquery-ui-min.css">
+    <link rel="stylesheet" href="/public_js/plugins/spectrum/css/spectrum-min.css">
+    <link rel="stylesheet" href="/public_js/plugins/mCustomScrollbar/css/mCustomScrollbar-min.css">
+    <script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+    <script type="text/javascript" src="/public_js/plugins/jQueryUi/jquery-ui-min.js"></script>
+    <script type="text/javascript" src="/public_js/plugins/spectrum/spectrum-min.js"></script>
+    <script type="text/javascript" src="/public_js/plugins/mCustomScrollbar/mCustomScrollbar-min.js"></script>
+    <script type="text/javascript" src="/public_js/public_fun.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var editBorder = $("#editBorder");
+            pf.fncolor(editBorder);
+            pf.sliderRange(editBorder);
+            editBorder.on({
+                change: function() {
+                    var c = $('#BorderTopColor').val() + ' ' + $('#BorderRightColor').val() + ' ' + $('#BorderBottomColor').val() + ' ' + $('#BorderLeftColor').val(),
+                        w = $('#BorderTopWidth').val() + 'px ' + $('#BorderRightWidth').val() + 'px ' + $('#BorderBottomWidth').val() + 'px ' + $('#BorderLeftWidth').val() + 'px ',
+                        s = $('#BorderTopStyle').val() + ' ' + $('#BorderRightStyle').val() + ' ' + $('#BorderBottomStyle').val() + ' ' + $('#BorderLeftStyle').val();
+                    $('#case8 .b-1').css({
+                        'border-color': c,
+                        'border-width': w,
+                        'border-style': s
+                    });
+                }
+            }, 'input, select');
+        });
+    </script>
+    <style type="text/css">
+        .border-style {
+            padding: 0px;
+            list-style: none;
+        }
+        
+        .border-style>li {
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: #5A5A5A #ccc #ccc;
+        }
+        
+        .border-style li:after,
+        .border-style li:before {
+            display: table;
+            content: "";
+        }
+        
+        .border-style li:after {
+            clear: both;
+        }
+        
+        .border-style li.title {
+            font-size: 20px;
+            border-width: 0;
+            line-height: 40px;
+        }
+        
+        .border-style b {
+            margin: 10px;
+            font-size: 0;
+            line-height: 0px;
+            display: inline-block;
+            width: 0px;
+            height: 0px;
+        }
+        
+        .style-border b {
+            border-width: 100px;
+            border-color: orange blue yellow red;
+            width: 0px;
+            height: 0;
+            vertical-align: middle;
+        }
+        
+        .style-border .style-10 {
+            width: 110px;
+            height: 100px;
+            border-width: 50px 40px;
+            font-size: 15px;
+            line-height: 30px;
+        }
+        
+        .style-border .solid {
+            border-style: solid;
+        }
+        
+        .style-border .dotted {
+            border-style: dotted;
+        }
+        
+        .style-border .dashed {
+            border-style: dashed;
+        }
+        
+        .style-border .double {
+            border-style: double;
+        }
+        
+        .style-border .groove {
+            border-style: groove;
+        }
+        
+        .style-border .ridge {
+            border-style: ridge;
+        }
+        
+        .style-border .inset {
+            border-style: inset;
+        }
+        
+        .style-border .outset {
+            border-style: outset;
+        }
+        
+        .one-border .b-1 {
+            border-width: 20px 20px 0;
+            border-color: orange transparent transparent;
+            border-style: solid dashed dashed;
+        }
+        
+        .one-border .b-2 {
+            border-width: 20px 20px 20px 0;
+            border-color: transparent orange transparent transparent;
+            border-style: dashed solid dashed dashed;
+        }
+        
+        .one-border .b-3 {
+            border-width: 0 20px 20px 20px;
+            border-color: transparent transparent orange;
+            border-style: dashed dashed solid;
+        }
+        
+        .one-border .b-4 {
+            border-width: 20px 0 20px 20px;
+            border-color: transparent transparent transparent orange;
+            border-style: dashed dashed dashed solid;
+        }
+        
+        .one-border .b-5 {
+            border-width: 5px 30px 50px 30px;
+            border-color: #efefef #ccc #ddd orange;
+            border-style: solid;
+        }
+        
+        .one-border .b-6 {
+            border-width: 44px 22px 15px;
+            border-color: #ccc #eee #aaa orange;
+            border-style: solid;
+        }
+        
+        .one-border .b-7 {
+            border-width: 0 0px 55px 55px;
+            border-color: #ccc #eee #aaa orange;
+            border-style: solid;
+        }
+        
+        .one-border .b-8 {
+            border-width: 55px 0px 0px 55px;
+            border-color: #ccc #eee #aaa orange;
+            border-style: solid;
+        }
+        
+        .one-border .b-9 {
+            border-width: 20px 0 50px 23px;
+            border-color: #ccc #eee #aaa orange;
+            border-style: solid;
+        }
+        
+        .one-border .b-10 {
+            border-width: 23px 5px 0 50px;
+            border-color: orange #ccc #eee #aaa;
+            border-style: solid;
+        }
+        
+        .one-border .b-11 {
+            border-width: 15px 44px 0 22px;
+            border-color: orange #ccc #eee #aaa;
+            border-style: solid;
+        }
+        
+        .one-border .b-12 {
+            border-width: 55px 55px 0 0px;
+            border-color: orange #ccc #eee #aaa;
+            border-style: solid;
+        }
+        
+        .one-border .b-13 {
+            border-width: 55px 0px 0 55px;
+            border-color: orange #ccc #eee #aaa;
+            border-style: solid;
+        }
+        
+        .one-border .b-14 {
+            border-width: 55px 55px 0 0px;
+            border-color: #ccc orange #eee #aaa;
+            border-style: solid;
+        }
+        
+        .one-border .b-15 {
+            height: 45px;
+            border-width: 5px 3px;
+            border-color: transparent orange transparent transparent;
+            border-style: solid;
+        }
+        
+        .one-border .b-16 {
+            height: 45px;
+            border-width: 5px 3px;
+            border-color: transparent transparent transparent orange;
+            border-style: solid;
+        }
+        
+        .two-border .b-1 {
+            border-width: 20px;
+            border-color: orange orange transparent transparent;
+            border-style: solid solid dashed dashed;
+        }
+        
+        .two-border .b-2 {
+            border-width: 20px;
+            border-color: transparent orange orange transparent;
+            border-style: dashed solid solid dashed;
+        }
+        
+        .two-border .b-3 {
+            border-width: 20px;
+            border-color: transparent transparent orange orange;
+            border-style: dashed dashed solid solid;
+        }
+        
+        .two-border .b-4 {
+            border-width: 20px;
+            border-color: orange transparent transparent orange;
+            border-style: solid dashed dashed solid;
+        }
+        
+        .two-border .b-5 {
+            border-width: 20px;
+            border-color: orange transparent orange transparent;
+            border-style: solid dashed solid dashed;
+        }
+        
+        .two-border .b-6 {
+            border-width: 20px;
+            border-color: transparent orange transparent orange;
+            border-style: dashed solid dashed solid;
+        }
+        
+        .two-border .b-7 {
+            border-width: 38px 45px 7px 21px;
+            border-color: orange orange transparent transparent;
+            border-style: dashed solid dashed solid;
+        }
+        
+        .two-border .b-8 {
+            border-width: 38px 45px 7px 21px;
+            border-color: orange transparent transparent orange;
+            border-style: dashed solid dashed solid;
+        }
+        
+        .two-border .b-9 {
+            border-width: 20px;
+            border-color: orange;
+            border-style: double outset;
+        }
+        
+        .two-border .b-10 {
+            border-width: 20px;
+            border-color: orange orange transparent transparent;
+            border-style: groove ridge inset dashed;
+        }
+        
+        .three-border .b-1 {
+            border-width: 20px;
+            border-color: orange;
+            border-style: double outset;
+        }
+        
+        .three-border .b-2 {
+            border-width: 20px;
+            border-color: orange orange orange transparent;
+            border-style: groove ridge inset dashed;
+        }
+        
+        .three-border .b-3 {
+            border-width: 20px;
+            border-color: orange transparent orange orange;
+            border-style: solid dashed solid solid;
+        }
+        
+        .three-border .b-4 {
+            border-width: 20px;
+            border-color: orange orange transparent orange;
+            border-style: solid solid dashed solid;
+        }
+        
+        .three-border .b-5 {
+            border-width: 20px;
+            border-color: orange orange orange transparent;
+            border-style: solid solid solid dashed;
+        }
+        
+        .three-border .b-6 {
+            border-width: 20px;
+            border-color: transparent orange orange orange;
+            border-style: dashed solid solid solid;
+        }
+        
+        .four-border .b-17 {
+            border-width: 15px 30px;
+            border-color: orange orange transparent transparent;
+            border-style: solid solid dashed dashed;
+        }
+        
+        .four-border .b-18 {
+            border-width: 15px 20px 0px 60px;
+            border-color: orange transparent transparent transparent;
+            border-style: solid dashed dashed dashed;
+        }
+        
+        .four-border .b-19 {
+            border-width: 10px 20px 40px 0px;
+            border-color: transparent orange transparent transparent;
+            border-style: dashed solid dashed dashed;
+        }
+        /**/
+        
+        .showCase {
+            padding: 20px;
+        }
+        
+        .showCase div {
+            position: relative;
+        }
+        
+        .showCase div b {
+            position: absolute;
+            font-size: 0px;
+            line-height: 0px;
+            margin: 0;
+        }
+        
+        .case-1 {
+            border: 5px solid orange;
+            width: 500px;
+            height: 150px;
+        }
+        
+        .case-1 b {
+            left: 50px;
+            border-style: dashed dashed solid;
+        }
+        
+        .case-1 b.b-1 {
+            border-width: 0px 20px 15px;
+            border-color: transparent transparent orange;
+            top: -15px;
+        }
+        
+        .case-1 b.b-2 {
+            border-width: 0px 20px 15px;
+            border-color: transparent transparent white;
+            top: -10px;
+        }
+        
+        .case-2 {
+            background-color: orange;
+            width: 500px;
+            height: 150px;
+            float: left;
+            margin-right: 30px;
+        }
+        
+        .case-2 b {
+            left: 50px;
+            border-style: solid dashed dashed;
+        }
+        
+        .case-2 b.b-1 {
+            border-width: 15px 20px 0px;
+            border-color: orange transparent transparent;
+            bottom: -14px;
+        }
+        
+        .case-2-1 {
+            width: 300px;
+            height: 130px;
+            margin-left: 0px;
+            background-color: orange;
+            float: left;
+        }
+        
+        .case-2-1 b.b-1 {
+            border-width: 20px 10px 0 60px;
+            border-color: orange transparent;
+            border-style: solid dashed;
+            bottom: -20px;
+            left: 60px;
+        }
+        
+        .case-3 {
+            border: 5px solid orange;
+            width: 250px;
+            height: 100px;
+            margin-left: 50px;
+        }
+        
+        .case-3 b {
+            top: 15px;
+            border-style: dashed solid dashed solid;
+            border-width: 20px 15px 20px 0px;
+        }
+        
+        .case-3 b.b-1 {
+            border-color: transparent orange transparent orange;
+            left: -15px;
+        }
+        
+        .case-3 b.b-2 {
+            border-color: transparent white transparent transparent;
+            left: -10px;
+        }
+        
+        .case-4 {
+            border: 5px solid orange;
+            width: 250px;
+            height: 100px;
+            margin-left: 50px;
+            background-color: orange;
+        }
+        
+        .case-4 b {
+            top: 15px;
+            border-style: dashed solid dashed solid;
+            border-width: 20px 0px 20px 15px;
+        }
+        
+        .case-4 b.b-1 {
+            border-color: transparent orange transparent orange;
+            right: -15px;
+        }
+        
+        .case-4 b.b-2 {
+            border-color: transparent white transparent white;
+            right: -10px;
+            display: none;
+        }
+        
+        .case-5 {
+            border: 5px solid orange;
+            width: 200px;
+            height: 80px;
+            margin: 10px 0 10px 50px;
+            background-color: orange;
+            float: left;
+        }
+        
+        .case-5 b.b-1 {
+            top: 5px;
+            border-color: orange orange transparent transparent;
+            border-style: solid solid dashed dashed;
+            border-width: 20px;
+            left: -40px;
+        }
+        
+        .case-5 b.b-2 {
+            top: 0px;
+            border-color: #fff #fff transparent transparent;
+            border-style: solid solid dashed dashed;
+            border-width: 10px 20px 10px 28px;
+            left: -53px;
+        }
+        
+        .case-5-1 {
+            width: 200px;
+            height: 80px;
+            margin-left: 10px;
+            background-color: orange;
+            padding: 5px;
+            margin: 10px 0px 10px 50px;
+            float: left;
+        }
+        
+        .case-5-1 b.b-1 {
+            top: 15px;
+            border-color: transparent orange;
+            border-style: solid solid dashed;
+            border-width: 0px 0px 40px 40px;
+            right: -40px;
+        }
+        
+        .case-5-1 b.b-2 {
+            top: 15px;
+            border-color: transparent #fff;
+            border-style: solid solid dashed;
+            border-width: 0px 0px 15px 40px;
+            right: -40px;
+        }
+        
+        .case-6 {
+            background-color: orange;
+            width: 150px;
+            height: 30px;
+        }
+        
+        .case-6 b.b-1 {
+            border-width: 15px 25px;
+            border-style: solid dashed solid solid;
+            border-color: orange transparent orange orange;
+            right: -28px;
+            top: 0px;
+        }
+        
+        .case-6 b.b-2 {
+            border-width: 2px 2px 2px 0px;
+            border-style: dashed solid dashed dashed;
+            border-color: transparent orange transparent transparent;
+            left: -2px;
+            top: 0px;
+            height: 26px;
+        }
+        
+        .case-7 {
+            background-color: orange;
+            width: 150px;
+            height: 30px;
+            margin-left: 30px;
+        }
+        
+        .case-7 b {
+            height: 26px;
+            top: 0px;
+        }
+        
+        .case-7 b.b-1 {
+            border-color: transparent orange transparent transparent;
+            border-width: 2px 2px 2px 0px;
+            border-style: dashed solid dashed solid;
+            left: -2px;
+        }
+        
+        .case-7 b.b-2 {
+            border-color: transparent transparent transparent orange;
+            border-width: 2px 0px 2px 2px;
+            border-style: dashed solid dashed solid;
+            right: -2px;
+        }
+        
+        .case-8 {
+            float: left;
+            width: 500px;
+        }
+        
+        .case-8 b.b-1 {
+            margin: 30px 100px 30px 30px;
+            display: block;
+            width: 0;
+            height: 0;
+            border-width: 100px;
+            border-style: solid;
+            border-color: orange yellow blue red;
+        }
+        
+        .edit-border {
+            overflow: hidden;
+        }
+        
+        .edit-border h5 {
+            border-bottom: 1px dashed #ccc;
+            padding: 20px;
+            margin: 10px;
+            font-size: 20px;
+        }
+        
+        .edit-border aside {
+            width: 50%;
+            float: left;
+        }
+        
+        .edit-border ul {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .edit-border li {
+            list-style: none;
+            padding: 15px;
+        }
+        
+        .slider-range {
+            display: inline-block;
+            vertical-align: middle;
+            width: 150px;
+            height: 5px;
+            margin: -2px 18px 0 0;
+            border-radius: 5px;
+            background: none #d3edff;
+            box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+            border-width: 0;
+            border-radius: 3px;
+        }
+        
+        .slider-range div.ui-slider-range-min {
+            background: none #3899ed;
+            border-radius: 3px;
+        }
+        
+        .slider-range a.ui-slider-handle {
+            outline: none;
+            border: 4px solid #f5f5f5;
+            background: none #3899ed;
+            width: 8px;
+            height: 8px;
+            box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+            margin-top: -2px;
+            border-radius: 50%;
+            cursor: w-resize;
+        }
+        
+        .selectObj {
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <dl class="detail-list">
+            <dt class="detail-list-head">巧用边框设置一些效果</dt>
+            <dd class="detail-list-body" id="caseList">
+                <ul class="border-style">
+                    <li class="title">不同边框样式的效果</li>
+                    <li class="style-border">
+                        <b class="solid style-10">实线：solid</b>
+                        <b class="solid"></b>
+                        <b class="dotted style-10">点线：dotted</b>
+                        <b class="dotted"></b>
+                        <b class="dashed style-10">虚线：dashed</b>
+                        <b class="dashed"></b>
+                        <b class="double style-10">双线：double</b>
+                        <b class="double"></b>
+                        <b class="groove style-10">3D凹槽：groove</b>
+                        <b class="groove"></b>
+                        <b class="ridge style-10">3D凸槽：ridge</b>
+                        <b class="ridge"></b>
+                        <b class="inset style-10">3D凹边：inset</b>
+                        <b class="inset"></b>
+                        <b class="outset style-10">3D凸边：outset</b>
+                        <b class="outset"></b>
+                    </li>
+                    <li class="title">单个边框可实现的效果</li>
+                    <li class="one-border">
+                        <b class="b-1"></b>
+                        <b class="b-2"></b>
+                        <b class="b-3"></b>
+                        <b class="b-4"></b>
+                        <b class="b-5"></b>
+                        <b class="b-6"></b>
+                        <b class="b-7"></b>
+                        <b class="b-8"></b>
+                        <b class="b-9"></b>
+                        <b class="b-10"></b>
+                        <b class="b-11"></b>
+                        <b class="b-12"></b>
+                        <b class="b-13"></b>
+                        <b class="b-14"></b>
+                        <b class="b-15"></b>
+                        <b class="b-16"></b>
+                    </li>
+                    <li>
+                        <pre data-title="CSS" data-skin="2">
+.b-1{border-width:20px 20px 0; border-color:orange transparent transparent; border-style:solid dashed dashed;}
+.b-2{ border-width:20px 20px 20px 0; border-color:transparent orange transparent transparent; border-style:dashed solid dashed dashed;}
+.b-3{ border-width:0 20px 20px 20px; border-color:transparent transparent orange; border-style:dashed dashed solid;}
+.b-4{border-width:20px 0 20px 20px; border-color:transparent transparent transparent orange; border-style:dashed dashed dashed solid;}
+.b-5{ border-width:5px 30px 50px 30px; border-color:#efefef #ccc #ddd orange; border-style:solid;}
+.b-6{ border-width:44px 22px 15px; border-color:#ccc #eee #aaa orange; border-style:solid;}
+.b-7{ border-width:0 0px 55px 55px; border-color:#ccc #eee #aaa orange; border-style:solid;}
+.b-8{ border-width:55px 0px 0px 55px; border-color:#ccc #eee #aaa orange; border-style:solid;}
+.b-9{ border-width:20px 0 50px 23px; border-color:#ccc #eee #aaa orange; border-style:solid;}
+.b-10{ border-width:23px 5px  0 50px; border-color:orange #ccc #eee #aaa; border-style:solid;}
+.b-11{ border-width:15px 44px  0 22px; border-color:orange #ccc #eee #aaa; border-style:solid;}
+.b-12{ border-width:55px 55px  0 0px; border-color:orange #ccc #eee #aaa; border-style:solid;}
+.b-13{ border-width:55px 0px  0 55px; border-color:orange #ccc #eee #aaa; border-style:solid;}
+.b-14{ border-width:55px 55px  0 0px; border-color:#ccc orange #eee #aaa; border-style:solid;}
+</pre>
+                    </li>
+                    <li class="title">两个边框可实现的效果</li>
+                    <li class="two-border">
+                        <b class="b-1"></b>
+                        <b class="b-2"></b>
+                        <b class="b-3"></b>
+                        <b class="b-4"></b>
+                        <b class="b-5"></b>
+                        <b class="b-6"></b>
+                        <b class="b-7"></b>
+                        <b class="b-8"></b>
+                        <b class="b-9"></b>
+                        <b class="b-10"></b>
+                    </li>
+                    <pre data-title="CSS" data-skin="2">
+.b-1{ border-width:20px; border-color:orange orange transparent transparent; border-style:solid solid dashed dashed;}
+.b-2{ border-width:20px; border-color:transparent orange orange transparent; border-style:dashed solid solid dashed;}
+.b-3{ border-width:20px; border-color:transparent transparent orange orange; border-style:dashed dashed solid solid;}
+.b-4{ border-width:20px; border-color:orange transparent transparent orange; border-style:solid dashed dashed solid;}
+.b-5{ border-width:20px; border-color:orange transparent orange transparent; border-style:solid dashed solid dashed;}
+.b-6{ border-width:20px; border-color:transparent orange transparent orange; border-style:dashed solid dashed solid;}
+.b-7{ border-width:38px 45px 7px 21px; border-color:orange orange transparent transparent; border-style:dashed solid dashed solid;}
+.b-8{ border-width:38px 45px 7px 21px; border-color:orange transparent transparent orange; border-style:dashed solid dashed solid;}
+.b-9{ border-width:20px; border-color:orange; border-style:double outset;}
+.b-10{ border-width:20px; border-color:orange orange transparent transparent; border-style:groove ridge inset dashed;}
+</pre>
+                    <li class="title">三个边框可实现的效果</li>
+                    <li class="three-border">
+                        <b class="b-1"></b>
+                        <b class="b-2"></b>
+                        <b class="b-3"></b>
+                        <b class="b-4"></b>
+                        <b class="b-5"></b>
+                        <b class="b-6"></b>
+                    </li>
+                    <li>
+                        <pre data-title="CSS" data-skin="2">
+.b-1{ border-width:20px; border-color:orange; border-style:double outset;}
+.b-2{ border-width:20px; border-color:orange orange orange transparent; border-style:groove ridge inset dashed;}
+.b-3{ border-width:20px; border-color:orange transparent orange orange; border-style:solid dashed solid solid;}
+.b-4{ border-width:20px; border-color:orange orange transparent orange; border-style:solid solid dashed solid;}
+.b-5{border-width:20px; border-color:orange orange orange transparent; border-style:solid solid solid dashed;}
+.b-6{ border-width:20px; border-color:transparent orange orange orange; border-style:dashed solid solid solid;}
+</pre>
+                    </li>
+                    <li class="showCase">
+                        <div class="case-1"><b class="b-1"></b><b class="b-2"></b></div>
+                    </li>
+                    <li>
+                        <pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;case-1&quot;&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+</pre>
+                        <pre data-title="CSS" data-skin="2">
+.case-1{border:5px solid orange; width:500px; height:150px;}
+.case-1 b{left:50px; border-style:dashed dashed solid;}
+.case-1 b.b-1{border-width:0px 20px 15px; border-color:transparent transparent orange; top:-15px;}
+.case-1 b.b-2{border-width:0px 20px 15px; border-color:transparent transparent white; top:-10px;}
+</pre>
+                    </li>
+                    <li class="showCase">
+                        <div class="case-2"><b class="b-1"></b></div>
+                        <div class="case-2-1"><b class="b-1"></b><b class="b-2"></b></div>
+                    </li>
+                    <li>
+                        <pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;case-2&quot;&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+&lt;div class=&quot;case-2-1&quot;&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+</pre>
+                        <pre data-title="CSS" data-skin="2">
+.case-2{background-color:orange; height:40px;}
+.case-2 b{left:50px; border-style:solid dashed dashed;}
+.case-2 b.b-1{border-width:15px 20px 0px; border-color:orange transparent transparent; bottom:-15px;}
+.case-2-1{width:300px; height:130px; margin-left:0px; background-color:orange; float: left;}
+.case-2-1 b.b-1{border-width:20px 10px 0 60px; border-color:orange transparent; border-style:solid dashed; bottom:-20px; left:60px;}
+</pre>
+                    </li>
+                    <li class="showCase">
+                        <div class="case-3"><b class="b-1"></b><b class="b-2"></b></div>
+                    </li>
+                    <li>
+                        <pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;case-3&quot;&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+</pre>
+                        <pre data-title="CSS" data-skin="2">
+.case-3{border:5px solid orange; width:50px; height:100px; margin-left:50px;}
+.case-3 b{top:15px; border-style:dashed solid dashed solid;border-width:20px 15px 20px 0px; }
+.case-3 b.b-1{border-color:transparent orange transparent orange; left:-15px;}
+.case-3 b.b-2{border-color:transparent white transparent transparent; left:-10px;}
+</pre>
+                    </li>
+                    <li class="showCase">
+                        <div class="case-4"><b class="b-1"></b><b class="b-2"></b></div>
+                    </li>
+                    <li>
+                        <pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;case-4&quot;&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+</pre>
+                        <pre data-title="CSS" data-skin="2">
+.case-4{border:5px solid orange; width:50px; height:100px; margin-left:50px; background-color:orange;}
+.case-4 b{top:15px; border-style:dashed solid dashed solid; border-width:20px 0px 20px 15px;}
+.case-4 b.b-1{ border-color:transparent orange transparent orange; right:-15px;}
+.case-4 b.b-2{border-color:transparent white transparent white; right:-10px; display:none;}
+</pre>
+                    </li>
+                    <li class="showCase">
+                        <div class="case-5"><b class="b-1"></b><b class="b-2"></b></div>
+                        <div class="case-5-1"><b class="b-1"></b><b class="b-2"></b></div>
+                    </li>
+                    <li>
+                        <pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;case-5&quot;&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+&lt;div class=&quot;case-5-1&quot;&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+</pre>
+                        <pre data-title="CSS" data-skin="2">
+.case-5{border:5px solid orange; width:200px; height:80px; margin-left:50px; background-color:orange;}
+.case-5 b.b-1{top:5px;  border-color:orange orange transparent transparent; border-style:solid solid dashed dashed; border-width:20px; left:-40px;}
+.case-5 b.b-2{top:0px;border-color:#fff #fff transparent transparent; border-style:solid solid dashed dashed; border-width:10px 20px 10px 28px; left:-53px;}
+.case-5-1{ width:200px; height:80px; margin-left:10px; background-color:orange; padding:5px; margin:10px 0px 10px 50px;float: left;}
+.case-5-1 b.b-1{top:15px;  border-color:transparent orange; border-style:solid solid dashed; border-width:0px 0px 40px 40px; right:-40px;}
+.case-5-1 b.b-2{top:15px; border-color:transparent #fff; border-style:solid solid dashed; border-width:0px 0px 15px 40px; right:-40px;}
+</pre>
+                    </li>
+                    <li class="showCase">
+                        <div class="case-6"><b class="b-1"></b><b class="b-2"></b></div>
+                    </li>
+                    <li>
+                        <pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;case-6&quot;&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+</pre>
+                        <pre data-title="CSS" data-skin="2">
+.case-6{background-color:orange; width:150px; height:30px;}
+.case-6 b.b-1{border-width:15px 25px; border-style:solid dashed solid solid; border-color:orange transparent orange orange; right:-28px; top:0px;}
+.case-6 b.b-2{border-width:2px 2px 2px 0px; border-style: dashed solid dashed dashed; border-color:transparent orange transparent transparent; left:-2px; top:0px; height:26px;}
+</pre>
+                    </li>
+                    <li class="showCase">
+                        <div class="case-7"><b class="b-1"></b><b class="b-2"></b></div>
+                    </li>
+                    <li>
+                        <pre data-title="HTML" data-skin="1">
+&lt;div class=&quot;case-7&quot;&gt;&lt;b class=&quot;b-1&quot;&gt;&lt;/b&gt;&lt;b class=&quot;b-2&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+</pre>
+                        <pre data-title="CSS" data-skin="2">
+.case-7{background-color:orange; width:150px; height:30px; margin-left:30px;}
+.case-7 b{height:26px; top:0px;}
+.case-7 b.b-1{border-color:transparent orange transparent transparent; border-width:2px 2px 2px 0px; border-style:dashed solid dashed solid; left:-2px; }
+.case-7 b.b-2{border-color:transparent transparent transparent orange; border-width:2px 0px 2px 2px; border-style:dashed solid dashed solid; right:-2px;}
+</pre>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="detail-list">
+            <dt class="detail-list-head">通过js来设置边框查看效果</dt>
+            <dd class="detail-list-body q" id="jsCase">
+                <div class="case-8" id="case8">
+                    <b class="b-1"></b>
+                </div>
+                <div class="edit-border" id="editBorder">
+                    <article>
+                        <aside>
+                            <h5>上：</h5>
+                            <ul>
+                                <li>
+                                    <span>颜色：</span>
+                                    <input class="colorObj" name="colorInput" id="BorderTopColor" value="#FFA500" />
+                                </li>
+                                <li><span>大小：</span>
+                                    <input type="text" class="inputObj" style="width:30px;" id="BorderTopWidth" data-type="slider" data-min="0" data-max="200" data-defalutval="100" value='100' />&nbsp;
+                                    <span class="px">像素</span>
+                                </li>
+                                <li>
+                                    <span>样式：</span>
+                                    <select class="selectObj" name="BorderTopStyle" id="BorderTopStyle">
+                                        <option value="solid" selected="selected">――――――</option>
+                                        <option value="dashed">--------------------</option>
+                                        <option value="dotted">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside>
+                            <h5>下：</h5>
+                            <ul>
+                                <li>
+                                    <span>颜色：</span>
+                                    <input class="colorObj" name="colorInput" id="BorderBottomColor" value="#FFFF00" />
+                                </li>
+                                <li><span>大小：</span>
+                                    <input type="text" class="inputObj" style="width:30px;" id="BorderBottomWidth" data-type="slider" data-min="0" data-max="200" data-defalutval="100" value='100' />&nbsp;
+                                    <span class="px">像素</span>
+                                </li>
+                                <li>
+                                    <span>样式：</span>
+                                    <select class="selectObj" name="BorderBottomStyle" id="BorderBottomStyle">
+                                        <option value="solid" selected="selected">――――――</option>
+                                        <option value="dashed">--------------------</option>
+                                        <option value="dotted">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside>
+                            <h5>左：</h5>
+                            <ul>
+                                <li>
+                                    <span>颜色：</span>
+                                    <input class="colorObj" name="colorInput" id="BorderLeftColor" value="#0000ff" />
+                                </li>
+                                <li><span>大小：</span>
+                                    <input type="text" class="inputObj" style="width:30px;" id="BorderLeftWidth" data-type="slider" data-min="0" data-max="200" data-defalutval="100" value='100' />&nbsp;
+                                    <span class="px">像素</span>
+                                </li>
+                                <li>
+                                    <span>样式：</span>
+                                    <select class="selectObj" name="BorderLeftStyle" id="BorderLeftStyle">
+                                        <option value="solid" selected="selected">――――――</option>
+                                        <option value="dashed">--------------------</option>
+                                        <option value="dotted">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside>
+                            <h5>右：</h5>
+                            <ul>
+                                <li>
+                                    <span>颜色：</span>
+                                    <input class="colorObj" name="colorInput" id="BorderRightColor" value="#ff0000" />
+                                </li>
+                                <li><span>大小：</span>
+                                    <input type="text" class="inputObj" style="width:30px;" id="BorderRightWidth" data-type="slider" data-min="0" data-max="200" data-defalutval="100" value='100' />&nbsp;
+                                    <span class="px">像素</span>
+                                </li>
+                                <li>
+                                    <span>样式：</span>
+                                    <select class="selectObj" name="BorderRightStyle" id="BorderRightStyle">
+                                        <option value="solid" selected="selected">――――――</option>
+                                        <option value="dashed">--------------------</option>
+                                        <option value="dotted">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </aside>
+                    </article>
+                </div>
+            </dd>
+        </dl>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+@color_1 : red;
+@libg : #ccc;
+@librw : 2px;
+@librs : solid;
+@librc : (@libg - #111);
+@lifs : 14px;
+.border-radius(@radius){
+	-moz-border-radius : @radius;
+	-webkit-border-radius : @radius;
+	-o-border-radius : @radius;
+	-ms-border-radius : @radius;
+	border-radius : @radius;
+}
+.bg-color(@radius){
+	background-color:@radius;
+}
+.colors(@radius){
+	color:@radius;
+}
+body{
+	color:@color_1;
+}
+li{
+	border : @librs @librw @librc;
+	padding:10px 5px;
+	font-size:@lifs;
+	margin:10px;
+	list-style:none;
+	.border-radius(4px);
+	background-color:@libg;
+}
+li:nth-child(2){
+	.border-radius(10px);
+	background-color : multiply(@libg, #aaaaaa);
+}
+li:nth-child(3){
+	background-color : screen(@libg, #aaaaaa);
+}
+li:nth-child(4){
+	background-color : overlay(@libg, #aaaaaa);
+}
+.butgroup{
+	.bg-color(#eee);
+	padding:10px;
+	button{border-width:0px;}
+	button:hover{
+		opacity:0.8;
+	}
+	button:nth-child(1){
+		.bg-color(red);
+		.border-radius(5px);
+		&:hover{.bg-color(pink);}
+	}
+	button:nth-child(2){
+		.bg-color(yellow);
+		.border-radius(10px);
+	}
+}

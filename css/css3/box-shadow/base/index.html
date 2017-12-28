@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>投影效果</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+	.operate{ border-bottom:2px solid #CCC; padding: 10px; }
+	.operate label{margin-right:10px;}
+	.operate select{padding:5px;}
+	.operate input[type="number"]{width:50px;padding:5px;}
+	.box-shadows{width:500px; height:300px; border-width:3px; border-style:solid; border-color: #CCC; background-color:#F5F5F5; margin:20px auto; text-align:center;
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+	}
+	.box-shadows .text{font: 700 14px/50px 'Arial';}
+</style>
+<script type="text/javascript">
+	var changes = function(j){
+		var box = $("#boxShadows"),
+				txt = box.find(".text");
+			box.attr('style','box-shadow : ' + j);
+			txt.html('box-shadow : ' + j);
+	}
+$(function(){
+	var operate = $("#operate");
+	operate.on({
+		change : function(){
+			var t = $(this),
+					sty = $("#Style").val(),
+					col = $("#Color").val(),
+					X = $("#X").val(),
+					Y = $("#Y").val(),
+					L = $("#L").val();
+				var j = X + 'px ' + Y + 'px ' + L + 'px ' + col + ' ' + sty;
+				changes(j);
+		}
+	},'select,input');
+	$("#Style").trigger('change');
+});
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">box-shadow投影的基本设置：</dt>
+		<dd class="detail-list-body">
+			<div class="operate" id="operate">
+				<label>位置：
+					<select name="style" id="Style">
+						<option value="">默认</option>
+						<option value="inset">内阴影</option>
+					</select>
+				</label>
+				<label>颜色：<input id="Color" name="color" type="color"></label>
+				<label>x轴：<input id="X" name="x" type="number" value="1"></label>
+				<label>y轴：<input id="Y" name="y" type="number" value="1"></label>
+				<label>y轴：<input id="L" name="l" type="number" value="1"></label>
+			</div>
+			<div class="box-shadows" id="boxShadows">
+				<span class="text">box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);</span>
+			</div>
+		</dd>
+	</dl>
+	<dl class="detail-list">
+		<dt class="detail-list-head">说明：</dt>
+		<dd class="detail-list-body">
+			<div class="explain">
+				<h1>box-shadow：用来设置元素的阴影；</h1>
+				<ul class="lower-roman">
+					<li class="f-red">box-shadow: x y l color;</li>
+				</ul>
+				<div class="dashed-line"></div>
+				<h4>语法介绍：</h4>
+				<ol>
+					<li><b class="f-red">x：</b>表示元素的投影在x轴方向的偏移度，取正数表示投影向左偏移，负值表示投影向右偏移。</li>
+					<li><b class="f-red">y：</b>表示元素的投影在y轴方向的偏移度，区正数表示投影向下偏移，负值表示投影向上偏移。</li>
+					<li><b class="f-red">l：</b>表示元素投影的四周扩散程度，取值越高表示扩散程度越大，并且扩散的边缘越模糊。取值为正数。</li>
+					<li><b class="f-red">color：</b>表示元素投影的颜色值。</li>
+				</ol>
+				<p>通过元素投影可以实现好多有趣绚丽的效果。</p>
+			</div>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

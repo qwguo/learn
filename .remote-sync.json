@@ -1,0 +1,13 @@
+{
+  "transport": "ftp",
+  "hostname": "139.129.4.36",
+  "port": 22,
+  "username": "root",
+  "password": "18201109020xiaoQI",
+  "target": "/home/wwwroot/www.learn.qwguo.com/",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "watch":[]
+}

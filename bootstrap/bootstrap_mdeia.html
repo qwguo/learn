@@ -1,0 +1,57 @@
+﻿<!doctype  html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<title>"这是用来测试bootstrap 栅格化系统的。"</title>
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<style type="text/css">
+		.row{border:1px solid #ccc; margin-bottom:10px;}
+		.row div{height:200px; border-left:1px solid #ccc;background-color:#f5f5f5; border-bottom:1px solid #ccc;}
+		.row div:first-child{border-left:0px;}
+		.wrap-2 div{height:auto;}
+	</style>
+</head>
+<body>
+<div class="container wrap-1">
+	<h1>不同屏幕的样式嵌套使用，超小：xs，小：sm，中：md，大型：lg；</h1>
+	<div class="row">
+		<div class="col-sm-12 col-md-8">.col-sm-12 .col-md-8</div>
+		<div class="col-sm-12 col-md-4">.col-sm-12.col-md-4</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+		<div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+		<div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">.col-sm-6</div>
+		<div class="col-sm-6">.col-sm-6</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-3 col-sm-6 col-md-4 col-lg-2">.col-xs-3 .col-sm-6 .col-md-4 .col-lg-2</div>
+	</div>
+</div>
+<div class="container wrap-2">
+	<h1>清除浮动的使用方法（未清除前）</h1>
+	<div class="row">
+		<div class="col-xs-6 col-sm-3">div1 : .col-xs-6 .col-sm-3多内容的情况下会发生错位现象</div>
+		<div class="col-xs-6 col-sm-3">div1 : .col-xs-6 .col-sm-3</div>
+		<div class="col-xs-6 col-sm-3">div1 : .col-xs-6 .col-sm-3</div>
+		<div class="col-xs-6 col-sm-3">div1 : .col-xs-6 .col-sm-3</div>
+	</div>
+	<h1>清楚后</h1>
+	<div class="row">
+		<div class="col-xs-6 col-sm-3">div1 : .col-xs-6 .col-sm-3这是使用了clearfix visible-xs空div实现清除浮动</div>
+		<div class="col-xs-6 col-sm-3">div1 : .col-xs-6 .col-sm-3</div>
+		<div class="clearfix visible-xs"></div>
+		<div class="col-xs-6 col-sm-3">div1 : .col-xs-6 .col-sm-3</div>
+		<div class="col-xs-6 col-sm-3">div1 : .col-xs-6 .col-sm-3</div>
+	</div>
+</div>
+</body>
+
+</html>

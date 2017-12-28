@@ -1,0 +1,701 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>按钮效果</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<link rel="stylesheet" href="button.css">
+</head>
+<body>
+	<div class="wrapper">
+<pre data-title="HTML" data-skin="1" data-height="300">
+<span class="note">&lt;!--公用HTML结构--&gt;</span>
+&lt;span class=&quot;linear-btn linear-btn-pink&quot;&gt;pink button&lt;/span&gt;
+&lt;span class=&quot;linear-btn linear-btn-orange&quot;&gt;orange button&lt;/span&gt;
+&lt;span class=&quot;linear-btn linear-btn-blue&quot;&gt;blue button&lt;/span&gt;
+&lt;span class=&quot;linear-btn linear-btn-green&quot;&gt;green button&lt;/span&gt;
+&lt;span class=&quot;linear-btn linear-btn-red&quot;&gt;red button&lt;/span&gt;
+&lt;span class=&quot;linear-btn linear-btn-yellow&quot;&gt;yellow button&lt;/span&gt;
+&lt;span class=&quot;linear-btn linear-btn-purple&quot;&gt;purple button&lt;/span&gt;
+&lt;span class=&quot;linear-btn linear-btn-black&quot;&gt;black button&lt;/span&gt;
+&lt;span class=&quot;linear-btn linear-btn-brown&quot;&gt;brown button&lt;/span&gt;
+<span class="note">&lt;!--公用的CSS样式--&gt;</span>
+span[class*="btn"]{
+	display:inline-block; 
+	margin:10px; 
+	font-size:40px; 
+	font-family:"arial"; 
+	font-weight: 700;
+	padding:10px 20px; 
+	text-decoration:none;
+	cursor:pointer;
+}
+</pre>
+			<dl class="detail-list">
+				<dt class="detail-list-head">渐变按钮组</dt>
+				<dd class="detail-list-body">
+					<span class="linear-btn linear-btn-pink">pink button</span>
+					<span class="linear-btn linear-btn-orange">orange button</span>
+					<span class="linear-btn linear-btn-blue">blue button</span>
+					<span class="linear-btn linear-btn-green">green button</span>
+					<span class="linear-btn linear-btn-red">red button</span>
+					<span class="linear-btn linear-btn-yellow">yellow button</span>
+					<span class="linear-btn linear-btn-purple">purple button</span>
+					<span class="linear-btn linear-btn-black">black button</span>
+					<span class="linear-btn linear-btn-brown">brown button</span>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/*渐变按钮效果*/</span>
+.linear-btn{
+	color:#fff; 
+	border-radius:5px;
+	text-shadow:0 -1px 1px rgba(0,0,0,0.25);
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,.6);
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,.6);
+	-o-box-shadow:0 1px 3px rgba(0,0,0,.6);
+	box-shadow:0 1px 3px rgba(0,0,0,.6);
+	border-width:0 0 1px;
+	border-style:solid;
+}
+<span class="note">按钮被按下</span>
+.linear-btn:active{
+		-webkit-transform:translateY(2px);
+	}
+<span class="note">/*粉色*/</span>
+.linear-btn-pink{
+	border-color:#79124D;
+	background-image:-webkit-linear-gradient(top,#E958AD,#E22092);
+	background-image:-moz-linear-gradient(top,#E958AD,#E22092);
+	background-image:-ms-linear-gradient(top,#E958AD,#E22092);
+	background-image:-o-linear-gradient(top,#E958AD,#E22092);
+	background-image:linear-gradient(top,#E958AD,#E22092);
+}
+.linear-btn-pink:hover{
+	border-color:#5F0F3E;
+	background-image:-webkit-linear-gradient(top,#D656A1,#C81E82);
+	background-image:-moz-linear-gradient(top,#D656A1,#C81E82);
+	background-image:-ms-linear-gradient(top,#D656A1,#C81E82);
+	background-image:-o-linear-gradient(top,#D656A1,#C81E82);
+	background-image:linear-gradient(top,#D656A1,#C81E82);		
+}
+<span class="note">/*粉色*/</span>
+.linear-btn-orange{
+	border-color:#BF4F11;
+	background-image:-webkit-linear-gradient(top,#FF8540,#FF6B18);
+	background-image:-moz-linear-gradient(top,#FF8540,#FF6B18);
+	background-image:-ms-linear-gradient(top,#FF8540,#FF6B18);
+	background-image:-o-linear-gradient(top,#FF8540,#FF6B18);
+	background-image:linear-gradient(top,#FF8540,#FF6B18);
+}
+.linear-btn-orange:hover{
+	border-color:#A14B11;
+	background-image:-webkit-linear-gradient(top,#DF7F40,#D86518);
+	background-image:-moz-linear-gradient(top,#DF7F40,#D86518);
+	background-image:-ms-linear-gradient(top,#DF7F40,#D86518);
+	background-image:-o-linear-gradient(top,#DF7F40,#D86518);
+	background-image:linear-gradient(top,#DF7F40,#D86518);
+}
+<span class="note">/*蓝色*/</span>
+.linear-btn-blue{
+	border-color:#2D69AC;
+	background-image:-webkit-linear-gradient(top,#5EA0EB,#3D8CE6);
+	background-image:-moz-linear-gradient(top,#5EA0EB,#3D8CE6);
+	background-image:-ms-linear-gradient(top,#5EA0EB,#3D8CE6);
+	background-image:-o-linear-gradient(top,#5EA0EB,#3D8CE6);
+	background-image:linear-gradient(top,#5EA0EB,#3D8CE6);
+}
+.linear-btn-blue:hover{
+	border-color:#2A609E;
+	background-image:-webkit-linear-gradient(top,#5B97DB,#3982D3);
+	background-image:-moz-linear-gradient(top,#5B97DB,#3982D3);
+	background-image:-ms-linear-gradient(top,#5B97DB,#3982D3);
+	background-image:-o-linear-gradient(top,#5B97DB,#3982D3);
+	background-image:linear-gradient(top,#5B97DB,#3982D3);
+}
+<span class="note">/*绿色*/</span>
+.linear-btn-green{
+	border-color:#739217;
+	background-image:-webkit-linear-gradient(top,#ACCD46,#9BC320);
+	background-image:-webkit-gradient(linear,left top,left bottom, form(#ACCD46),to(#9BC320));
+	background-image:-moz-linear-gradient(top,#ACCD46,#9BC320);
+	background-image:-ms-linear-gradient(top,#ACCD46,#9BC320);
+	background-image:-o-linear-gradient(top,#ACCD46,#9BC320);
+	background-image:linear-gradient(top,#ACCD46,#9BC320);
+}
+.linear-btn-green:hover{
+	border-color:#607A12;
+	background-image:-webkit-linear-gradient(top,#97B341,#81A319);
+	background-image:-webkit-gradient(linear,left top,left bottom,form(#97B341),to(#81A319));
+	background-image:-moz-linear-gradient(top,#97B341,#81A319);
+	background-image:-ms-linear-gradient(top,#97B341,#81A319);
+	background-image:-o-linear-gradient(top,#97B341,#81A319);
+	background-image:linear-gradient(top,#97B341,#81A319);
+}
+<span class="note">/*红色*/</span>
+.linear-btn-red{
+	border-color:#AE2B2B;
+	background-image:-webkit-linear-gradient(top,#EC5D5D,#E83B3B);
+	background-image:-webkit-gradient(linear,left top,left bottom, form(#EC5D5D),to(#E83B3B));
+	background-image:-moz-linear-gradient(top,#EC5D5D,#E83B3B);
+	background-image:-ms-linear-gradient(top,#EC5D5D,#E83B3B);
+	background-image:-o-linear-gradient(top,#EC5D5D,#E83B3B);
+	background-image:linear-gradient(top,#EC5D5D,#E83B3B);
+}
+.linear-btn-red:hover{
+	border-color:#9E2A2A;
+	background-image:-webkit-linear-gradient(top,#DB5B5B,#D33939);
+	background-image:-webkit-gradient(linear,left top,left bottom, form(#DB5B5B),to(#D33939));
+	background-image:-moz-linear-gradient(top,#DB5B5B,#D33939);
+	background-image:-ms-linear-gradient(top,#DB5B5B,#D33939);
+	background-image:-o-linear-gradient(top,#DB5B5B,#D33939);
+	background-image:linear-gradient(top,#DB5B5B,#D33939);
+}
+<span class="note">/*黄色*/</span>
+.linear-btn-yellow{
+	border-color:#BF8C1F;
+	background-image:-webkit-linear-gradient(top,#FFC74F,#FFBC2B);
+	background-image:-webkit-gradient(linear,left top,left bottom,form(#FFC74F),to(#FFBC2B));
+	background-image:-moz-linear-gradient(top,#FFC74F,#FFBC2B);
+	background-image:-ms-linear-gradient(top,#FFC74F,#FFBC2B);
+	background-image:-o-linear-gradient(top,#FFC74F,#FFBC2B);
+	background-image:linear-gradient(top,#FFC74F,#FFBC2B);
+}
+.linear-btn-yellow:hover{
+	border-color:#BD7411;
+	background-image:-webkit-linear-gradient(top,#FDAD40,#FC9C18);
+	background-image:-webkit-gradient(linear,left top,left bottom,form(#FDAD40),to(#FC9C18));
+	background-image:-moz-linear-gradient(top,#FDAD40,#FC9C18);
+	background-image:-ms-linear-gradient(top,#FDAD40,#FC9C18);
+	background-image:-o-linear-gradient(top,#FDAD40,#FC9C18);
+	background-image:linear-gradient(top,#FDAD40,#FC9C18);
+}
+<span class="note">/*紫色*/</span>
+.linear-btn-purple{
+	border-color:purple;
+	background-image:-webkit-linear-gradient(top,#BF2EBF,#B203B2);
+	background-image:-webkit-gradient(linear,left top,left bottom,form(#BF2EBF),top(#B203B2));
+	background-image:-moz-linear-gradient(top,#BF2EBF,#B203B2);
+	background-image:-ms-linear-gradient(top,#BF2EBF,#B203B2);
+	background-image:-o-linear-gradient(top,#BF2EBF,#B203B2);
+	background-image:linear-gradient(top,#BF2EBF,#B203B2);
+}
+.linear-btn-purple:hover{
+	border-color:#6F036F;
+	background-image:-webkit-linear-gradient(top,#A231A2,#8E038E);
+	background-image:-webkit-gradient(linear,left top,left bottom,form(#A231A2),top(#8E038E));
+	background-image:-moz-linear-gradient(top,#A231A2,#8E038E);
+	background-image:-ms-linear-gradient(top,#A231A2,#8E038E);
+	background-image:-o-linear-gradient(top,#A231A2,#8E038E);
+	background-image:linear-gradient(top,#A231A2,#8E038E);
+}
+<span class="note">/*黑色*/</span>
+.linear-btn-black{
+	border-color:#333;
+	background-image:-webkit-linear-gradient(top,#777,#444);
+	background-image:-webkit-gradient(linear,left top,left bottom,form(#777),top(#444));
+	background-image:-moz-linear-gradient(top,#777,#444);
+	background-image:-ms-linear-gradient(top,#777,#444);
+	background-image:-o-linear-gradient(top,#777,#444);
+	background-image:linear-gradient(top,#777,#444);
+}
+.linear-btn-black:hover{
+	border-color:#111;
+	background-image:-webkit-linear-gradient(top,#666,#333);
+	background-image:-webkit-gradient(linear,left top,left bottom,form(#666),top(#333));
+	background-image:-moz-linear-gradient(top,#666,#333);
+	background-image:-ms-linear-gradient(top,#666,#333);
+	background-image:-o-linear-gradient(top,#666,#333);
+	background-image:linear-gradient(top,#666,#333);
+}
+<span class="note">/*褐色*/</span>
+.linear-btn-brown{
+	border-color:#712C03;
+	background-image:-webkit-linear-gradient(top,#C15D21,#983B03);
+	background-image:-webkit-gradient(linear,left top,left bottom,form(#C15D21),top(#983B03));
+	background-image:-moz-linear-gradient(top,#C15D21,#983B03);
+	background-image:-ms-linear-gradient(top,#C15D21,#983B03);
+	background-image:-o-linear-gradient(top,#C15D21,#983B03);
+	background-image:linear-gradient(top,#C15D21,#983B03);
+}
+.linear-btn-brown:hover{
+	border-color:brown;
+	background-image:-webkit-linear-gradient(top,#B25A27,#762E03);
+	background-image:-webkit-gradient(linear,left top,left bottom,form(#B25A27),top(#762E03));
+	background-image:-moz-linear-gradient(top,#B25A27,#762E03);
+	background-image:-ms-linear-gradient(top,#B25A27,#762E03);
+	background-image:-o-linear-gradient(top,#B25A27,#762E03);
+	background-image:linear-gradient(top,#B25A27,#762E03);
+}
+</pre>
+				</dd>
+			</dl>
+			<dl class="detail-list">
+				<dt class="detail-list-head">3D按钮组</dt>
+				<dd class="detail-list-body">
+					<span class="D3-btn D3-btn-pink">pink button</span>
+					<span class="D3-btn D3-btn-orange">orange button</span>
+					<span class="D3-btn D3-btn-blue">blue button</span>
+					<span class="D3-btn D3-btn-green">green button</span>
+					<span class="D3-btn D3-btn-red">red button</span>
+					<span class="D3-btn D3-btn-yellow">yellow button</span>
+					<span class="D3-btn D3-btn-purple">purple button</span>
+					<span class="D3-btn D3-btn-black">black button</span>
+					<span class="D3-btn D3-btn-brown">brown button</span>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/*3D按钮效果*/</span>
+.D3-btn{
+	border-width:1px;
+	border-style:solid;
+	border-radius: 5px;
+	text-shadow:0px 1px 1px rgba(255,255,255,0.8);
+}
+<span class="note">粉色按钮</span>
+.D3-btn-pink{
+	border-color:#B41C76;
+	color:#79124D;
+	-webkit-box-shadow:1px 1px 1px rgba(255,255,255,0.8) inset,0 -1px 1px rgba(255,255,255,0.4) inset,0 1px 0 #C92486,0 2px 0 #C92486,0 3px 0 #C92486,0 4px 0 #B41C76;
+	-moz-box-shadow:1px 1px 1px rgba(255,255,255,0.8) inset,0 -1px 1px rgba(255,255,255,0.4) inset,0 1px 0 #C92486,0 2px 0 #C92486,0 3px 0 #C92486,0 4px 0 #B41C76;
+	-ms-box-shadow:1px 1px 1px rgba(255,255,255,0.8) inset,0 -1px 1px rgba(255,255,255,0.4) inset,0 1px 0 #C92486,0 2px 0 #C92486,0 3px 0 #C92486,0 4px 0 #B41C76;
+	-o-box-shadow:1px 1px 1px rgba(255,255,255,0.8) inset,0 -1px 1px rgba(255,255,255,0.4) inset,0 1px 0 #C92486,0 2px 0 #C92486,0 3px 0 #C92486,0 4px 0 #B41C76;
+	box-shadow:1px 1px 1px rgba(255,255,255,0.8) inset,0 -1px 1px rgba(255,255,255,0.4) inset,0 1px 0 #C92486,0 2px 0 #C92486,0 3px 0 #C92486,0 4px 0 #B41C76;
+	background-image:-webkit-linear-gradient(top,#F789C9,#E22092);
+	background-image:-moz-linear-gradient(top,#F789C9,#E22092);
+	background-image:-ms-linear-gradient(top,#F789C9,#E22092);
+	background-image:-o-linear-gradient(top,#F789C9,#E22092);
+	background-image:linear-gradient(top,#F789C9,#E22092);
+}
+.D3-btn-pink:hover{
+	border-color:#951A62;
+	-webkit-box-shadow:1px 1px 1px rgba(255,255,255,0.6) inset,0 -1px 1px rgba(255,255,255,0.2) inset,0 1px 0 #B72179,0 2px 0 #B72179,0 3px 0 #B72179,0 4px 0 #951A62;
+	-moz-box-shadow:1px 1px 1px rgba(255,255,255,0.6) inset,0 -1px 1px rgba(255,255,255,0.2) inset,0 1px 0 #B72179,0 2px 0 #B72179,0 3px 0 #B72179,0 4px 0 #951A62;
+	-ms-box-shadow:1px 1px 1px rgba(255,255,255,0.6) inset,0 -1px 1px rgba(255,255,255,0.2) inset,0 1px 0 #B72179,0 2px 0 #B72179,0 3px 0 #B72179,0 4px 0 #951A62;
+	-o-box-shadow:1px 1px 1px rgba(255,255,255,0.6) inset,0 -1px 1px rgba(255,255,255,0.2) inset,0 1px 0 #B72179,0 2px 0 #B72179,0 3px 0 #B72179,0 4px 0 #951A62;
+	box-shadow:1px 1px 1px rgba(255,255,255,0.6) inset,0 -1px 1px rgba(255,255,255,0.2) inset,0 1px 0 #B72179,0 2px 0 #B72179,0 3px 0 #B72179,0 4px 0 #951A62;
+	background-image:-webkit-linear-gradient(top,#E55FAF,#C81E82);
+	background-image:-moz-linear-gradient(top,#E55FAF,#C81E82);
+	background-image:-ms-linear-gradient(top,#E55FAF,#C81E82);
+	background-image:-o-linear-gradient(top,#E55FAF,#C81E82);
+	background-image:linear-gradient(top,#E55FAF,#C81E82);		
+}
+</pre>
+				</dd>
+			</dl>
+			<dl class="detail-list">
+				<dt class="detail-list-head">气泡按钮组</dt>
+				<dd class="detail-list-body">
+					<span class="bubble-btn bubble-btn-pink">pink button</span>
+					<span class="bubble-btn bubble-btn-orange">orange button</span>
+					<span class="bubble-btn bubble-btn-blue">blue button</span>
+					<span class="bubble-btn bubble-btn-green">green button</span>
+					<span class="bubble-btn bubble-btn-red">red button</span>
+					<span class="bubble-btn bubble-btn-yellow">yellow button</span>
+					<span class="bubble-btn bubble-btn-purple">purple button</span>
+					<span class="bubble-btn bubble-btn-black">black button</span>
+					<span class="bubble-btn bubble-btn-brown">brown button</span>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/*气泡按钮*/</span>
+.bubble-btn{
+	border-width:1px;
+	border-radius:5px;
+	border-style:solid;
+	color:#fff;
+	-webkit-transition:all 1.2s ease-in-out;
+	-moz-transition:all 1.2s ease-in-out;
+	-ms-transition:all 1.2s ease-in-out;
+	-o-transition:all 1.2s ease-in-out;
+	transition:all 1.2s ease-in-out;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.8),0px 1px 0px rgba(255,255,255,0.6) inset,0px -1px 0px rgba(255,255,255,0.4) inset,1px 0px 0px rgba(255,255,255,0.3) inset,-1px 0px 0px rgba(255,255,255,0.3) inset;
+	position:relative;
+	background-position:0 0px,80px 0px;
+	text-shadow:1px 1px 0px rgba(0,0,0,0.5);
+}
+.bubble-btn:hover{
+	background-position: 0 -500px,80px -500px
+}
+.bubble-btn:after,.bubble-btn:before{
+	content:"";
+	position:absolute;
+	height:80%;
+	width:90%;
+	background-color:rgba(0,0,0,0.2);
+	border-radius:50%/20%;
+	z-index:-1;
+	left:5%;
+}
+.bubble-btn:before{
+	top:0px;
+	box-shadow:0 -5px 4px rgba(0,0,0,0.3);
+}
+.bubble-btn:after{
+	bottom:0px;
+	box-shadow:0 5px 4px rgba(0,0,0,0.3);
+}
+<span class="note">/*粉色,可以设置不同颜色*/</span>
+.bubble-btn-pink{
+	border-color:#B41C76;
+	background-image:url('bubble_bg.png'), url('bubble_bg.png'),-webkit-radial-gradient(circle,#FABFE0,#F55FB4,#E32394,#C92486);
+	background-image:url('bubble_bg.png'), url('bubble_bg.png'),-moz-radial-gradient(circle,#FABFE0,#F55FB4,#E32394,#C92486);
+	background-image:url('bubble_bg.png'), url('bubble_bg.png'),-ms-radial-gradient(circle,#FABFE0,#F55FB4,#E32394,#C92486);
+	background-image:url('bubble_bg.png'), url('bubble_bg.png'),-o-radial-gradient(circle,#FABFE0,#F55FB4,#E32394,#C92486);
+	background-image:url('bubble_bg.png'), url('bubble_bg.png'),radial-gradient(circle,#FABFE0,#F55FB4,#E32394,#C92486);
+}
+</pre>
+				</dd>
+			</dl>
+			<dl class="detail-list">
+				<dt class="detail-list-head">纹理按钮组</dt>
+				<dd class="detail-list-body">
+					<span class="grain-btn grain-btn-pink">pink button</span>
+					<span class="grain-btn grain-btn-orange">orange button</span>
+					<span class="grain-btn grain-btn-blue">blue button</span>
+					<span class="grain-btn grain-btn-green">green button</span>
+<pre data-title="CSS" data-skin="2" data-height="300">
+<span class="note">/*纹理按钮*/</span>
+.grain-btn{
+	border-width:1px;
+	border-style:solid;
+	border-radius:10px;
+	color:#fff;
+	position:relative;
+	box-shadow:1px 1px 4px rgba(0,0,0,0.6);
+	background-size:5px 5px;
+	background-position: 0 0, 1px 1px;
+}
+.grain-btn:after,.grain-btn:before{
+	position:absolute;
+	content:" ";
+	border-width:1px;
+	border-style:dashed;
+	border-radius:10px;
+}
+.grain-btn:after{
+	left:2px;
+	right:2px;
+	bottom:2px;
+	top:2px;
+}
+.grain-btn:before{
+	left:3px;
+	right:3px;
+	bottom:3px;
+	top:3px;
+}
+<span class="note">/*纹理按钮颜色设置*/</span>
+.grain-btn-pink{
+	border-color:#B41C76;
+	background-color:#E32494;
+	background-image: -webkit-linear-gradient(45deg,#CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487),-webkit-linear-gradient(45deg, #CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487);
+	background-image: -moz-linear-gradient(45deg,#CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487),-moz-linear-gradient(45deg, #CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487);
+	background-image: -ms-linear-gradient(45deg,#CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487),-ms-linear-gradient(45deg, #CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487);
+	background-image: -o-linear-gradient(45deg,#CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487),-o-linear-gradient(45deg, #CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487);
+	background-image: linear-gradient(45deg,#CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487),linear-gradient(45deg, #CB2487 25%, transparent 25%, transparent 75%, #CB2487 75%, #CB2487);
+}
+</pre>
+				</dd>
+			</dl>
+			<dl class="detail-list">
+				<dt class="detail-list-head">立体按钮</dt>
+				<dd class="detail-list-body">
+					<a href="###" class="solid-btn D3-ridge-btn D3-ridge-btn-blue">blue button</a>
+					<a href="###" class="solid-btn D3-ridge-btn D3-ridge-btn-red">red button</a>
+					<a href="###" class="solid-btn D3-ridge-btn D3-ridge-btn-orange">orange button</a>
+					<a href="###" class="solid-btn D3-inset-btn D3-inset-btn-blue">blue button</a>
+					<a href="###" class="solid-btn D3-inset-btn D3-inset-btn-red">red button</a>
+					<a href="###" class="solid-btn D3-inset-btn D3-inset-btn-orange">orange button</a>
+					<a href="###" class="D3-solid-btn D3-solid-btn-orange">orange button</a>
+					<a href="###" class="D3-solid-btn D3-solid-btn-blue">blue button</a>
+					<a href="###" class="D3-solid-btn D3-solid-btn-red">blue button</a>
+<pre data-skin="1" data-title="HTML">
+&lt;a href=&quot;###&quot; class=&quot;D3-ridge-btn D3-ridge-btn-blue&quot;&gt;blue button&lt;/a&gt;
+&lt;a href=&quot;###&quot; class=&quot;D3-ridge-btn D3-ridge-btn-red&quot;&gt;red button&lt;/a&gt;
+&lt;a href=&quot;###&quot; class=&quot;D3-ridge-btn D3-ridge-btn-orange&quot;&gt;orange button&lt;/a&gt;
+</pre>
+<pre data-skin="2" data-title="CSS" data-height="300">
+<span class="note">/*********立体按钮**********/</span>
+<span class="note">/*3D凸起效果，由于class不能以数字开头所以命名为D3*/</span>
+.D3-ridge-btn{
+	width: 200px;
+	height: 60px;
+	display: inline-block;
+	position: relative;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 60px;
+	font:100 30px/60px 'arial';
+	text-decoration: none;
+	margin: 10px 20px;
+}
+.D3-ridge-btn::before{
+	content:"";
+	position:absolute;
+	width:100%;
+	height:100%;
+	padding-left:3px;
+	padding-right:3px;
+	padding-bottom:8px;
+	left:-2px;
+	top:5px;
+	z-index:-1;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	border-radius: 6px;
+}
+.D3-ridge-btn:active{
+	top: 7px;
+}
+.D3-ridge-btn:active::before{
+	top:-2px;
+}
+.D3-ridge-btn-blue{
+	background-color:#3bb3e0;
+	background-image: linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(44,160,202)),color-stop(1, rgb(62,184,229)));
+	-webkit-box-shadow: inset 0px 1px 0px #7fd2f1, 0px 6px 0px #156785;
+	-moz-box-shadow: inset 0px 1px 0px #7fd2f1, 0px 6px 0px #156785;
+	-o-box-shadow: inset 0px 1px 0px #7fd2f1, 0px 6px 0px #156785;
+	box-shadow: inset 0px 1px 0px #7fd2f1, 0px 6px 0px #156785;
+	color: #fff;
+}
+.D3-ridge-btn-blue::before{
+	background-color:#0F3E67;
+	-webkit-box-shadow: 0px 1px 0px #fff;
+	-moz-box-shadow: 0px 1px 0px #fff;
+	-o-box-shadow: 0px 1px 0px #fff;
+	box-shadow: 0px 1px 0px #fff;
+}
+.D3-ridge-btn-blue:active{
+	color:#156785;
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+	background:rgb(44,160,202);
+	-webkit-box-shadow: inset 0px 1px 0px #7fd2f1, inset 0px -1px 0px #156785;
+	 -moz-box-shadow: inset 0px 1px 0px #7fd2f1, inset 0px -1px 0px #156785;
+	-o-box-shadow: inset 0px 1px 0px #7fd2f1, inset 0px -1px 0px #156785;
+	box-shadow: inset 0px 1px 0px #7fd2f1, inset 0px -1px 0px #156785;
+}
+.D3-ridge-btn-red{
+	background-color:#ff535b;
+	background-image: linear-gradient(bottom, rgb(223,68,76) 0%, rgb(233,87,94) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(223,68,76) 0%, rgb(233,87,94) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(223,68,76) 0%, rgb(233,87,94) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(223,68,76) 0%, rgb(233,87,94) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(223,68,76) 0%, rgb(233,87,94) 100%);
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(233,68,76)),color-stop(1, rgb(233,87,94)));
+	-webkit-box-shadow: inset 0px 1px 0px #fb9196, 0px 6px 0px #9d2d32;
+	-moz-box-shadow: inset 0px 1px 0px #fb9196, 0px 6px 0px #9d2d32;
+	-o-box-shadow: inset 0px 1px 0px #fb9196, 0px 6px 0px #9d2d32;
+	box-shadow: inset 0px 1px 0px #fb9196, 0px 6px 0px #9d2d32;
+	color: #fff;
+}
+.D3-ridge-btn-red::before{
+	background-color:#77151a;
+	-webkit-box-shadow: 0px 1px 0px #fff;
+	-moz-box-shadow: 0px 1px 0px #fff;
+	-o-box-shadow: 0px 1px 0px #fff;
+	box-shadow: 0px 1px 0px #fff;
+}
+.D3-ridge-btn-red:active{
+	color:#9d2d32;
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+	background:rgb(223,68,76);
+	-webkit-box-shadow: inset 0px 1px 0px #fb9196, inset 0px -1px 0px #9d2d32;
+	 -moz-box-shadow: inset 0px 1px 0px #fb9196, inset 0px -1px 0px #9d2d32;
+	-o-box-shadow: inset 0px 1px 0px #fb9196, inset 0px -1px 0px #9d2d32;
+	box-shadow: inset 0px 1px 0px #fb9196, inset 0px -1px 0px #9d2d32;
+}
+.D3-ridge-btn-orange{
+	background-color: #e4934b;
+	background-image: linear-gradient(bottom, rgb(208, 128, 56) 0%, rgb(223, 141, 68) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(208, 128, 56) 0%, rgb(233, 141, 68) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(208, 128, 56) 0%, rgb(233, 144, 68) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(208, 128, 56) 0%, rgb(233, 144, 68) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(208, 128, 56) 0%, rgb(233, 144, 68) 100%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(208, 128, 56)), color-stop(1, rgb(233, 144, 68)));
+	-webkit-box-shadow: inset 0 1px 0 #e8a66b, 0 6px 0 #8e5523;
+	-moz-box-shadow: inset 0 1px 0 #e8a66b, 0 6px 0 #8e5523;
+	-ms-box-shadow: inset 0 1px 0 #e8a66b, 0 6px 0 #8e5523;
+	o-box-shadow: inset 0 1px 0 #e8a66b, 0 6px 0 #8e5523;
+	box-shadow: inset 0 1px 0 #e8a66b, 0 6px 0 #8e5523;
+	color: #fff;
+}
+.D3-ridge-btn-orange::before{
+	background-color: #6b3d15;
+	-webkit-box-shadow: 0px 1px 0px #fff;
+	-moz-box-shadow: 0px 1px 0px #fff;
+	-o-box-shadow: 0px 1px 0px #fff;
+	box-shadow: 0px 1px 0px #fff;
+}
+.D3-ridge-btn-orange:active{
+	color:#8e5523;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+	background-color:(107, 61, 21);
+	-webkit-box-shadow: inset 0 1px 0 #e8a66b, 0 -1px 0 #8e5523;
+	-moz-box-shadow: inset 0 1px 0 #e8a66b, 0 -1px 0 #8e5523;
+	-ms-box-shadow: inset 0 1px 0 #e8a66b, 0 -1px 0 #8e5523;
+	o-box-shadow: inset 0 1px 0 #e8a66b, 0 -1px 0 #8e5523;
+	box-shadow: inset 0 1px 0 #e8a66b, 0 -1px 0 #8e5523;
+}
+</pre>
+				</dd>
+			</dl>
+			<dl class="detail-list">
+				<dt class="detail-list-head">线条动画按钮</dt>
+				<dd class="detail-list-body">
+					<a class="lineanimate-btn line-btn-gray" href="#">
+						button
+						<em class="l-t"></em>
+						<em class="l-r"></em>
+						<em class="l-b"></em>
+						<em class="l-l"></em>
+					</a>
+					<a class="lineanimate-btn line-btn-blue" href="#">
+						button
+						<em class="l-t"></em>
+						<em class="l-r"></em>
+						<em class="l-b"></em>
+						<em class="l-l"></em>
+					</a>
+					<a class="lineanimate-btn line-btn-red" href="#">
+						button
+						<em class="l-t"></em>
+						<em class="l-r"></em>
+						<em class="l-b"></em>
+						<em class="l-l"></em>
+					</a>
+					<a class="lineanimate-btn line-btn-green" href="#">
+						button
+						<em class="l-t"></em>
+						<em class="l-r"></em>
+						<em class="l-b"></em>
+						<em class="l-l"></em>
+					</a>
+					<a class="lineanimate-btn line-btn-orange" href="#">
+						button
+						<em class="l-t"></em>
+						<em class="l-r"></em>
+						<em class="l-b"></em>
+						<em class="l-l"></em>
+					</a>
+<pre data-title="HTML" data-skin="1">
+&lt;a class=&quot;lineanimate-btn line-btn-gray&quot; href=&quot;#&quot;&gt;
+	button
+	&lt;em class=&quot;l-t&quot;&gt;&lt;/em&gt;
+	&lt;em class=&quot;l-r&quot;&gt;&lt;/em&gt;
+	&lt;em class=&quot;l-b&quot;&gt;&lt;/em&gt;
+	&lt;em class=&quot;l-l&quot;&gt;&lt;/em&gt;
+&lt;/a&gt;
+</pre>
+<pre data-title="HTML" data-skin="2" data-height="300">
+<span class="note">/*基本结构*/</span>
+.lineanimate-btn{
+	display: inline-block;
+	margin:0 50px 0 5px;
+	width:200px; 
+	height:60px;
+	text-align: center;
+	font: bold 24px/60px "arial";
+	text-transform: capitalize;
+	position: relative;
+	border-width: 2px; 
+	border-style:solid;
+	text-decoration: none;
+	opacity: 0.7;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.lineanimate-btn em{
+	position: absolute;
+	opacity: 0;
+	-moz-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.lineanimate-btn em.l-t,.lineanimate-btn em.l-b{
+	height: 2px;
+	width: 100%;
+	left: 0;
+}
+.lineanimate-btn em.l-t{
+	top: -2px;
+	-moz-transform: translateX(-100%);
+	-webkit-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	-o-transform: translateX(-100%);
+	transform: translateX(-100%);
+
+}
+.lineanimate-btn em.l-b{
+	bottom: -2px;
+	-moz-transform: translateX(100%);
+	-webkit-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	-o-transform: translateX(100%);
+	transform: translateX(100%);
+}
+.lineanimate-btn em.l-l,.lineanimate-btn em.l-r{
+	height: 100%;
+	width: 2px;
+	top: 0;
+}
+.lineanimate-btn em.l-l{
+	left: -2px;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	-o-transform: translateY(100%);
+	transform:translateY(100%);
+}
+.lineanimate-btn em.l-r{
+	right: -2px;
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+.lineanimate-btn:hover{
+	opacity: 1;
+}
+.lineanimate-btn:hover em{
+	opacity: 1;
+}
+.lineanimate-btn:hover em.l-t,.lineanimate-btn:hover em.l-b{
+	-moz-transform: translateX(0);
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	transform: translateX(0);
+}
+.lineanimate-btn:hover em.l-l,.lineanimate-btn:hover em.l-r{
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+}
+<span class="note">/*按钮颜色*/</span>
+<span class="note">/*gray*/</span>
+.line-btn-gray{
+	border-color: #aaa;
+	background-color: #eee;
+	color: #444;
+}
+.line-btn-gray em{
+	background-color: #aaa;
+}
+</pre>
+				</dd>
+			</dl>
+	</div>
+</body>
+</html>

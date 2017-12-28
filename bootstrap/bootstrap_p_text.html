@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<title>alert警告框组件</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="user_style.css" />
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("pre").each(function(){
+			$(this).codeShow({
+				'title' : {'names' : 'html'},
+				'skin' : 1
+			})
+		});
+	})
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">bootstrap中的文本定义</dt>
+			<dd class="detail-list-body">
+				<div class="container">
+					<h3>普通文本样式</h3>
+					<div class="row">
+						<div class="col-xs-12">
+							<p class="text-muted">这是bootstrap中定义的muted文本</p>
+							<p class="text-primary">这是bootstrap中定义的primary文本</p>
+							<p class="text-success">这是bootstrap中定义的success文本</p>
+							<p class="text-info">这是bootstrap中定义的info文本</p>
+							<p class="text-warning">这是bootstrap中定义的warning文本</p>
+							<p class="text-danger">这是bootstrap中定义的danger文本</p>
+						</div>
+					</div>
+<pre>
+&lt;p class=&quot;text-muted&quot;&gt;这是bootstrap中定义的muted文本&lt;/p&gt;
+&lt;p class=&quot;text-primary&quot;&gt;这是bootstrap中定义的primary文本&lt;/p&gt;
+&lt;p class=&quot;text-success&quot;&gt;这是bootstrap中定义的success文本&lt;/p&gt;
+&lt;p class=&quot;text-info&quot;&gt;这是bootstrap中定义的info文本&lt;/p&gt;
+&lt;p class=&quot;text-warning&quot;&gt;这是bootstrap中定义的warning文本&lt;/p&gt;
+&lt;p class=&quot;text-danger&quot;&gt;这是bootstrap中定义的danger文本&lt;/p&gt;
+</pre>
+					<h3>普通带背景的文本样式</h3>		
+					<div class="row">
+						<div class="col-xs-12">
+							<p class="bg-muted">这是bootstrap中定义的muted文本</p>
+							<p class="bg-primary">这是bootstrap中定义的primary文本</p>
+							<p class="bg-success">这是bootstrap中定义的success文本</p>
+							<p class="bg-info">这是bootstrap中定义的info文本</p>
+							<p class="bg-warning">这是bootstrap中定义的warning文本</p>
+							<p class="bg-danger">这是bootstrap中定义的danger文本</p>
+						</div>
+					</div>
+<pre>
+&lt;p class=&quot;bg-muted&quot;&gt;这是bootstrap中定义的muted文本&lt;/p&gt;
+&lt;p class=&quot;bg-primary&quot;&gt;这是bootstrap中定义的primary文本&lt;/p&gt;
+&lt;p class=&quot;bg-success&quot;&gt;这是bootstrap中定义的success文本&lt;/p&gt;
+&lt;p class=&quot;bg-info&quot;&gt;这是bootstrap中定义的info文本&lt;/p&gt;
+&lt;p class=&quot;bg-warning&quot;&gt;这是bootstrap中定义的warning文本&lt;/p&gt;
+&lt;p class=&quot;bg-danger&quot;&gt;这是bootstrap中定义的danger文本&lt;/p&gt;
+</pre>
+					<h3>链接的文本样式</h3>
+					<div class="row">
+						<div class="col-xs-12">
+							<a href="#" class="text-muted">这是bootstrap中定义的muted文本</a>
+							<a href="#" class="text-primary">这是bootstrap中定义的primary文本</a>
+							<a href="#" class="text-success">这是bootstrap中定义的success文本</a>
+							<a href="#" class="text-info">这是bootstrap中定义的info文本</a>
+							<a href="#" class="text-warning">这是bootstrap中定义的warning文本</a>
+							<a href="#" class="text-danger">这是bootstrap中定义的danger文本</a>
+						</div>
+					</div>
+<pre>
+&lt;a href=&quot;#&quot; class=&quot;text-muted&quot;&gt;这是bootstrap中定义的muted文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;text-primary&quot;&gt;这是bootstrap中定义的primary文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;text-success&quot;&gt;这是bootstrap中定义的success文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;text-info&quot;&gt;这是bootstrap中定义的info文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;text-warning&quot;&gt;这是bootstrap中定义的warning文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;text-danger&quot;&gt;这是bootstrap中定义的danger文本&lt;/a&gt;
+</pre>
+					<h3>链接带背景的文本样式</h3>
+					<div class="row">
+						<div class="col-xs-12">
+							<a href="#" class="bg-muted">这是bootstrap中定义的muted文本</a>
+							<a href="#" class="bg-primary">这是bootstrap中定义的primary文本</a>
+							<a href="#" class="bg-success">这是bootstrap中定义的success文本</a>
+							<a href="#" class="bg-info">这是bootstrap中定义的info文本</a>
+							<a href="#" class="bg-warning">这是bootstrap中定义的warning文本</a>
+							<a href="#" class="bg-danger">这是bootstrap中定义的danger文本</a>
+						</div>
+					</div>
+<pre>
+&lt;a href=&quot;#&quot; class=&quot;bg-muted&quot;&gt;这是bootstrap中定义的muted文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-primary&quot;&gt;这是bootstrap中定义的primary文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-success&quot;&gt;这是bootstrap中定义的success文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-info&quot;&gt;这是bootstrap中定义的info文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-warning&quot;&gt;这是bootstrap中定义的warning文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-danger&quot;&gt;这是bootstrap中定义的danger文本&lt;/a&gt;
+</pre>
+					<h3>带背景加颜色的文本样式</h3>
+					<div class="row">
+						<div class="col-xs-12">
+							<p class="bg-muted text-muted">这是bootstrap中定义的muted文本</p>
+							<p class="bg-primary text-primary">这是bootstrap中定义的primary文本</p>
+							<p class="bg-success text-success">这是bootstrap中定义的success文本</p>
+							<p class="bg-info text-info">这是bootstrap中定义的info文本</p>
+							<p class="bg-warning text-warning">这是bootstrap中定义的warning文本</p>
+							<p class="bg-danger text-danger">这是bootstrap中定义的danger文本</p>				
+						</div>
+					</div>
+<pre>
+&lt;p class=&quot;bg-muted text-muted&quot;&gt;这是bootstrap中定义的muted文本&lt;/p&gt;
+&lt;p class=&quot;bg-primary text-primary&quot;&gt;这是bootstrap中定义的primary文本&lt;/p&gt;
+&lt;p class=&quot;bg-success text-success&quot;&gt;这是bootstrap中定义的success文本&lt;/p&gt;
+&lt;p class=&quot;bg-info text-info&quot;&gt;这是bootstrap中定义的info文本&lt;/p&gt;
+&lt;p class=&quot;bg-warning text-warning&quot;&gt;这是bootstrap中定义的warning文本&lt;/p&gt;
+&lt;p class=&quot;bg-danger text-danger&quot;&gt;这是bootstrap中定义的danger文本&lt;/p&gt;
+</pre>
+					<h3>带背景加颜色链接的文本样式</h3>
+					<div class="row">
+						<div class="col-xs-12">
+							<a href="#" class="bg-muted text-muted">这是bootstrap中定义的muted文本</a>
+							<a href="#" class="bg-primary text-primary">这是bootstrap中定义的primary文本</a>
+							<a href="#" class="bg-success text-success">这是bootstrap中定义的success文本</a>
+							<a href="#" class="bg-info text-info">这是bootstrap中定义的info文本</a>
+							<a href="#" class="bg-warning text-warning">这是bootstrap中定义的warning文本</a>
+							<a href="#" class="bg-danger text-danger">这是bootstrap中定义的danger文本</a>			
+						</div>
+					</div>
+<pre>
+&lt;a href=&quot;#&quot; class=&quot;bg-muted text-muted&quot;&gt;这是bootstrap中定义的muted文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-primary text-primary&quot;&gt;这是bootstrap中定义的primary文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-success text-success&quot;&gt;这是bootstrap中定义的success文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-info text-info&quot;&gt;这是bootstrap中定义的info文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-warning text-warning&quot;&gt;这是bootstrap中定义的warning文本&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;bg-danger text-danger&quot;&gt;这是bootstrap中定义的danger文本&lt;/a&gt;
+</pre>
+				</div>
+			</dd>
+		</dl>		
+	</div>	
+</body>
+</html>

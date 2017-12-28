@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式联系</title>
+<style id="stylemodule" type="text/css">
+	#module491 {height:174px;}
+	#module3 {border:none;}
+	#module3 {padding:0px;}
+	#module3 .formMiddle3{border:none;}
+	#module3 .formMiddle3{padding:0px;}
+	#module3 .formMiddle3 .formMiddleCenter3{border:none;}
+	#module3 .formMiddle3 .formMiddleCenter3{padding:0px;}
+	#module3 .formTop3{display:none;}
+	#module3 .formBottom3{display:none;}
+	#module3 .formMiddle3 .formMiddleLeft3{display:none;}
+	#module3 .formMiddle3 .formMiddleRight3{display:none;}</style>
+<script type="text/javascript">
+	var h = document.getElementById("stylemodule").innerHTML;
+	alert(h);
+	var abc = [{
+    cls: "",
+    key: "border"
+  },
+  {
+    cls: "",
+    key: "padding"
+  },
+  {
+    cls: ".formMiddle" + a,
+    key: "border"
+  },
+  {
+    cls: ".formMiddle" + a,
+    key: "padding"
+  },
+  {
+    cls: ".formMiddle" + a + " .formMiddleCenter" + a,
+    key: "border"
+  },
+  {
+    cls: ".formMiddle" + a + " .formMiddleCenter" + a,
+    key: "padding"
+  },
+  {
+    cls: ".formTop" + a,
+    key: "display"
+  },
+  {
+    cls: ".formBottom" + a,
+    key: "display"
+  },
+  {
+    cls: ".formMiddle" + a + " .formMiddleLeft" + a,
+    key: "display"
+  },
+  {
+    cls: ".formMiddle" + a + " .formMiddleRight" + a,
+    key: "display"
+  }]
+	h = h.replace(/{\r\n/g, "{").replace(/\t/g, "").replace(/\r\n}/g, ";}");
+	k = h.split("\n");
+	alert(h);
+	alert(k);
+	for (var g = k.length - 1; g >= 0; --g) {
+    var o = k[g];
+    for (var f = 0; f < abc.length; ++f) {
+      var m = j[f].cls;
+      var l = j[f].key;
+      var d = new RegExp("#" + b + " +" + m.replace(".", "\\.") + " *{ *" + l + "[^;]*;", "gi");
+      if (b == "" || b == "undefined") {
+        d = new RegExp(m.replace(".", "\\.") + " *{ *" + l + "[^;]*;", "gi")
+      }
+      if (o.length == 0 || /^\s$/.test(o) || d.test(o)) {
+        k.splice(g, 1);
+        break
+      }
+    }
+  }
+</script>
+</head>
+
+<body>
+<body>
+</body>
+</html>

@@ -1,0 +1,196 @@
+﻿<!doctype  html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<title>alert弹窗组件</title>
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<style type="text/css">
+		.row{border:1px solid #ccc; margin-bottom:10px;}
+		.row div[class^=col]{border-left:1px solid #ccc;background-color:#f5f5f5;padding-top:10px; padding-bottom:10px;}
+		.row div[class^=col]:first-child{border-left:0px;}
+		.wrap-2 div{height:auto;}
+		.form-horizontal div[class^=col]{border-left:0px;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>表单控件</h1>
+		<div class="row">
+			<div class="col-lg-3">
+				<from>
+					<fieldset>
+						<legend>用户登录</legend>
+						<div class="form-group">
+							<lable>登录账号</lable>
+							<input type="email" class="form-control" placeholder="请输入您的用户名或Email">
+						</div>
+						<div class="form-group">
+							<lable>密码</lable>
+							<input type="text" class="form-control" placeholder="请输入您的用户名密码">
+						</div>
+						<div class="checkbox"><label><input type="checkbox">记住密码</label></div>
+						<button type="submit" class="btn btn-default">登录</button>
+					</fieldset>
+				</from>
+			</div>
+			<div class="col-lg-6">
+				<from class="form-horizontal">
+					<fieldset>
+						<legend>用户登录</legend>
+						<div class="form-group">
+							<div class="col-xs-2"><lable>登录账号</lable></div>
+							<div class="col-xs-10"><input type="email" class="form-control" placeholder="请输入您的用户名或Email"></div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-2"><lable>密码</lable></div>
+							<div class="col-xs-10"><input type="text" class="form-control" placeholder="请输入您的用户名密码"></div>
+						</div>
+						<div class="col-xs-10 checkbox col-xs-push-2"><label><input type="checkbox">记住密码</label></div>
+						<div class="col-xs-10 col-xs-push-2"><button type="submit" class="btn btn-default">登录</button></div>
+					</fieldset>
+				</from>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<from class="form-inline">
+					<fieldset>
+						<legend>用户登录</legend>
+						<div class="form-group">
+							<lable>登录账号</lable>
+							<input type="email" class="form-control" placeholder="请输入您的用户名或Email">
+						</div>
+						<div class="form-group">
+							<lable>密码</lable>
+							<input type="text" class="form-control" placeholder="请输入您的用户名密码">
+						</div>
+						<div class="checkbox"><label><input type="checkbox">记住密码</label></div>
+						<button type="submit" class="btn btn-default">登录</button>
+					</fieldset>
+				</from>
+			</div>
+		</div>
+		<h1>表单各控件</h1>
+		<div class="row">
+			<div class="col-xs-2">
+				<input type="text" placeholder="文本输入框" class="form-control">
+				<input type="password" placeholder="这是密码" class="form-control">
+				<input type="datetime" placeholder="时间" class="form-control">
+				<input type="datetime-local" placeholder="日期" class="form-control">
+				<input type="date" placeholder="日期" class="form-control">
+				<input type="month" placeholder="年月" class="form-control">
+				<input type="time" placeholder="时间" class="form-control">
+
+			</div>
+			<div class="col-xs-2">
+				<select name="select" id="select" class="form-control">
+					<option value="1">1</option>
+				</select>
+				<hr />
+				<select name="select_2" id="" multiple="multiple" class="form-control">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+			</div>
+			<div class="col-xs-2">
+				<div class="radio">
+					<label><input type="radio">这是单选按钮</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox">这是复选按钮</label>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<label class="radio"><input type="radio">体育</label>
+				<label class="radio"><input type="radio">音乐</label>
+				<label class="radio"><input type="radio">艺术</label>
+				<label class="checkbox-inline"><input type="checkbox">体育</label>
+				<label class="checkbox-inline"><input type="checkbox">音乐</label>
+				<label class="checkbox-inline"><input type="checkbox">艺术</label>
+			</div>
+			<div class="col-xs-3">
+				<input class="file" type="file">
+				<input type="submit" value="提交" class="btn btn-success">
+				<input type="reset" value="重置" class="btn btn-primary">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2">
+				<input type="text" placeholder="文本输入框" disabled class="form-control">
+				<hr />
+				<input type="password" placeholder="这是密码" disabled class="form-control">
+			</div>
+			<div class="col-xs-2">
+				<select name="" id="" class="form-control" disabled>
+					<option value="">这是不可用的下拉菜单</option>
+				</select>
+				<hr />
+				<select name="select_2" id="" multiple="multiple" class="form-control" disabled>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+			</div>
+			<div class="col-xs-2">
+				<div class="radio"><label><input type="radio" disabled>禁用单选按钮</label></div>
+				<div class="checkbox"><label><input type="checkbox" disabled>禁用复选按钮</label></div>
+			</div>
+
+			<div class="col-xs-3">
+				<label class="file"><input type="file" disabled></label>
+				<input type="submit" value="提交" disabled class="btn btn-success">
+				<input type="reset" value="重置" disabled class="btn btn-primary">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group has-warning">
+					<label for="inputWarning" class="control-label">输入的长度不够！</label>
+					<input type="text" class="form-control" id="Text1">
+				</div>
+				<div class="form-group has-error">
+					<label for="inputError" class="control-label">输入不合法要求！</label>
+					<input type="text" class="form-control" id="Text2">
+				</div>
+				<div class="form-group has-success">
+					<label for="inputSuccess" class="control-label">输入文本符合要求！</label>
+					<input type="text" class="form-control" id="Text3">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group has-warning has-feedback">
+					<label for="inputWarning" class="control-label">输入的长度不够！</label>
+					<input type="text" class="form-control" id="Text1">
+					<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+				</div>
+				<div class="form-group has-error has-feedback">
+					<label for="inputError" class="control-label">输入不合法要求！</label>
+					<input type="text" class="form-control" id="Text2">
+					<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+				</div>
+				<div class="form-group has-success has-feedback">
+					<label for="inputSuccess" class="control-label">输入文本符合要求！</label>
+					<input type="text" class="form-control" id="Text3">
+					<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+				</div>				
+			</div>
+			<div class="col-md-4">
+				<input type="text" class="input-lg form-control" placeholder="较大">
+				<input type="text" class="form-control" placeholder="正常">
+				<input type="text" class="input-sm form-control" placeholder="较小">
+				<span class="help-block">自己独占一行或者多行的块级帮助文本</span>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+</html>

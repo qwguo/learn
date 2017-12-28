@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>使用图片来设置元素的边框</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+<script type="text/javascript" src="/public_js/public_fun.js"></script>
+<style type="text/css">
+.div-wrap{ overflow:hidden; padding:0px 10px;}
+.div-wrap .left-wrap,.div-wrap .right-wrap{float:left;}
+.div-wrap .left-wrap{/*border-image-width:10px; border-width:40px;border-image-slice 10px;-webkit-border-image:url(border_bg_3.png) 30 30 30 30 fill/20px 20px 20px 20px/20px 20px 20px 20px repeat round; -moz-border-image:url(border_bg_3.png) 30 30 30 30 fill/20px 20px 20px 20px/20px 20px 20px 20px repeat round; border-image:url(border_bg_3.png) 30 30 30 30 fill/20px 20px 20px 20px/20px 20px 20px 20px repeat round; background-color:#0c0;*/ width:415px; height:415px; margin:30px; border-width:0px; color:#000; margin-top:100px;}
+.div-wrap .left-wrap em{position:absolute; width: 415px; height: 415px; border:1px dashed #CCC;}
+.div-wrap .right-wrap{width:700px; height:auto; margin-top:0px;}
+.form{border:1px solid #ccc;}
+.form dt{font-weight:700; height:40px; line-height:40px; background-color:#efefef; padding-left:10px; border-bottom:2px solid #ddd;}
+.form dd{border-bottom:1px dotted #ccc; padding:5px 0; margin:5px;}
+.form dd .sourceImg{width:100px; height:100px; float:right; display:none;}
+.form dd .sourceImg img{width:100%;}
+.form dd strong{line-height:24px; display:block; color:#a00; margin-bottom:5px;}
+.form dd strong em{display:inline-block; width:0px; height:0px; line-height:0px; font-size:0px; border-width:5px; border-style:dashed dashed dashed solid; border-color:transparent transparent transparent #ccc; margin-right:10px;}
+.form dd strong.open em{border-style:solid dashed dashed; border-color:#ccc transparent transparent;}
+.form dd div{padding-left:10px;}
+.form dd div img{float:right;}
+.form dd span{padding-right:5px;}
+.form dd label{margin-right:10px;}
+.form dd input.text{width:50px; border:1px solid #ccc; height:20px; line-height:20px; margin-right:10px; text-align:center; outline:none;}
+.form dd input.radio,.form dd input.checkbox{width:14px; height:14px; outline:none; vertical-align:middle;}
+.form dd select{padding:2px; height:22px; line-height:22px; outline:none;}
+</style>
+<style type="text/css" id="sBorder"></style>
+<script type="text/javascript">
+	var $ = function(obj){
+		return typeof(obj) == "string" ? document.getElementById(obj) : obj;
+	}
+	var tag = function(parObj,tName){
+		return parObj.getElementsByTagName(tName);
+	}
+	var getClass = function(parObj,cName){
+		var arr = [],tagAll = parObj.getElementsByTagName("*");
+		for(var i = 0;i < tagAll.length;i++){
+			if(tagAll.className = cName){
+				arr.push(tagAll[i]);
+			}
+		}
+		return arr;
+	}
+	var addEvent = function(evType,obj,fn){
+		if(obj.addEventListener){
+			obj.addEventListener(evType,fn,false);
+		}else if(obj.attachEvent){
+			obj.attachEvent('on'+evType,fn);
+		}else{
+			obj['on'+evType] = fn;
+		}
+	}
+	window.onload = function(){
+		var cElm = $('liObj'),form = $('form'),input = tag(form,"input"),select = tag(form,"select"),typeArray = {};
+		for(var i = 0; i < input.length; i++){
+			addEvent('change',input[i],changeFn);
+		}
+		for(var s = 0; s < select.length; s++){
+			addEvent('change',select[s],changeFn);
+		}
+		function changeFn(){
+			var typeName = this.id,typeVal = this.value;
+			switch(typeName){
+				case 'backgroundColor' : case 'borderTopStyle' : case 'borderRightStyle' : case 'borderBottomStyle' : case 'borderLeftStyle' : case 'borderTopColor' : case 'borderRightColor' : case 'borderBottomColor' : case 'borderLeftColor' :
+					typeArray[typeName] = typeVal;
+				break;
+				case 'borderTopWidth' : case 'borderRightWidth' : case 'borderBottomWidth' : case 'borderLeftWidth' : 
+					typeArray[typeName] = typeVal+"px";
+				break;
+				case 'borderImageSource' :
+					typeArray[typeName] = 'url('+typeVal+')';
+					if(typeVal!="none"){
+						$('borderImageUrl').style.display = "block";
+						tag($('borderImageUrl'),'img')[0].src = typeVal;
+					}else{
+						$('borderImageUrl').style.display = "none";
+					}
+				break;
+				case 'borderImageSliceTop' : case 'borderImageSliceRight' : case 'borderImageSliceBottom' : case 'borderImageSliceLeft' : case 'sliceFill' :
+					var val = "",
+						t = $('borderImageSliceTop').value,
+						r = $('borderImageSliceRight').value,
+						b = $('borderImageSliceBottom').value,
+						l = $('borderImageSliceLeft').value,
+						f = $('sliceFill').checked;
+						console.log(f);
+					if(t && !r && !b && !l) val = t;
+					if(!t && r && !b && !l) val = r;
+					if(!t && !r && b && !l) val = b;
+					if(!t && !r && !b && l) val = l;
+					if(t && r && !b && !l) val = t + ' ' + r;
+					if(t && !r && b && !l) val = t + ' ' + b;
+					if(t && !r && !b && l) val = t + ' ' + l;
+					if(!t && r && b && !l) val = b + ' ' + r;
+					if(!t && r && !b && l) val = r + ' ' + l;
+					if(!t && !r && b && l) val = b + ' ' + l;
+					if(t && r && b && !l) val = t + ' ' + r + ' ' + b;
+					if(t && r && !b && l) val = t + ' ' + r + ' ' + t + ' ' + l;
+					if(t && !r && b && l) val = t + ' ' + l + ' ' + b;
+					if(!t && r && b && l) val = b + ' ' + r + ' ' + b + ' ' + l;
+					if(t && r && b && l) val = t + ' ' + r + ' ' + b + ' ' + l;
+					if(f) val += " " + 'fill';
+					typeArray["borderImageSlice"] = val;
+				break;
+				case 'borderImageWidthTop' : case 'borderImageWidthRight' : case 'borderImageWidthBottom' : case 'borderImageWidthLeft' :
+					var val = "",t = $('borderImageWidthTop').value,r = $('borderImageWidthRight').value, b = $('borderImageWidthBottom').value,l = $('borderImageWidthLeft').value;
+					if(t && !r && !b && !l) val = t + "px";
+					if(!t && r && !b && !l) val = r + "px";
+					if(!t && !r && b && !l) val = b + "px";
+					if(!t && !r && !b && l) val = l + "px";
+					if(t && r && !b && !l) val = t + "px " + r + "px";
+					if(t && !r && b && !l) val = t + "px " + b + "px";
+					if(t && !r && !b && l) val = t + "px " + l + "px";
+					if(!t && r && b && !l) val = b + "px " + r + "px";
+					if(!t && r && !b && l) val = r + "px " + l + "px";
+					if(!t && !r && b && l) val = b + "px " + l + "px";
+					if(t && r && b && !l) val = t + "px " + r + "px " + b + "px";
+					if(t && r && !b && l) val = t + "px " + r + "px " + t + "px " + l + "px";
+					if(t && !r && b && l) val = t + "px " + l + "px " + b + "px ";
+					if(!t && r && b && l) val = b + "px " + r + "px " + b + "px " + l + "px ";
+					if(t && r && b && l) val = t + "px " + r + "px " + b + "px " + l + "px ";
+					typeArray["borderImageWidth"] = val;
+				break;
+				case 'borderImageOutsetTop' : case 'borderImageOutsetRight' : case 'borderImageOutsetBottom' : case 'borderImageOutsetLeft' :
+					var val = "",t = $('borderImageOutsetTop').value,r = $('borderImageOutsetRight').value, b = $('borderImageOutsetBottom').value,l = $('borderImageOutsetLeft').value;
+					if(t && !r && !b && !l) val = t + "px";
+					if(!t && r && !b && !l) val = r + "px";
+					if(!t && !r && b && !l) val = b + "px";
+					if(!t && !r && !b && l) val = l + "px";
+					if(t && r && !b && !l) val = t + "px " + r + "px";
+					if(t && !r && b && !l) val = t + "px " + b + "px";
+					if(t && !r && !b && l) val = t + "px " + l + "px";
+					if(!t && r && b && !l) val = b + "px " + r + "px";
+					if(!t && r && !b && l) val = r + "px " + l + "px";
+					if(!t && !r && b && l) val = b + "px " + l + "px";
+					if(t && r && b && !l) val = t + "px " + r + "px " + b + "px";
+					if(t && r && !b && l) val = t + "px " + r + "px " + t + "px " + l + "px";
+					if(t && !r && b && l) val = t + "px " + l + "px " + b + "px ";
+					if(!t && r && b && l) val = b + "px " + r + "px " + b + "px " + l + "px ";
+					if(t && r && b && l) val = t + "px " + r + "px " + b + "px " + l + "px ";
+					typeArray["borderImageOutset"] = val;
+				break;
+				case 'borderImageRepeatTB' : case 'borderImageRepeatRL' :
+					var val = '',TB = $('borderImageRepeatTB').value,RL = $('borderImageRepeatRL').value;
+					if(TB && ! RL) val = TB;
+					if(!TB && RL) val = RL;
+					if(TB && RL) val = TB + " " + RL;
+					typeArray['borderImageRepeat'] = val;
+				break;
+			}
+			for(x in typeArray){
+				cElm.style[x] = typeArray[x];
+			}
+			console.log(cElm.getAttribute('style'));
+			cElm.innerHTML = cElm.getAttribute('style');
+		}
+	};
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<dl class="detail-list">
+		<dt class="detail-list-head">利用js来查看元素边框原理</dt>
+		<dd class="detail-list-body">
+			<div class="div-wrap">
+				<div class="left-wrap" id="liObj"><em></em><span>这里是存放更改后的样式</span></div>
+				<div class="right-wrap">
+				<dl class="form" id="form">
+					<dt>设置border的样式</dt>
+					<dd>
+						<strong class="open"><em></em>background:</strong>
+						<div>
+							<span>color:</span><input type="text" class="text" id="backgroundColor" />
+						</div>
+					</dd>			
+					<dd>
+						<strong class="open"><em></em>border-style:</strong>
+						<div>
+							<span>top:</span><select class="text" id="borderTopStyle"><option value="" selected="selected">不设置</option><option value="none">none</option><option value="solid">solid</option><option value="dotted">dotted</option><option value="dashed">dashed</option><option value="double">double</option><option value="groove">groove</option><option value="ridge">ridge</option><option value="inset">inset</option><option value="outset">outset</option><option value="hidden">hidden</option></select>
+							<span>right:</span><select class="text" id="borderRightStyle"><option value="" selected="selected">不设置</option><option value="none">none</option><option value="solid">solid</option><option value="dotted">dotted</option><option value="dashed">dashed</option><option value="double">double</option><option value="groove">groove</option><option value="ridge">ridge</option><option value="inset">inset</option><option value="outset">outset</option><option value="hidden">hidden</option></select>
+							<span>bottom:</span><select class="text" id="borderBottomStyle"><option value="" selected="selected">不设置</option><option value="none">none</option><option value="solid">solid</option><option value="dotted">dotted</option><option value="dashed">dashed</option><option value="double">double</option><option value="groove">groove</option><option value="ridge">ridge</option><option value="inset">inset</option><option value="outset">outset</option><option value="hidden">hidden</option></select>
+							<span>left:</span><select class="text" id="borderLeftStyle"><option value="" selected="selected">不设置</option><option value="none">none</option><option value="solid">solid</option><option value="dotted">dotted</option><option value="dashed">dashed</option><option value="double">double</option><option value="groove">groove</option><option value="ridge">ridge</option><option value="inset">inset</option><option value="outset">outset</option><option value="hidden">hidden</option></select>
+						</div>
+						
+					</dd>
+					<dd>
+						<strong><em></em>border-width:</strong>
+						<div>
+							<span>top:</span><input type="text" class="text" id="borderTopWidth" />
+							<span>right:</span><input type="text" class="text" id="borderRightWidth" />
+							<span>bottom:</span><input type="text" class="text" id="borderBottomWidth" />
+							<span>left:</span><input type="text" class="text" id="borderLeftWidth" />
+						</div>
+					</dd>
+					<dd>
+						<strong>border-color:</strong>
+						<div>
+							<span>top:</span><input type="text" class="text" id="borderTopColor" />
+							<span>right:</span><input type="text" class="text" id="borderRightColor" />
+							<span>bottom:</span><input type="text" class="text" id="borderBottomColor" />
+							<span>left:</span><input type="text" class="text" id="borderLeftColor" />
+						</div>
+					</dd>
+					<dd style="height:100px;"><div class="sourceImg" id="borderImageUrl"><img src="" /></div>
+						<strong>border-image-source:</strong>
+						<div>
+							<span>图片地址：</span>
+							<select id="borderImageSource">
+								<option value="" selected="selected">不设置</option>
+								<option value="none">none</option>
+								<option value="border_bg.png">border_bg.png</option>
+								<option value="border_bg_1.png">border_bg_1.png</option>
+								<option value="border_bg_2.png">border_bg_2.png</option>
+								<option value="border_bg_3.png">border_bg_3.png</option>
+								<option value="border_bg_4.png">border_bg_4.png</option>
+							</select>
+							
+						</div>
+					</dd>
+					<dd>
+						<strong>border-image-slice:</strong>
+						<div>
+							<span>top:</span><input type="text" class="text" id="borderImageSliceTop" />
+							<span>right:</span><input type="text" class="text" id="borderImageSliceRight" />
+							<span>bottom:</span><input type="text" class="text" id="borderImageSliceBottom" />
+							<span>left:</span><input type="text" class="text" id="borderImageSliceLeft" />
+							<span>fill:</span><input type="checkbox" class="checkbox" name="borderImageSliceFill" id="sliceFill" />
+						</div>
+					</dd>
+					<dd>
+						<strong>border-image-width:</strong>
+						<div>
+							<span>top:</span><input type="text" class="text" id="borderImageWidthTop" />
+							<span>right:</span><input type="text" class="text" id="borderImageWidthRight" />
+							<span>bottom:</span><input type="text" class="text" id="borderImageWidthBottom" />
+							<span>left:</span><input type="text" class="text" id="borderImageWidthLeft" />
+						</div>
+					</dd>
+					<dd>
+						<strong>border-image-outset:</strong>
+						<div>
+							<span>top:</span><input type="text" class="text" id="borderImageOutsetTop" />
+							<span>right:</span><input type="text" class="text" id="borderImageOutsetRight" />
+							<span>bottom:</span><input type="text" class="text" id="borderImageOutsetBottom" />
+							<span>left:</span><input type="text" class="text" id="borderImageOutsetLeft" />
+						</div>
+					</dd>
+					<dd>
+						<strong>border-image-repeat:</strong>
+						<div>
+							<span>top-bottom:</span>
+							<select id="borderImageRepeatTB">
+								<option value="" selected="selected">无设置</option>
+								<option value="stretch">stretch</option>
+								<option value="repeat">repeat</option>
+								<option value="round">round</option>
+								<option value="space">space</option>
+							</select>
+							<span>right-left:</span>
+							<select id="borderImageRepeatRL">
+								<option value="" selected="selected">无设置</option>
+								<option value="stretch">stretch</option>
+								<option value="repeat">repeat</option>
+								<option value="round">round</option>
+								<option value="space">space</option>
+							</select>
+						</div>
+					</dd>
+				</dl>
+				</div>
+			</div>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<title>标题组件</title>
+	<link rel="stylesheet" href="/public_css/base_style.css">
+	
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="user_style.css" />
+	<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
+	<script type="text/javascript" src="/public_js/public_fun.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("pre").each(function(){
+			$(this).codeShow({
+				'title' : {'names' : 'html'},
+				'skin' : 1
+			})
+		});
+	})
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">进度条组件</dt>
+			<dd class="detail-list-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							默认进度条
+							<div class="progress">
+								<div class="progress-bar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">40%</div>
+							</div>
+							<div class="progress progress-striped">
+								<div class="progress-bar" style="width:35%"><span class="sr-only">45% complete</span></div>
+							</div>
+							<div class="progress progress-striped active">
+								<div class="progress-bar" style="width:25%"><span class="sr-only">45% complete</span></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+						primary重点蓝进度条
+							<div class="progress">
+								<div class="progress-bar progress-bar-primary" style="width:10%"><span class="sr-only">45% complete</span></div>
+							</div>
+							<div class="progress progress-striped">
+								<div class="progress-bar progress-bar-primary" style="width:20%"><span class="sr-only">45% complete</span></div>
+							</div>
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-primary" style="width:30%"><span class="sr-only">45% complete</span></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+						success成功绿进度条
+							<div class="progress">
+								<div class="progress-bar progress-bar-success" style="width:40%"><span class="sr-only">45% complete</span></div>
+							</div>
+							<div class="progress progress-striped">
+								<div class="progress-bar progress-bar-success" style="width:50%"><span class="sr-only">45% complete</span></div>
+							</div>
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-success" style="width:60%"><span class="sr-only">45% complete</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4">
+							信息蓝进度条
+							<div class="progress">
+								<div class="progress-bar progress-bar-info" style="width:70%"><span class="sr-only">20% complete</span></div>
+							</div>
+							<div class="progress progress-striped">
+								<div class="progress-bar progress-bar-info" style="width:80%"><span class="sr-only">20% complete</span></div>
+							</div>
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-info" style="width:90%"><span class="sr-only">20% complete</span></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							警告橙进度条
+							<div class="progress">
+								<div class="progress-bar progress-bar-warning" style="width:100%"><span class="sr-only">20% complete</span></div>
+							</div>
+							<div class="progress progress-striped">
+								<div class="progress-bar progress-bar-warning" style="width:95%"><span class="sr-only">20% complete</span></div>
+							</div>
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-warning" style="width:85%"><span class="sr-only">20% complete</span></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							危险红进度条
+							<div class="progress">
+								<div class="progress-bar progress-bar-danger" style="width:75%"><span class="sr-only">20% complete</span></div>
+							</div>
+							<div class="progress progress-striped">
+								<div class="progress-bar progress-bar-danger" style="width:65%"><span class="sr-only">20% complete</span></div>
+							</div>
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-danger" style="width:55%"><span class="sr-only">20% complete</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<table class="table table-bordered">
+					<tr>
+						<th>状态说明</th>
+						<th>class名</th>
+					</tr>
+					<tr>
+						<th>默认状态</th>
+						<td>progress，progress-bar</td>
+					</tr>
+					<tr>
+						<th>颜色class名</th>
+						<td>默认和重点蓝：progress-bar-primary；成功绿：progress-bar-success；信息蓝：progress-bar-info；警告橙色：progress-bar-warning；危险红：progress-bar-danger；</td>
+					</tr>
+					<tr>
+						<th>纹理class</th>
+						<td>progress-striped</td>
+					</tr>
+					<tr>
+						<th>带动画的纹理效果</th>
+						<td>active</td>
+					</tr>
+					<tr>
+						<th>进度值</th>
+						<td>style="width:40%";百分比</td>
+					</tr>
+				</table>
+<pre>
+默认进度条
+&lt;div class=&quot;progress&quot;&gt;
+	&lt;div class=&quot;progress-bar&quot; style=&quot;width:45%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;45% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+带纹理的进度条
+&lt;div class=&quot;progress progress-striped&quot;&gt;
+	&lt;div class=&quot;progress-bar&quot; style=&quot;width:35%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;45% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+带纹理的动画进度条
+&lt;div class=&quot;progress progress-striped active&quot;&gt;
+	&lt;div class=&quot;progress-bar&quot; style=&quot;width:25%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;45% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+success成功绿进度条
+&lt;div class=&quot;progress&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-success&quot; style=&quot;width:40%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;45% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-success&quot; style=&quot;width:50%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;45% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped active&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-success&quot; style=&quot;width:60%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;45% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+警告橙进度条
+&lt;div class=&quot;progress&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-warning&quot; style=&quot;width:100%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;20% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-warning&quot; style=&quot;width:95%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;20% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped active&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-warning&quot; style=&quot;width:85%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;20% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+信息蓝进度条
+&lt;div class=&quot;progress&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-info&quot; style=&quot;width:70%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;20% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-info&quot; style=&quot;width:80%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;20% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped active&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-info&quot; style=&quot;width:90%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;20% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+危险红进度条
+&lt;div class=&quot;progress&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-danger&quot; style=&quot;width:75%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;20% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-danger&quot; style=&quot;width:65%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;20% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped active&quot;&gt;
+	&lt;div class=&quot;progress-bar progress-bar-danger&quot; style=&quot;width:55%&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;20% complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+			</dd>
+		</dl>		
+	</div>	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>string</title>
+<style id="stylemodule" type="text/css">
+	#module491 {height:174px;}
+	#module3 {border:none;}
+	#module3 {padding:0px;}
+	#module3 .formMiddle3{border:none;}
+	#module3 .formMiddle3{padding:0px;}
+	#module3 .formMiddle3 .formMiddleCenter3{border:none;}
+	#module3 .formMiddle3 .formMiddleCenter3{padding:0px;}
+	#module3 .formTop3{display:none;}
+	#module3 .formBottom3{display:none;}
+	#module3 .formMiddle3 .formMiddleLeft3{display:none;}
+	#module3 .formMiddle3 .formMiddleRight3{display:none;}
+</style>
+<script type="text/javascript">
+  /*var aobj = ["#module491 {height:200px;}","#module491"]
+  var sty = document.getElementById("stylemodule").innerHTML;
+  alert(sty);
+  var s = sty.replace(/{\r\n/g,"").replace(/\t/g,"").replace(/\r\n}/g,"");
+  var sa = s.split("\n");
+  for(var i = 1; i < sa.length-1; i++){
+	alert(sa[i]);
+  }*/
+  function tests(){
+  alert(arguments.length);
+	for(var i = 0; i<arguments.length; i++){
+		alert(typeof arguments[i]);
+	}
+  }
+ var a = "wo"
+ tests([0,1,2],{"a":123,"b":456},"str",a,123);
+</script>
+</head>
+
+<body>
+<body>
+</body>
+</html>

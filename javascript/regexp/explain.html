@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式测试</title>
+<link rel="stylesheet" href="/public_css/base_style.css">
+<style type="text/css">
+	ul{list-style:none; margin:0px; padding:0;}
+	ol{list-style:decimal; list-style-position:inside;padding:0;}
+	li{line-height:30px; border-bottom:1px dashed #ccc; padding-left:20px;}
+	em{color:#00f;}
+	span{color:#f00;}
+	li.tit{font-size:30px; padding-left:0; border-bottom:2px solid #aaa;}
+	li.tit span{font-size:27px; color:#00c; padding-left:10px;}
+</style>
+<script type="text/javascript">
+var $ = function(id){
+	return document.getElementById(id);
+}
+/*******定义正则表达式的两种方法********/
+//var reg_1 = new RegExp(pattern,modifiers);
+//var reg_2 = /pattern/modifiers;
+window.onload = function(){
+	var str = "Is this all there is?";
+	var 	
+		r_1 = new RegExp('is');
+		// r_1 = /is/;
+	$("t_1").getElementsByTagName('span')[0].innerHTML = str.match(r_1);
+	var
+		r_2 = new RegExp('is','g');
+		// r_2 = /is/g;
+	$("t_2").getElementsByTagName('span')[0].innerHTML = str.match(r_2);
+	var
+		r_3 = new RegExp('is','gi');
+		// r_3 = /is/gi;
+	$("t_3").getElementsByTagName('span')[0].innerHTML = str.match(r_3);
+};
+</script>
+</head>
+
+<body>
+	<div class="wrapper">
+			<dl class="detail-list">
+				<dt class="detail-list-head">正则表达式的定义</dt>
+				<dd class="detail-list-body">
+					<h3>在javascript我们可以通过两种方式来定义正则表达式：</h3>
+					<ol>
+						<li>使用构造函数的方式定义：var reg_1 = new RegExp(pattern,modifiers);</li>
+						<li>使用perl风格的字面量形式定义：var reg_2 = /pattern/modifiers;</li>
+					</ol>
+					<p><b>pattern（模式）：</b>描述了一个表达式模型。</p>
+
+					<p><b>modifiers (修饰符)：</b>描述了检索是否是全局，区分大小写等。</p>
+				</dd>
+			</dl>
+			<dl class="detail-list">
+				<dt class="detail-list-head">pattern语法的说明和使用</dt>
+				<dd class="detail-list-body">
+					<h3>一、方括[]号的使用</h3>
+					<ol>
+						<li><b>[abc]:</b>查找方括号之间的任何字符。
+							<div><b>例如：</b><p><em>/[abc]/.test("This is apple!");</em>查找字符串中是否存在abc其中任意一个字符。</p></div>
+						</li>
+						<li><b>[^abc]:</b>查找非方括号之间的任何字符。</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl class="detail-list">
+				<dt class="detail-list-head">match使用：<span>string.match(regexp)</span></dt>
+				<dd class="detail-list-body">
+					<ul id="ul">
+						<li id="t_1"><em></em>在"Is this all there is?"中查找指定字符串：<span></span></li>
+						<li id="t_2">使用g在"Is this all there is?"中查找指定字符串：<span></span></li>
+						<li id="t_3">使用gi在"Is this all there is?"中查找指定字符串：<span></span></li>
+					</ul>
+				</dd>
+			</dl>
+	</div>
+<body>
+</body>
+</html>
