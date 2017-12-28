@@ -2,433 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06a461e7-a83e-49c0-99ba-5c09365e95c6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/qwguo.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/studyNotes.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.remote-sync.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.vscode/formatter.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.vscode/settings.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/1.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/IDE/phpStorm.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_alert.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_basis.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_btn.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_btn_group.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_dropdown.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_font_icon.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_form.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_grid.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_head.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_img.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_mdeia.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_p_text.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_progress.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_small_icon.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_tab.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/bootstrap_table.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/images/1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/js/bootstrap.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/js/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/user_style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/IE6_position_fixed.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/border/01/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/border/02/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/border/border_style.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/border/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/css_selectors/attribute_selectors.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/css_selectors/element_selectors.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/css_selectors/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/css_selectors/pseudo_classes_selectors.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/css_selectors/pseudo_element_selectors.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/css_selectors/relationship_selectors.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/css_selectors/selectors.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/index.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/layout.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/positioning/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/positioning/positioning.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/positioning/positioning1.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/positioning/z-index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/visibility.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/wordwrap/demo_1.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/wordwrap/demo_2.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/wordwrap/demo_3.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/wordwrap/demo_4.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css2/wordwrap/index.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/album.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/1.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/10.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/10.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/11.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/11.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/12.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/12.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/13.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/13.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/14.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/14.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/15.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/15.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/16.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/16.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/17.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/17.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/18.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/18.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/2.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/3.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/4.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/5.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/5.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/6.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/6.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/7.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/7.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/8.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/8.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/9.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/images/9.large.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/album/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/animate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/animation/02/index.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/animation/02/loading.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/animation/animation_base.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/animation/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/background/base_learn/border_bg_0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/background/base_learn/border_bg_1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/background/base_learn/border_bg_2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/background/base_learn/border_bg_3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/background/base_learn/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/background/bg_images/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/background/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/01/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/02/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/03/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/04/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/border_bg/border_bg_1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/border_bg/border_bg_2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/border_bg/border_bg_3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/border_bg/border_bg_4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/border_bg/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/borders.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/border/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/box-flex.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/box-shadow/01/curve.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/box-shadow/01/edge.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/box-shadow/02/Mona_Lisa.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/box-shadow/base/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/box-shadow/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/boxflex/flex.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/boxflex/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/button/bubble_bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/button/button.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/button/button.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/filter/01/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/filter/filter.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/filter/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/margin.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/nav/01/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/nav/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/prefixfree.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/prefixfree_min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/selector/css_attr_select.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/selector/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/selector/lang_selector.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/selector/nth-child-selector.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/selector/target_selector.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/switch/switch.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/switch/switch.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/text_decoration.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/01/1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/01/2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/01/3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/01/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/01.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/02.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/03.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/04.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/05.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/06.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/07.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/08.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/09.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/10.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/11.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/image/12.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/02/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/03/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/01.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/02.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/03.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/04.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/05.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/06.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/07.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/08.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/09.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/10.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/11.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/image/12.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/04/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/05/fonts/icomoon.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/05/fonts/icomoon.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/05/fonts/icomoon.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/05/fonts/icomoon.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/05/image/tooltip1.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/05/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/05/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/06/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/07/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/08/index(冲突时的文件备份2016-07-05 10-42-23).html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/08/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/transform_2d_base.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transform/transform_3d_base.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transition/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/css3/transition/transition_base.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/tool_bar/pic_method/css/index.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/tool_bar/pic_method/css/index.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html4/if_Ie_else.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/add_svg.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_a.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_circle/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_ellipse/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_include/circle.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_include/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_include/polygon.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_line/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_path/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_polygon/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_polyline/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_rect/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_shapes.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/svg/svg_test.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/tag/a_tag.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/html/html5/tag/tag_table.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/httped" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/public_include.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/index_1.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/inner_iframe.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/event/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/event/keyCode.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/event/wheel/base.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/function/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/include/a.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/include/async.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/include/defer.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/include/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/regexp/RegExp.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/regexp/css.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/regexp/explain.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/regexp/function.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/regexp/function_.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/regexp/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/regexp/small_function.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/regexp/string.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/regexp/test.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/javascript/test/test.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/base_learn/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/base_learn/selectors(QWGUO--Administrator--2017-03-02-13,53,24).html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/base_learn/selectors(QWGUO--Administrator--2017-03-02-13,55,57).html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/base_learn/selectors.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/form/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/form/radio/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/form/select/form_obj.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/form/select/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/form/select/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/title/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jquery/title/title.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/less/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/less/less-1.7.3.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/less/less-1.7.3.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/less/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/less/style.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_js/http/callback.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_js/node_test.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_js/school/student.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_js/server.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_css/base_style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_css/normalize.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_css/spectrum.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_css/step_detail.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/favicon.ico" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/ico.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/pic.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/s1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/s2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/s3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/s4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/small_1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_image/small_2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_include.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery-1.7-min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.10.0/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.10.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.10.1/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.10.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.10.2/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.10.2/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.11.0/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.11.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.11.1/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.11.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.11.2/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.11.2/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.11.3/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.11.3/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.0/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.1/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.2/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.2/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.3/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.3/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.4/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.12.4/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.7.0/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.7.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.7.1/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.7.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.7.2/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.7.2/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.8.0/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.8.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.8.1/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.8.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.8.2/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.8.2/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.8.3/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.8.3/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.9.0/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.9.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.9.1/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-1.9.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.0.0/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.0.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.0.1/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.0.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.0.2/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.0.2/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.0.3/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.0.3/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.0/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.1/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.2/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.2/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.3/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.3/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.4/MIT-LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.1.4/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.0/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.1/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.2/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.2/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.3/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.3/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.4/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-2.2.4/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-3.0.0/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-3.0.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-3.1.0/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-3.1.0/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-3.1.1/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/jquery/jquery-3.1.1/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/css/jquery-ui-min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/css/jquery-ui.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/images/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/images/ui-bg_glass_75_dadada_1x400.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/images/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/images/ui-icons_222222_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/images/ui-icons_454545_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/jquery-ui-min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/jQueryUi/jquery-ui.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/mCustomScrollbar/css/mCSB_buttons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/mCustomScrollbar/css/mCustomScrollbar-min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/mCustomScrollbar/css/mCustomScrollbar.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/mCustomScrollbar/mCustomScrollbar-min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/mCustomScrollbar/mCustomScrollbar.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/spectrum/css/spectrum-min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/spectrum/css/spectrum.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/spectrum/spectrum-min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/plugins/spectrum/spectrum.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/public_fun.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/spectrum.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public_js/zepto.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/1.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/normalize.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/scss/style.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/scss/style.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/css/_mixin.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/css/_style.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/css/fonts/icomoon.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/css/fonts/icomoon.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/css/fonts/icomoon.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/css/fonts/icomoon.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/css/index.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/css/index.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/css/index.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/image/toolbar_img.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/js/main.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/js/require.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/after_method/js/require_min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/css/_mixin.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/css/_style.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/css/fonts/icomoon.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/css/fonts/icomoon.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/css/fonts/icomoon.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/css/fonts/icomoon.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/css/index.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/css/index.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/css/index.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/image/toolbar_img.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/font_method/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/pic_method/css/_mixin.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/pic_method/css/_toolbar.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/pic_method/css/index.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/pic_method/css/index.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/pic_method/css/index.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/pic_method/image/toolbar.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sass_learn/tool_bar/pic_method/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sftp-config.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates_page.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/unnamed.patch" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/xml/books.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/xml/bookstore.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/xml/simple.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/xml/simple.xsl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/xml/test.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/xml/xPath_select_title.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/xml/xQuery.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -439,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index_1.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index_1.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <state relative-caret-position="564">
+              <caret line="126" column="7" lean-forward="true" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -494,6 +69,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -506,7 +82,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -544,6 +119,7 @@
       <workItem from="1514372204988" duration="1233000" />
       <workItem from="1514424772721" duration="1812000" />
       <workItem from="1514427140375" duration="201000" />
+      <workItem from="1514431877855" duration="156000" />
     </task>
     <task id="LOCAL-00001">
       <created>1514372731473</created>
@@ -556,13 +132,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3246000" />
+    <option name="totallyTimeSpent" value="3402000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25799572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -617,8 +193,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index_1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="126" column="7" lean-forward="true" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
           <folding />
         </state>
       </provider>
