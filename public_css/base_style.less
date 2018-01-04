@@ -42,11 +42,27 @@ h1.big-title {
     color: #444;
   }
 }
-
+.panel-color(j){
+  j.panel {
+    border-color: j.color_1;
+    dt.panel-heading {
+      background-color: j.color_2;
+    }
+    dd.panel-body {
+      a{
+        color: j.color_3;
+        &:hover{
+          color:j.color_4;
+        }
+      }
+    }
+  }
+}
 /**学习列表样式**/
 dl.panel{
     border-radius: 5px;
-    border: 3px solid #333;
+    border-width: 3px;
+    border-style:solid;
   dt.panel-heading {
     font-family: '隶书';
     font-size: 25px;
@@ -54,10 +70,7 @@ dl.panel{
     font-weight: bold;
     padding: 10px;
     text-transform: uppercase;
-    color: white;
-    background-color: #222;
     a {
-      color: #FFF;
       text-decoration: none;
     }
     em {
@@ -77,7 +90,6 @@ dl.panel{
       font-weight: 700;
       text-decoration: none;
       font-family: "微软雅黑";
-      color: #777;
       -webkit-transition: color .2s ease-in;
       -moz-transition: color .2s ease-in;
       -o-transition: color .2s ease-in;
@@ -85,18 +97,7 @@ dl.panel{
     }
   }
   &.css-panel {
-    border-color: @css-bgcolor;
-    dt.panel-heading {
-      background-color: @css-bgcolor;
-    }
-    dd.panel-body {
-      a{
-        color: @css-color;
-        &:hover{
-          color:@css-color-hover;
-        }
-      }
-    }
+  panel-color({panel: &, color_1:@css-bgcolor, color_2:@css-bgcolor, color_3:@css-color, color_4:@css-color-hover});
   }
   &.css3-panel {
     border-color: @css-bgcolor;
