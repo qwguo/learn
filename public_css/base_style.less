@@ -1,4 +1,5 @@
 @css-bgcolor:#3194ed; // css color
+@css-headColor:#fff;
 @css-color:darken(@css-bgcolor, 20%);
 @css-color-hover:darken(@css-bgcolor, 30%);
 @css3-color:  darken(@css-color, 10%);
@@ -42,25 +43,24 @@ h1.big-title {
     color: #444;
   }
 }
-.panel-color(j){
-  j.panel {
-    border-color: j.color_1;
+.panel-color(@color_1, @color_2, @color_3, @color_4){
+    border-color: @color_1;
     dt.panel-heading {
-      background-color: j.color_2;
+      background-color: @color_2;
     }
     dd.panel-body {
       a{
-        color: j.color_3;
+        color: @color_3;
         &:hover{
-          color:j.color_4;
+          color: @color_4;
         }
       }
     }
-  }
 }
+
 /**学习列表样式**/
 dl.panel{
-    border-radius: 5px;
+    border-radius: 10px;
     border-width: 3px;
     border-style:solid;
   dt.panel-heading {
@@ -97,7 +97,7 @@ dl.panel{
     }
   }
   &.css-panel {
-  panel-color({panel: &, color_1:@css-bgcolor, color_2:@css-bgcolor, color_3:@css-color, color_4:@css-color-hover});
+    .panel-color(@css-bgcolor,  @css-bgcolor,  @css-color,  @css-color-hover);
   }
   &.css3-panel {
     border-color: @css-bgcolor;
