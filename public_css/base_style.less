@@ -1,61 +1,53 @@
-@import url(normalize.css);
+@css-bgcolor:#3194ed; // css color
+@css-color:darken(@css-bgcolor, 20%);
+@css-color-hover:darken(@css-bgcolor, 30%);
+@css3-color:  darken(@css-color, 10%);
 .q {
     zoom: 1;
 }
-
 .q:after {
     content: "";
     display: table;
     clear: both;
 }
-
 .wrapper {
     width: 98%;
     margin: 0 auto;
     /*overflow:hidden;*/
 }
-
 h1.big-title {
     font-size: 30px;
     padding: 10px;
     text-align: center;
 }
-
-
 /**面包屑样式**/
-
 .crumbs {
     padding: 30px 10px 10px;
     margin-bottom: 15px;
     height: 30px;
     font-size: 24px;
     border-bottom: 2px dashed #aaa;
-}
-
-.crumbs a {
+  a{
     text-decoration: none;
     color: #666;
-}
-
-.crumbs em {
+  }
+  em {
     font-style: normal;
     padding: 0px 5px;
     font-size: 30px;
     line-height: 100%;
-}
-
-.crumbs span {
+  }
+  span {
     font-size: 30px;
     color: #444;
+  }
 }
-
 
 /**学习列表样式**/
 dl.panel{
     border-radius: 5px;
     border: 3px solid #333;
-}
-dl.panel > dt.panel-heading {
+  dt.panel-heading {
     font-family: '隶书';
     font-size: 25px;
     line-height: 40px;
@@ -64,53 +56,48 @@ dl.panel > dt.panel-heading {
     text-transform: uppercase;
     color: white;
     background-color: #222;
-}
-
-dl.panel dt a {
-    color: #FFF;
-    text-decoration: none;
-}
-
-dl.panel dt em {
-    text-transform: none;
-    font-style: normal;
-}
-
-dl.panel dd {
+    a {
+      color: #FFF;
+      text-decoration: none;
+    }
+    em {
+      text-transform: none;
+      font-style: normal;
+    }
+  }
+  dd.panel-body {
     margin: 0 0 30px;
     padding: 20px 20px 5px;
-}
-
-dl.panel dd span {
-    display: inline-block;
-    padding: 0 10px 15px;
-}
-
-dl.panel dd a {
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    font-family: "微软雅黑";
-    color: #777;
-    -webkit-transition: color .2s ease-in;
-    -moz-transition: color .2s ease-in;
-    -o-transition: color .2s ease-in;
-    transition: color .2s ease-in;
-}
-
-dl.css-panel {
-    border-color: #3194ed;
-}
-dl.css-panel > dt.panel-heading {
-    background-color: #3194ed;
-}
-
-dl.css-panel dd {
-    border-color: #3194ed;
-}
-
-dl.css-panel dd a:hover {
-    color: #3194ed;
+    span {
+      display: inline-block;
+      padding: 0 10px 15px;
+    }
+    a {
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: "微软雅黑";
+      color: #777;
+      -webkit-transition: color .2s ease-in;
+      -moz-transition: color .2s ease-in;
+      -o-transition: color .2s ease-in;
+      transition: color .2s ease-in;
+    }
+  }
+  &.css-panel {
+    border-color: @css-bgcolor;
+    dt.panel-heading {
+      background-color: @css-bgcolor;
+    }
+    dd.panel-body {
+      a{
+        color: @css-color;
+        &:hover{
+          color:@css-color-hover;
+        }
+      }
+    }
+  }
 }
 
 dl.css3-list dt {
