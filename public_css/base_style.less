@@ -1,8 +1,69 @@
-@css-bgcolor:#3194ed; // css color
+// css color
+@css-bgColor:#3B9ADB;
+@css-borderColor:darken(@css-bgColor, 3%);
 @css-headColor:#fff;
-@css-color:darken(@css-bgcolor, 20%);
-@css-color-hover:darken(@css-bgcolor, 30%);
-@css3-color:  darken(@css-color, 10%);
+@css-bodyColor:darken(@css-bgColor, 30%);
+@css-bodyColorHover:lighten(@css-bgColor, 5%);
+//css3
+@css3-bgColor:#0070BA;
+@css3-borderColor:darken(@css3-bgColor, 3%);
+@css3-headColor:#fff;
+@css3-bodyColor:darken(@css3-bgColor, 30%);
+@css3-bodyColorHover:lighten(@css3-bgColor, 5%);
+//sass
+@sass-bgColor:#CC6699;
+@sass-borderColor:darken(@sass-bgColor, 3%);
+@sass-headColor:#fff;
+@sass-bodyColor:darken(@sass-bgColor, 30%);
+@sass-bodyColorHover:lighten(@sass-bgColor, 5%);
+//bootstrap
+@bootstrap-bgColor:#614789;
+@bootstrap-borderColor:darken(@bootstrap-bgColor, 3%);
+@bootstrap-headColor:#fff;
+@bootstrap-bodyColor:darken(@bootstrap-bgColor, 30%);
+@bootstrap-bodyColorHover:lighten(@bootstrap-bgColor, 5%);
+//HTML5
+@html5-bgColor:#F16528;
+@html5-borderColor:darken(@html5-bgColor, 3%);
+@html5-headColor:#fff;
+@html5-bodyColor:darken(@html5-bgColor, 30%);
+@html5-bodyColorHover:lighten(@html5-bgColor, 5%);
+//HTML
+@html-bgColor:#E45833;
+@html-borderColor:darken(@html-bgColor, 3%);
+@html-headColor:#fff;
+@html-bodyColor:darken(@html-bgColor, 30%);
+@html-bodyColorHover:lighten(@html-bgColor, 5%);
+//XML
+@xml-bgColor:#55BF91;
+@xml-borderColor:darken(@xml-bgColor, 3%);
+@xml-headColor:#fff;
+@xml-bodyColor:darken(@xml-bgColor, 30%);
+@xml-bodyColorHover:lighten(@xml-bgColor, 5%);
+//less
+@less-bgColor:#234575;
+@less-borderColor:darken(@less-bgColor, 3%);
+@less-headColor:#fff;
+@less-bodyColor:darken(@less-bgColor, 30%);
+@less-bodyColorHover:lighten(@less-bgColor, 5%);
+//javascript
+@javascript-bgColor:#F5C607;
+@javascript-borderColor:darken(@javascript-bgColor, 3%);
+@javascript-headColor:#fff;
+@javascript-bodyColor:darken(@javascript-bgColor, 30%);
+@javascript-bodyColorHover:lighten(@javascript-bgColor, 5%);
+//jquery
+@jquery-bgColor:#0868AC;
+@jquery-borderColor:darken(@jquery-bgColor, 3%);
+@jquery-headColor:#fff;
+@jquery-bodyColor:darken(@jquery-bgColor, 30%);
+@jquery-bodyColorHover:lighten(@jquery-bgColor, 5%);
+//IDE
+@IDE-bgColor:#FF9800;
+@IDE-borderColor:darken(@IDE-bgColor, 3%);
+@IDE-headColor:#fff;
+@IDE-bodyColor:darken(@IDE-bgColor, 30%);
+@IDE-bodyColorHover:lighten(@IDE-bgColor, 5%);
 .q {
     zoom: 1;
 }
@@ -43,19 +104,23 @@ h1.big-title {
     color: #444;
   }
 }
-.panel-color(@color_1, @color_2, @color_3, @color_4){
-    border-color: @color_1;
-    dt.panel-heading {
-      background-color: @color_2;
+.panel-color(@bgColor:black; @borderColor:black;  @headColor:black;  @bodyColor:black; @bodyColorHover:black) {
+  border-color: @borderColor;
+  dt.panel-heading {
+    background-color: @bgColor;
+    color: @headColor;
+    a {
+      color: @headColor;
     }
-    dd.panel-body {
-      a{
-        color: @color_3;
-        &:hover{
-          color: @color_4;
-        }
+  }
+  dd.panel-body {
+    a {
+      color: @bodyColor;
+      &:hover {
+        color: @bodyColorHover;
       }
     }
+  }
 }
 
 /**学习列表样式**/
@@ -69,7 +134,7 @@ dl.panel{
     line-height: 40px;
     font-weight: bold;
     padding: 10px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     a {
       text-decoration: none;
     }
@@ -97,121 +162,39 @@ dl.panel{
     }
   }
   &.css-panel {
-    .panel-color(@css-bgcolor,  @css-bgcolor,  @css-color,  @css-color-hover);
+    .panel-color(@bgColor:@css-bgColor;@borderColor:@css-borderColor;  @headColor:@css-headColor;  @bodyColor:@css-bodyColor; @bodyColorHover:@css-bodyColorHover);
   }
   &.css3-panel {
-    border-color: @css-bgcolor;
-    dt.panel-heading {
-      background-color: @css-bgcolor;
-    }
-    dd.panel-body {
-      a{
-        color: @css-color;
-        &:hover{
-          color:@css-color-hover;
-        }
-      }
-    }
+    .panel-color(@bgColor:@css3-bgColor;@borderColor:@css3-borderColor;  @headColor:@css3-headColor;  @bodyColor:@css3-bodyColor; @bodyColorHover:@css3-bodyColorHover);
+  }
+  &.sass-panel {
+    .panel-color(@bgColor:@sass-bgColor;@borderColor:@sass-borderColor;  @headColor:@sass-headColor;  @bodyColor:@sass-bodyColor; @bodyColorHover:@sass-bodyColorHover);
+  }
+  &.bootstrap-panel {
+    .panel-color(@bgColor:@bootstrap-bgColor;@borderColor:@bootstrap-borderColor;  @headColor:@bootstrap-headColor;  @bodyColor:@bootstrap-bodyColor; @bodyColorHover:@bootstrap-bodyColorHover);
+  }
+  &.less-panel {
+    .panel-color(@bgColor:@less-bgColor;@borderColor:@less-borderColor;  @headColor:@less-headColor;  @bodyColor:@less-bodyColor; @bodyColorHover:@less-bodyColorHover);
+  }
+  &.html5-panel {
+    .panel-color(@bgColor:@html5-bgColor;@borderColor:@html5-borderColor;  @headColor:@html5-headColor;  @bodyColor:@html5-bodyColor; @bodyColorHover:@html5-bodyColorHover);
+  }
+  &.xml-panel {
+    .panel-color(@bgColor:@xml-bgColor;@borderColor:@xml-borderColor;  @headColor:@xml-headColor;  @bodyColor:@xml-bodyColor; @bodyColorHover:@xml-bodyColorHover);
+  }
+  &.html-panel {
+    .panel-color(@bgColor:@html-bgColor;@borderColor:@html-borderColor;  @headColor:@html-headColor;  @bodyColor:@html-bodyColor; @bodyColorHover:@html-bodyColorHover);
+  }
+  &.jquery-panel {
+    .panel-color(@bgColor:@jquery-bgColor;@borderColor:@jquery-borderColor;  @headColor:@jquery-headColor;  @bodyColor:@jquery-bodyColor; @bodyColorHover:@jquery-bodyColorHover);
+  }
+  &.javascript-panel {
+    .panel-color(@bgColor:@javascript-bgColor;@borderColor:@javascript-borderColor;  @headColor:@javascript-headColor;  @bodyColor:@javascript-bodyColor; @bodyColorHover:@javascript-bodyColorHover);
+  }
+  &.IDE-panel {
+    .panel-color(@bgColor:@IDE-bgColor;@borderColor:@IDE-borderColor;  @headColor:@IDE-headColor;  @bodyColor:@IDE-bodyColor; @bodyColorHover:@IDE-bodyColorHover);
   }
 }
-
-dl.css3-list dt {
-    background-color: #6FB934;
-}
-
-dl.css3-list dd {
-    border-color: #6FB934;
-}
-
-dl.css3-list dd a:hover {
-    color: #6FB934;
-}
-
-dl.sass-list dt {
-    background-color: #f850ca;
-}
-
-dl.sass-list dd {
-    border-color: #f850ca;
-}
-
-dl.sass-list dd a:hover {
-    color: #f850ca;
-}
-
-dl.less-list dt {
-    background-color: #000A9E;
-}
-
-dl.less-list dd {
-    border-color: #000A9E;
-}
-
-dl.less-list dd a:hover {
-    color: #000A9E;
-}
-
-dl.html-list dt {
-    background-color: #222222;
-}
-
-dl.html-list dd {
-    border-color: #222222;
-}
-
-dl.html-list dd a:hover {
-    color: #222222;
-}
-
-dl.html5-list dt {
-    background-color: #F2743E;
-}
-
-dl.html5-list dd {
-    border-color: #F2743E;
-}
-
-dl.html5-list dd a:hover {
-    color: #F2743E;
-}
-
-dl.javascript-list dt {
-    background-color: #F767E3;
-}
-
-dl.javascript-list dd {
-    border-color: #F767E3;
-}
-
-dl.javascript-list dd a:hover {
-    color: #F767E3;
-}
-
-dl.xml-list dt {
-    background-color: #B0E24B;
-}
-
-dl.xml-list dd {
-    border-color: #B0E24B;
-}
-
-dl.xml-list dd a:hover {
-    color: #B0E24B;
-}
-
-dl.bootstrap-list dt {
-    text-transform: capitalize;
-    background-color: #523A77;
-}
-
-dl.bootstrap-list dd {
-    border-color: #523A77;
-}
-
-dl.bootstrap-list dd a:hover {
-    color: #523A77;
-}
-
 
 /**页面代码展示**/
 
