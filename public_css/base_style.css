@@ -7,7 +7,7 @@
   clear: both;
 }
 .wrapper {
-  width: 98%;
+  padding: 10px 0;
   margin: 0 auto;
   /*overflow:hidden;*/
 }
@@ -19,10 +19,9 @@ h1.big-title {
 /**面包屑样式**/
 .crumbs {
   padding: 30px 10px 10px;
-  margin-bottom: 15px;
-  height: 30px;
   font-size: 24px;
   border-bottom: 2px dashed #aaa;
+  margin: 15px;
 }
 .crumbs a {
   text-decoration: none;
@@ -30,7 +29,7 @@ h1.big-title {
 }
 .crumbs em {
   font-style: normal;
-  padding: 0px 5px;
+  padding: 0 5px;
   font-size: 30px;
   line-height: 100%;
 }
@@ -50,7 +49,6 @@ dl.panel dt.panel-heading {
   line-height: 40px;
   font-weight: bold;
   padding: 10px;
-  text-transform: uppercase;
 }
 dl.panel dt.panel-heading a {
   text-decoration: none;
@@ -69,7 +67,7 @@ dl.panel dd.panel-body span {
 }
 dl.panel dd.panel-body a {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   text-decoration: none;
   font-family: "微软雅黑";
   -webkit-transition: color 0.2s ease-in;
@@ -78,101 +76,191 @@ dl.panel dd.panel-body a {
   transition: color 0.2s ease-in;
 }
 dl.panel.css-panel {
-  border-color: #3194ed;
+  border-color: #2e93d9;
 }
 dl.panel.css-panel dt.panel-heading {
-  background-color: #3194ed;
+  background-color: #3B9ADB;
+  border-color: #3B9ADB;
+  color: #fff;
+}
+dl.panel.css-panel dt.panel-heading a {
+  color: #fff;
 }
 dl.panel.css-panel dd.panel-body a {
-  color: #0f60a9;
+  color: #13476a;
 }
 dl.panel.css-panel dd.panel-body a:hover {
-  color: #0b457a;
+  color: #51a5df;
 }
 dl.panel.css3-panel {
-  border-color: #3194ed;
+  border-color: #0067ab;
 }
 dl.panel.css3-panel dt.panel-heading {
-  background-color: #3194ed;
+  background-color: #0070BA;
+  border-color: #0070BA;
+  color: #fff;
+}
+dl.panel.css3-panel dt.panel-heading a {
+  color: #fff;
 }
 dl.panel.css3-panel dd.panel-body a {
-  color: #0f60a9;
+  color: #001421;
 }
 dl.panel.css3-panel dd.panel-body a:hover {
-  color: #0b457a;
+  color: #007fd3;
 }
-dl.css3-list dt {
-  background-color: #6FB934;
+dl.panel.sass-panel {
+  border-color: #c85b91;
 }
-dl.css3-list dd {
-  border-color: #6FB934;
+dl.panel.sass-panel dt.panel-heading {
+  background-color: #CC6699;
+  border-color: #CC6699;
+  color: #fff;
 }
-dl.css3-list dd a:hover {
-  color: #6FB934;
+dl.panel.sass-panel dt.panel-heading a {
+  color: #fff;
 }
-dl.sass-list dt {
-  background-color: #f850ca;
+dl.panel.sass-panel dd.panel-body a {
+  color: #73264d;
 }
-dl.sass-list dd {
-  border-color: #f850ca;
+dl.panel.sass-panel dd.panel-body a:hover {
+  color: #d279a6;
 }
-dl.sass-list dd a:hover {
-  color: #f850ca;
+dl.panel.bootstrap-panel {
+  border-color: #5a427f;
 }
-dl.less-list dt {
-  background-color: #000A9E;
+dl.panel.bootstrap-panel dt.panel-heading {
+  background-color: #614789;
+  border-color: #614789;
+  color: #fff;
 }
-dl.less-list dd {
-  border-color: #000A9E;
+dl.panel.bootstrap-panel dt.panel-heading a {
+  color: #fff;
 }
-dl.less-list dd a:hover {
-  color: #000A9E;
+dl.panel.bootstrap-panel dd.panel-body a {
+  color: #1a1324;
 }
-dl.html-list dt {
-  background-color: #222222;
+dl.panel.bootstrap-panel dd.panel-body a:hover {
+  color: #6d509a;
 }
-dl.html-list dd {
-  border-color: #222222;
+dl.panel.less-panel {
+  border-color: #1f3e69;
 }
-dl.html-list dd a:hover {
-  color: #222222;
+dl.panel.less-panel dt.panel-heading {
+  background-color: #234575;
+  border-color: #234575;
+  color: #fff;
 }
-dl.html5-list dt {
-  background-color: #F2743E;
+dl.panel.less-panel dt.panel-heading a {
+  color: #fff;
 }
-dl.html5-list dd {
-  border-color: #F2743E;
+dl.panel.less-panel dd.panel-body a {
+  color: #000000;
 }
-dl.html5-list dd a:hover {
-  color: #F2743E;
+dl.panel.less-panel dd.panel-body a:hover {
+  color: #295189;
 }
-dl.javascript-list dt {
-  background-color: #F767E3;
+dl.panel.html5-panel {
+  border-color: #f05b1a;
 }
-dl.javascript-list dd {
-  border-color: #F767E3;
+dl.panel.html5-panel dt.panel-heading {
+  background-color: #F16528;
+  border-color: #F16528;
+  color: #fff;
 }
-dl.javascript-list dd a:hover {
-  color: #F767E3;
+dl.panel.html5-panel dt.panel-heading a {
+  color: #fff;
 }
-dl.xml-list dt {
-  background-color: #B0E24B;
+dl.panel.html5-panel dd.panel-body a {
+  color: #782a08;
 }
-dl.xml-list dd {
-  border-color: #B0E24B;
+dl.panel.html5-panel dd.panel-body a:hover {
+  color: #f37640;
 }
-dl.xml-list dd a:hover {
-  color: #B0E24B;
+dl.panel.xml-panel {
+  border-color: #4abb8a;
 }
-dl.bootstrap-list dt {
-  text-transform: capitalize;
-  background-color: #523A77;
+dl.panel.xml-panel dt.panel-heading {
+  background-color: #55BF91;
+  border-color: #55BF91;
+  color: #fff;
 }
-dl.bootstrap-list dd {
-  border-color: #523A77;
+dl.panel.xml-panel dt.panel-heading a {
+  color: #fff;
 }
-dl.bootstrap-list dd a:hover {
-  color: #523A77;
+dl.panel.xml-panel dd.panel-body a {
+  color: #225941;
+}
+dl.panel.xml-panel dd.panel-body a:hover {
+  color: #68c69d;
+}
+dl.panel.html-panel {
+  border-color: #e24d25;
+}
+dl.panel.html-panel dt.panel-heading {
+  background-color: #E45833;
+  border-color: #E45833;
+  color: #fff;
+}
+dl.panel.html-panel dt.panel-heading a {
+  color: #fff;
+}
+dl.panel.html-panel dd.panel-body a {
+  color: #6f230f;
+}
+dl.panel.html-panel dd.panel-body a:hover {
+  color: #e76a4a;
+}
+dl.panel.jquery-panel {
+  border-color: #075f9d;
+}
+dl.panel.jquery-panel dt.panel-heading {
+  background-color: #0868AC;
+  border-color: #0868AC;
+  color: #fff;
+}
+dl.panel.jquery-panel dt.panel-heading a {
+  color: #fff;
+}
+dl.panel.jquery-panel dd.panel-body a {
+  color: #01101a;
+}
+dl.panel.jquery-panel dd.panel-body a:hover {
+  color: #0977c4;
+}
+dl.panel.javascript-panel {
+  border-color: #e6ba07;
+}
+dl.panel.javascript-panel dt.panel-heading {
+  background-color: #F5C607;
+  border-color: #F5C607;
+  color: #fff;
+}
+dl.panel.javascript-panel dt.panel-heading a {
+  color: #fff;
+}
+dl.panel.javascript-panel dd.panel-body a {
+  color: #604e03;
+}
+dl.panel.javascript-panel dd.panel-body a:hover {
+  color: #f9cd1d;
+}
+dl.panel.IDE-panel {
+  border-color: #f08f00;
+}
+dl.panel.IDE-panel dt.panel-heading {
+  background-color: #FF9800;
+  border-color: #FF9800;
+  color: #fff;
+}
+dl.panel.IDE-panel dt.panel-heading a {
+  color: #fff;
+}
+dl.panel.IDE-panel dd.panel-body a {
+  color: #663d00;
+}
+dl.panel.IDE-panel dd.panel-body a:hover {
+  color: #ffa21a;
 }
 /**页面代码展示**/
 .code-area {
