@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<note>
+	<to>Tove</to>
+	<from>Jani</from>
+	<heading>Reminder</heading>
+	<!--这是CDATA段的使用方法-->
+	<java>
+		<![CDATA[
+			if(a>b && b<c){
+				max = a;
+			}
+		]]>
+	</java>
+<body>Don't forget me this weekend!</body>
+</note>
