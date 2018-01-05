@@ -1,0 +1,113 @@
+@import 'mixin';
+@import 'style';
+$width: 52px;
+$height: 52px;
+.toolbar{
+	position: fixed;
+	right: $width;
+	bottom: 10px;
+}
+.toolbar-item{
+	&,.btn,.btn:after,.btn:before{
+		width: $width;
+		height: $height;
+	}
+	&:after,.btn,.btn:after,.btn:before{
+		position: absolute;
+	}
+	&:after,.btn:after,.btn:before{
+		@include transition(all .5s);
+	}
+	margin-bottom: 5px;
+	display: block;
+	position: relative;
+	&:after{
+		content:"";
+		right: $width - 6;
+		bottom: 0px;
+		width: 172px;
+		background-image: url(../image/toolbar_img.png);
+		background-repeat: no-repeat;
+		@include transform-origin(95% 95%);
+		@include transform-scale(0);
+		@include opacity(0);
+	}
+	.btn{
+		overflow: hidden;
+		top: 0;
+		@extend [class^="icon-"];
+		&,&:after,&:before{
+			left: 0;
+			color: #fff;
+			text-align: center;
+		}
+		&:before{
+			background-color: #d0d6d9;
+			top: 0;
+			font-size: 30px;
+			line-height: $height;
+		}
+		&:after{
+			background-color: #98a1a6;
+			top: $height;
+			font-size: 12px;
+			padding-top: 10px;
+			line-height: 1.5;
+			white-space: pre;
+		}
+	}
+	&:hover{
+		.btn{
+			&:before{
+				top: -$height;
+			}
+			&:after{
+				top: 0;
+			}
+		}
+		&:after{
+			@include opacity(1);
+			@include transform-scale(1);
+		}
+	}
+}
+.toolbar-item-feedback{
+	.btn{
+		@extend .icon-chat-3;
+		&:after{
+			content: "意见\A反馈";
+		}
+	}
+}
+.toolbar-item-weixin{
+	&:after{
+		height: 220px;
+		background-position: 0 0;
+	}
+	.btn{
+		@extend .icon-wechat;
+		&:after{
+			content: "公众\A账号";
+		}
+	}
+}
+.toolbar-item-app{
+	&:after{
+		height:194px;
+		background-position: 0 -222px;
+	}
+	.btn{
+		@extend .icon-mobile;
+		&:after{
+			content: "app\A下载";
+		}
+	}
+}
+.toolbar-item-backtop{
+	.btn{
+		@extend .icon-arrow-up2;
+		&:after{
+			content: "返回\A顶部";
+		}
+	}
+}

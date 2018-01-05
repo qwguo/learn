@@ -1,0 +1,27 @@
+$colors:orange;
+$a_c:blue;
+$a_h_c:orange;
+body{
+  color:$colors;
+  a,h2,.box{color:$a_c;}
+  a{text-decoration:none; color:$a_c;}
+  a:hover{color:$a_h_c;}
+  h1{
+    background-color:#c00;
+  }
+  h2{
+    background-color:#0c0;
+  }
+  .box{
+	background-color:grey;
+	border:1px solid #aaa;
+	box-shadow:3px 3px 3px #ccc;
+	height:300px;
+	width:300px;
+	border-radius:10px;
+  }
+}
+  .box{
+	span{color:green;}
+	b{color:#cc0;}
+  }

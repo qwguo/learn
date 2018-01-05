@@ -1,0 +1,77 @@
+@import 'mixin';
+@import 'style';
+$width : 52px;
+$height : 52px;
+.tool-bar{
+	position: fixed;
+	right: $width;
+	bottom: 10px;
+}
+.tool-item{
+	position: relative;
+	width: $width;
+	height: $height;
+	display: block;
+	margin-bottom: 2px;
+	.hide-w,.icon,.text{
+		position: absolute;
+		left:0;
+		width: $width;
+		height: $height;
+		overflow: hidden;
+	}
+	.hide-w{
+		top: 0;
+	}
+	.icon{
+		background-color: #d0d6d9;
+		top: 0;
+		text-align: center;
+		line-height: $height;
+		font-size: 30px;
+		color: #fff;
+		@include transition(all .5s);
+	}
+	.text{
+		background-color: #98a1a6;
+		top: $height;
+		text-align: center;
+		font-style: 12px;
+		padding-top: 8px;
+		line-height: 1.2;
+		color: #fff;
+		@include transition(all .5s);
+	}
+	.hide-layer{
+		position: absolute;
+		background:url(../image/toolbar_img.png);
+		width: 172px;
+		height: 216px;
+		bottom: 0;
+		right: $width;
+		@include opacity(0);
+		@include transformOrigin(95% 95%);
+		@include transition(all 0.5s ease);
+		@include transformScale(0);
+	}
+	&:hover{
+		.icon{
+			top: -$height;
+		}
+		.text{
+			top: 0;
+		}
+		.hide-layer{
+			@include transformScale(1);
+			@include opacity(1);
+
+		}
+	}
+}
+.tool-item-app .hide-layer{
+	height: 193px;
+	background-position: 0 -216px;
+}
+.tool-item-weixin .hide-layer{
+	background-position: 0 0;
+}

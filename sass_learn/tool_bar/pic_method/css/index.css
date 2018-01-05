@@ -1,0 +1,85 @@
+@charset "UTF-8";
+.tool-wrap {
+  position: fixed;
+  bottom: 10px;
+  right: 52px;
+  font-family: "微软雅黑";
+  width: 52px; }
+
+.tool-item, .hide-layer {
+  background-image: url(../image/toolbar.png);
+  background-repeat: no-repeat; }
+
+.tool-item {
+  display: block;
+  position: relative;
+  margin-bottom: 2px;
+  width: 52px;
+  height: 52px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.hide-layer {
+  position: absolute;
+  height: 216px;
+  width: 172px;
+  right: 52px;
+  bottom: -8px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform-origin: 95% 95%;
+  -moz-transform-origin: 95% 95%;
+  -ms-transform-origin: 95% 95%;
+  -o-transform-origin: 95% 95%;
+  transform-origin: 95% 95%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0); }
+
+.tool-item-feedback {
+  background-position: 0 -426px; }
+  .tool-item-feedback:hover {
+    background-position: 0 -488px; }
+
+.tool-item-app {
+  background-position: 0 -550px; }
+  .tool-item-app:hover {
+    background-position: 0 -612px; }
+
+.tool-item-weixin {
+  background-position: 0 -798px; }
+  .tool-item-weixin:hover {
+    background-position: 0 -860px; }
+
+.tool-item-backtop {
+  background-position: 0 -674px; }
+  .tool-item-backtop:hover {
+    background-position: 0 -736px; }
+
+.tool-item:hover .hide-layer {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  filter: alpha(opacity=100); }
+
+.tool-item-weixin .hide-layer {
+  background-position: 0 0; }
+
+.tool-item-app .hide-layer {
+  background-position: 0 -222px;
+  height: 195px; }
+
+/*# sourceMappingURL=index.css.map */

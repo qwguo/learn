@@ -1,0 +1,56 @@
+@mixin toolbar-item($pos, $hoverPos){
+	background-position: 0 $pos;
+	&:hover{
+		background-position: 0 $hoverPos;
+	}
+}
+$width :52px;
+$height:52px;
+.tool-wrap{
+	position:fixed;
+	bottom: 10px;
+	right: $width;
+	font-family: "微软雅黑";
+	width: $width;
+	}
+.tool-item,.hide-layer{
+	background-image: url(../image/toolbar.png);
+	background-repeat: no-repeat;
+}
+.tool-item{
+	display: block;
+	position: relative;
+	margin-bottom: 2px;
+	width: $width;
+	height: $height;
+	@include transition(all 0.5s ease);
+}
+.hide-layer{
+	position: absolute;
+	height: 216px;
+	width: 172px;
+	right: $width;
+	bottom: -8px;
+	@include opacity(0);
+	@include transformOrigin(95% 95%);
+	@include transition(all 0.5s ease);
+	@include transformScale(0);
+}
+.tool-item-feedback{
+	@include toolbar-item(-426px, -488px);
+}
+.tool-item-app{
+	@include toolbar-item(-550px, -612px)
+}
+.tool-item-weixin{
+	@include toolbar-item(-798px, -860px);
+}
+.tool-item-backtop{
+	@include toolbar-item(-674px, -736px);
+}
+.tool-item:hover .hide-layer{
+	@include transformScale(1);
+	@include opacity(1);
+}
+.tool-item-weixin .hide-layer{background-position: 0 0;}
+.tool-item-app .hide-layer{background-position: 0 -222px; height: 195px;}
