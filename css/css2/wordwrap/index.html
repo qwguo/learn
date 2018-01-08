@@ -1,0 +1,118 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>关于元素换行的研究</title>
+	<link rel="stylesheet" href="/public_css/base_style.css" />
+</head>
+<body>
+	<div class="wrapper">
+		<dl class="detail-list">
+			<dt class="detail-list-head">关于换行的一些学习</dt>
+			<dd class="detail-list-body">
+				<div class="explain">
+					<h3>我们在制作页面的时候经常会处理一些文本超过容器的时候换行的问题。一般我们处理换行的css属于主要用到：</h3>
+					<ul class="lower-roman">
+						<li class="f-red">word-break：normal | keep-all | break-all；</li>
+						<li class="f-red">word-wrap：normal | break-word；</li>
+					</ul>
+					<div class="dashed-line"></div>
+					<h4 class="f-blue">在浏览器默认情况下：</h4>
+					<ol>
+						<li>连续的数字不会自动换行；</li>
+						<li>连续的字母不会自动换行；</li>
+						<li>英文文章中空格是由&quot;&amp;nbsp&quot代码实现的空格不会换行；</li>
+						<li>英文单词不会在中间换行，在单词中间到达容器边缘，此单词会另起一行显示。</li>
+						<li>中文不会在文字和标点符号间换行，如果遇到标点符号到达容器的边缘，那么标点符号的前一个字会跟着折下来。</li>
+						<li>容器中是连续的图片的话会自动换行显示。</li>
+					</ol>
+					<p> <strong>实例：</strong>
+						<a class="f-red" href="demo_1.html" target="_blank">demo_1</a>
+					</p>
+					<div class="dashed-line"></div>
+					<h4 class="f-blue">
+						有时候我们为了让连续的文字，字母，和用"&amp;nbsp;"实现的空格的文章换行我们就必须使用上面说的css属于来实现强直换行。
+					</h4>
+
+					<h6>
+						<span class="f-red">word-break:break-all;</span>
+						(中断全部的) 该行为与亚洲语言的normal相同。也允许非亚洲语言文本行的任意字内断开。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字母间断行。
+					</h6>
+					<p> <strong>实例：</strong>
+						<a href="demo_2.html" class="f-red" target="_blank">demo_2</a>
+					</p>
+					<p>
+						我测试的：连续的字母和数字会自动折行，
+						<span class="f-orange">Firefox,chrome,safari</span>
+						等浏览器在中文和英文状态下显示效果一样当内容到达容器边缘都允许在标点符号和单词中间换行，允许标点符号在行首。
+						<span class="f-orange">Ie6-11</span>
+						等浏览器在中文和英文状态下显示效果一样当内容到达容器边缘也是允许单词和句子中间换行，但是他不允许标点符号在行首显示，如果内容到达边缘后第二行行首刚好是标点符号，他会让上一个单子尾字母或中文的汉子跟随标点符号一起换行。
+					</p>
+					<h6>
+						<span class="f-red">word-wrap:break-word;</span>
+						(打破单词)内容将在边界内换行。如果需要，单词内部允许断行。
+					</h6>
+					<p>
+						<span class="f-orange">Web-kite</span>
+						,和
+						<span class="f-orange">ie</span>
+						各浏览器显示效果一样，允许连续的字母和数字等内容到达容器边缘后强直换行，和
+						<span class="f-red">word-break:break-all</span>
+						的区别在于，
+						<span class="f-red">word-wrap:break-word;</span>
+						不允许在英文单词间换行、标点符号在行首。
+		在表格的单元格中使用此方法让连续的字母数字换行，
+						<span class="f-red">ie6-7</span>
+						会生效，但是其他浏览器不起作用。解决方法是给表格定义
+						<span class="f-red">table-layout:fixed;</span>
+						并且给表格一个固定宽度。意思是让单元格基于表格宽度计算宽度，而不是基于内容计算宽度。
+					</p>
+					<p>
+						<strong>实例：</strong>
+						<a href="demo_3.html" class="f-red" target="_blank">demo_3</a>
+					</p>
+					<div class="dashed-line"></div>
+					<h4 class="f-blue">关于使用了white-space属于的设置</h4>
+					<h6>
+						<span class="f-red">white-space: normal | pre | nowrap | pre-wrap | pre-line</span>
+						；设置或检索对象内空格的处理方式。
+					</h6>
+					<ol>
+						<li>
+							<span class="f-red">normal：</span>
+							浏览器的默认处理方式，文本自动换行。
+						</li>
+						<li>
+							<span class="f-red">pre：</span>
+							用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字超出边界时不换行。可查阅pre对象 。
+						</li>
+						<li>
+							<span class="f-red">nowrap：</span>
+							强制在同一行内显示所有文本，合并文本间的多余空白，直到文本结束或者遭遇br对象。
+						</li>
+						<li>
+							<span class="f-red">pre-wrap：</span>
+							用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字碰到边界时发生换行。
+						</li>
+						<li>
+							<span class="f-red">pre-line：</span>
+							保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。
+						</li>
+					</ol>
+					<p>
+						在换行中如果在元素中使用了white-space:pre/nowrap的话，word-wrap:break-wrap和word-break:break-word;都将失去作用，使中文，英文都在同一行显示，不会换行。
+					</p>
+					<p>当white-sace设置成nowrap的时候word-break和word-wrap设置换行的将都不生效。</p>
+					<p>
+						当white-space设置成pre的时候word-break换行将不生效。Word-wrap换行仅对文字和字符生效如果容器中是图片的话，图片将不换行。块级元素和行内块级元素显示效果一样。Firefox不可以。
+					</p>
+					<p>
+						<strong>综合实例：</strong>
+						<a class="f-red" href="demo_4.html" target="_blank">demo_4</a>
+					</p>
+				</div>
+			</dd>
+		</dl>
+	</div>
+</body>
+</html>
