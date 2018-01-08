@@ -134,6 +134,9 @@ dl.panel{
     line-height: 40px;
     font-weight: bold;
     padding: 10px;
+    -webkit-border-radius: 8px 8px 0 0;
+    -moz-border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
     //text-transform: uppercase;
     a {
       text-decoration: none;
@@ -463,19 +466,22 @@ dl.panel{
     color: #444;
 }
 
-.explain .dashed-line {
-    border-top: 1px dashed #CCC;
-    height: 0;
+hr[class*="line"]{
+  border-width: 1px 0 0;
+  border-color: #ccc;
+  height: 0;
+  margin: 10px 0;
+}
+.dashed-line {
+    border-style: dashed;
 }
 
-.explain .dotted-line {
-    border-top: 1px dotted #CCC;
-    height: 0;
+.dotted-line {
+    border-style: dotted;
 }
 
-.explain .solid-line {
-    border-top: 1px solid #CCC;
-    height: 0;
+.solid-line {
+    border-style: solid;
 }
 
 .explain h1 {
