@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex介绍</title>
+    <link rel="shortcut icon" href="/studyNotes/public_image/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet/less" type="text/css" href="/studyNotes/public_css/base_style.less">
+    <link rel="stylesheet" href="/studyNotes/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/studyNotes/public_js/jquery-1.7-min.js"></script>
+    <script type="text/javascript" src="/studyNotes/public_js/public_fun.js"></script>
+    <script type="text/javascript" src="/studyNotes/less/less-1.7.3.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <h2>flex学习</h2>
+        <dl class="box">
+            <dt><h3>flex的容器的相关css：</h3></dt>
+            <dt>
+                <h4>flex-flow：<span></span><span></span></h4>
+            </dt>
+            <dt>
+                <h5>flex-direction：<span class="normal">row</span>|<span>row-reverse</span>|<span>column</span>|<span>column-reverse</span></h5>
+            </dt>
+            <dd class="flex-direction">
+                <h5 class="normal">row</h5>
+                <ul class="row">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>row-reverse</h5>
+                <ul class="row-reverse">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>column</h5>
+                <ul class="column">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>column-reverse</h5>
+                <ul class="column-reverse">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+            </dd>
+            <dt>
+                <h5>flex-wrap：<span class="normal">nowrap</span>|<span>wrap</span>|<span>wrap-reverse</span></h5>
+            </dt>
+            <dd class="flex-wrap">
+                <h5>nowrap</h5>
+                <ul class="nowrap">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>wrap</h5>
+                <ul class="wrap">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>wrap-reverse</h5>
+                <ul class="wrap-reverse">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+            </dd>
+            <dt>
+                <h5>justify-content：<span class="normal">flex-start</span>|<span>flex-end</span>|<span>center</span>|<span>space-between</span>|<span>space-around</span></h5>
+            </dt>
+            <dd class="justify-content">
+                <h5 class="normal">flex-start</h5>
+                <ul class="flex-start">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>flex-end</h5>
+                <ul class="flex-end">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>center</h5>
+                <ul class="center">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>space-between</h5>
+                <ul class="space-between">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>space-around</h5>
+                <ul class="space-around">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+            </dd>
+            <dt>
+                <h5>align-content：<span>flex-start</span>|<span>flex-end</span>|<span>center</span>|<span>space-between</span>|<span>space-around</span>|<span class="normal">stretch</span></h5>
+            </dt>
+            <dd class="align-content">
+                <h5>flex-start</h5>
+                <ul class="flex-start">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>flex-end</h5>
+                <ul class="flex-end">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>center</h5>
+                <ul class="center">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>space-between</h5>
+                <ul class="space-between">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>space-around</h5>
+                <ul class="space-around">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5 class="normal">stretch</h5>
+                <ul class="stretch">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+            </dd>
+            <dt>
+                <h5>align-items：<span>flex-start</span>|<span>flex-end</span>|<span>center</span>|<span>baseline</span>|<span class="normal">stretch</span></h5>
+            </dt>
+            <dd class="align-items">
+                <h5>flex-start</h5>
+                <ul class="flex-start">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>flex-end</h5>
+                <ul class="flex-end">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>center</h5>
+                <ul class="center">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>baseline</h5>
+                <ul class="baseline">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5 class="normal">stretch</h5>
+                <ul class="stretch">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+            </dd>
+            <dt><h3>flex子项的相关css：</h3></dt>
+            <dt>
+                <h5>flex-grow：<span>&lt;number&gt;</span>用数值来定义扩展比率。不允许负值。</h5>
+            </dt>
+            <dd class="align-items">
+                <h5>flex-start</h5>
+                <p>设置或检索弹性盒的扩展比率。根据弹性盒子元素所设置的扩展因子作为比率来分配剩余空间。</p>
+                <ul class="flex-start">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>flex-end</h5>
+                <ul class="flex-end">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>center</h5>
+                <ul class="center">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5>baseline</h5>
+                <ul class="baseline">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+                <h5 class="normal">stretch</h5>
+                <ul class="stretch">
+                    <li>1.one</li>
+                    <li>22.two</li>
+                    <li>333.three</li>
+                    <li>4444.four</li>
+                    <li>55555.five</li>
+                </ul>
+            </dd>
+
+        </dl>
+    </div>
+</body>
+</html>
