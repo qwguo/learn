@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="/studyNotes/public_image/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet/less" type="text/css" href="/studyNotes/public_css/base_style.less">
     <link rel="stylesheet" href="/studyNotes/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet/less" type="text/css" href="new_baseFlex.less">
     <script type="text/javascript" src="/studyNotes/public_js/jquery-1.7-min.js"></script>
     <script type="text/javascript" src="/studyNotes/public_js/public_fun.js"></script>
     <script type="text/javascript" src="/studyNotes/less/less-1.7.3.js"></script>
@@ -56,6 +57,34 @@
                     <li>4444.four</li>
                     <li>55555.five</li>
                 </ul>
+            </dd>
+            <dd>
+<pre data-skin="4" data-height="200" data-title="less">
+.flex-direction {
+  .row {
+    flex-direction: row;
+    list-style: none;
+    display: flex;
+    border: 1px dotted palevioletred;
+    margin: 10px 0;
+    li {
+      padding: 10px;
+      margin: 5px;
+      background-color: dodgerblue;
+      font-size: 14px;
+    }
+  }
+  .row-reverse {
+    flex-direction: row-reverse;
+  }
+  .column {
+    flex-direction: column;
+  }
+  .column-reverse {
+    flex-direction: column-reverse;
+  }
+}
+</pre>
             </dd>
             <dt>
                 <h5>flex-wrap：<span class="normal">nowrap</span>|<span>wrap</span>|<span>wrap-reverse</span></h5>
