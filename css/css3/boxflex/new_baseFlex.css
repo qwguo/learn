@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+h2 {
+  text-align: center;
+  line-height: 200%;
+  font-size: 40px;
+}
+.box {
+  border-bottom: 1px solid #ccc;
+}
+.box dt h3,
+.box dt h4,
+.box dt h5 {
+  padding: 10px 30px;
+}
+.box dt h3 {
+  font-size: 26px;
+  line-height: 200%;
+  border-bottom: 1px dashed #ccc;
+}
+.box dt h4 {
+  font-size: 24px;
+  color: #00c;
+}
+.box dt h5 {
+  font-size: 20px;
+  color: #c00;
+}
+.box dt h5 span {
+  font-size: 16px;
+  padding: 0 10px;
+}
+.box dt h5 span.normal {
+  color: orange;
+}
+.box dd {
+  padding: 10px 30px;
+}
+.box dd h5 {
+  padding: 10px 30px;
+  background-color: #eee;
+  font-size: 16px;
+}
+.box dd h5.normal {
+  background-color: #ddd;
+  color: orange;
+}
+.box dd ul {
+  list-style: none;
+  display: flex;
+  border: 1px dotted palevioletred;
+  margin: 10px 0;
+}
+.box dd ul li {
+  padding: 10px;
+  margin: 5px;
+  background-color: dodgerblue;
+  font-size: 14px;
+}
+.box .flex-direction .row {
+  flex-direction: row;
+}
+.box .flex-direction .row-reverse {
+  flex-direction: row-reverse;
+}
+.box .flex-direction .column {
+  flex-direction: column;
+}
+.box .flex-direction .column-reverse {
+  flex-direction: column-reverse;
+}
+.box .flex-wrap li {
+  width: 400px;
+}
+.box .flex-wrap .nowrap {
+  flex-wrap: nowrap;
+}
+.box .flex-wrap .wrap {
+  flex-wrap: wrap;
+}
+.box .flex-wrap .wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.box .justify-content ul {
+  flex-wrap: wrap;
+}
+.box .justify-content li {
+  width: 400px;
+}
+.box .justify-content .flex-start {
+  justify-content: flex-start;
+}
+.box .justify-content .flex-end {
+  justify-content: flex-end;
+}
+.box .justify-content .center {
+  justify-content: center;
+}
+.box .justify-content .space-between {
+  justify-content: space-between;
+}
+.box .justify-content .space-around {
+  justify-content: space-around;
+}
+.box .align-content ul {
+  height: 250px;
+  flex-wrap: wrap;
+}
+.box .align-content li {
+  width: 500px;
+  height: 30px;
+  padding: 5px;
+}
+.box .align-content .flex-start {
+  align-content: flex-start;
+}
+.box .align-content .flex-end {
+  align-content: flex-end;
+}
+.box .align-content .center {
+  align-content: center;
+}
+.box .align-content .space-between {
+  align-content: space-between;
+}
+.box .align-content .space-around {
+  align-content: space-around;
+}
+.box .align-content .stretch {
+  align-content: stretch;
+}
+.box .align-items ul {
+  height: 250px;
+  flex-wrap: wrap;
+  display: flex;
+  min-height: 300px;
+}
+.box .align-items li {
+  width: 500px;
+  padding: 5px;
+}
+.box .align-items .flex-start {
+  align-items: flex-start;
+}
+.box .align-items .flex-end {
+  align-items: flex-end;
+}
+.box .align-items .center {
+  align-items: center;
+}
+.box .align-items .baseline {
+  align-items: baseline;
+}
+.box .align-items .stretch {
+  align-items: stretch;
+}
