@@ -1,6 +1,6 @@
 /**一个简单的代码展示**/
-(function($) {
-    $.fn.codeShow = function(j) {
+(function ($) {
+    $.fn.codeShow = function (j) {
         var j_ = {
                 'skin': 1,
                 'height': 'auto',
@@ -21,7 +21,7 @@
         var codeArea = codeBody.parent();
         //是否显示标题
         if (j.title.show) {
-            var codeTitle = $('<div>', { 'class': 'code-title' });
+            var codeTitle = $('<div>', {'class': 'code-title'});
             codeTitle.append('<span>' + j.title.names + '</span>');
             codeArea.prepend(codeTitle);
         }
@@ -30,7 +30,7 @@
         }
         //是否显示行号
         if (j.lineNum) {
-            var codeNumber = $('<ol>', { 'class': 'code-number' }),
+            var codeNumber = $('<ol>', {'class': 'code-number'}),
                 codeNumLi = "",
                 codeH = that.height(),
                 codeLH = parseInt(that.css("line-height"), 10),
@@ -39,15 +39,15 @@
                 codeNumLi += '<li>' + (i + 1) + '</li>';
             }
             codeBody.append(codeNumber.append(codeNumLi));
-            codeBodyInner.css({ paddingLeft: codeNumber.width() + "px" });
+            codeBodyInner.css({paddingLeft: codeNumber.width() + "px"});
         }
 
     };
 })(jQuery);
 
 //执行函数
-$(function() {
-    $("pre").each(function() {
+$(function () {
+    $("pre").each(function () {
         var that = $(this),
             tit = that.data("title"),
             skin = that.data("skin"),
@@ -63,10 +63,10 @@ $(function() {
     });
 });
 var pf = {
-    fncolor: function(obj) {
+    fncolor: function (obj) {
         var colobj = obj.find("input[name=colorInput]");
         if (colobj.length > 0) {
-            colobj.each(function() {
+            colobj.each(function () {
                 var this_ = $(this);
                 this_.spectrum({
                     color: this_.val(),
@@ -77,7 +77,7 @@ var pf = {
                     showInput: true,
                     chooseText: "确定",
                     cancelText: "取消",
-                    change: function(color) {
+                    change: function (color) {
                         this_.val(color.toHexString());
                     }
                 });
@@ -85,7 +85,7 @@ var pf = {
         }
     },
     //检测输入数字的范围和正确否
-    numJudge: function(obj, defaults, mins, maxs) {
+    numJudge: function (obj, defaults, mins, maxs) {
         var that = $(obj),
             a = parseInt(that.val());
         mins = mins || 0;
@@ -100,8 +100,8 @@ var pf = {
         that.val(a);
         return a;
     },
-    sliderRange: function(dom) {
-        dom.find("input[data-type='slider']").each(function(i, e) {
+    sliderRange: function (dom) {
+        dom.find("input[data-type='slider']").each(function (i, e) {
             var $this = $(e);
             var $slider = $('<span class="slider-range"></span>').slider({
                 range: "min",
@@ -109,12 +109,12 @@ var pf = {
                 max: $this.data('max'),
                 value: $this.val(),
                 animate: true,
-                slide: function(event, ui) {
+                slide: function (event, ui) {
                     $this.val(ui.value).trigger('change');
                 }
             });
             $this.before($slider);
-            $this.on('change', function() {
+            $this.on('change', function () {
                 var a = pf.numJudge($this[0], $this.data('defalutval'), $this.data('min'), $this.data('max'));
                 $slider.slider('value', a);
             });
