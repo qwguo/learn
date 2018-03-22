@@ -1,0 +1,27 @@
+body {
+  color: orange; }
+  body a, body h2, body .box {
+    color: blue; }
+  body a {
+    text-decoration: none;
+    color: blue; }
+  body a:hover {
+    color: orange; }
+  body h1 {
+    background-color: #c00; }
+  body h2 {
+    background-color: #0c0; }
+  body .box {
+    background-color: grey;
+    border: 1px solid #aaa;
+    box-shadow: 3px 3px 3px #ccc;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px; }
+
+.box span {
+  color: green; }
+.box b {
+  color: #cc0; }
+
+/*# sourceMappingURL=style.css.map */
