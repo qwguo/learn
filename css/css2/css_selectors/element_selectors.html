@@ -1,36 +1,89 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>element selectors元素选择器</title>
-<link rel="stylesheet" href="/public_css/base_style.css">
-<script type="text/javascript" src="/public_js/jquery-1.7-min.js"></script>
-<script type="text/javascript" src="/public_js/public_fun.js"></script>
-<style type="text/css">
-	.selector-list{padding-left:0; margin:0px; padding-bottom: 10px;font-family:arial;}
-	.selector-list a{text-decoration: none; color: #000;}
-	.selector-list li{background-color:#f5f5f5; border:1px solid #ddd; padding:10px; line-height:30px; margin:10px 0 0; list-style-position: inside;}
-	.selector-list span,.selector-list a{margin:0px 8px;}
-	.selector-list input.text{width:80px; height:30px;}
-	.selector-list input.radio,.selector-list input.checkbox{width:14px; height:14px; margin:0px 5px;}
-	/**元素选择符**/
-	.elementSelect .element a{color:darkturquoise;font-size:20px; font-weight:bold;}
-	.elementSelect .id-select #idSelect{color:darkslategray;font-size:20px; font-weight:bold;}
-	.elementSelect .class-select .class-name{color:burlywood;font-size:20px; font-weight:bold;}
-</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>element selectors元素选择器</title>
+    <link rel="shortcut icon" href="/studyNotes/public_image/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet/less" type="text/css" href="/studyNotes/public_css/base_style.less">
+    <link rel="stylesheet" href="/studyNotes/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/studyNotes/public_js/jquery-1.7-min.js"></script>
+    <script type="text/javascript" src="/studyNotes/public_js/public_fun.js"></script>
+    <script type="text/javascript" src="/studyNotes/less/less-1.7.3.js"></script>
+    <style type="text/css">
+        .selector-list {
+            padding-left: 0;
+            margin: 0px;
+            padding-bottom: 10px;
+            font-family: arial;
+        }
+
+        .selector-list a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .selector-list li {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 10px;
+            line-height: 30px;
+            margin: 10px 0 0;
+            list-style-position: inside;
+        }
+
+        .selector-list span, .selector-list a {
+            margin: 0px 8px;
+        }
+
+        .selector-list input.text {
+            width: 80px;
+            height: 30px;
+        }
+
+        .selector-list input.radio, .selector-list input.checkbox {
+            width: 14px;
+            height: 14px;
+            margin: 0px 5px;
+        }
+
+        /**元素选择符**/
+        .elementSelect .element a {
+            color: darkturquoise;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .elementSelect .id-select #idSelect {
+            color: darkslategray;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .elementSelect .class-select .class-name {
+            color: burlywood;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 <div class="wrapper">
-	<dl class="detail-list">
-		<dt class="detail-list-head">元素选择符：</dt>
-		<dd class="detail-list-body">
-			<ol class="selector-list elementSelect">
-				<li class="element">a{选择符}：<span>第一个span</span><span>第二个span</span><span>第三个span</span><span>第四个span</span><span>第五个span</span><a href="#">第一个a（选中）</a><a href="#"><em>第二个a（选中）</em></a></li>
-				<li class="id-select">#id{选择符}：<span>第一个span</span><span>第二个span</span><span id="idSelect">第三个span（选中）</span><span>第四个span</span><span>第五个span</span><a href="#">第一个a</a><a href="#"><em>第二个a</em></a></li>
-				<li class="class-select">.class{选择符}：<span>第一个span</span><span>第二个span</span><span class="class-name">第三个span（选中）</span><span>第四个span</span><span>第五个span</span><a href="#">第一个a</a><a href="#" class="class-name"><em>第二个a（选中）</em></a></li>
-			</ol>
-<pre data-title="HTML" data-skin="1" data-height="300">
+    <dl class="detail-list">
+        <dt class="detail-list-head">元素选择符：</dt>
+        <dd class="detail-list-body">
+            <ol class="selector-list elementSelect">
+                <li class="element">
+                    a{选择符}：<span>第一个span</span><span>第二个span</span><span>第三个span</span><span>第四个span</span><span>第五个span</span><a
+                    href="#">第一个a（选中）</a><a href="#"><em>第二个a（选中）</em></a></li>
+                <li class="id-select">#id{选择符}：<span>第一个span</span><span>第二个span</span><span
+                    id="idSelect">第三个span（选中）</span><span>第四个span</span><span>第五个span</span><a href="#">第一个a</a><a
+                    href="#"><em>第二个a</em></a></li>
+                <li class="class-select">.class{选择符}：<span>第一个span</span><span>第二个span</span><span class="class-name">第三个span（选中）</span><span>第四个span</span><span>第五个span</span><a
+                    href="#">第一个a</a><a href="#" class="class-name"><em>第二个a（选中）</em></a></li>
+            </ol>
+            <pre data-title="HTML" data-skin="1" data-height="300">
 &lt;ol class=&quot;selector-list elementSelect&quot;&gt;
 	&lt;li class=&quot;element&quot;&gt;
 		a{选择符}：
@@ -64,14 +117,14 @@
 	&lt;/li&gt;
 &lt;/ol&gt;
 </pre>
-<pre data-title="CSS" data-skin="2">
+            <pre data-title="CSS" data-skin="2">
 <span class="note">/**元素选择符**/</span>
 .elementSelect .element a{color:darkturquoise;font-size:20px; font-weight:bold;}
 .elementSelect .id-select #idSelect{color:darkslategray;font-size:20px; font-weight:bold;}
-.elementSelect .class-select .class-name{color:burlywood;font-size:20px; font-weight:bold;}	
+.elementSelect .class-select .class-name{color:burlywood;font-size:20px; font-weight:bold;}
 </pre>
-		</dd>
-	</dl>
+        </dd>
+    </dl>
 </div>
 </body>
 </html>
